@@ -1138,7 +1138,8 @@ function mostrarFeedback(esCorrecta, justificacion) {
   DOM.feedbackStatus.textContent = esCorrecta ? '¡Correcto!' : 'Incorrecto';
 
   if (justificacion && justificacion.trim() !== '') {
-    DOM.feedbackJust.textContent = justificacion;
+    const formatted = justificacion.replace(/\s([B-D])\.\s/g, '\n$1. ');
+    DOM.feedbackJust.textContent = formatted;
     DOM.feedbackJust.hidden      = false;
   } else {
     DOM.feedbackJust.hidden      = true;

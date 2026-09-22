@@ -3,30 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Cuestionario interactivo - Pon a prueba tus conocimientos" />
+  <meta name="description" content="Cuestionario interactivo - Auditoría de SI" />
   <meta name="theme-color" content="#6c63ff" />
   <title>Cuestionario Interactivo</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ========================================================
-       PANTALLA: INICIO
-  ======================================================== -->
   <main id="app" class="app-container">
 
+    <!-- ========================================================
+         PANTALLA: INICIO – Selección de sección
+    ======================================================== -->
     <section id="screen-start" class="screen screen--active" aria-label="Pantalla de inicio">
       <div class="card start-card">
         <div class="start-icon" aria-hidden="true">🧠</div>
         <h1 class="start-title">Cuestionario<br />Interactivo</h1>
-        <p class="start-subtitle">Responde cada pregunta y pon a prueba tus conocimientos. Recibirás retroalimentación inmediata.</p>
-        <div class="start-meta">
-          <span class="meta-badge" id="badge-total-questions"><!-- JS --></span>
-          <span class="meta-badge">Respuesta única</span>
+        <p class="start-subtitle">Selecciona una sección para comenzar. Recibirás retroalimentación inmediata en cada pregunta.</p>
+
+        <div class="section-grid">
+          <button class="section-btn" id="btn-seccion-teoria">
+            <span class="section-btn__emoji" aria-hidden="true">📖</span>
+            <span class="section-btn__label">Dominio Teoría</span>
+            <span class="section-btn__sub">5 subsecciones</span>
+          </button>
+          <button class="section-btn" id="btn-seccion-casos">
+            <span class="section-btn__emoji" aria-hidden="true">🔍</span>
+            <span class="section-btn__label">Casos de Estudio</span>
+            <span class="section-btn__sub">5 subsecciones</span>
+          </button>
         </div>
-        <button class="btn btn--primary btn--full" id="btn-start">
-          Comenzar cuestionario
-          <span class="btn-arrow" aria-hidden="true">→</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PANTALLA: SUBSECCIONES – Selección de subsección
+    ======================================================== -->
+    <section id="screen-subsections" class="screen" aria-label="Selección de subsección">
+      <div class="card subsections-card">
+        <h2 class="subsections-title" id="subsection-title"><!-- JS --></h2>
+        <p class="subsections-subtitle">Elige una subsección para practicar</p>
+        <div class="subsection-grid" id="subsection-grid">
+          <!-- JS inserta los botones -->
+        </div>
+        <button class="btn btn--ghost btn--full" id="btn-back-to-start">
+          <span aria-hidden="true">←</span> Volver al inicio
         </button>
       </div>
     </section>
@@ -94,8 +115,8 @@
         <div class="results-stats" id="results-stats"><!-- JS --></div>
 
         <button class="btn btn--primary btn--full" id="btn-restart">
-          Reiniciar cuestionario
-          <span class="btn-arrow" aria-hidden="true">↺</span>
+          Elegir otra subsección
+          <span class="btn-arrow" aria-hidden="true">↩</span>
         </button>
       </div>
     </section>

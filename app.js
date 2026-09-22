@@ -6,85 +6,153 @@
 'use strict';
 
 /* ----------------------------------------------------------
-   1. DATOS – Banco de preguntas (JSON separado de la lógica)
+   1. DATOS – Banco de preguntas por sección y subsección
    ---------------------------------------------------------- */
-const PREGUNTAS = [
-  {
-    id: 1,
-    pregunta: "¿Cuál es el resultado de ejecutar `typeof null` en JavaScript?",
-    alternativas: [
-      { id: "a", texto: "\"null\"" },
-      { id: "b", texto: "\"undefined\"" },
-      { id: "c", texto: "\"object\"" },
-      { id: "d", texto: "\"symbol\"" },
-      { id: "e", texto: "Lanza un TypeError" }
+const BANCO_PREGUNTAS = {
+  teoria: {
+    1: [
+      {
+        id: 1,
+        pregunta: "¿Cuál de las siguientes opciones describe la autoridad general para realizar una auditoría de SI?",
+        alternativas: [
+          { id: "a", texto: "El alcance de la auditoría con metas y objetivos" },
+          { id: "b", texto: "Una solicitud de la gerencia para realizar una auditoría" },
+          { id: "c", texto: "La carta de auditoría (audit charter) aprobada" },
+          { id: "d", texto: "El cronograma de auditoría aprobado" }
+        ],
+        respuestaCorrectaId: "c",
+        justificacion: ""
+      },
+      {
+        id: 2,
+        pregunta: "¿Cuál es el beneficio clave de una autoevaluación de control (CSA)?",
+        alternativas: [
+          { id: "a", texto: "Se refuerza la apropiación por parte de la gerencia de los controles internos" },
+          { id: "b", texto: "Se reducen los gastos de auditoría" },
+          { id: "c", texto: "Mejora la detección de fraude" },
+          { id: "d", texto: "Los auditores internos pueden adoptar un enfoque consultivo" }
+        ],
+        respuestaCorrectaId: "a",
+        justificacion: ""
+      },
+      {
+        id: 3,
+        pregunta: "¿En qué se enfocaría MÁS un auditor de SI al desarrollar un programa de auditoría basado en riesgo?",
+        alternativas: [
+          { id: "a", texto: "Procesos de negocio" },
+          { id: "b", texto: "Controles administrativos" },
+          { id: "c", texto: "Controles ambientales" },
+          { id: "d", texto: "Estrategias de negocio" }
+        ],
+        respuestaCorrectaId: "a",
+        justificacion: ""
+      },
+      {
+        id: 4,
+        pregunta: "¿Qué tipo de riesgo de auditoría asume la ausencia de controles compensatorios en el área revisada?",
+        alternativas: [
+          { id: "a", texto: "Riesgo de control" },
+          { id: "b", texto: "Riesgo de detección" },
+          { id: "c", texto: "Riesgo inherente" },
+          { id: "d", texto: "Riesgo de muestreo" }
+        ],
+        respuestaCorrectaId: "c",
+        justificacion: ""
+      },
+      {
+        id: 5,
+        pregunta: "Un auditor de SI que revisa los controles de una aplicación encuentra una debilidad en el software de sistema que podría afectar materialmente la aplicación. ¿Qué debe hacer?",
+        alternativas: [
+          { id: "a", texto: "Ignorarla por estar fuera de alcance" },
+          { id: "b", texto: "Realizar una revisión detallada del software de sistema y reportarla" },
+          { id: "c", texto: "Incluir una declaración de que la auditoría se limitó a la aplicación" },
+          { id: "d", texto: "Revisar los controles relevantes del software de sistema y recomendar una revisión detallada" }
+        ],
+        respuestaCorrectaId: "d",
+        justificacion: ""
+      },
+      {
+        id: 6,
+        pregunta: "¿Cuál es la razón MÁS importante para revisar periódicamente el proceso de planificación de auditoría?",
+        alternativas: [
+          { id: "a", texto: "Planificar el despliegue de recursos" },
+          { id: "b", texto: "Considerar cambios en el entorno de riesgo" },
+          { id: "c", texto: "Aportar insumos para la carta de auditoría" },
+          { id: "d", texto: "Identificar los estándares de auditoría aplicables" }
+        ],
+        respuestaCorrectaId: "b",
+        justificacion: ""
+      },
+      {
+        id: 7,
+        pregunta: "¿Cuál es el paso MÁS crítico al planificar una auditoría de SI?",
+        alternativas: [
+          { id: "a", texto: "Revisión de hallazgos de auditorías previas" },
+          { id: "b", texto: "Aprobación del plan por la alta gerencia" },
+          { id: "c", texto: "Revisión de políticas de seguridad de la información" },
+          { id: "d", texto: "Realizar una evaluación de riesgo" }
+        ],
+        respuestaCorrectaId: "d",
+        justificacion: ""
+      },
+      {
+        id: 8,
+        pregunta: "El enfoque para planificar la cobertura de auditoría de SI debe basarse en:",
+        alternativas: [
+          { id: "a", texto: "Riesgo" },
+          { id: "b", texto: "Materialidad" },
+          { id: "c", texto: "Monitoreo de fraude" },
+          { id: "d", texto: "Suficiencia de la evidencia" }
+        ],
+        respuestaCorrectaId: "a",
+        justificacion: ""
+      },
+      {
+        id: 9,
+        pregunta: "Una organización respalda diariamente datos y software críticos y almacena los medios fuera del sitio para restaurar archivos ante una interrupción. Esto es un ejemplo de un control:",
+        alternativas: [
+          { id: "a", texto: "Preventivo" },
+          { id: "b", texto: "De gestión" },
+          { id: "c", texto: "Correctivo" },
+          { id: "d", texto: "Detective" }
+        ],
+        respuestaCorrectaId: "c",
+        justificacion: ""
+      }
     ],
-    respuestaCorrectaId: "c",
-    justificacion: "En JavaScript, `typeof null` devuelve \"object\". Esto es un error histórico que existe desde la primera versión del lenguaje (Netscape Navigator 2.0). El valor null fue diseñado para representar la ausencia intencional de un objeto, y la implementación interna almacenaba todos los valores como tipos etiquetados; el tag de los objetos era 0, y null tenía un puntero nulo (0x00), lo que causó que el sistema de tipos lo clasificara como objeto. Se decidió mantener este comportamiento para no romper código existente."
+    2: [],
+    3: [],
+    4: [],
+    5: []
   },
-  {
-    id: 2,
-    pregunta: "En CSS, ¿qué valor de `display` hace que un elemento genere un contexto de formato de bloque (BFC) sin afectar el flujo exterior del documento?",
-    alternativas: [
-      { id: "a", texto: "display: block" },
-      { id: "b", texto: "display: inline-block" },
-      { id: "c", texto: "display: flow-root" },
-      { id: "d", texto: "display: contents" },
-      { id: "e", texto: "overflow: hidden en el elemento padre" }
-    ],
-    respuestaCorrectaId: "c",
-    justificacion: "`display: flow-root` crea un nuevo BFC (Block Formatting Context) de forma explícita y sin efectos secundarios. A diferencia de `overflow: hidden` (que también crea un BFC pero corta el contenido desbordado) o `display: inline-block` (que cambia el tipo externo del elemento a inline), `flow-root` fue diseñado específicamente para este propósito. Es la solución moderna para contener flotantes o evitar colapso de márgenes sin alterar el flujo del documento."
-  },
-  {
-    id: 3,
-    pregunta: "¿Cuál de las siguientes afirmaciones describe correctamente la diferencia entre `==` y `===` en JavaScript?",
-    alternativas: [
-      { id: "a", texto: "`==` compara valor y tipo; `===` solo compara valor." },
-      { id: "b", texto: "`===` realiza coerción de tipos antes de comparar; `==` no lo hace." },
-      { id: "c", texto: "`==` realiza coerción de tipos (comparación abstracta); `===` compara valor y tipo sin coerción (comparación estricta)." },
-      { id: "d", texto: "Ambos operadores son idénticos en comportamiento desde ES6." },
-      { id: "e", texto: "`===` lanza un error si los tipos son distintos." }
-    ],
-    respuestaCorrectaId: "c",
-    justificacion: "El operador `==` usa el algoritmo de «Abstract Equality Comparison», que convierte los operandos a un tipo común antes de comparar (ej: `'5' == 5` → `true`). El operador `===` usa «Strict Equality Comparison» y devuelve `false` directamente si los tipos son distintos, sin coerción (ej: `'5' === 5` → `false`). La práctica recomendada es usar siempre `===` para evitar resultados inesperados derivados de la coerción implícita."
-  },
-  {
-    id: 4,
-    pregunta: "En el modelo de cajas de CSS, ¿qué propiedad cambia el modelo de cálculo del tamaño para que `width` y `height` incluyan el padding y el borde?",
-    alternativas: [
-      { id: "a", texto: "box-model: border-box" },
-      { id: "b", texto: "sizing: border-box" },
-      { id: "c", texto: "box-sizing: border-box" },
-      { id: "d", texto: "box-sizing: content-box" },
-      { id: "e", texto: "border-sizing: include" }
-    ],
-    respuestaCorrectaId: "c",
-    justificacion: "La propiedad `box-sizing: border-box` hace que el cálculo de `width` y `height` incluya el contenido, el padding y el borde. Con el valor por defecto `content-box`, `width` solo describe el área de contenido y el padding + borde se suman por fuera. La práctica universal en CSS moderno es aplicar `*, *::before, *::after { box-sizing: border-box; }` al inicio de cualquier hoja de estilos para simplificar los cálculos de dimensiones."
-  },
-  {
-    id: 5,
-    pregunta: "¿Cuál es la principal ventaja de usar `const` en lugar de `let` al declarar variables en JavaScript moderno?",
-    alternativas: [
-      { id: "a", texto: "Las variables `const` no pueden ser reasignadas, lo que comunica la intención de inmutabilidad del enlace." },
-      { id: "b", texto: "`const` hace que el valor del objeto sea completamente inmutable y sus propiedades no puedan modificarse." },
-      { id: "c", texto: "`const` mejora el rendimiento en tiempo de ejecución al optimizar las variables en el compilador V8." },
-      { id: "d", texto: "`const` tiene alcance de función, mientras que `let` tiene alcance de bloque." },
-      { id: "e", texto: "`const` es idéntico a `var` pero sin hoisting." }
-    ],
-    respuestaCorrectaId: "a",
-    justificacion: "La principal ventaja de `const` es semántica: deja claro que el **enlace** (binding) de la variable no será reasignado, lo que reduce errores y mejora la legibilidad. Importante: `const` no congela el *valor* del objeto; sus propiedades sí pueden modificarse (para eso existe `Object.freeze()`). Tanto `let` como `const` tienen alcance de bloque, no de función. No hay diferencias de rendimiento significativas respecto a `let` en motores modernos."
+  casos: {
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: []
   }
-];
+};
+
+/* ----------------------------------------------------------
+   Metadatos de secciones para la UI
+   ---------------------------------------------------------- */
+const SECCIONES_META = {
+  teoria: { label: "Dominio Teoría", emoji: "📖" },
+  casos:  { label: "Casos de Estudio", emoji: "🔍" }
+};
 
 /* ----------------------------------------------------------
    2. ESTADO DE LA APLICACIÓN
    ---------------------------------------------------------- */
 const state = {
-  preguntas:       [],   // array barajado o en orden
-  indiceActual:    0,
-  correctas:       0,
-  incorrectas:     0,
-  respondida:      false,
+  seccionActual:    null,   // 'teoria' | 'casos'
+  subseccionActual: null,   // 1 | 2 | 3 | 4 | 5
+  preguntas:        [],     // array de preguntas de la subsección seleccionada
+  indiceActual:     0,
+  correctas:        0,
+  incorrectas:      0,
+  respondida:       false,
 };
 
 /* ----------------------------------------------------------
@@ -92,53 +160,53 @@ const state = {
    ---------------------------------------------------------- */
 const DOM = {
   // Pantallas
-  screenStart:    document.getElementById('screen-start'),
-  screenQuestion: document.getElementById('screen-question'),
-  screenResults:  document.getElementById('screen-results'),
+  screenStart:       document.getElementById('screen-start'),
+  screenSubsections: document.getElementById('screen-subsections'),
+  screenQuestion:    document.getElementById('screen-question'),
+  screenResults:     document.getElementById('screen-results'),
 
   // Inicio
-  badgeTotalQuestions: document.getElementById('badge-total-questions'),
-  btnStart:            document.getElementById('btn-start'),
+  btnTeoria:         document.getElementById('btn-seccion-teoria'),
+  btnCasos:          document.getElementById('btn-seccion-casos'),
+
+  // Subsecciones
+  subsectionTitle:   document.getElementById('subsection-title'),
+  subsectionGrid:    document.getElementById('subsection-grid'),
+  btnBackToStart:    document.getElementById('btn-back-to-start'),
 
   // Pregunta
-  questionCurrent:  document.getElementById('question-current'),
-  questionTotal:    document.getElementById('question-total'),
-  liveScore:        document.getElementById('live-score'),
-  progressFill:     document.getElementById('progress-fill'),
-  progressBar:      document.querySelector('.progress-bar'),
-  questionNumber:   document.getElementById('question-number-label'),
-  questionText:     document.getElementById('question-text'),
-  alternativesList: document.getElementById('alternatives-list'),
-  feedbackCard:     document.getElementById('feedback-card'),
-  feedbackIcon:     document.getElementById('feedback-icon'),
-  feedbackStatus:   document.getElementById('feedback-status'),
-  feedbackJust:     document.getElementById('feedback-justification'),
-  btnNext:          document.getElementById('btn-next'),
+  questionCurrent:   document.getElementById('question-current'),
+  questionTotal:     document.getElementById('question-total'),
+  liveScore:         document.getElementById('live-score'),
+  progressFill:      document.getElementById('progress-fill'),
+  progressBar:       document.querySelector('.progress-bar'),
+  questionNumber:    document.getElementById('question-number-label'),
+  questionText:      document.getElementById('question-text'),
+  alternativesList:  document.getElementById('alternatives-list'),
+  feedbackCard:      document.getElementById('feedback-card'),
+  feedbackIcon:      document.getElementById('feedback-icon'),
+  feedbackStatus:    document.getElementById('feedback-status'),
+  feedbackJust:      document.getElementById('feedback-justification'),
+  btnNext:           document.getElementById('btn-next'),
 
   // Resultados
-  resultsTrophy:   document.getElementById('results-trophy'),
-  resultsTitle:    document.getElementById('results-title'),
-  resultsSubtitle: document.getElementById('results-subtitle'),
-  ringFill:        document.getElementById('ring-fill'),
-  ringScore:       document.getElementById('ring-score'),
-  ringTotal:       document.getElementById('ring-total'),
-  resultsStats:    document.getElementById('results-stats'),
-  btnRestart:      document.getElementById('btn-restart'),
+  resultsTrophy:     document.getElementById('results-trophy'),
+  resultsTitle:      document.getElementById('results-title'),
+  resultsSubtitle:   document.getElementById('results-subtitle'),
+  ringFill:          document.getElementById('ring-fill'),
+  ringScore:         document.getElementById('ring-score'),
+  ringTotal:         document.getElementById('ring-total'),
+  resultsStats:      document.getElementById('results-stats'),
+  btnRestart:        document.getElementById('btn-restart'),
 };
 
 /* ----------------------------------------------------------
    4. NAVEGACIÓN ENTRE PANTALLAS
    ---------------------------------------------------------- */
-/**
- * Oculta todas las pantallas y muestra la indicada.
- * @param {HTMLElement} screen
- */
 function showScreen(screen) {
-  [DOM.screenStart, DOM.screenQuestion, DOM.screenResults].forEach(s => {
-    s.classList.remove('screen--active');
-  });
+  [DOM.screenStart, DOM.screenSubsections, DOM.screenQuestion, DOM.screenResults]
+    .forEach(s => s.classList.remove('screen--active'));
   screen.classList.add('screen--active');
-  // Enfoca el primer elemento enfocable para accesibilidad
   requestAnimationFrame(() => {
     const focusable = screen.querySelector('button, [tabindex="0"], h1, h2');
     if (focusable) focusable.focus({ preventScroll: true });
@@ -146,15 +214,53 @@ function showScreen(screen) {
 }
 
 /* ----------------------------------------------------------
-   5. INICIO DEL CUESTIONARIO
+   5. PANTALLA: SELECCIÓN DE SUBSECCIÓN
    ---------------------------------------------------------- */
-function iniciarCuestionario() {
-  // Copia el array de preguntas (no modifica el original)
-  state.preguntas    = [...PREGUNTAS];
-  state.indiceActual = 0;
-  state.correctas    = 0;
-  state.incorrectas  = 0;
-  state.respondida   = false;
+function mostrarSubsecciones(seccion) {
+  state.seccionActual = seccion;
+  const meta = SECCIONES_META[seccion];
+
+  DOM.subsectionTitle.textContent = `${meta.emoji} ${meta.label}`;
+
+  // Limpiar grid
+  DOM.subsectionGrid.innerHTML = '';
+
+  for (let n = 1; n <= 5; n++) {
+    const preguntas = BANCO_PREGUNTAS[seccion][n];
+    const disponible = preguntas && preguntas.length > 0;
+
+    const btn = document.createElement('button');
+    btn.className = `subsection-btn${disponible ? '' : ' subsection-btn--empty'}`;
+    btn.disabled  = !disponible;
+    btn.setAttribute('aria-label', `${meta.label} ${n}${disponible ? '' : ' (próximamente)'}`);
+
+    btn.innerHTML = `
+      <span class="subsection-num">${n}</span>
+      <span class="subsection-label">${meta.label} ${n}</span>
+      <span class="subsection-count">${disponible ? preguntas.length + ' preguntas' : 'Próximamente'}</span>
+    `;
+
+    if (disponible) {
+      btn.addEventListener('click', () => iniciarCuestionario(seccion, n));
+    }
+
+    DOM.subsectionGrid.appendChild(btn);
+  }
+
+  showScreen(DOM.screenSubsections);
+}
+
+/* ----------------------------------------------------------
+   6. INICIO DEL CUESTIONARIO
+   ---------------------------------------------------------- */
+function iniciarCuestionario(seccion, subseccion) {
+  state.seccionActual    = seccion;
+  state.subseccionActual = subseccion;
+  state.preguntas        = [...BANCO_PREGUNTAS[seccion][subseccion]];
+  state.indiceActual     = 0;
+  state.correctas        = 0;
+  state.incorrectas      = 0;
+  state.respondida       = false;
 
   DOM.questionTotal.textContent = state.preguntas.length;
   DOM.liveScore.textContent     = 0;
@@ -164,20 +270,18 @@ function iniciarCuestionario() {
 }
 
 /* ----------------------------------------------------------
-   6. RENDERIZAR PREGUNTA ACTUAL
+   7. RENDERIZAR PREGUNTA ACTUAL
    ---------------------------------------------------------- */
 function mostrarPregunta() {
   state.respondida = false;
   const pregunta   = state.preguntas[state.indiceActual];
   const numHumano  = state.indiceActual + 1;
 
-  // Actualizar indicadores de progreso
   DOM.questionCurrent.textContent = numHumano;
   DOM.questionNumber.textContent  = `P.${numHumano}`;
   DOM.questionText.textContent    = pregunta.pregunta;
   actualizarProgreso();
 
-  // Ocultar feedback y botón siguiente
   ocultarFeedback();
   DOM.btnNext.hidden = true;
 
@@ -206,19 +310,14 @@ function mostrarPregunta() {
 }
 
 /* ----------------------------------------------------------
-   7. MANEJAR RESPUESTA DEL USUARIO
+   8. MANEJAR RESPUESTA DEL USUARIO
    ---------------------------------------------------------- */
-/**
- * @param {string} idSeleccionado  – id de la alternativa elegida
- * @param {Object} pregunta        – objeto de la pregunta actual
- */
 function manejarRespuesta(idSeleccionado, pregunta) {
   if (state.respondida) return;
   state.respondida = true;
 
   const esCorrecta = idSeleccionado === pregunta.respuestaCorrectaId;
 
-  // Actualizar puntuación
   if (esCorrecta) {
     state.correctas++;
   } else {
@@ -226,11 +325,10 @@ function manejarRespuesta(idSeleccionado, pregunta) {
   }
   DOM.liveScore.textContent = state.correctas;
 
-  // Deshabilitar todos los botones
+  // Deshabilitar y marcar botones
   const botones = DOM.alternativesList.querySelectorAll('.alternative-btn');
   botones.forEach(btn => {
     btn.disabled = true;
-
     if (btn.dataset.id === pregunta.respuestaCorrectaId) {
       btn.classList.add('alternative-btn--correct');
     } else if (btn.dataset.id === idSeleccionado && !esCorrecta) {
@@ -238,33 +336,36 @@ function manejarRespuesta(idSeleccionado, pregunta) {
     }
   });
 
-  // Mostrar feedback
   mostrarFeedback(esCorrecta, pregunta.justificacion);
 
-  // Mostrar botón siguiente o finalizar
   const esUltima = state.indiceActual >= state.preguntas.length - 1;
   DOM.btnNext.hidden      = false;
   DOM.btnNext.textContent = esUltima ? 'Ver resultados' : 'Siguiente pregunta';
-  // Re-añadir ícono de flecha (el textContent lo reemplazó)
+
   const arrow = document.createElement('span');
   arrow.className   = 'btn-arrow';
   arrow.textContent = esUltima ? ' ↗' : ' →';
   arrow.setAttribute('aria-hidden', 'true');
   DOM.btnNext.appendChild(arrow);
 
-  // Scroll suave hacia el feedback
   DOM.feedbackCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 /* ----------------------------------------------------------
-   8. FEEDBACK
+   9. FEEDBACK
    ---------------------------------------------------------- */
 function mostrarFeedback(esCorrecta, justificacion) {
-  DOM.feedbackCard.hidden = false;
+  DOM.feedbackCard.hidden    = false;
   DOM.feedbackCard.className = `feedback-card feedback-card--${esCorrecta ? 'correct' : 'wrong'}`;
   DOM.feedbackIcon.textContent   = esCorrecta ? '✅' : '❌';
   DOM.feedbackStatus.textContent = esCorrecta ? '¡Correcto!' : 'Incorrecto';
-  DOM.feedbackJust.textContent   = justificacion;
+
+  if (justificacion && justificacion.trim() !== '') {
+    DOM.feedbackJust.textContent = justificacion;
+    DOM.feedbackJust.hidden      = false;
+  } else {
+    DOM.feedbackJust.hidden      = true;
+  }
 }
 
 function ocultarFeedback() {
@@ -273,11 +374,11 @@ function ocultarFeedback() {
 }
 
 /* ----------------------------------------------------------
-   9. PROGRESO
+   10. PROGRESO
    ---------------------------------------------------------- */
 function actualizarProgreso() {
   const total      = state.preguntas.length;
-  const respondidas = state.indiceActual; // preguntas ya superadas
+  const respondidas = state.indiceActual;
   const pct        = total > 0 ? Math.round((respondidas / total) * 100) : 0;
 
   DOM.progressFill.style.width = `${pct}%`;
@@ -285,7 +386,7 @@ function actualizarProgreso() {
 }
 
 /* ----------------------------------------------------------
-   10. SIGUIENTE PREGUNTA
+   11. SIGUIENTE PREGUNTA
    ---------------------------------------------------------- */
 function siguientePregunta() {
   const esUltima = state.indiceActual >= state.preguntas.length - 1;
@@ -295,22 +396,20 @@ function siguientePregunta() {
   } else {
     state.indiceActual++;
     mostrarPregunta();
-    // Scroll al inicio de la pantalla
     DOM.screenQuestion.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
 /* ----------------------------------------------------------
-   11. PANTALLA DE RESULTADOS
+   12. PANTALLA DE RESULTADOS
    ---------------------------------------------------------- */
 function mostrarResultados() {
-  const total   = state.preguntas.length;
-  const score   = state.correctas;
-  const pct     = total > 0 ? Math.round((score / total) * 100) : 0;
+  const total = state.preguntas.length;
+  const score = state.correctas;
+  const pct   = total > 0 ? Math.round((score / total) * 100) : 0;
 
-  // Emoji y mensaje según rendimiento
-  let trophy   = '🏆';
-  let titulo   = '¡Excelente trabajo!';
+  let trophy    = '🏆';
+  let titulo    = '¡Excelente trabajo!';
   let subtitulo = 'Obtuviste una puntuación perfecta. ¡Sigue así!';
 
   if (pct < 40) {
@@ -333,18 +432,16 @@ function mostrarResultados() {
   DOM.ringScore.textContent       = score;
   DOM.ringTotal.textContent       = `/ ${total}`;
 
-  // Animar el anillo SVG (circunferencia = 2π·50 ≈ 314.16)
   const circunferencia = 314.16;
   const offset         = circunferencia - (circunferencia * pct) / 100;
 
-  // Pequeño delay para que la animación sea visible al entrar la pantalla
   requestAnimationFrame(() => {
     setTimeout(() => {
       DOM.ringFill.style.strokeDashoffset = offset;
     }, 300);
   });
 
-  // Estadísticas
+  const meta = SECCIONES_META[state.seccionActual];
   DOM.resultsStats.innerHTML = `
     <div class="stat-item stat-item--correct">
       <span class="stat-value">${state.correctas}</span>
@@ -358,35 +455,35 @@ function mostrarResultados() {
       <span class="stat-value">${pct}%</span>
       <span class="stat-label">Acierto</span>
     </div>
+    <div class="stat-item stat-item--section" style="grid-column: 1 / -1;">
+      <span class="stat-value" style="font-size: var(--font-size-base);">${meta.emoji} ${meta.label} ${state.subseccionActual}</span>
+      <span class="stat-label">Sección</span>
+    </div>
   `;
 
   showScreen(DOM.screenResults);
 }
 
 /* ----------------------------------------------------------
-   12. REINICIAR
+   13. REINICIAR – vuelve a la selección de subsección
    ---------------------------------------------------------- */
 function reiniciarCuestionario() {
-  // Resetear anillo para la próxima animación
   DOM.ringFill.style.strokeDashoffset = 314.16;
-  showScreen(DOM.screenStart);
+  mostrarSubsecciones(state.seccionActual);
 }
 
 /* ----------------------------------------------------------
-   13. INICIALIZACIÓN Y EVENTOS
+   14. INICIALIZACIÓN Y EVENTOS
    ---------------------------------------------------------- */
 function init() {
-  // Badge con total de preguntas en pantalla de inicio
-  DOM.badgeTotalQuestions.textContent = `${PREGUNTAS.length} preguntas`;
+  DOM.btnTeoria.addEventListener('click', () => mostrarSubsecciones('teoria'));
+  DOM.btnCasos.addEventListener('click',  () => mostrarSubsecciones('casos'));
 
-  // Eventos
-  DOM.btnStart.addEventListener('click', iniciarCuestionario);
+  DOM.btnBackToStart.addEventListener('click', () => showScreen(DOM.screenStart));
   DOM.btnNext.addEventListener('click', siguientePregunta);
   DOM.btnRestart.addEventListener('click', reiniciarCuestionario);
 
-  // Mostrar pantalla de inicio al cargar
   showScreen(DOM.screenStart);
 }
 
-// Arrancar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', init);

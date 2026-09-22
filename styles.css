@@ -602,7 +602,179 @@ button {
 .stat-item--total   .stat-value  { color: var(--color-primary); }
 
 /* ----------------------------------------------------------
-   13. RESPONSIVE – Pantallas medianas/grandes
+   13. PANTALLA DE INICIO – Grid de secciones
+   ---------------------------------------------------------- */
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.section-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-4);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow   var(--transition-fast),
+    transform    var(--transition-fast);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .section-btn:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px var(--color-primary-light), var(--shadow-md);
+    transform: translateY(-2px);
+  }
+}
+
+.section-btn:active {
+  transform: scale(0.97);
+}
+
+.section-btn__emoji {
+  font-size: 2.25rem;
+  filter: drop-shadow(0 2px 4px rgba(108,99,255,.2));
+}
+
+.section-btn__label {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.section-btn__sub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* ----------------------------------------------------------
+   14. PANTALLA DE SUBSECCIONES
+   ---------------------------------------------------------- */
+.subsections-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.subsections-title {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.subsections-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.subsection-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.subsection-btn {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow   var(--transition-fast),
+    transform    var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .subsection-btn:not(:disabled):hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px var(--color-primary-light);
+    transform: translateY(-1px);
+  }
+}
+
+.subsection-btn:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+.subsection-btn--empty {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.subsection-num {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  flex-shrink: 0;
+}
+
+.subsection-btn--empty .subsection-num {
+  background: var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.subsection-label {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+}
+
+.subsection-count {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* Botón ghost (volver) */
+.btn--ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 2px solid var(--color-border);
+  font-weight: 600;
+}
+
+@media (hover: hover) {
+  .btn--ghost:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+  }
+}
+
+.btn--ghost:active {
+  transform: scale(0.97);
+}
+
+/* ----------------------------------------------------------
+   15. RESPONSIVE – Pantallas medianas/grandes
    ---------------------------------------------------------- */
 @media (min-width: 480px) {
   .app-container {

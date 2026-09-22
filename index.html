@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Cuestionario interactivo - Pon a prueba tus conocimientos" />
+  <meta name="theme-color" content="#6c63ff" />
+  <title>Cuestionario Interactivo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========================================================
+       PANTALLA: INICIO
+  ======================================================== -->
+  <main id="app" class="app-container">
+
+    <section id="screen-start" class="screen screen--active" aria-label="Pantalla de inicio">
+      <div class="card start-card">
+        <div class="start-icon" aria-hidden="true">🧠</div>
+        <h1 class="start-title">Cuestionario<br />Interactivo</h1>
+        <p class="start-subtitle">Responde cada pregunta y pon a prueba tus conocimientos. Recibirás retroalimentación inmediata.</p>
+        <div class="start-meta">
+          <span class="meta-badge" id="badge-total-questions"><!-- JS --></span>
+          <span class="meta-badge">Respuesta única</span>
+        </div>
+        <button class="btn btn--primary btn--full" id="btn-start">
+          Comenzar cuestionario
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PANTALLA: PREGUNTA
+    ======================================================== -->
+    <section id="screen-question" class="screen" aria-label="Pregunta actual" aria-live="polite">
+      <header class="quiz-header">
+        <div class="progress-info">
+          <span class="progress-label">Pregunta <span id="question-current">1</span> de <span id="question-total">1</span></span>
+          <span class="score-label">Puntos: <strong id="live-score">0</strong></span>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-label="Progreso del cuestionario" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar__fill" id="progress-fill"></div>
+        </div>
+      </header>
+
+      <div class="question-card">
+        <p class="question-number" aria-hidden="true" id="question-number-label">P.1</p>
+        <h2 class="question-text" id="question-text"><!-- JS --></h2>
+      </div>
+
+      <ul class="alternatives-list" id="alternatives-list" role="list" aria-label="Alternativas de respuesta">
+        <!-- JS inserta los <li> -->
+      </ul>
+
+      <!-- Tarjeta de feedback (oculta hasta responder) -->
+      <div class="feedback-card" id="feedback-card" aria-live="assertive" hidden>
+        <div class="feedback-header">
+          <span class="feedback-icon" id="feedback-icon" aria-hidden="true"></span>
+          <strong class="feedback-status" id="feedback-status"></strong>
+        </div>
+        <p class="feedback-justification" id="feedback-justification"></p>
+      </div>
+
+      <div class="quiz-footer">
+        <button class="btn btn--primary btn--full" id="btn-next" hidden>
+          Siguiente pregunta
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PANTALLA: RESULTADOS
+    ======================================================== -->
+    <section id="screen-results" class="screen" aria-label="Pantalla de resultados">
+      <div class="card results-card">
+        <div class="results-trophy" aria-hidden="true" id="results-trophy">🏆</div>
+        <h2 class="results-title" id="results-title">¡Cuestionario completado!</h2>
+        <p class="results-subtitle" id="results-subtitle"></p>
+
+        <div class="results-score-ring" aria-label="Puntaje obtenido">
+          <svg class="ring-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="ring-bg" cx="60" cy="60" r="50" />
+            <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="50" />
+          </svg>
+          <div class="ring-label">
+            <span class="ring-score" id="ring-score">0</span>
+            <span class="ring-total" id="ring-total">/ 0</span>
+          </div>
+        </div>
+
+        <div class="results-stats" id="results-stats"><!-- JS --></div>
+
+        <button class="btn btn--primary btn--full" id="btn-restart">
+          Reiniciar cuestionario
+          <span class="btn-arrow" aria-hidden="true">↺</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

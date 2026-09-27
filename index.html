@@ -10,6 +10,12 @@
 </head>
 <body>
 
+  <!-- Botón de cambio de idioma (fijo, visible en todas las pantallas) -->
+  <button id="btn-lang" class="lang-toggle" aria-label="Cambiar idioma / Change language">
+    <span id="lang-flag">🇺🇸</span>
+    <span id="lang-label">EN</span>
+  </button>
+
   <main id="app" class="app-container">
 
     <!-- ========================================================
@@ -18,19 +24,19 @@
     <section id="screen-start" class="screen screen--active" aria-label="Pantalla de inicio">
       <div class="card start-card">
         <div class="start-icon" aria-hidden="true">🧠</div>
-        <h1 class="start-title">Cuestionario<br />Interactivo</h1>
-        <p class="start-subtitle">Selecciona una sección para comenzar. Recibirás retroalimentación inmediata en cada pregunta.</p>
+        <h1 class="start-title" data-i18n="appTitle">Cuestionario<br />Interactivo</h1>
+        <p class="start-subtitle" data-i18n="appSubtitle">Selecciona una sección para comenzar. Recibirás retroalimentación inmediata en cada pregunta.</p>
 
         <div class="section-grid">
           <button class="section-btn" id="btn-seccion-teoria">
             <span class="section-btn__emoji" aria-hidden="true">📖</span>
-            <span class="section-btn__label">Dominio Teoría</span>
-            <span class="section-btn__sub">5 subsecciones</span>
+            <span class="section-btn__label" data-i18n="teoriaLabel">Dominio Teoría</span>
+            <span class="section-btn__sub" data-i18n="subsCount">5 subsecciones</span>
           </button>
           <button class="section-btn" id="btn-seccion-casos">
             <span class="section-btn__emoji" aria-hidden="true">🔍</span>
-            <span class="section-btn__label">Casos de Estudio</span>
-            <span class="section-btn__sub">5 subsecciones</span>
+            <span class="section-btn__label" data-i18n="casosLabel">Casos de Estudio</span>
+            <span class="section-btn__sub" data-i18n="subsCount">5 subsecciones</span>
           </button>
         </div>
       </div>
@@ -42,12 +48,12 @@
     <section id="screen-subsections" class="screen" aria-label="Selección de subsección">
       <div class="card subsections-card">
         <h2 class="subsections-title" id="subsection-title"><!-- JS --></h2>
-        <p class="subsections-subtitle">Elige una subsección para practicar</p>
+        <p class="subsections-subtitle" id="subsections-subtitle" data-i18n="chooseSubsection">Elige una subsección para practicar</p>
         <div class="subsection-grid" id="subsection-grid">
           <!-- JS inserta los botones -->
         </div>
         <button class="btn btn--ghost btn--full" id="btn-back-to-start">
-          <span aria-hidden="true">←</span> Volver al inicio
+          <span aria-hidden="true">←</span> <span data-i18n="backBtn">Volver al inicio</span>
         </button>
       </div>
     </section>
@@ -58,8 +64,13 @@
     <section id="screen-question" class="screen" aria-label="Pregunta actual" aria-live="polite">
       <header class="quiz-header">
         <div class="progress-info">
-          <span class="progress-label">Pregunta <span id="question-current">1</span> de <span id="question-total">1</span></span>
-          <span class="score-label">Puntos: <strong id="live-score">0</strong></span>
+          <span class="progress-label">
+            <span data-i18n="questionWord">Pregunta</span>
+            <span id="question-current">1</span>
+            <span data-i18n="ofWord">de</span>
+            <span id="question-total">1</span>
+          </span>
+          <span class="score-label"><span data-i18n="scoreWord">Puntos</span>: <strong id="live-score">0</strong></span>
         </div>
         <div class="progress-bar" role="progressbar" aria-label="Progreso del cuestionario" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
           <div class="progress-bar__fill" id="progress-fill"></div>
@@ -86,7 +97,7 @@
 
       <div class="quiz-footer">
         <button class="btn btn--primary btn--full" id="btn-next" hidden>
-          Siguiente pregunta
+          <span id="btn-next-text" data-i18n="nextBtn">Siguiente pregunta</span>
           <span class="btn-arrow" aria-hidden="true">→</span>
         </button>
       </div>
@@ -115,7 +126,7 @@
         <div class="results-stats" id="results-stats"><!-- JS --></div>
 
         <button class="btn btn--primary btn--full" id="btn-restart">
-          Elegir otra subsección
+          <span data-i18n="restartBtn">Volver al inicio</span>
           <span class="btn-arrow" aria-hidden="true">↩</span>
         </button>
       </div>

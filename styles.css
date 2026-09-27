@@ -821,3 +821,40 @@ button {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ----------------------------------------------------------
+   16. BOTÓN DE IDIOMA
+   ---------------------------------------------------------- */
+.lang-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(108, 99, 255, 0.15);
+  transition: background var(--transition-base), color var(--transition-base),
+              transform var(--transition-base);
+}
+
+.lang-toggle:hover,
+.lang-toggle:focus-visible {
+  background: var(--color-primary);
+  color: #fff;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+#lang-flag {
+  font-size: 1.1rem;
+  line-height: 1;
+}

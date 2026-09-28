@@ -49,6 +49,22 @@
       <div class="card subsections-card">
         <h2 class="subsections-title" id="subsection-title"><!-- JS --></h2>
         <p class="subsections-subtitle" id="subsections-subtitle" data-i18n="chooseSubsection">Elige una subsección para practicar</p>
+
+        <!-- Control de Modo Aleatorio (antes de entrar al cuestionario) -->
+        <div class="random-mode-card">
+          <div class="random-mode-info">
+            <span class="random-mode-icon" aria-hidden="true">🔀</span>
+            <div class="random-mode-text">
+              <span class="random-mode-title" data-i18n="randomModeTitle">Modo Aleatorio</span>
+              <span class="random-mode-desc" data-i18n="randomModeDesc">Mezcla las alternativas en cada pregunta</span>
+            </div>
+          </div>
+          <label class="switch-toggle" for="toggle-random-mode" aria-label="Activar o desactivar modo aleatorio">
+            <input type="checkbox" id="toggle-random-mode" />
+            <span class="switch-slider" aria-hidden="true"></span>
+          </label>
+        </div>
+
         <div class="subsection-grid" id="subsection-grid">
           <!-- JS inserta los botones -->
         </div>
@@ -69,6 +85,7 @@
             <span id="question-current">1</span>
             <span data-i18n="ofWord">de</span>
             <span id="question-total">1</span>
+            <span id="badge-random-mode" class="badge-random" data-i18n="randomBadge" hidden>🔀 Aleatorio</span>
           </span>
           <span class="score-label"><span data-i18n="scoreWord">Puntos</span>: <strong id="live-score">0</strong></span>
         </div>
@@ -90,7 +107,10 @@
       <div class="feedback-card" id="feedback-card" aria-live="assertive" hidden>
         <div class="feedback-header">
           <span class="feedback-icon" id="feedback-icon" aria-hidden="true"></span>
-          <strong class="feedback-status" id="feedback-status"></strong>
+          <div class="feedback-status-group">
+            <strong class="feedback-status" id="feedback-status"></strong>
+            <span id="feedback-reorder-notice" class="feedback-reorder-badge" data-i18n="reorderNotice" hidden></span>
+          </div>
         </div>
         <p class="feedback-justification" id="feedback-justification"></p>
       </div>

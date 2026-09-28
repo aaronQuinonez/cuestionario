@@ -31,6 +31,10 @@ const TRANSLATIONS = {
     statIncorrect:     'Incorrectas',
     statAccuracy:      'Acierto',
     statSection:       'Sección',
+    randomModeTitle:   'Modo Aleatorio',
+    randomModeDesc:    'Mezcla las alternativas en cada pregunta',
+    randomBadge:       '🔀 Aleatorio',
+    reorderNotice:     '🔄 Opciones reordenadas (A-D) sincronizadas con la justificación',
     score0:  ['📚', '¡Sigue estudiando!',  'No te rindas, cada intento te acerca más al dominio del tema.'],
     score40: ['👍', '¡Buen esfuerzo!',     'Vas por buen camino. Repasa las preguntas que fallaste.'],
     score70: ['🌟', '¡Muy bien!',          'Casi perfecto. Revisa las respuestas incorrectas para alcanzar el 100%.'],
@@ -62,6 +66,10 @@ const TRANSLATIONS = {
     statIncorrect:     'Incorrect',
     statAccuracy:      'Accuracy',
     statSection:       'Section',
+    randomModeTitle:   'Shuffle Mode',
+    randomModeDesc:    'Shuffles alternatives on each question',
+    randomBadge:       '🔀 Shuffled',
+    reorderNotice:     '🔄 Options reordered (A-D) synchronized with justification',
     score0:  ['📚', 'Keep studying!',    "Don't give up, each attempt brings you closer to mastering the topic."],
     score40: ['👍', 'Good effort!',      "You're on the right track. Review the questions you got wrong."],
     score70: ['🌟', 'Well done!',        'Almost perfect. Review incorrect answers to reach 100%.'],
@@ -77,6 +85,22 @@ let currentLang = 'es';
 
 function t(key) {
   return TRANSLATIONS[currentLang][key];
+}
+
+/** Mezcla un arreglo garantizando un orden diferente (Fisher-Yates) */
+function shuffleAlts(array) {
+  if (array.length <= 1) return [...array];
+  let shuffled;
+  let attempts = 0;
+  do {
+    shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    attempts++;
+  } while (attempts < 10 && shuffled.every((val, idx) => val === array[idx]));
+  return shuffled;
 }
 
 function applyLanguage(lang) {
@@ -122,10 +146,18 @@ function applyLanguage(lang) {
         }
       });
 
+      if (DOM.badgeRandomMode && state.modoAleatorio) {
+        DOM.badgeRandomMode.textContent = t('randomBadge');
+      }
+
       if (state.respondida) {
         const esCorrecta = DOM.feedbackCard.classList.contains('feedback-card--correct');
         const just = useEn ? pregunta.justificacionEn : pregunta.justificacion;
         mostrarFeedback(esCorrecta, just);
+
+        if (DOM.feedbackReorderNotice && state.modoAleatorio) {
+          DOM.feedbackReorderNotice.textContent = t('reorderNotice');
+        }
 
         const esUltima = state.indiceActual >= state.preguntas.length - 1;
         const nextText = DOM.btnNext.querySelector('#btn-next-text') || DOM.btnNext;
@@ -1655,49 +1687,54 @@ function getSectionMeta(seccion) {
    2. ESTADO DE LA APLICACIÓN
    ---------------------------------------------------------- */
 const state = {
-  seccionActual:    null,
-  subseccionActual: null,
-  preguntas:        [],
-  indiceActual:     0,
-  correctas:        0,
-  incorrectas:      0,
-  respondida:       false,
+  seccionActual:             null,
+  subseccionActual:          null,
+  preguntas:                 [],
+  indiceActual:              0,
+  correctas:                 0,
+  incorrectas:               0,
+  respondida:                false,
+  modoAleatorio:             false,
+  ordenAlternativasActuales: ['a', 'b', 'c', 'd'],
 };
 
 /* ----------------------------------------------------------
    3. REFERENCIAS AL DOM
    ---------------------------------------------------------- */
 const DOM = {
-  screenStart:       document.getElementById('screen-start'),
-  screenSubsections: document.getElementById('screen-subsections'),
-  screenQuestion:    document.getElementById('screen-question'),
-  screenResults:     document.getElementById('screen-results'),
-  btnTeoria:         document.getElementById('btn-seccion-teoria'),
-  btnCasos:          document.getElementById('btn-seccion-casos'),
-  subsectionTitle:   document.getElementById('subsection-title'),
-  subsectionGrid:    document.getElementById('subsection-grid'),
-  btnBackToStart:    document.getElementById('btn-back-to-start'),
-  questionCurrent:   document.getElementById('question-current'),
-  questionTotal:     document.getElementById('question-total'),
-  liveScore:         document.getElementById('live-score'),
-  progressFill:      document.getElementById('progress-fill'),
-  progressBar:       document.querySelector('.progress-bar'),
-  questionNumber:    document.getElementById('question-number-label'),
-  questionText:      document.getElementById('question-text'),
-  alternativesList:  document.getElementById('alternatives-list'),
-  feedbackCard:      document.getElementById('feedback-card'),
-  feedbackIcon:      document.getElementById('feedback-icon'),
-  feedbackStatus:    document.getElementById('feedback-status'),
-  feedbackJust:      document.getElementById('feedback-justification'),
-  btnNext:           document.getElementById('btn-next'),
-  resultsTrophy:     document.getElementById('results-trophy'),
-  resultsTitle:      document.getElementById('results-title'),
-  resultsSubtitle:   document.getElementById('results-subtitle'),
-  ringFill:          document.getElementById('ring-fill'),
-  ringScore:         document.getElementById('ring-score'),
-  ringTotal:         document.getElementById('ring-total'),
-  resultsStats:      document.getElementById('results-stats'),
-  btnRestart:        document.getElementById('btn-restart'),
+  screenStart:           document.getElementById('screen-start'),
+  screenSubsections:     document.getElementById('screen-subsections'),
+  screenQuestion:        document.getElementById('screen-question'),
+  screenResults:         document.getElementById('screen-results'),
+  btnTeoria:             document.getElementById('btn-seccion-teoria'),
+  btnCasos:              document.getElementById('btn-seccion-casos'),
+  subsectionTitle:       document.getElementById('subsection-title'),
+  subsectionGrid:        document.getElementById('subsection-grid'),
+  btnBackToStart:        document.getElementById('btn-back-to-start'),
+  toggleRandomMode:      document.getElementById('toggle-random-mode'),
+  badgeRandomMode:       document.getElementById('badge-random-mode'),
+  questionCurrent:       document.getElementById('question-current'),
+  questionTotal:         document.getElementById('question-total'),
+  liveScore:             document.getElementById('live-score'),
+  progressFill:          document.getElementById('progress-fill'),
+  progressBar:           document.querySelector('.progress-bar'),
+  questionNumber:        document.getElementById('question-number-label'),
+  questionText:          document.getElementById('question-text'),
+  alternativesList:      document.getElementById('alternatives-list'),
+  feedbackCard:          document.getElementById('feedback-card'),
+  feedbackIcon:          document.getElementById('feedback-icon'),
+  feedbackStatus:        document.getElementById('feedback-status'),
+  feedbackReorderNotice: document.getElementById('feedback-reorder-notice'),
+  feedbackJust:          document.getElementById('feedback-justification'),
+  btnNext:               document.getElementById('btn-next'),
+  resultsTrophy:         document.getElementById('results-trophy'),
+  resultsTitle:          document.getElementById('results-title'),
+  resultsSubtitle:       document.getElementById('results-subtitle'),
+  ringFill:              document.getElementById('ring-fill'),
+  ringScore:             document.getElementById('ring-score'),
+  ringTotal:             document.getElementById('ring-total'),
+  resultsStats:          document.getElementById('results-stats'),
+  btnRestart:            document.getElementById('btn-restart'),
 };
 
 function showScreen(screen) {
@@ -1743,6 +1780,13 @@ function iniciarCuestionario(seccion, subseccion) {
   state.correctas        = 0;
   state.incorrectas      = 0;
   state.respondida       = false;
+
+  // Bloquear el modo aleatorio seleccionado antes de iniciar el cuestionario
+  state.modoAleatorio = DOM.toggleRandomMode ? DOM.toggleRandomMode.checked : false;
+  if (DOM.badgeRandomMode) {
+    DOM.badgeRandomMode.hidden = !state.modoAleatorio;
+  }
+
   DOM.questionTotal.textContent = state.preguntas.length;
   DOM.liveScore.textContent     = 0;
   actualizarProgreso();
@@ -1754,29 +1798,50 @@ function mostrarPregunta() {
   state.respondida = false;
   const pregunta   = state.preguntas[state.indiceActual];
   const numHumano  = state.indiceActual + 1;
-  const useEn      = currentLang === 'en' && pregunta.preguntaEn;
+
+  // Si está activo el modo aleatorio, mezclar el orden de las alternativas
+  if (state.modoAleatorio) {
+    state.ordenAlternativasActuales = shuffleAlts(['a', 'b', 'c', 'd']);
+  } else {
+    state.ordenAlternativasActuales = ['a', 'b', 'c', 'd'];
+  }
+
+  const useEn         = currentLang === 'en' && pregunta.preguntaEn;
   const textoPregunta = useEn ? pregunta.preguntaEn : pregunta.pregunta;
-  const alts          = useEn ? pregunta.alternativasEn : pregunta.alternativas;
+  const allAlts       = useEn ? pregunta.alternativasEn : pregunta.alternativas;
+
   DOM.questionCurrent.textContent = numHumano;
   DOM.questionNumber.textContent  = `P.${numHumano}`;
   DOM.questionText.textContent    = textoPregunta;
   actualizarProgreso();
+
   ocultarFeedback();
   DOM.btnNext.hidden = true;
+
+  // Renderizar alternativas según el orden actual
   DOM.alternativesList.innerHTML = '';
-  alts.forEach(alt => {
+  state.ordenAlternativasActuales.forEach((altId, idx) => {
+    const alt = allAlts.find(a => a.id === altId);
+    if (!alt) return;
+
+    const displayLetter = String.fromCharCode(65 + idx); // A, B, C, D
+
     const li  = document.createElement('li');
     li.setAttribute('role', 'listitem');
+
     const btn = document.createElement('button');
     btn.className      = 'alternative-btn';
     btn.dataset.id     = alt.id;
-    btn.dataset.letter = alt.id.toUpperCase();
-    btn.setAttribute('aria-label', `${currentLang === 'en' ? 'Option' : 'Opción'} ${alt.id.toUpperCase()}: ${alt.texto}`);
+    btn.dataset.letter = displayLetter;
+    btn.setAttribute('aria-label', `${currentLang === 'en' ? 'Option' : 'Opción'} ${displayLetter}: ${alt.texto}`);
+
     const span = document.createElement('span');
     span.className   = 'alternative-text';
     span.textContent = alt.texto;
+
     btn.appendChild(span);
     btn.addEventListener('click', () => manejarRespuesta(alt.id, pregunta));
+
     li.appendChild(btn);
     DOM.alternativesList.appendChild(li);
   });
@@ -1785,21 +1850,79 @@ function mostrarPregunta() {
 function manejarRespuesta(idSeleccionado, pregunta) {
   if (state.respondida) return;
   state.respondida = true;
+
   const esCorrecta = idSeleccionado === pregunta.respuestaCorrectaId;
-  if (esCorrecta) { state.correctas++; } else { state.incorrectas++; }
+  if (esCorrecta) {
+    state.correctas++;
+  } else {
+    state.incorrectas++;
+  }
   DOM.liveScore.textContent = state.correctas;
-  const botones = DOM.alternativesList.querySelectorAll('.alternative-btn');
-  botones.forEach(btn => {
-    btn.disabled = true;
-    if (btn.dataset.id === pregunta.respuestaCorrectaId) {
-      btn.classList.add('alternative-btn--correct');
-    } else if (btn.dataset.id === idSeleccionado && !esCorrecta) {
-      btn.classList.add('alternative-btn--wrong');
-    }
-  });
+
+  // Si estamos en modo aleatorio, reordenar las alternativas a su orden original (A, B, C, D)
+  // para que coincidan 100% con la justificación
+  if (state.modoAleatorio) {
+    state.ordenAlternativasActuales = ['a', 'b', 'c', 'd'];
+    const useEn   = currentLang === 'en' && pregunta.preguntaEn;
+    const allAlts = useEn ? pregunta.alternativasEn : pregunta.alternativas;
+
+    DOM.alternativesList.innerHTML = '';
+    state.ordenAlternativasActuales.forEach((altId, idx) => {
+      const alt = allAlts.find(a => a.id === altId);
+      if (!alt) return;
+
+      const displayLetter = String.fromCharCode(65 + idx); // A, B, C, D
+
+      const li  = document.createElement('li');
+      li.setAttribute('role', 'listitem');
+
+      const btn = document.createElement('button');
+      btn.className      = 'alternative-btn';
+      btn.dataset.id     = alt.id;
+      btn.dataset.letter = displayLetter;
+      btn.disabled       = true;
+      btn.setAttribute('aria-label', `${currentLang === 'en' ? 'Option' : 'Opción'} ${displayLetter}: ${alt.texto}`);
+
+      // Marcar correcta y/o incorrecta
+      if (alt.id === pregunta.respuestaCorrectaId) {
+        btn.classList.add('alternative-btn--correct');
+      } else if (alt.id === idSeleccionado && !esCorrecta) {
+        btn.classList.add('alternative-btn--wrong');
+      }
+
+      const span = document.createElement('span');
+      span.className   = 'alternative-text';
+      span.textContent = alt.texto;
+
+      btn.appendChild(span);
+      li.appendChild(btn);
+      DOM.alternativesList.appendChild(li);
+    });
+  } else {
+    // Modo normal: deshabilitar y marcar botones en su posición
+    const botones = DOM.alternativesList.querySelectorAll('.alternative-btn');
+    botones.forEach(btn => {
+      btn.disabled = true;
+      if (btn.dataset.id === pregunta.respuestaCorrectaId) {
+        btn.classList.add('alternative-btn--correct');
+      } else if (btn.dataset.id === idSeleccionado && !esCorrecta) {
+        btn.classList.add('alternative-btn--wrong');
+      }
+    });
+  }
+
   const useEn = currentLang === 'en' && pregunta.justificacionEn;
   const just  = useEn ? pregunta.justificacionEn : pregunta.justificacion;
   mostrarFeedback(esCorrecta, just);
+
+  // Mostrar aviso de reordenamiento sincronizado si aplica
+  if (DOM.feedbackReorderNotice) {
+    DOM.feedbackReorderNotice.hidden = !state.modoAleatorio;
+    if (state.modoAleatorio) {
+      DOM.feedbackReorderNotice.textContent = t('reorderNotice');
+    }
+  }
+
   const esUltima = state.indiceActual >= state.preguntas.length - 1;
   DOM.btnNext.hidden = false;
   const nextText = DOM.btnNext.querySelector('#btn-next-text') || DOM.btnNext;
@@ -1831,6 +1954,9 @@ function mostrarFeedback(esCorrecta, justificacion) {
 function ocultarFeedback() {
   DOM.feedbackCard.hidden    = true;
   DOM.feedbackCard.className = 'feedback-card';
+  if (DOM.feedbackReorderNotice) {
+    DOM.feedbackReorderNotice.hidden = true;
+  }
 }
 
 function actualizarProgreso() {
@@ -1905,6 +2031,22 @@ function init() {
   DOM.btnNext.addEventListener('click', siguientePregunta);
   DOM.btnRestart.addEventListener('click', reiniciarCuestionario);
   document.getElementById('btn-lang').addEventListener('click', toggleLanguage);
+
+  // Inicializar estado del modo aleatorio con memoria local
+  if (DOM.toggleRandomMode) {
+    try {
+      const saved = localStorage.getItem('cisa_random_mode');
+      if (saved !== null) {
+        DOM.toggleRandomMode.checked = saved === 'true';
+      }
+      DOM.toggleRandomMode.addEventListener('change', (e) => {
+        localStorage.setItem('cisa_random_mode', e.target.checked);
+      });
+    } catch (e) {
+      // Ignorar si localStorage no está habilitado
+    }
+  }
+
   showScreen(DOM.screenStart);
 }
 

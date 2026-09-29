@@ -40,9 +40,31 @@ const TRANSLATIONS = {
     score70: ['🌟', '¡Muy bien!',          'Casi perfecto. Revisa las respuestas incorrectas para alcanzar el 100%.'],
     score100:['🏆', '¡Excelente trabajo!', 'Obtuviste una puntuación perfecta. ¡Sigue así!'],
     sectionMeta: {
-      teoria: { label: 'Dominio Teoría',   emoji: '📖' },
-      casos:  { label: 'Casos de Estudio', emoji: '🔍' }
-    }
+      teoria:   { label: 'Dominio Teoría',   emoji: '📖' },
+      casos:    { label: 'Casos de Estudio', emoji: '🔍' },
+      deepseek: {
+        label: 'Banco DeepSeek',
+        emoji: '🤖',
+        subLabels: {
+          1: 'Parte 1 (Preguntas 1 - 10)',
+          2: 'Parte 2 (Preguntas 11 - 20)',
+          3: 'Examen Completo (20 preguntas)'
+        }
+      },
+      gemini: {
+        label: 'Banco Gemini',
+        emoji: '✨',
+        subLabels: {
+          1: 'Parte 1 (Preguntas 1 - 10)',
+          2: 'Parte 2 (Preguntas 11 - 20)',
+          3: 'Examen Completo (20 preguntas)'
+        }
+      }
+    },
+    deepseekLabel:     'Banco DeepSeek',
+    deepseekCount:     '20 preguntas',
+    geminiLabel:       'Banco Gemini',
+    geminiCount:       '20 preguntas'
   },
   en: {
     appTitle:          'Interactive<br>Quiz',
@@ -75,9 +97,31 @@ const TRANSLATIONS = {
     score70: ['🌟', 'Well done!',        'Almost perfect. Review incorrect answers to reach 100%.'],
     score100:['🏆', 'Excellent work!',   'You got a perfect score. Keep it up!'],
     sectionMeta: {
-      teoria: { label: 'Theory Domain', emoji: '📖' },
-      casos:  { label: 'Case Studies',  emoji: '🔍' }
-    }
+      teoria:   { label: 'Theory Domain', emoji: '📖' },
+      casos:    { label: 'Case Studies',  emoji: '🔍' },
+      deepseek: {
+        label: 'DeepSeek Bank',
+        emoji: '🤖',
+        subLabels: {
+          1: 'Part 1 (Questions 1 - 10)',
+          2: 'Part 2 (Questions 11 - 20)',
+          3: 'Full Exam (20 questions)'
+        }
+      },
+      gemini: {
+        label: 'Gemini Bank',
+        emoji: '✨',
+        subLabels: {
+          1: 'Part 1 (Questions 1 - 10)',
+          2: 'Part 2 (Questions 11 - 20)',
+          3: 'Full Exam (20 questions)'
+        }
+      }
+    },
+    deepseekLabel:     'DeepSeek Bank',
+    deepseekCount:     '20 questions',
+    geminiLabel:       'Gemini Bank',
+    geminiCount:       '20 questions'
   }
 };
 
@@ -1673,7 +1717,3543 @@ const BANCO_PREGUNTAS = {
         justificacionEn: "A. BYOD policies have shown increased productivity and employee satisfaction. B. BYOD use can make it more difficult to terminate employee access. C. Since employees are using their own devices, BYOD can help organizations increase their cost savings. D. The use of BYOD does not indicate that employees have increased awareness of the security risk posed by their use of their personal devices for work."
       }
     ]
-  }
+  },
+  deepseek: {
+  "1": [
+    {
+      "id": 1,
+      "pregunta": "Durante una auditoría de SI, el auditor necesita confirmar que tiene autoridad para acceder a registros, sistemas y personal. ¿Qué documento debe revisar principalmente?",
+      "preguntaEn": "During an IS audit, the auditor needs to confirm that they have authority to access records, systems, and personnel. Which document should be primarily reviewed?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El alcance específico de la auditoría."
+        },
+        {
+          "id": "b",
+          "texto": "Una solicitud de la gerencia para realizar la auditoría."
+        },
+        {
+          "id": "c",
+          "texto": "La carta de auditoría aprobada."
+        },
+        {
+          "id": "d",
+          "texto": "El programa anual de auditoría."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "The specific audit scope."
+        },
+        {
+          "id": "b",
+          "texto": "A management request to perform the audit."
+        },
+        {
+          "id": "c",
+          "texto": "The approved audit charter."
+        },
+        {
+          "id": "d",
+          "texto": "The annual audit schedule."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 2,
+      "pregunta": "La alta dirección desea que los gerentes de negocio asuman mayor responsabilidad sobre los controles internos y el gobierno corporativo. ¿Qué enfoque cumple mejor este objetivo?",
+      "preguntaEn": "Senior management wants business managers to assume greater responsibility for internal controls and corporate governance. Which approach best achieves this objective?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Auditoría tradicional basada en cumplimiento."
+        },
+        {
+          "id": "b",
+          "texto": "Autoevaluación de control (CSA)."
+        },
+        {
+          "id": "c",
+          "texto": "Pruebas sustantivas de saldos."
+        },
+        {
+          "id": "d",
+          "texto": "Muestreo estadístico de transacciones."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Traditional compliance-based audit."
+        },
+        {
+          "id": "b",
+          "texto": "Control self-assessment (CSA)."
+        },
+        {
+          "id": "c",
+          "texto": "Substantive testing of balances."
+        },
+        {
+          "id": "d",
+          "texto": "Statistical transaction sampling."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 3,
+      "pregunta": "Un auditor de SI utiliza un enfoque basado en riesgos. ¿Qué debe comprender primero para identificar y categorizar riesgos?",
+      "preguntaEn": "An IS auditor uses a risk-based approach. What must be understood first to identify and categorize risks?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Los controles administrativos."
+        },
+        {
+          "id": "b",
+          "texto": "Los controles ambientales."
+        },
+        {
+          "id": "c",
+          "texto": "Los procesos de negocio."
+        },
+        {
+          "id": "d",
+          "texto": "Las estrategias sin relación con procesos."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Administrative controls."
+        },
+        {
+          "id": "b",
+          "texto": "Environmental controls."
+        },
+        {
+          "id": "c",
+          "texto": "Business processes."
+        },
+        {
+          "id": "d",
+          "texto": "Strategies unrelated to processes."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Qué tipo de riesgo existe cuando un error material no es prevenido ni detectado oportunamente por el sistema de control interno?",
+      "preguntaEn": "What type of risk exists when a material error is not prevented or detected in a timely manner by the internal control system?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Riesgo de control."
+        },
+        {
+          "id": "b",
+          "texto": "Riesgo de detección."
+        },
+        {
+          "id": "c",
+          "texto": "Riesgo inherente."
+        },
+        {
+          "id": "d",
+          "texto": "Riesgo de muestreo."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Control risk."
+        },
+        {
+          "id": "b",
+          "texto": "Detection risk."
+        },
+        {
+          "id": "c",
+          "texto": "Inherent risk."
+        },
+        {
+          "id": "d",
+          "texto": "Sampling risk."
+        }
+      ],
+      "respuestaCorrectaId": "a",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Cuál es la actividad más crítica al planificar una auditoría de SI?",
+      "preguntaEn": "What is the most critical activity when planning an IS audit?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Revisar los hallazgos de auditorías anteriores."
+        },
+        {
+          "id": "b",
+          "texto": "Obtener aprobación de la gerencia ejecutiva."
+        },
+        {
+          "id": "c",
+          "texto": "Revisar las políticas de seguridad de la información."
+        },
+        {
+          "id": "d",
+          "texto": "Realizar una evaluación de riesgos."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Reviewing findings from prior audits."
+        },
+        {
+          "id": "b",
+          "texto": "Obtaining executive management approval."
+        },
+        {
+          "id": "c",
+          "texto": "Reviewing information security policies."
+        },
+        {
+          "id": "d",
+          "texto": "Performing a risk assessment."
+        }
+      ],
+      "respuestaCorrectaId": "d",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 6,
+      "pregunta": "Un respaldo en cinta que se utiliza para restaurar archivos dañados se clasifica como control:",
+      "preguntaEn": "A tape backup used to restore damaged files is classified as a:",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Preventivo."
+        },
+        {
+          "id": "b",
+          "texto": "Correctivo."
+        },
+        {
+          "id": "c",
+          "texto": "Detectivo."
+        },
+        {
+          "id": "d",
+          "texto": "Directivo."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Preventive control."
+        },
+        {
+          "id": "b",
+          "texto": "Corrective control."
+        },
+        {
+          "id": "c",
+          "texto": "Detective control."
+        },
+        {
+          "id": "d",
+          "texto": "Directive control."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 7,
+      "pregunta": "Antes de auditar los controles de acceso lógico, el auditor de SI debe:",
+      "preguntaEn": "Prior to auditing logical access controls, the IS auditor should:",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Probar los controles que considera más críticos."
+        },
+        {
+          "id": "b",
+          "texto": "Revisar el plan de auditoría."
+        },
+        {
+          "id": "c",
+          "texto": "Realizar una evaluación de riesgos de TI."
+        },
+        {
+          "id": "d",
+          "texto": "Revisar únicamente los flujos de proceso."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Test the controls deemed most critical."
+        },
+        {
+          "id": "b",
+          "texto": "Review the audit plan."
+        },
+        {
+          "id": "c",
+          "texto": "Perform an IT risk assessment."
+        },
+        {
+          "id": "d",
+          "texto": "Review process flows only."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 8,
+      "pregunta": "Al probar un control, ¿cuál es el mejor enfoque para verificar que todo cambio cuenta con documentación de control?",
+      "preguntaEn": "When testing a control, what is the best approach to verify that every change has control documentation?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Seleccionar documentos de control y buscar los cambios asociados."
+        },
+        {
+          "id": "b",
+          "texto": "Rastrear desde el elemento controlado hasta la documentación del control."
+        },
+        {
+          "id": "c",
+          "texto": "Revisar solo la exactitud de la documentación."
+        },
+        {
+          "id": "d",
+          "texto": "Revisar solo la integridad de la documentación."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Select control documents and look for associated changes."
+        },
+        {
+          "id": "b",
+          "texto": "Trace from the controlled element to the control documentation."
+        },
+        {
+          "id": "c",
+          "texto": "Review only documentation accuracy."
+        },
+        {
+          "id": "d",
+          "texto": "Review only documentation completeness."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 9,
+      "pregunta": "Una empresa subcontrata el procesamiento por lotes y los respaldos. ¿Qué acción brinda mayor assurance al auditor de SI?",
+      "preguntaEn": "An enterprise outsources batch processing and backups. Which action provides the greatest assurance to the IS auditor?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Confiar en el informe del auditor de servicio."
+        },
+        {
+          "id": "b",
+          "texto": "Revisar el contrato con el proveedor."
+        },
+        {
+          "id": "c",
+          "texto": "Comparar el informe de servicio con el SLA."
+        },
+        {
+          "id": "d",
+          "texto": "Realizar una revisión independiente del respaldo y procesamiento por lotes."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Rely on the service auditor report."
+        },
+        {
+          "id": "b",
+          "texto": "Review the vendor contract."
+        },
+        {
+          "id": "c",
+          "texto": "Compare the service delivery report with the SLA."
+        },
+        {
+          "id": "d",
+          "texto": "Conduct an independent review of the backup and batch processing."
+        }
+      ],
+      "respuestaCorrectaId": "d",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 10,
+      "pregunta": "¿Cómo puede utilizarse COBIT para evaluar los procesos de TI de una organización?",
+      "preguntaEn": "How can COBIT be used to assess an organization's IT processes?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Clasificando cada proceso como totalmente abordado, parcialmente abordado o no aplicable, comparándolo con la realidad de la organización."
+        },
+        {
+          "id": "b",
+          "texto": "Únicamente para auditorías financieras."
+        },
+        {
+          "id": "c",
+          "texto": "Reemplazando las políticas internas de la organización."
+        },
+        {
+          "id": "d",
+          "texto": "Evaluando solo el área de infraestructura de TI."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Classifying each process as fully addressed, partially addressed, or not applicable, comparing it with the organization's reality."
+        },
+        {
+          "id": "b",
+          "texto": "Solely for financial audits."
+        },
+        {
+          "id": "c",
+          "texto": "Replacing the organization's internal policies."
+        },
+        {
+          "id": "d",
+          "texto": "Evaluating only the IT infrastructure area."
+        }
+      ],
+      "respuestaCorrectaId": "a",
+      "justificacion": "",
+      "justificacionEn": ""
+    }
+  ],
+  "2": [
+    {
+      "id": 11,
+      "pregunta": "¿Qué herramienta proporciona información visual sobre el cumplimiento de procesos, aplicaciones y elementos configurables?",
+      "preguntaEn": "Which tool provides visual information on compliance with processes, applications, and configurable elements?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Un repositorio central de documentos."
+        },
+        {
+          "id": "b",
+          "texto": "Un sistema de gestión del conocimiento."
+        },
+        {
+          "id": "c",
+          "texto": "Un dashboard."
+        },
+        {
+          "id": "d",
+          "texto": "Un proceso de benchmarking."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "A central document repository."
+        },
+        {
+          "id": "b",
+          "texto": "A knowledge management system."
+        },
+        {
+          "id": "c",
+          "texto": "A dashboard."
+        },
+        {
+          "id": "d",
+          "texto": "A benchmarking process."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Qué debe abordar principalmente un plan estratégico de SI?",
+      "preguntaEn": "What should an IS strategic plan primarily address?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Especificaciones de compras de hardware."
+        },
+        {
+          "id": "b",
+          "texto": "Las necesidades del negocio y los objetivos futuros."
+        },
+        {
+          "id": "c",
+          "texto": "Fechas objetivo de proyectos de desarrollo."
+        },
+        {
+          "id": "d",
+          "texto": "El presupuesto anual del departamento de TI."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Hardware purchase specifications."
+        },
+        {
+          "id": "b",
+          "texto": "Business needs and future goals."
+        },
+        {
+          "id": "c",
+          "texto": "Target dates for development projects."
+        },
+        {
+          "id": "d",
+          "texto": "The annual budget of the IT department."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Cuál es la responsabilidad principal del oficial de seguridad de datos?",
+      "preguntaEn": "What is the primary responsibility of the data security officer?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Establecer los procedimientos de TI."
+        },
+        {
+          "id": "b",
+          "texto": "Administrar los controles de acceso físicos y lógicos."
+        },
+        {
+          "id": "c",
+          "texto": "Recomendar y monitorear las políticas de seguridad de datos."
+        },
+        {
+          "id": "d",
+          "texto": "Promover la concienciación en seguridad."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Establishing IT procedures."
+        },
+        {
+          "id": "b",
+          "texto": "Administering physical and logical access controls."
+        },
+        {
+          "id": "c",
+          "texto": "Recommending and monitoring data security policies."
+        },
+        {
+          "id": "d",
+          "texto": "Promoting security awareness."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Cuál es el factor clave para el éxito de un programa de seguridad de la información?",
+      "preguntaEn": "What is the key success factor for an information security program?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Un marco efectivo de gestión de riesgos empresariales."
+        },
+        {
+          "id": "b",
+          "texto": "El compromiso de la alta gerencia."
+        },
+        {
+          "id": "c",
+          "texto": "Un proceso efectivo de presupuestación de seguridad."
+        },
+        {
+          "id": "d",
+          "texto": "La planificación detallada del programa."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "An effective enterprise risk management framework."
+        },
+        {
+          "id": "b",
+          "texto": "Senior management commitment."
+        },
+        {
+          "id": "c",
+          "texto": "An effective security budgeting process."
+        },
+        {
+          "id": "d",
+          "texto": "Detailed program planning."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Cuál es el control más crítico sobre las funciones del administrador de base de datos (DBA)?",
+      "preguntaEn": "What is the most critical control over database administrator (DBA) functions?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Aprobación de las actividades del DBA."
+        },
+        {
+          "id": "b",
+          "texto": "Separación de funciones."
+        },
+        {
+          "id": "c",
+          "texto": "Revisión de logs de acceso y actividades."
+        },
+        {
+          "id": "d",
+          "texto": "Revisión del uso de herramientas de base de datos."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Approval of DBA activities."
+        },
+        {
+          "id": "b",
+          "texto": "Segregation of duties."
+        },
+        {
+          "id": "c",
+          "texto": "Review of access logs and activities."
+        },
+        {
+          "id": "d",
+          "texto": "Review of database tool usage."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 16,
+      "pregunta": "En una empresa pequeña no es posible lograr una estricta separación de funciones. ¿Qué debe recomendar el auditor de SI?",
+      "preguntaEn": "In a small enterprise, strict segregation of duties cannot be achieved. What should the IS auditor recommend?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Contratar personal adicional para lograr la separación."
+        },
+        {
+          "id": "b",
+          "texto": "Implementar controles compensatorios que detecten cambios en el código fuente y objeto."
+        },
+        {
+          "id": "c",
+          "texto": "Registrar cambios en las librerías de desarrollo."
+        },
+        {
+          "id": "d",
+          "texto": "Restringir el acceso de los operadores a las modificaciones de programas."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Hiring additional staff to achieve segregation."
+        },
+        {
+          "id": "b",
+          "texto": "Implementing compensating controls that detect changes to source and object code."
+        },
+        {
+          "id": "c",
+          "texto": "Logging changes to development libraries."
+        },
+        {
+          "id": "d",
+          "texto": "Restricting operator access to program modifications."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 17,
+      "pregunta": "¿Cuál es la principal preocupación al utilizar datos de prueba?",
+      "preguntaEn": "What is the primary concern when using test data?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Que el conjunto de datos sea completo."
+        },
+        {
+          "id": "b",
+          "texto": "Que represente datos transaccionales."
+        },
+        {
+          "id": "c",
+          "texto": "Que represente datos actuales del proceso."
+        },
+        {
+          "id": "d",
+          "texto": "Que los datos sean sanitizados para evitar fuga de información sensible."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "That the dataset is complete."
+        },
+        {
+          "id": "b",
+          "texto": "That it represents transactional data."
+        },
+        {
+          "id": "c",
+          "texto": "That it represents current process data."
+        },
+        {
+          "id": "d",
+          "texto": "That data is sanitized to prevent leakage of sensitive information."
+        }
+      ],
+      "respuestaCorrectaId": "d",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Cuál es el propósito principal de las pruebas en paralelo?",
+      "preguntaEn": "What is the primary purpose of parallel testing?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Demostrar que el sistema antiguo es más rentable."
+        },
+        {
+          "id": "b",
+          "texto": "Reemplazar las pruebas unitarias y de sistema."
+        },
+        {
+          "id": "c",
+          "texto": "Probar las interfaces del programa con archivos."
+        },
+        {
+          "id": "d",
+          "texto": "Asegurar que la implementación del nuevo sistema cumpla con los requisitos del usuario."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Proving the legacy system is more cost-effective."
+        },
+        {
+          "id": "b",
+          "texto": "Replacing unit and system testing."
+        },
+        {
+          "id": "c",
+          "texto": "Testing program interfaces with files."
+        },
+        {
+          "id": "d",
+          "texto": "Ensuring the new system implementation satisfies user requirements."
+        }
+      ],
+      "respuestaCorrectaId": "d",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 19,
+      "pregunta": "¿Qué control es efectivo para detectar errores de transposición y transcripción?",
+      "preguntaEn": "Which control is effective for detecting transposition and transcription errors?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Range check."
+        },
+        {
+          "id": "b",
+          "texto": "Check digit."
+        },
+        {
+          "id": "c",
+          "texto": "Availability check."
+        },
+        {
+          "id": "d",
+          "texto": "Duplicate check."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Range check."
+        },
+        {
+          "id": "b",
+          "texto": "Check digit."
+        },
+        {
+          "id": "c",
+          "texto": "Availability check."
+        },
+        {
+          "id": "d",
+          "texto": "Duplicate check."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 20,
+      "pregunta": "Si el objetivo de punto de recuperación (RPO) es de minutos, ¿qué estrategia de recuperación es la más apropiada?",
+      "preguntaEn": "If the recovery point objective (RPO) is measured in minutes, which recovery strategy is most appropriate?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Respaldos diarios en cinta."
+        },
+        {
+          "id": "b",
+          "texto": "Espejo de datos o replicación síncrona."
+        },
+        {
+          "id": "c",
+          "texto": "Respaldos semanales fuera de sitio."
+        },
+        {
+          "id": "d",
+          "texto": "No aplicar estrategia de recuperación."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Daily tape backups."
+        },
+        {
+          "id": "b",
+          "texto": "Data mirroring or synchronous replication."
+        },
+        {
+          "id": "c",
+          "texto": "Weekly off-site backups."
+        },
+        {
+          "id": "d",
+          "texto": "Applying no recovery strategy."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    }
+  ],
+  "3": [
+    {
+      "id": 1,
+      "pregunta": "Durante una auditoría de SI, el auditor necesita confirmar que tiene autoridad para acceder a registros, sistemas y personal. ¿Qué documento debe revisar principalmente?",
+      "preguntaEn": "During an IS audit, the auditor needs to confirm that they have authority to access records, systems, and personnel. Which document should be primarily reviewed?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El alcance específico de la auditoría."
+        },
+        {
+          "id": "b",
+          "texto": "Una solicitud de la gerencia para realizar la auditoría."
+        },
+        {
+          "id": "c",
+          "texto": "La carta de auditoría aprobada."
+        },
+        {
+          "id": "d",
+          "texto": "El programa anual de auditoría."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "The specific audit scope."
+        },
+        {
+          "id": "b",
+          "texto": "A management request to perform the audit."
+        },
+        {
+          "id": "c",
+          "texto": "The approved audit charter."
+        },
+        {
+          "id": "d",
+          "texto": "The annual audit schedule."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 2,
+      "pregunta": "La alta dirección desea que los gerentes de negocio asuman mayor responsabilidad sobre los controles internos y el gobierno corporativo. ¿Qué enfoque cumple mejor este objetivo?",
+      "preguntaEn": "Senior management wants business managers to assume greater responsibility for internal controls and corporate governance. Which approach best achieves this objective?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Auditoría tradicional basada en cumplimiento."
+        },
+        {
+          "id": "b",
+          "texto": "Autoevaluación de control (CSA)."
+        },
+        {
+          "id": "c",
+          "texto": "Pruebas sustantivas de saldos."
+        },
+        {
+          "id": "d",
+          "texto": "Muestreo estadístico de transacciones."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Traditional compliance-based audit."
+        },
+        {
+          "id": "b",
+          "texto": "Control self-assessment (CSA)."
+        },
+        {
+          "id": "c",
+          "texto": "Substantive testing of balances."
+        },
+        {
+          "id": "d",
+          "texto": "Statistical transaction sampling."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 3,
+      "pregunta": "Un auditor de SI utiliza un enfoque basado en riesgos. ¿Qué debe comprender primero para identificar y categorizar riesgos?",
+      "preguntaEn": "An IS auditor uses a risk-based approach. What must be understood first to identify and categorize risks?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Los controles administrativos."
+        },
+        {
+          "id": "b",
+          "texto": "Los controles ambientales."
+        },
+        {
+          "id": "c",
+          "texto": "Los procesos de negocio."
+        },
+        {
+          "id": "d",
+          "texto": "Las estrategias sin relación con procesos."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Administrative controls."
+        },
+        {
+          "id": "b",
+          "texto": "Environmental controls."
+        },
+        {
+          "id": "c",
+          "texto": "Business processes."
+        },
+        {
+          "id": "d",
+          "texto": "Strategies unrelated to processes."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Qué tipo de riesgo existe cuando un error material no es prevenido ni detectado oportunamente por el sistema de control interno?",
+      "preguntaEn": "What type of risk exists when a material error is not prevented or detected in a timely manner by the internal control system?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Riesgo de control."
+        },
+        {
+          "id": "b",
+          "texto": "Riesgo de detección."
+        },
+        {
+          "id": "c",
+          "texto": "Riesgo inherente."
+        },
+        {
+          "id": "d",
+          "texto": "Riesgo de muestreo."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Control risk."
+        },
+        {
+          "id": "b",
+          "texto": "Detection risk."
+        },
+        {
+          "id": "c",
+          "texto": "Inherent risk."
+        },
+        {
+          "id": "d",
+          "texto": "Sampling risk."
+        }
+      ],
+      "respuestaCorrectaId": "a",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Cuál es la actividad más crítica al planificar una auditoría de SI?",
+      "preguntaEn": "What is the most critical activity when planning an IS audit?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Revisar los hallazgos de auditorías anteriores."
+        },
+        {
+          "id": "b",
+          "texto": "Obtener aprobación de la gerencia ejecutiva."
+        },
+        {
+          "id": "c",
+          "texto": "Revisar las políticas de seguridad de la información."
+        },
+        {
+          "id": "d",
+          "texto": "Realizar una evaluación de riesgos."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Reviewing findings from prior audits."
+        },
+        {
+          "id": "b",
+          "texto": "Obtaining executive management approval."
+        },
+        {
+          "id": "c",
+          "texto": "Reviewing information security policies."
+        },
+        {
+          "id": "d",
+          "texto": "Performing a risk assessment."
+        }
+      ],
+      "respuestaCorrectaId": "d",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 6,
+      "pregunta": "Un respaldo en cinta que se utiliza para restaurar archivos dañados se clasifica como control:",
+      "preguntaEn": "A tape backup used to restore damaged files is classified as a:",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Preventivo."
+        },
+        {
+          "id": "b",
+          "texto": "Correctivo."
+        },
+        {
+          "id": "c",
+          "texto": "Detectivo."
+        },
+        {
+          "id": "d",
+          "texto": "Directivo."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Preventive control."
+        },
+        {
+          "id": "b",
+          "texto": "Corrective control."
+        },
+        {
+          "id": "c",
+          "texto": "Detective control."
+        },
+        {
+          "id": "d",
+          "texto": "Directive control."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 7,
+      "pregunta": "Antes de auditar los controles de acceso lógico, el auditor de SI debe:",
+      "preguntaEn": "Prior to auditing logical access controls, the IS auditor should:",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Probar los controles que considera más críticos."
+        },
+        {
+          "id": "b",
+          "texto": "Revisar el plan de auditoría."
+        },
+        {
+          "id": "c",
+          "texto": "Realizar una evaluación de riesgos de TI."
+        },
+        {
+          "id": "d",
+          "texto": "Revisar únicamente los flujos de proceso."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Test the controls deemed most critical."
+        },
+        {
+          "id": "b",
+          "texto": "Review the audit plan."
+        },
+        {
+          "id": "c",
+          "texto": "Perform an IT risk assessment."
+        },
+        {
+          "id": "d",
+          "texto": "Review process flows only."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 8,
+      "pregunta": "Al probar un control, ¿cuál es el mejor enfoque para verificar que todo cambio cuenta con documentación de control?",
+      "preguntaEn": "When testing a control, what is the best approach to verify that every change has control documentation?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Seleccionar documentos de control y buscar los cambios asociados."
+        },
+        {
+          "id": "b",
+          "texto": "Rastrear desde el elemento controlado hasta la documentación del control."
+        },
+        {
+          "id": "c",
+          "texto": "Revisar solo la exactitud de la documentación."
+        },
+        {
+          "id": "d",
+          "texto": "Revisar solo la integridad de la documentación."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Select control documents and look for associated changes."
+        },
+        {
+          "id": "b",
+          "texto": "Trace from the controlled element to the control documentation."
+        },
+        {
+          "id": "c",
+          "texto": "Review only documentation accuracy."
+        },
+        {
+          "id": "d",
+          "texto": "Review only documentation completeness."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 9,
+      "pregunta": "Una empresa subcontrata el procesamiento por lotes y los respaldos. ¿Qué acción brinda mayor assurance al auditor de SI?",
+      "preguntaEn": "An enterprise outsources batch processing and backups. Which action provides the greatest assurance to the IS auditor?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Confiar en el informe del auditor de servicio."
+        },
+        {
+          "id": "b",
+          "texto": "Revisar el contrato con el proveedor."
+        },
+        {
+          "id": "c",
+          "texto": "Comparar el informe de servicio con el SLA."
+        },
+        {
+          "id": "d",
+          "texto": "Realizar una revisión independiente del respaldo y procesamiento por lotes."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Rely on the service auditor report."
+        },
+        {
+          "id": "b",
+          "texto": "Review the vendor contract."
+        },
+        {
+          "id": "c",
+          "texto": "Compare the service delivery report with the SLA."
+        },
+        {
+          "id": "d",
+          "texto": "Conduct an independent review of the backup and batch processing."
+        }
+      ],
+      "respuestaCorrectaId": "d",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 10,
+      "pregunta": "¿Cómo puede utilizarse COBIT para evaluar los procesos de TI de una organización?",
+      "preguntaEn": "How can COBIT be used to assess an organization's IT processes?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Clasificando cada proceso como totalmente abordado, parcialmente abordado o no aplicable, comparándolo con la realidad de la organización."
+        },
+        {
+          "id": "b",
+          "texto": "Únicamente para auditorías financieras."
+        },
+        {
+          "id": "c",
+          "texto": "Reemplazando las políticas internas de la organización."
+        },
+        {
+          "id": "d",
+          "texto": "Evaluando solo el área de infraestructura de TI."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Classifying each process as fully addressed, partially addressed, or not applicable, comparing it with the organization's reality."
+        },
+        {
+          "id": "b",
+          "texto": "Solely for financial audits."
+        },
+        {
+          "id": "c",
+          "texto": "Replacing the organization's internal policies."
+        },
+        {
+          "id": "d",
+          "texto": "Evaluating only the IT infrastructure area."
+        }
+      ],
+      "respuestaCorrectaId": "a",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 11,
+      "pregunta": "¿Qué herramienta proporciona información visual sobre el cumplimiento de procesos, aplicaciones y elementos configurables?",
+      "preguntaEn": "Which tool provides visual information on compliance with processes, applications, and configurable elements?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Un repositorio central de documentos."
+        },
+        {
+          "id": "b",
+          "texto": "Un sistema de gestión del conocimiento."
+        },
+        {
+          "id": "c",
+          "texto": "Un dashboard."
+        },
+        {
+          "id": "d",
+          "texto": "Un proceso de benchmarking."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "A central document repository."
+        },
+        {
+          "id": "b",
+          "texto": "A knowledge management system."
+        },
+        {
+          "id": "c",
+          "texto": "A dashboard."
+        },
+        {
+          "id": "d",
+          "texto": "A benchmarking process."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 12,
+      "pregunta": "¿Qué debe abordar principalmente un plan estratégico de SI?",
+      "preguntaEn": "What should an IS strategic plan primarily address?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Especificaciones de compras de hardware."
+        },
+        {
+          "id": "b",
+          "texto": "Las necesidades del negocio y los objetivos futuros."
+        },
+        {
+          "id": "c",
+          "texto": "Fechas objetivo de proyectos de desarrollo."
+        },
+        {
+          "id": "d",
+          "texto": "El presupuesto anual del departamento de TI."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Hardware purchase specifications."
+        },
+        {
+          "id": "b",
+          "texto": "Business needs and future goals."
+        },
+        {
+          "id": "c",
+          "texto": "Target dates for development projects."
+        },
+        {
+          "id": "d",
+          "texto": "The annual budget of the IT department."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 13,
+      "pregunta": "¿Cuál es la responsabilidad principal del oficial de seguridad de datos?",
+      "preguntaEn": "What is the primary responsibility of the data security officer?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Establecer los procedimientos de TI."
+        },
+        {
+          "id": "b",
+          "texto": "Administrar los controles de acceso físicos y lógicos."
+        },
+        {
+          "id": "c",
+          "texto": "Recomendar y monitorear las políticas de seguridad de datos."
+        },
+        {
+          "id": "d",
+          "texto": "Promover la concienciación en seguridad."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Establishing IT procedures."
+        },
+        {
+          "id": "b",
+          "texto": "Administering physical and logical access controls."
+        },
+        {
+          "id": "c",
+          "texto": "Recommending and monitoring data security policies."
+        },
+        {
+          "id": "d",
+          "texto": "Promoting security awareness."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Cuál es el factor clave para el éxito de un programa de seguridad de la información?",
+      "preguntaEn": "What is the key success factor for an information security program?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Un marco efectivo de gestión de riesgos empresariales."
+        },
+        {
+          "id": "b",
+          "texto": "El compromiso de la alta gerencia."
+        },
+        {
+          "id": "c",
+          "texto": "Un proceso efectivo de presupuestación de seguridad."
+        },
+        {
+          "id": "d",
+          "texto": "La planificación detallada del programa."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "An effective enterprise risk management framework."
+        },
+        {
+          "id": "b",
+          "texto": "Senior management commitment."
+        },
+        {
+          "id": "c",
+          "texto": "An effective security budgeting process."
+        },
+        {
+          "id": "d",
+          "texto": "Detailed program planning."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 15,
+      "pregunta": "¿Cuál es el control más crítico sobre las funciones del administrador de base de datos (DBA)?",
+      "preguntaEn": "What is the most critical control over database administrator (DBA) functions?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Aprobación de las actividades del DBA."
+        },
+        {
+          "id": "b",
+          "texto": "Separación de funciones."
+        },
+        {
+          "id": "c",
+          "texto": "Revisión de logs de acceso y actividades."
+        },
+        {
+          "id": "d",
+          "texto": "Revisión del uso de herramientas de base de datos."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Approval of DBA activities."
+        },
+        {
+          "id": "b",
+          "texto": "Segregation of duties."
+        },
+        {
+          "id": "c",
+          "texto": "Review of access logs and activities."
+        },
+        {
+          "id": "d",
+          "texto": "Review of database tool usage."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 16,
+      "pregunta": "En una empresa pequeña no es posible lograr una estricta separación de funciones. ¿Qué debe recomendar el auditor de SI?",
+      "preguntaEn": "In a small enterprise, strict segregation of duties cannot be achieved. What should the IS auditor recommend?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Contratar personal adicional para lograr la separación."
+        },
+        {
+          "id": "b",
+          "texto": "Implementar controles compensatorios que detecten cambios en el código fuente y objeto."
+        },
+        {
+          "id": "c",
+          "texto": "Registrar cambios en las librerías de desarrollo."
+        },
+        {
+          "id": "d",
+          "texto": "Restringir el acceso de los operadores a las modificaciones de programas."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Hiring additional staff to achieve segregation."
+        },
+        {
+          "id": "b",
+          "texto": "Implementing compensating controls that detect changes to source and object code."
+        },
+        {
+          "id": "c",
+          "texto": "Logging changes to development libraries."
+        },
+        {
+          "id": "d",
+          "texto": "Restricting operator access to program modifications."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 17,
+      "pregunta": "¿Cuál es la principal preocupación al utilizar datos de prueba?",
+      "preguntaEn": "What is the primary concern when using test data?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Que el conjunto de datos sea completo."
+        },
+        {
+          "id": "b",
+          "texto": "Que represente datos transaccionales."
+        },
+        {
+          "id": "c",
+          "texto": "Que represente datos actuales del proceso."
+        },
+        {
+          "id": "d",
+          "texto": "Que los datos sean sanitizados para evitar fuga de información sensible."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "That the dataset is complete."
+        },
+        {
+          "id": "b",
+          "texto": "That it represents transactional data."
+        },
+        {
+          "id": "c",
+          "texto": "That it represents current process data."
+        },
+        {
+          "id": "d",
+          "texto": "That data is sanitized to prevent leakage of sensitive information."
+        }
+      ],
+      "respuestaCorrectaId": "d",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 18,
+      "pregunta": "¿Cuál es el propósito principal de las pruebas en paralelo?",
+      "preguntaEn": "What is the primary purpose of parallel testing?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Demostrar que el sistema antiguo es más rentable."
+        },
+        {
+          "id": "b",
+          "texto": "Reemplazar las pruebas unitarias y de sistema."
+        },
+        {
+          "id": "c",
+          "texto": "Probar las interfaces del programa con archivos."
+        },
+        {
+          "id": "d",
+          "texto": "Asegurar que la implementación del nuevo sistema cumpla con los requisitos del usuario."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Proving the legacy system is more cost-effective."
+        },
+        {
+          "id": "b",
+          "texto": "Replacing unit and system testing."
+        },
+        {
+          "id": "c",
+          "texto": "Testing program interfaces with files."
+        },
+        {
+          "id": "d",
+          "texto": "Ensuring the new system implementation satisfies user requirements."
+        }
+      ],
+      "respuestaCorrectaId": "d",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 19,
+      "pregunta": "¿Qué control es efectivo para detectar errores de transposición y transcripción?",
+      "preguntaEn": "Which control is effective for detecting transposition and transcription errors?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Range check."
+        },
+        {
+          "id": "b",
+          "texto": "Check digit."
+        },
+        {
+          "id": "c",
+          "texto": "Availability check."
+        },
+        {
+          "id": "d",
+          "texto": "Duplicate check."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Range check."
+        },
+        {
+          "id": "b",
+          "texto": "Check digit."
+        },
+        {
+          "id": "c",
+          "texto": "Availability check."
+        },
+        {
+          "id": "d",
+          "texto": "Duplicate check."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 20,
+      "pregunta": "Si el objetivo de punto de recuperación (RPO) es de minutos, ¿qué estrategia de recuperación es la más apropiada?",
+      "preguntaEn": "If the recovery point objective (RPO) is measured in minutes, which recovery strategy is most appropriate?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Respaldos diarios en cinta."
+        },
+        {
+          "id": "b",
+          "texto": "Espejo de datos o replicación síncrona."
+        },
+        {
+          "id": "c",
+          "texto": "Respaldos semanales fuera de sitio."
+        },
+        {
+          "id": "d",
+          "texto": "No aplicar estrategia de recuperación."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Daily tape backups."
+        },
+        {
+          "id": "b",
+          "texto": "Data mirroring or synchronous replication."
+        },
+        {
+          "id": "c",
+          "texto": "Weekly off-site backups."
+        },
+        {
+          "id": "d",
+          "texto": "Applying no recovery strategy."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    }
+  ]
+},
+  gemini: {
+  "1": [
+    {
+      "id": 1,
+      "pregunta": "Un auditor de SI recién incorporado descubre que la organización nunca ha formalizado ni aprobado un estatuto de auditoría (audit charter). ¿Cuál debe ser su curso de acción INMEDIATO?",
+      "preguntaEn": "A newly hired IS auditor discovers that the organization has never formalized or approved an audit charter. What should be their IMMEDIATE course of action?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Continuar ejecutando el cronograma de auditoría previamente acordado con la gerencia general."
+        },
+        {
+          "id": "b",
+          "texto": "Suspender de forma indefinida cualquier interacción con los dueños de procesos de negocio."
+        },
+        {
+          "id": "c",
+          "texto": "Elaborar el borrador del estatuto de auditoría y presentarlo a la junta directiva o comité de auditoría para su aprobación formal."
+        },
+        {
+          "id": "d",
+          "texto": "Limitar las actividades de auditoría a revisiones financieras sin involucrar sistemas de información."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Continue executing the audit schedule previously agreed upon with executive management."
+        },
+        {
+          "id": "b",
+          "texto": "Indefinitely suspend any interaction with business process owners."
+        },
+        {
+          "id": "c",
+          "texto": "Draft the audit charter and submit it to the board of directors or audit committee for formal approval."
+        },
+        {
+          "id": "d",
+          "texto": "Limit audit activities to financial reviews without involving information systems."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 2,
+      "pregunta": "Al planificar una auditoría sobre una plataforma transaccional en la nube, el auditor de SI evalúa la probabilidad y el impacto de pérdidas operacionales considerando que no existen controles internos ni salvaguardas implementadas. ¿Qué categoría de riesgo está valorando?",
+      "preguntaEn": "When planning an audit of a cloud-based transactional platform, the IS auditor assesses the likelihood and impact of operational losses assuming no internal controls or safeguards are in place. What risk category is being assessed?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Riesgo residual"
+        },
+        {
+          "id": "b",
+          "texto": "Riesgo de control"
+        },
+        {
+          "id": "c",
+          "texto": "Riesgo de detección"
+        },
+        {
+          "id": "d",
+          "texto": "Riesgo inherente"
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Residual risk"
+        },
+        {
+          "id": "b",
+          "texto": "Control risk"
+        },
+        {
+          "id": "c",
+          "texto": "Detection risk"
+        },
+        {
+          "id": "d",
+          "texto": "Inherent risk"
+        }
+      ],
+      "respuestaCorrectaId": "d",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 3,
+      "pregunta": "Durante la evaluación de la gestión de cambios a programas en un entorno productivo, ¿cuál es el procedimiento de muestreo MÁS eficaz para identificar cambios no autorizados?",
+      "preguntaEn": "During an evaluation of program change management in a production environment, what is the MOST effective sampling procedure to identify unauthorized changes?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Seleccionar una muestra aleatoria de solicitudes de cambio aprobadas en el sistema de tickets y rastrearlas hacia el entorno de producción."
+        },
+        {
+          "id": "b",
+          "texto": "Extraer la muestra a partir de los cambios detectados directamente en el código de producción y rastrearlos hacia la documentación de autorización previa."
+        },
+        {
+          "id": "c",
+          "texto": "Seleccionar solicitudes de cambio según la criticidad del sistema documentada en el inventario de aplicaciones."
+        },
+        {
+          "id": "d",
+          "texto": "Rastrear los cambios documentados en el plan de trabajo anual contra los incidentes reportados por usuarios finales."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Select a random sample of approved change requests in the ticketing system and trace them to the production environment."
+        },
+        {
+          "id": "b",
+          "texto": "Draw the sample from changes detected directly in production code and trace them back to prior authorization documentation."
+        },
+        {
+          "id": "c",
+          "texto": "Select change requests based on system criticality documented in the application inventory."
+        },
+        {
+          "id": "d",
+          "texto": "Trace changes documented in the annual work plan against incidents reported by end users."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 4,
+      "pregunta": "Una entidad financiera adopta un programa de Autoevaluación de Controles (CSA) en sus áreas operativas. ¿Cuál debe ser el rol primordial del auditor de SI en este proceso?",
+      "preguntaEn": "A financial institution adopts a Control Self-Assessment (CSA) program in its operational areas. What should be the primary role of the IS auditor in this process?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Diseñar y configurar directamente los controles compensatorios requeridos en las aplicaciones."
+        },
+        {
+          "id": "b",
+          "texto": "Facilitar los talleres y proporcionar guía metodológica a los dueños de los procesos de negocio."
+        },
+        {
+          "id": "c",
+          "texto": "Asumir la propiedad y rendición de cuentas sobre la efectividad de los controles evaluados."
+        },
+        {
+          "id": "d",
+          "texto": "Reemplazar a la gerencia en la toma de decisiones sobre mitigación de riesgos."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Directly design and configure required compensating controls in applications."
+        },
+        {
+          "id": "b",
+          "texto": "Facilitate workshops and provide methodological guidance to business process owners."
+        },
+        {
+          "id": "c",
+          "texto": "Assume ownership and accountability for the effectiveness of evaluated controls."
+        },
+        {
+          "id": "d",
+          "texto": "Replace management in risk mitigation decision-making."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 5,
+      "pregunta": "Al revisar la estructura de gobierno corporativo de TI, el auditor observa que los proyectos tecnológicos se ejecutan sin contar con un plan estratégico de TI formalizado. ¿Cuál es la consecuencia MÁS probable de esta situación?",
+      "preguntaEn": "When reviewing the IT corporate governance structure, the auditor notes that technology projects are executed without a formalized IT strategic plan. What is the MOST likely consequence of this situation?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El personal técnico no podrá aplicar parches de seguridad en los servidores perimetrales."
+        },
+        {
+          "id": "b",
+          "texto": "Las inversiones y proyectos de TI perderán alineación con los objetivos del negocio y la entrega de valor."
+        },
+        {
+          "id": "c",
+          "texto": "Los acuerdos de nivel de servicio (SLA) con proveedores se cancelarán automáticamente."
+        },
+        {
+          "id": "d",
+          "texto": "Se incrementará el riesgo de muestreo durante las pruebas de auditoría continua."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Technical staff will be unable to apply security patches on perimeter servers."
+        },
+        {
+          "id": "b",
+          "texto": "IT investments and projects will lose alignment with business objectives and value delivery."
+        },
+        {
+          "id": "c",
+          "texto": "Service level agreements (SLAs) with vendors will be automatically canceled."
+        },
+        {
+          "id": "d",
+          "texto": "Sampling risk will increase during continuous audit testing."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 6,
+      "pregunta": "En una institución financiera mediana, el Gerente de Sistemas de Información reporta directamente al Director Financiero (CFO). Desde la perspectiva de gobernanza y control interno, ¿cuál es la MAYOR preocupación para el auditor de SI?",
+      "preguntaEn": "In a mid-sized financial institution, the IS Manager reports directly to the Chief Financial Officer (CFO). From a governance and internal control perspective, what is the GREATEST concern for the IS auditor?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Que el CFO carezca de certificaciones técnicas en administración de bases de datos."
+        },
+        {
+          "id": "b",
+          "texto": "Que las decisiones y presupuestos de TI se subordinen a metas de costos contables a corto plazo, comprometiendo controles y proyectos de seguridad."
+        },
+        {
+          "id": "c",
+          "texto": "Que el comité de riesgos deje de reportar a la gerencia de operaciones."
+        },
+        {
+          "id": "d",
+          "texto": "Que los auditores externos deban ejecutar tareas de mesa de ayuda."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "That the CFO lacks technical certifications in database administration."
+        },
+        {
+          "id": "b",
+          "texto": "That IT decisions and budgets are subordinated to short-term accounting cost goals, compromising controls and security projects."
+        },
+        {
+          "id": "c",
+          "texto": "That the risk committee stops reporting to operations management."
+        },
+        {
+          "id": "d",
+          "texto": "That external auditors must perform help desk tasks."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 7,
+      "pregunta": "Un desarrollador necesita modificar registros transaccionales directamente en la base de datos de producción debido a un error de cálculo del aplicativo. ¿Quién debe autorizar formalmente este acceso de escritura?",
+      "preguntaEn": "A developer needs to modify transactional records directly in the production database due to an application calculation error. Who must formally authorize this write access?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El Administrador de Bases de Datos (DBA)"
+        },
+        {
+          "id": "b",
+          "texto": "El Líder Técnico de Desarrollo de Software"
+        },
+        {
+          "id": "c",
+          "texto": "El Dueño de los Datos de Negocio (Data Owner)"
+        },
+        {
+          "id": "d",
+          "texto": "El Operador de Consola del Centro de Cómputo"
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "The Database Administrator (DBA)"
+        },
+        {
+          "id": "b",
+          "texto": "The Technical Software Development Lead"
+        },
+        {
+          "id": "c",
+          "texto": "The Business Data Owner"
+        },
+        {
+          "id": "d",
+          "texto": "The Computer Center Console Operator"
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 8,
+      "pregunta": "En una empresa pequeña donde resulta inviable contratar personal adicional para separar las funciones de programación y de operación de cómputo, ¿cuál es el MEJOR control compensatorio que el auditor debe recomendar?",
+      "preguntaEn": "In a small company where hiring additional staff to separate programming and computer operation functions is unfeasible, what is the BEST compensating control the auditor should recommend?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Exigir la firma periódica de acuerdos de confidencialidad y ética profesional."
+        },
+        {
+          "id": "b",
+          "texto": "Implementar procesos independientes y periódicos que comparen el código autorizado con el código en producción para detectar cambios no autorizados."
+        },
+        {
+          "id": "c",
+          "texto": "Deshabilitar los puertos USB en las estaciones de trabajo de los desarrolladores."
+        },
+        {
+          "id": "d",
+          "texto": "Prohibir el uso de software de depuración en entornos de desarrollo."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Requiring periodic signing of confidentiality and professional ethics agreements."
+        },
+        {
+          "id": "b",
+          "texto": "Implementing independent periodic processes that compare authorized code with production code to detect unauthorized changes."
+        },
+        {
+          "id": "c",
+          "texto": "Disabling USB ports on developer workstations."
+        },
+        {
+          "id": "d",
+          "texto": "Prohibiting debugging software in development environments."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 9,
+      "pregunta": "Para realizar pruebas de estrés de un nuevo sistema bancario, la gerencia entrega una copia de la base de datos productiva a un proveedor externo de pruebas. ¿Cuál es la preocupación PRIMARIA que el auditor de SI debe comunicar?",
+      "preguntaEn": "To conduct stress testing on a new banking system, management provides a copy of the production database to an external testing vendor. What is the PRIMARY concern the IS auditor must report?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Que el conjunto de datos no esté completamente actualizado con las transacciones del día."
+        },
+        {
+          "id": "b",
+          "texto": "Que no se hayan anonimizado ni saneado (sanitized) los datos sensibles y confidenciales de los clientes."
+        },
+        {
+          "id": "c",
+          "texto": "Que el tiempo de respuesta del enlace de pruebas supere las métricas acordadas en el contrato."
+        },
+        {
+          "id": "d",
+          "texto": "Que la muestra de prueba no incluya transacciones de años fiscales cerrados."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "That the dataset is not fully updated with current day transactions."
+        },
+        {
+          "id": "b",
+          "texto": "That sensitive and confidential customer data has not been sanitized or anonymized."
+        },
+        {
+          "id": "c",
+          "texto": "That test link response time exceeds contractually agreed metrics."
+        },
+        {
+          "id": "d",
+          "texto": "That the test sample does not include closed fiscal year transactions."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 10,
+      "pregunta": "Una organización ha finalizado las pruebas unitarias y de integración de su nuevo software de pagos y decide iniciar pruebas en paralelo junto al software antiguo. ¿Cuál es el propósito PRINCIPAL de este enfoque?",
+      "preguntaEn": "An organization has completed unit and integration testing of its new payment software and decides to begin parallel testing alongside the legacy software. What is the MAIN purpose of this approach?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Reducir los costos de licenciamiento del software antiguo de manera anticipada."
+        },
+        {
+          "id": "b",
+          "texto": "Identificar fallos de sintaxis en los módulos de integración con el sistema operativo."
+        },
+        {
+          "id": "c",
+          "texto": "Asegurar que la implementación del nuevo sistema satisfaga los requisitos de negocio de los usuarios comparando sus resultados con el sistema anterior."
+        },
+        {
+          "id": "d",
+          "texto": "Probar la resistencia física de los servidores ante variaciones de voltaje."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Reducing legacy software licensing costs early."
+        },
+        {
+          "id": "b",
+          "texto": "Identifying syntax errors in operating system integration modules."
+        },
+        {
+          "id": "c",
+          "texto": "Ensuring that implementation of the new system satisfies user business requirements by comparing its outputs with the legacy system."
+        },
+        {
+          "id": "d",
+          "texto": "Testing physical server resilience against voltage fluctuations."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    }
+  ],
+  "2": [
+    {
+      "id": 11,
+      "pregunta": "Durante la fase de codificación de un desarrollo en cascada, los usuarios solicitan continuas modificaciones que amenazan el cumplimiento del plazo y presupuesto acordados. ¿Qué control preventivo debió establecerse para mitigar este desvío (scope creep)?",
+      "preguntaEn": "During the coding phase of a waterfall development project, users request continuous modifications that threaten the agreed-upon timeline and budget. Which preventive control should have been established to mitigate this scope creep?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El congelamiento formal del diseño mediante una línea base de software (software baselining) sujeta a control de cambios."
+        },
+        {
+          "id": "b",
+          "texto": "La adopción inmediata de metodologías de desarrollo ágil en medio de la fase de despliegue."
+        },
+        {
+          "id": "c",
+          "texto": "El incremento automático de horas extra para los programadores del proyecto."
+        },
+        {
+          "id": "d",
+          "texto": "La eliminación de las pruebas de aceptación de usuario (UAT)."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Formal design freezing through software baselining subject to change control."
+        },
+        {
+          "id": "b",
+          "texto": "Immediate adoption of agile development methodologies midway through deployment."
+        },
+        {
+          "id": "c",
+          "texto": "Automatic overtime increase for project programmers."
+        },
+        {
+          "id": "d",
+          "texto": "Elimination of user acceptance testing (UAT)."
+        }
+      ],
+      "respuestaCorrectaId": "a",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 12,
+      "pregunta": "Al reemplazar el desarrollo interno por la adquisición de un paquete de software comercial (COTS), ¿qué fases del ciclo de vida de desarrollo de sistemas (SDLC) tradicional son sustituidas principalmente?",
+      "preguntaEn": "When replacing in-house development with a commercial off-the-shelf (COTS) software package, which phases of the traditional SDLC are primarily substituted?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El estudio de factibilidad y la definición de requisitos de usuario."
+        },
+        {
+          "id": "b",
+          "texto": "El diseño y el desarrollo, las cuales se reemplazan por selección y configuración."
+        },
+        {
+          "id": "c",
+          "texto": "Las pruebas de aceptación de usuario y la revisión post-implementación."
+        },
+        {
+          "id": "d",
+          "texto": "La migración de datos y la capacitación a usuarios finales."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Feasibility study and user requirements definition."
+        },
+        {
+          "id": "b",
+          "texto": "Design and development, which are replaced by selection and configuration."
+        },
+        {
+          "id": "c",
+          "texto": "User acceptance testing and post-implementation review."
+        },
+        {
+          "id": "d",
+          "texto": "Data migration and end-user training."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 13,
+      "pregunta": "El análisis de impacto en el negocio (BIA) determina que una aplicación bancaria de transferencias interbancarias tiene un Objetivo de Punto de Recuperación (RPO) cercano a cero (pocos minutos). ¿Qué estrategia técnica de respaldo es indispensable para cumplir esta meta?",
+      "preguntaEn": "Business Impact Analysis (BIA) determines that an interbank wire transfer application has a Recovery Point Objective (RPO) close to zero (a few minutes). Which technical backup strategy is essential to meet this target?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Copias de respaldo completas ejecutadas semanalmente en cintas magnéticas fuera del sitio."
+        },
+        {
+          "id": "b",
+          "texto": "Replicación sincrónica de datos en espejo (data mirroring) hacia un centro de datos alterno."
+        },
+        {
+          "id": "c",
+          "texto": "Respaldos incrementales ejecutados cada doce horas mediante scripts programados."
+        },
+        {
+          "id": "d",
+          "texto": "Almacenamiento de archivos en discos duros externos desconectados de la red corporativa."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Full weekly backups on magnetic tapes stored off-site."
+        },
+        {
+          "id": "b",
+          "texto": "Synchronous data mirroring to an alternate data center."
+        },
+        {
+          "id": "c",
+          "texto": "Incremental backups executed every twelve hours via scheduled scripts."
+        },
+        {
+          "id": "d",
+          "texto": "File storage on external hard drives disconnected from the corporate network."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Cuál de las siguientes características describe con precisión a un sitio de contingencia templado (warm site)?",
+      "preguntaEn": "Which of the following characteristics accurately describes a warm recovery site?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Cuenta únicamente con el espacio físico, cableado y servicios básicos, sin componentes de cómputo preinstalados."
+        },
+        {
+          "id": "b",
+          "texto": "Dispone de energía, conexiones de red y equipos periféricos parciales, pero carece de la computadora o servidor central principal."
+        },
+        {
+          "id": "c",
+          "texto": "Es una instalación totalmente equipada y sincronizada que puede operar en cuestión de minutos tras el desastre."
+        },
+        {
+          "id": "d",
+          "texto": "Es una oficina móvil transportada en un remolque hacia la sede afectada tras la contingencia."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "It has only physical space, wiring, and basic utilities, without pre-installed computing components."
+        },
+        {
+          "id": "b",
+          "texto": "It has power, network connections, and selected peripherals, but lacks the main computer or central server."
+        },
+        {
+          "id": "c",
+          "texto": "It is a fully equipped, synchronized facility that can operate within minutes after a disaster."
+        },
+        {
+          "id": "d",
+          "texto": "It is a mobile office transported in a trailer to the affected site following contingency."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 15,
+      "pregunta": "Durante la ejecución de un simulacro anual del Plan de Recuperación ante Desastres (DRP) en la sede alterna, ¿cuál debe ser el papel del auditor de SI?",
+      "preguntaEn": "During the execution of an annual Disaster Recovery Plan (DRP) simulation at an alternate site, what should be the role of the IS auditor?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Declarar formalmente el estado de desastre e iniciar los comandos de failover en la consola."
+        },
+        {
+          "id": "b",
+          "texto": "Observar y evaluar las pruebas para verificar si se cumplen los objetivos de tiempo y efectividad del plan."
+        },
+        {
+          "id": "c",
+          "texto": "Asumir la reconfiguración de los firewalls y conmutadores durante la contingencia."
+        },
+        {
+          "id": "d",
+          "texto": "Ajustar los cronogramas operativos de los operadores de cómputo presentes en la prueba."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Formally declare a disaster state and initiate failover commands at the console."
+        },
+        {
+          "id": "b",
+          "texto": "Observe and evaluate testing to verify whether timeline and effectiveness objectives are met."
+        },
+        {
+          "id": "c",
+          "texto": "Assume responsibility for reconfiguring firewalls and switches during contingency."
+        },
+        {
+          "id": "d",
+          "texto": "Adjust operational schedules of computer operators present at the test."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 16,
+      "pregunta": "Una corporación con múltiples sedes decide implementar acuerdos recíprocos entre sucursales como estrategia de contingencia para la continuidad operativa. ¿Cuál es la limitación MÁS crítica de este modelo?",
+      "preguntaEn": "A multi-branch corporation decides to implement reciprocal agreements between branches as a contingency strategy. What is the MOST critical limitation of this model?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El alto costo asociado a la contratación mensual de empresas especializadas de hot site."
+        },
+        {
+          "id": "b",
+          "texto": "La alta probabilidad de que la sucursal receptora no disponga de capacidad excedente suficiente para absorber la carga de ambas sedes."
+        },
+        {
+          "id": "c",
+          "texto": "La incompatibilidad con los estándares de cableado de fibra óptica subterránea."
+        },
+        {
+          "id": "d",
+          "texto": "La necesidad de solicitar autorizaciones regulatorias previas para cada conexión remota."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "High costs associated with monthly contracts with specialized hot site vendors."
+        },
+        {
+          "id": "b",
+          "texto": "High probability that the receiving branch lacks sufficient spare capacity to absorb the workload of both locations."
+        },
+        {
+          "id": "c",
+          "texto": "Incompatibility with underground fiber optic cabling standards."
+        },
+        {
+          "id": "d",
+          "texto": "The need to obtain prior regulatory approvals for each remote link."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 17,
+      "pregunta": "Al evaluar la seguridad de la red inalámbrica de una cadena minorista, el auditor descubre que los puntos de venta (POS) móviles transmiten datos de tarjetas utilizando cifrado WEP. ¿Por qué representa esto un riesgo crítico de seguridad?",
+      "preguntaEn": "When assessing wireless network security for a retail chain, the auditor discovers mobile point-of-sale (POS) units transmit cardholder data using WEP encryption. Why does this represent a critical security risk?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Porque WEP restringe la conexión a un máximo de diez terminales concurrentes."
+        },
+        {
+          "id": "b",
+          "texto": "Porque WEP emplea claves estáticas con vectores de inicialización débiles que permiten descifrar el tráfico fácilmente."
+        },
+        {
+          "id": "c",
+          "texto": "Porque WEP impide el uso de túneles VPN punto a punto hacia la sede central."
+        },
+        {
+          "id": "d",
+          "texto": "Porque WEP no es compatible con el protocolo IPv4 de los conmutadores."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Because WEP limits connections to a maximum of ten concurrent terminals."
+        },
+        {
+          "id": "b",
+          "texto": "Because WEP uses static keys with weak initialization vectors that allow traffic to be easily decrypted."
+        },
+        {
+          "id": "c",
+          "texto": "Because WEP prevents point-to-point VPN tunnels to corporate headquarters."
+        },
+        {
+          "id": "d",
+          "texto": "Because WEP is incompatible with switch IPv4 protocols."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 18,
+      "pregunta": "En un modelo de Control de Acceso Mandatorio (MAC), ¿quién posee la autoridad exclusiva para modificar o asignar las etiquetas de seguridad de un archivo o recurso?",
+      "preguntaEn": "In a Mandatory Access Control (MAC) model, who holds exclusive authority to modify or assign security labels to a file or resource?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El usuario creador que originó el documento en su estación de trabajo."
+        },
+        {
+          "id": "b",
+          "texto": "El administrador de seguridad del sistema conforme a la política formal de clasificación."
+        },
+        {
+          "id": "c",
+          "texto": "El custodio del almacenamiento en cinta del centro de cómputo."
+        },
+        {
+          "id": "d",
+          "texto": "Cualquier integrante del departamento que cuente con privilegios de lectura."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "The originating user who created the document on their workstation."
+        },
+        {
+          "id": "b",
+          "texto": "The system security administrator in accordance with formal classification policy."
+        },
+        {
+          "id": "c",
+          "texto": "The computer center tape storage custodian."
+        },
+        {
+          "id": "d",
+          "texto": "Any department member holding read privileges."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 19,
+      "pregunta": "Un empleado contacta a la mesa de ayuda (Help Desk) solicitando el restablecimiento inmediato de su contraseña por olvido. Para prevenir ataques de ingeniería social, ¿qué control debe verificar el auditor que se aplique en PRIMER lugar?",
+      "preguntaEn": "An employee contacts the Help Desk requesting an immediate password reset due to forgetfulness. To prevent social engineering attacks, which control should the auditor verify is applied FIRST?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Generar una contraseña temporal y enviarla al correo electrónico personal del usuario."
+        },
+        {
+          "id": "b",
+          "texto": "Validar de forma concluyente la identidad del solicitante mediante un mecanismo predefinido de desafío/respuesta o canal seguro secundario."
+        },
+        {
+          "id": "c",
+          "texto": "Deshabilitar la cuenta del usuario de forma preventiva durante las siguientes veinticuatro horas."
+        },
+        {
+          "id": "d",
+          "texto": "Solicitar una autorización escrita firmada por el Director General de la empresa."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Generating a temporary password and emailing it to the user personal email."
+        },
+        {
+          "id": "b",
+          "texto": "Conclusively validating the requester identity using a predefined challenge/response mechanism or secondary secure channel."
+        },
+        {
+          "id": "c",
+          "texto": "Preventively disabling the user account for the next twenty-four hours."
+        },
+        {
+          "id": "d",
+          "texto": "Requiring written authorization signed by the company Chief Executive Officer."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 20,
+      "pregunta": "¿En qué nivel arquitectónico proporciona el software de control de acceso el MAYOR grado de protección integral contra accesos no autorizados por parte de usuarios internos y externos?",
+      "preguntaEn": "At which architectural level does access control software provide the GREATEST degree of comprehensive protection against unauthorized access by internal and external users?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "A nivel de los formularios de entrada de la aplicación de usuario."
+        },
+        {
+          "id": "b",
+          "texto": "A nivel de los procedimientos almacenados en el motor de base de datos."
+        },
+        {
+          "id": "c",
+          "texto": "A nivel de red y de plataforma / sistema operativo (sistemas de soporte general)."
+        },
+        {
+          "id": "d",
+          "texto": "A nivel de los repositorios de respaldo y bitácoras históricas."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "At the user application entry form level."
+        },
+        {
+          "id": "b",
+          "texto": "At the database engine stored procedure level."
+        },
+        {
+          "id": "c",
+          "texto": "At the network and platform / operating system level (general support systems)."
+        },
+        {
+          "id": "d",
+          "texto": "At the backup repository and historical log level."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    }
+  ],
+  "3": [
+    {
+      "id": 1,
+      "pregunta": "Un auditor de SI recién incorporado descubre que la organización nunca ha formalizado ni aprobado un estatuto de auditoría (audit charter). ¿Cuál debe ser su curso de acción INMEDIATO?",
+      "preguntaEn": "A newly hired IS auditor discovers that the organization has never formalized or approved an audit charter. What should be their IMMEDIATE course of action?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Continuar ejecutando el cronograma de auditoría previamente acordado con la gerencia general."
+        },
+        {
+          "id": "b",
+          "texto": "Suspender de forma indefinida cualquier interacción con los dueños de procesos de negocio."
+        },
+        {
+          "id": "c",
+          "texto": "Elaborar el borrador del estatuto de auditoría y presentarlo a la junta directiva o comité de auditoría para su aprobación formal."
+        },
+        {
+          "id": "d",
+          "texto": "Limitar las actividades de auditoría a revisiones financieras sin involucrar sistemas de información."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Continue executing the audit schedule previously agreed upon with executive management."
+        },
+        {
+          "id": "b",
+          "texto": "Indefinitely suspend any interaction with business process owners."
+        },
+        {
+          "id": "c",
+          "texto": "Draft the audit charter and submit it to the board of directors or audit committee for formal approval."
+        },
+        {
+          "id": "d",
+          "texto": "Limit audit activities to financial reviews without involving information systems."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 2,
+      "pregunta": "Al planificar una auditoría sobre una plataforma transaccional en la nube, el auditor de SI evalúa la probabilidad y el impacto de pérdidas operacionales considerando que no existen controles internos ni salvaguardas implementadas. ¿Qué categoría de riesgo está valorando?",
+      "preguntaEn": "When planning an audit of a cloud-based transactional platform, the IS auditor assesses the likelihood and impact of operational losses assuming no internal controls or safeguards are in place. What risk category is being assessed?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Riesgo residual"
+        },
+        {
+          "id": "b",
+          "texto": "Riesgo de control"
+        },
+        {
+          "id": "c",
+          "texto": "Riesgo de detección"
+        },
+        {
+          "id": "d",
+          "texto": "Riesgo inherente"
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Residual risk"
+        },
+        {
+          "id": "b",
+          "texto": "Control risk"
+        },
+        {
+          "id": "c",
+          "texto": "Detection risk"
+        },
+        {
+          "id": "d",
+          "texto": "Inherent risk"
+        }
+      ],
+      "respuestaCorrectaId": "d",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 3,
+      "pregunta": "Durante la evaluación de la gestión de cambios a programas en un entorno productivo, ¿cuál es el procedimiento de muestreo MÁS eficaz para identificar cambios no autorizados?",
+      "preguntaEn": "During an evaluation of program change management in a production environment, what is the MOST effective sampling procedure to identify unauthorized changes?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Seleccionar una muestra aleatoria de solicitudes de cambio aprobadas en el sistema de tickets y rastrearlas hacia el entorno de producción."
+        },
+        {
+          "id": "b",
+          "texto": "Extraer la muestra a partir de los cambios detectados directamente en el código de producción y rastrearlos hacia la documentación de autorización previa."
+        },
+        {
+          "id": "c",
+          "texto": "Seleccionar solicitudes de cambio según la criticidad del sistema documentada en el inventario de aplicaciones."
+        },
+        {
+          "id": "d",
+          "texto": "Rastrear los cambios documentados en el plan de trabajo anual contra los incidentes reportados por usuarios finales."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Select a random sample of approved change requests in the ticketing system and trace them to the production environment."
+        },
+        {
+          "id": "b",
+          "texto": "Draw the sample from changes detected directly in production code and trace them back to prior authorization documentation."
+        },
+        {
+          "id": "c",
+          "texto": "Select change requests based on system criticality documented in the application inventory."
+        },
+        {
+          "id": "d",
+          "texto": "Trace changes documented in the annual work plan against incidents reported by end users."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 4,
+      "pregunta": "Una entidad financiera adopta un programa de Autoevaluación de Controles (CSA) en sus áreas operativas. ¿Cuál debe ser el rol primordial del auditor de SI en este proceso?",
+      "preguntaEn": "A financial institution adopts a Control Self-Assessment (CSA) program in its operational areas. What should be the primary role of the IS auditor in this process?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Diseñar y configurar directamente los controles compensatorios requeridos en las aplicaciones."
+        },
+        {
+          "id": "b",
+          "texto": "Facilitar los talleres y proporcionar guía metodológica a los dueños de los procesos de negocio."
+        },
+        {
+          "id": "c",
+          "texto": "Asumir la propiedad y rendición de cuentas sobre la efectividad de los controles evaluados."
+        },
+        {
+          "id": "d",
+          "texto": "Reemplazar a la gerencia en la toma de decisiones sobre mitigación de riesgos."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Directly design and configure required compensating controls in applications."
+        },
+        {
+          "id": "b",
+          "texto": "Facilitate workshops and provide methodological guidance to business process owners."
+        },
+        {
+          "id": "c",
+          "texto": "Assume ownership and accountability for the effectiveness of evaluated controls."
+        },
+        {
+          "id": "d",
+          "texto": "Replace management in risk mitigation decision-making."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 5,
+      "pregunta": "Al revisar la estructura de gobierno corporativo de TI, el auditor observa que los proyectos tecnológicos se ejecutan sin contar con un plan estratégico de TI formalizado. ¿Cuál es la consecuencia MÁS probable de esta situación?",
+      "preguntaEn": "When reviewing the IT corporate governance structure, the auditor notes that technology projects are executed without a formalized IT strategic plan. What is the MOST likely consequence of this situation?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El personal técnico no podrá aplicar parches de seguridad en los servidores perimetrales."
+        },
+        {
+          "id": "b",
+          "texto": "Las inversiones y proyectos de TI perderán alineación con los objetivos del negocio y la entrega de valor."
+        },
+        {
+          "id": "c",
+          "texto": "Los acuerdos de nivel de servicio (SLA) con proveedores se cancelarán automáticamente."
+        },
+        {
+          "id": "d",
+          "texto": "Se incrementará el riesgo de muestreo durante las pruebas de auditoría continua."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Technical staff will be unable to apply security patches on perimeter servers."
+        },
+        {
+          "id": "b",
+          "texto": "IT investments and projects will lose alignment with business objectives and value delivery."
+        },
+        {
+          "id": "c",
+          "texto": "Service level agreements (SLAs) with vendors will be automatically canceled."
+        },
+        {
+          "id": "d",
+          "texto": "Sampling risk will increase during continuous audit testing."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 6,
+      "pregunta": "En una institución financiera mediana, el Gerente de Sistemas de Información reporta directamente al Director Financiero (CFO). Desde la perspectiva de gobernanza y control interno, ¿cuál es la MAYOR preocupación para el auditor de SI?",
+      "preguntaEn": "In a mid-sized financial institution, the IS Manager reports directly to the Chief Financial Officer (CFO). From a governance and internal control perspective, what is the GREATEST concern for the IS auditor?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Que el CFO carezca de certificaciones técnicas en administración de bases de datos."
+        },
+        {
+          "id": "b",
+          "texto": "Que las decisiones y presupuestos de TI se subordinen a metas de costos contables a corto plazo, comprometiendo controles y proyectos de seguridad."
+        },
+        {
+          "id": "c",
+          "texto": "Que el comité de riesgos deje de reportar a la gerencia de operaciones."
+        },
+        {
+          "id": "d",
+          "texto": "Que los auditores externos deban ejecutar tareas de mesa de ayuda."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "That the CFO lacks technical certifications in database administration."
+        },
+        {
+          "id": "b",
+          "texto": "That IT decisions and budgets are subordinated to short-term accounting cost goals, compromising controls and security projects."
+        },
+        {
+          "id": "c",
+          "texto": "That the risk committee stops reporting to operations management."
+        },
+        {
+          "id": "d",
+          "texto": "That external auditors must perform help desk tasks."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 7,
+      "pregunta": "Un desarrollador necesita modificar registros transaccionales directamente en la base de datos de producción debido a un error de cálculo del aplicativo. ¿Quién debe autorizar formalmente este acceso de escritura?",
+      "preguntaEn": "A developer needs to modify transactional records directly in the production database due to an application calculation error. Who must formally authorize this write access?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El Administrador de Bases de Datos (DBA)"
+        },
+        {
+          "id": "b",
+          "texto": "El Líder Técnico de Desarrollo de Software"
+        },
+        {
+          "id": "c",
+          "texto": "El Dueño de los Datos de Negocio (Data Owner)"
+        },
+        {
+          "id": "d",
+          "texto": "El Operador de Consola del Centro de Cómputo"
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "The Database Administrator (DBA)"
+        },
+        {
+          "id": "b",
+          "texto": "The Technical Software Development Lead"
+        },
+        {
+          "id": "c",
+          "texto": "The Business Data Owner"
+        },
+        {
+          "id": "d",
+          "texto": "The Computer Center Console Operator"
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 8,
+      "pregunta": "En una empresa pequeña donde resulta inviable contratar personal adicional para separar las funciones de programación y de operación de cómputo, ¿cuál es el MEJOR control compensatorio que el auditor debe recomendar?",
+      "preguntaEn": "In a small company where hiring additional staff to separate programming and computer operation functions is unfeasible, what is the BEST compensating control the auditor should recommend?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Exigir la firma periódica de acuerdos de confidencialidad y ética profesional."
+        },
+        {
+          "id": "b",
+          "texto": "Implementar procesos independientes y periódicos que comparen el código autorizado con el código en producción para detectar cambios no autorizados."
+        },
+        {
+          "id": "c",
+          "texto": "Deshabilitar los puertos USB en las estaciones de trabajo de los desarrolladores."
+        },
+        {
+          "id": "d",
+          "texto": "Prohibir el uso de software de depuración en entornos de desarrollo."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Requiring periodic signing of confidentiality and professional ethics agreements."
+        },
+        {
+          "id": "b",
+          "texto": "Implementing independent periodic processes that compare authorized code with production code to detect unauthorized changes."
+        },
+        {
+          "id": "c",
+          "texto": "Disabling USB ports on developer workstations."
+        },
+        {
+          "id": "d",
+          "texto": "Prohibiting debugging software in development environments."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 9,
+      "pregunta": "Para realizar pruebas de estrés de un nuevo sistema bancario, la gerencia entrega una copia de la base de datos productiva a un proveedor externo de pruebas. ¿Cuál es la preocupación PRIMARIA que el auditor de SI debe comunicar?",
+      "preguntaEn": "To conduct stress testing on a new banking system, management provides a copy of the production database to an external testing vendor. What is the PRIMARY concern the IS auditor must report?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Que el conjunto de datos no esté completamente actualizado con las transacciones del día."
+        },
+        {
+          "id": "b",
+          "texto": "Que no se hayan anonimizado ni saneado (sanitized) los datos sensibles y confidenciales de los clientes."
+        },
+        {
+          "id": "c",
+          "texto": "Que el tiempo de respuesta del enlace de pruebas supere las métricas acordadas en el contrato."
+        },
+        {
+          "id": "d",
+          "texto": "Que la muestra de prueba no incluya transacciones de años fiscales cerrados."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "That the dataset is not fully updated with current day transactions."
+        },
+        {
+          "id": "b",
+          "texto": "That sensitive and confidential customer data has not been sanitized or anonymized."
+        },
+        {
+          "id": "c",
+          "texto": "That test link response time exceeds contractually agreed metrics."
+        },
+        {
+          "id": "d",
+          "texto": "That the test sample does not include closed fiscal year transactions."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 10,
+      "pregunta": "Una organización ha finalizado las pruebas unitarias y de integración de su nuevo software de pagos y decide iniciar pruebas en paralelo junto al software antiguo. ¿Cuál es el propósito PRINCIPAL de este enfoque?",
+      "preguntaEn": "An organization has completed unit and integration testing of its new payment software and decides to begin parallel testing alongside the legacy software. What is the MAIN purpose of this approach?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Reducir los costos de licenciamiento del software antiguo de manera anticipada."
+        },
+        {
+          "id": "b",
+          "texto": "Identificar fallos de sintaxis en los módulos de integración con el sistema operativo."
+        },
+        {
+          "id": "c",
+          "texto": "Asegurar que la implementación del nuevo sistema satisfaga los requisitos de negocio de los usuarios comparando sus resultados con el sistema anterior."
+        },
+        {
+          "id": "d",
+          "texto": "Probar la resistencia física de los servidores ante variaciones de voltaje."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Reducing legacy software licensing costs early."
+        },
+        {
+          "id": "b",
+          "texto": "Identifying syntax errors in operating system integration modules."
+        },
+        {
+          "id": "c",
+          "texto": "Ensuring that implementation of the new system satisfies user business requirements by comparing its outputs with the legacy system."
+        },
+        {
+          "id": "d",
+          "texto": "Testing physical server resilience against voltage fluctuations."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 11,
+      "pregunta": "Durante la fase de codificación de un desarrollo en cascada, los usuarios solicitan continuas modificaciones que amenazan el cumplimiento del plazo y presupuesto acordados. ¿Qué control preventivo debió establecerse para mitigar este desvío (scope creep)?",
+      "preguntaEn": "During the coding phase of a waterfall development project, users request continuous modifications that threaten the agreed-upon timeline and budget. Which preventive control should have been established to mitigate this scope creep?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El congelamiento formal del diseño mediante una línea base de software (software baselining) sujeta a control de cambios."
+        },
+        {
+          "id": "b",
+          "texto": "La adopción inmediata de metodologías de desarrollo ágil en medio de la fase de despliegue."
+        },
+        {
+          "id": "c",
+          "texto": "El incremento automático de horas extra para los programadores del proyecto."
+        },
+        {
+          "id": "d",
+          "texto": "La eliminación de las pruebas de aceptación de usuario (UAT)."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Formal design freezing through software baselining subject to change control."
+        },
+        {
+          "id": "b",
+          "texto": "Immediate adoption of agile development methodologies midway through deployment."
+        },
+        {
+          "id": "c",
+          "texto": "Automatic overtime increase for project programmers."
+        },
+        {
+          "id": "d",
+          "texto": "Elimination of user acceptance testing (UAT)."
+        }
+      ],
+      "respuestaCorrectaId": "a",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 12,
+      "pregunta": "Al reemplazar el desarrollo interno por la adquisición de un paquete de software comercial (COTS), ¿qué fases del ciclo de vida de desarrollo de sistemas (SDLC) tradicional son sustituidas principalmente?",
+      "preguntaEn": "When replacing in-house development with a commercial off-the-shelf (COTS) software package, which phases of the traditional SDLC are primarily substituted?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El estudio de factibilidad y la definición de requisitos de usuario."
+        },
+        {
+          "id": "b",
+          "texto": "El diseño y el desarrollo, las cuales se reemplazan por selección y configuración."
+        },
+        {
+          "id": "c",
+          "texto": "Las pruebas de aceptación de usuario y la revisión post-implementación."
+        },
+        {
+          "id": "d",
+          "texto": "La migración de datos y la capacitación a usuarios finales."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Feasibility study and user requirements definition."
+        },
+        {
+          "id": "b",
+          "texto": "Design and development, which are replaced by selection and configuration."
+        },
+        {
+          "id": "c",
+          "texto": "User acceptance testing and post-implementation review."
+        },
+        {
+          "id": "d",
+          "texto": "Data migration and end-user training."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 13,
+      "pregunta": "El análisis de impacto en el negocio (BIA) determina que una aplicación bancaria de transferencias interbancarias tiene un Objetivo de Punto de Recuperación (RPO) cercano a cero (pocos minutos). ¿Qué estrategia técnica de respaldo es indispensable para cumplir esta meta?",
+      "preguntaEn": "Business Impact Analysis (BIA) determines that an interbank wire transfer application has a Recovery Point Objective (RPO) close to zero (a few minutes). Which technical backup strategy is essential to meet this target?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Copias de respaldo completas ejecutadas semanalmente en cintas magnéticas fuera del sitio."
+        },
+        {
+          "id": "b",
+          "texto": "Replicación sincrónica de datos en espejo (data mirroring) hacia un centro de datos alterno."
+        },
+        {
+          "id": "c",
+          "texto": "Respaldos incrementales ejecutados cada doce horas mediante scripts programados."
+        },
+        {
+          "id": "d",
+          "texto": "Almacenamiento de archivos en discos duros externos desconectados de la red corporativa."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Full weekly backups on magnetic tapes stored off-site."
+        },
+        {
+          "id": "b",
+          "texto": "Synchronous data mirroring to an alternate data center."
+        },
+        {
+          "id": "c",
+          "texto": "Incremental backups executed every twelve hours via scheduled scripts."
+        },
+        {
+          "id": "d",
+          "texto": "File storage on external hard drives disconnected from the corporate network."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 14,
+      "pregunta": "¿Cuál de las siguientes características describe con precisión a un sitio de contingencia templado (warm site)?",
+      "preguntaEn": "Which of the following characteristics accurately describes a warm recovery site?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Cuenta únicamente con el espacio físico, cableado y servicios básicos, sin componentes de cómputo preinstalados."
+        },
+        {
+          "id": "b",
+          "texto": "Dispone de energía, conexiones de red y equipos periféricos parciales, pero carece de la computadora o servidor central principal."
+        },
+        {
+          "id": "c",
+          "texto": "Es una instalación totalmente equipada y sincronizada que puede operar en cuestión de minutos tras el desastre."
+        },
+        {
+          "id": "d",
+          "texto": "Es una oficina móvil transportada en un remolque hacia la sede afectada tras la contingencia."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "It has only physical space, wiring, and basic utilities, without pre-installed computing components."
+        },
+        {
+          "id": "b",
+          "texto": "It has power, network connections, and selected peripherals, but lacks the main computer or central server."
+        },
+        {
+          "id": "c",
+          "texto": "It is a fully equipped, synchronized facility that can operate within minutes after a disaster."
+        },
+        {
+          "id": "d",
+          "texto": "It is a mobile office transported in a trailer to the affected site following contingency."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 15,
+      "pregunta": "Durante la ejecución de un simulacro anual del Plan de Recuperación ante Desastres (DRP) en la sede alterna, ¿cuál debe ser el papel del auditor de SI?",
+      "preguntaEn": "During the execution of an annual Disaster Recovery Plan (DRP) simulation at an alternate site, what should be the role of the IS auditor?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Declarar formalmente el estado de desastre e iniciar los comandos de failover en la consola."
+        },
+        {
+          "id": "b",
+          "texto": "Observar y evaluar las pruebas para verificar si se cumplen los objetivos de tiempo y efectividad del plan."
+        },
+        {
+          "id": "c",
+          "texto": "Asumir la reconfiguración de los firewalls y conmutadores durante la contingencia."
+        },
+        {
+          "id": "d",
+          "texto": "Ajustar los cronogramas operativos de los operadores de cómputo presentes en la prueba."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Formally declare a disaster state and initiate failover commands at the console."
+        },
+        {
+          "id": "b",
+          "texto": "Observe and evaluate testing to verify whether timeline and effectiveness objectives are met."
+        },
+        {
+          "id": "c",
+          "texto": "Assume responsibility for reconfiguring firewalls and switches during contingency."
+        },
+        {
+          "id": "d",
+          "texto": "Adjust operational schedules of computer operators present at the test."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 16,
+      "pregunta": "Una corporación con múltiples sedes decide implementar acuerdos recíprocos entre sucursales como estrategia de contingencia para la continuidad operativa. ¿Cuál es la limitación MÁS crítica de este modelo?",
+      "preguntaEn": "A multi-branch corporation decides to implement reciprocal agreements between branches as a contingency strategy. What is the MOST critical limitation of this model?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El alto costo asociado a la contratación mensual de empresas especializadas de hot site."
+        },
+        {
+          "id": "b",
+          "texto": "La alta probabilidad de que la sucursal receptora no disponga de capacidad excedente suficiente para absorber la carga de ambas sedes."
+        },
+        {
+          "id": "c",
+          "texto": "La incompatibilidad con los estándares de cableado de fibra óptica subterránea."
+        },
+        {
+          "id": "d",
+          "texto": "La necesidad de solicitar autorizaciones regulatorias previas para cada conexión remota."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "High costs associated with monthly contracts with specialized hot site vendors."
+        },
+        {
+          "id": "b",
+          "texto": "High probability that the receiving branch lacks sufficient spare capacity to absorb the workload of both locations."
+        },
+        {
+          "id": "c",
+          "texto": "Incompatibility with underground fiber optic cabling standards."
+        },
+        {
+          "id": "d",
+          "texto": "The need to obtain prior regulatory approvals for each remote link."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 17,
+      "pregunta": "Al evaluar la seguridad de la red inalámbrica de una cadena minorista, el auditor descubre que los puntos de venta (POS) móviles transmiten datos de tarjetas utilizando cifrado WEP. ¿Por qué representa esto un riesgo crítico de seguridad?",
+      "preguntaEn": "When assessing wireless network security for a retail chain, the auditor discovers mobile point-of-sale (POS) units transmit cardholder data using WEP encryption. Why does this represent a critical security risk?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Porque WEP restringe la conexión a un máximo de diez terminales concurrentes."
+        },
+        {
+          "id": "b",
+          "texto": "Porque WEP emplea claves estáticas con vectores de inicialización débiles que permiten descifrar el tráfico fácilmente."
+        },
+        {
+          "id": "c",
+          "texto": "Porque WEP impide el uso de túneles VPN punto a punto hacia la sede central."
+        },
+        {
+          "id": "d",
+          "texto": "Porque WEP no es compatible con el protocolo IPv4 de los conmutadores."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Because WEP limits connections to a maximum of ten concurrent terminals."
+        },
+        {
+          "id": "b",
+          "texto": "Because WEP uses static keys with weak initialization vectors that allow traffic to be easily decrypted."
+        },
+        {
+          "id": "c",
+          "texto": "Because WEP prevents point-to-point VPN tunnels to corporate headquarters."
+        },
+        {
+          "id": "d",
+          "texto": "Because WEP is incompatible with switch IPv4 protocols."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 18,
+      "pregunta": "En un modelo de Control de Acceso Mandatorio (MAC), ¿quién posee la autoridad exclusiva para modificar o asignar las etiquetas de seguridad de un archivo o recurso?",
+      "preguntaEn": "In a Mandatory Access Control (MAC) model, who holds exclusive authority to modify or assign security labels to a file or resource?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "El usuario creador que originó el documento en su estación de trabajo."
+        },
+        {
+          "id": "b",
+          "texto": "El administrador de seguridad del sistema conforme a la política formal de clasificación."
+        },
+        {
+          "id": "c",
+          "texto": "El custodio del almacenamiento en cinta del centro de cómputo."
+        },
+        {
+          "id": "d",
+          "texto": "Cualquier integrante del departamento que cuente con privilegios de lectura."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "The originating user who created the document on their workstation."
+        },
+        {
+          "id": "b",
+          "texto": "The system security administrator in accordance with formal classification policy."
+        },
+        {
+          "id": "c",
+          "texto": "The computer center tape storage custodian."
+        },
+        {
+          "id": "d",
+          "texto": "Any department member holding read privileges."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 19,
+      "pregunta": "Un empleado contacta a la mesa de ayuda (Help Desk) solicitando el restablecimiento inmediato de su contraseña por olvido. Para prevenir ataques de ingeniería social, ¿qué control debe verificar el auditor que se aplique en PRIMER lugar?",
+      "preguntaEn": "An employee contacts the Help Desk requesting an immediate password reset due to forgetfulness. To prevent social engineering attacks, which control should the auditor verify is applied FIRST?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "Generar una contraseña temporal y enviarla al correo electrónico personal del usuario."
+        },
+        {
+          "id": "b",
+          "texto": "Validar de forma concluyente la identidad del solicitante mediante un mecanismo predefinido de desafío/respuesta o canal seguro secundario."
+        },
+        {
+          "id": "c",
+          "texto": "Deshabilitar la cuenta del usuario de forma preventiva durante las siguientes veinticuatro horas."
+        },
+        {
+          "id": "d",
+          "texto": "Solicitar una autorización escrita firmada por el Director General de la empresa."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "Generating a temporary password and emailing it to the user personal email."
+        },
+        {
+          "id": "b",
+          "texto": "Conclusively validating the requester identity using a predefined challenge/response mechanism or secondary secure channel."
+        },
+        {
+          "id": "c",
+          "texto": "Preventively disabling the user account for the next twenty-four hours."
+        },
+        {
+          "id": "d",
+          "texto": "Requiring written authorization signed by the company Chief Executive Officer."
+        }
+      ],
+      "respuestaCorrectaId": "b",
+      "justificacion": "",
+      "justificacionEn": ""
+    },
+    {
+      "id": 20,
+      "pregunta": "¿En qué nivel arquitectónico proporciona el software de control de acceso el MAYOR grado de protección integral contra accesos no autorizados por parte de usuarios internos y externos?",
+      "preguntaEn": "At which architectural level does access control software provide the GREATEST degree of comprehensive protection against unauthorized access by internal and external users?",
+      "alternativas": [
+        {
+          "id": "a",
+          "texto": "A nivel de los formularios de entrada de la aplicación de usuario."
+        },
+        {
+          "id": "b",
+          "texto": "A nivel de los procedimientos almacenados en el motor de base de datos."
+        },
+        {
+          "id": "c",
+          "texto": "A nivel de red y de plataforma / sistema operativo (sistemas de soporte general)."
+        },
+        {
+          "id": "d",
+          "texto": "A nivel de los repositorios de respaldo y bitácoras históricas."
+        }
+      ],
+      "alternativasEn": [
+        {
+          "id": "a",
+          "texto": "At the user application entry form level."
+        },
+        {
+          "id": "b",
+          "texto": "At the database engine stored procedure level."
+        },
+        {
+          "id": "c",
+          "texto": "At the network and platform / operating system level (general support systems)."
+        },
+        {
+          "id": "d",
+          "texto": "At the backup repository and historical log level."
+        }
+      ],
+      "respuestaCorrectaId": "c",
+      "justificacion": "",
+      "justificacionEn": ""
+    }
+  ]
+}
 };
 
 /* ----------------------------------------------------------
@@ -1708,6 +5288,8 @@ const DOM = {
   screenResults:         document.getElementById('screen-results'),
   btnTeoria:             document.getElementById('btn-seccion-teoria'),
   btnCasos:              document.getElementById('btn-seccion-casos'),
+  btnDeepseek:           document.getElementById('btn-seccion-deepseek'),
+  btnGemini:             document.getElementById('btn-seccion-gemini'),
   subsectionTitle:       document.getElementById('subsection-title'),
   subsectionGrid:        document.getElementById('subsection-grid'),
   btnBackToStart:        document.getElementById('btn-back-to-start'),
@@ -1752,23 +5334,28 @@ function mostrarSubsecciones(seccion) {
   const meta = getSectionMeta(seccion);
   DOM.subsectionTitle.textContent = `${meta.emoji} ${meta.label}`;
   DOM.subsectionGrid.innerHTML = '';
-  for (let n = 1; n <= 5; n++) {
+
+  const subsecciones = Object.keys(BANCO_PREGUNTAS[seccion] || {}).sort((a, b) => Number(a) - Number(b));
+  subsecciones.forEach(n => {
     const preguntas = BANCO_PREGUNTAS[seccion][n];
     const disponible = preguntas && preguntas.length > 0;
     const btn = document.createElement('button');
     btn.className = `subsection-btn${disponible ? '' : ' subsection-btn--empty'}`;
     btn.disabled  = !disponible;
-    btn.setAttribute('aria-label', `${meta.label} ${n}${disponible ? '' : ' ('+t('comingSoon')+')'}`);
+
+    const labelSub = (meta.subLabels && meta.subLabels[n]) ? meta.subLabels[n] : `${meta.label} ${n}`;
+
+    btn.setAttribute('aria-label', `${labelSub}${disponible ? '' : ' ('+t('comingSoon')+')'}`);
     btn.innerHTML = `
       <span class="subsection-num">${n}</span>
-      <span class="subsection-label">${meta.label} ${n}</span>
+      <span class="subsection-label">${labelSub}</span>
       <span class="subsection-count">${disponible ? preguntas.length + ' ' + t('preguntas') : t('comingSoon')}</span>
     `;
     if (disponible) {
-      btn.addEventListener('click', () => iniciarCuestionario(seccion, n));
+      btn.addEventListener('click', () => iniciarCuestionario(seccion, Number(n)));
     }
     DOM.subsectionGrid.appendChild(btn);
-  }
+  });
   showScreen(DOM.screenSubsections);
 }
 
@@ -1998,6 +5585,9 @@ function mostrarResultados() {
     setTimeout(() => { DOM.ringFill.style.strokeDashoffset = offset; }, 300);
   });
   const meta = getSectionMeta(state.seccionActual);
+  const subLabelResult = (meta.subLabels && meta.subLabels[state.subseccionActual])
+    ? meta.subLabels[state.subseccionActual]
+    : `${meta.label} ${state.subseccionActual}`;
   DOM.resultsStats.innerHTML = `
     <div class="stat-item stat-item--correct">
       <span class="stat-value">${state.correctas}</span>
@@ -2012,7 +5602,7 @@ function mostrarResultados() {
       <span class="stat-label">${t('statAccuracy')}</span>
     </div>
     <div class="stat-item stat-item--section" style="grid-column: 1 / -1;">
-      <span class="stat-value" style="font-size: var(--font-size-base);">${meta.emoji} ${meta.label} ${state.subseccionActual}</span>
+      <span class="stat-value" style="font-size: var(--font-size-base);">${meta.emoji} ${subLabelResult}</span>
       <span class="stat-label">${t('statSection')}</span>
     </div>
   `;
@@ -2025,8 +5615,10 @@ function reiniciarCuestionario() {
 }
 
 function init() {
-  DOM.btnTeoria.addEventListener('click', () => mostrarSubsecciones('teoria'));
-  DOM.btnCasos.addEventListener('click',  () => mostrarSubsecciones('casos'));
+  DOM.btnTeoria.addEventListener('click',   () => mostrarSubsecciones('teoria'));
+  DOM.btnCasos.addEventListener('click',    () => mostrarSubsecciones('casos'));
+  if (DOM.btnDeepseek) DOM.btnDeepseek.addEventListener('click', () => mostrarSubsecciones('deepseek'));
+  if (DOM.btnGemini)   DOM.btnGemini.addEventListener('click',   () => mostrarSubsecciones('gemini'));
   DOM.btnBackToStart.addEventListener('click', () => showScreen(DOM.screenStart));
   DOM.btnNext.addEventListener('click', siguientePregunta);
   DOM.btnRestart.addEventListener('click', reiniciarCuestionario);

@@ -612,6 +612,10 @@ button {
   width: 100%;
 }
 
+.section-btn:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .section-btn {
   display: flex;
   flex-direction: column;

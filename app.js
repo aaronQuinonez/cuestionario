@@ -59,12 +59,23 @@ const TRANSLATIONS = {
           2: 'Parte 2 (Preguntas 11 - 20)',
           3: 'Examen Completo (20 preguntas)'
         }
+      },
+      gpt: {
+        label: 'Banco GPT',
+        emoji: '💡',
+        subLabels: {
+          1: 'Parte 1: Por Dominio (1 - 10)',
+          2: 'Parte 2: Casos de Estudio (11 - 20)',
+          3: 'Examen Completo (20 preguntas)'
+        }
       }
     },
     deepseekLabel:     'Banco DeepSeek',
     deepseekCount:     '20 preguntas',
     geminiLabel:       'Banco Gemini',
-    geminiCount:       '20 preguntas'
+    geminiCount:       '20 preguntas',
+    gptLabel:          'Banco GPT',
+    gptCount:          '20 preguntas'
   },
   en: {
     appTitle:          'Interactive<br>Quiz',
@@ -116,12 +127,23 @@ const TRANSLATIONS = {
           2: 'Part 2 (Questions 11 - 20)',
           3: 'Full Exam (20 questions)'
         }
+      },
+      gpt: {
+        label: 'GPT Bank',
+        emoji: '💡',
+        subLabels: {
+          1: 'Part 1: By Domain (1 - 10)',
+          2: 'Part 2: Case Studies (11 - 20)',
+          3: 'Full Exam (20 questions)'
+        }
       }
     },
     deepseekLabel:     'DeepSeek Bank',
     deepseekCount:     '20 questions',
     geminiLabel:       'Gemini Bank',
-    geminiCount:       '20 questions'
+    geminiCount:       '20 questions',
+    gptLabel:          'GPT Bank',
+    gptCount:          '20 questions'
   }
 };
 
@@ -6994,6 +7016,1774 @@ const BANCO_PREGUNTAS = {
         "justificacionEn": ""
       }
     ]
+  },
+  "gpt": {
+    "1": [
+      {
+        "id": 1,
+        "pregunta": "Una empresa creció rápidamente y el auditor debe elaborar su plan anual. Existen informes de auditorías anteriores, pero no una evaluación reciente de riesgos de TI. ¿Qué debería hacer PRIMERO?",
+        "preguntaEn": "An enterprise grew rapidly and the auditor must prepare its annual plan. Previous audit reports exist, but no recent IT risk assessment is available. What should the auditor do FIRST?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Repetir las pruebas que detectaron más errores el año anterior."
+          },
+          {
+            "id": "b",
+            "texto": "Evaluar los riesgos de TI para establecer prioridades."
+          },
+          {
+            "id": "c",
+            "texto": "Solicitar a gerencia una lista de controles que desea revisar."
+          },
+          {
+            "id": "d",
+            "texto": "Seleccionar una muestra de transacciones críticas."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Repeat the tests that detected the most exceptions in the prior year."
+          },
+          {
+            "id": "b",
+            "texto": "Perform an IT risk assessment to establish priorities."
+          },
+          {
+            "id": "c",
+            "texto": "Request from management a list of controls they want reviewed."
+          },
+          {
+            "id": "d",
+            "texto": "Select a sample of critical transactions."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 2,
+        "pregunta": "El auditor quiere comprobar si todos los cambios realizados en producción fueron autorizados. ¿Cuál es la mejor forma de seleccionar la muestra?",
+        "preguntaEn": "The auditor wants to verify whether all changes made in production were authorized. What is the best method to select the sample?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Tomar solicitudes de cambio aprobadas y verificar sus firmas."
+          },
+          {
+            "id": "b",
+            "texto": "Tomar cambios registrados en producción y rastrearlos hasta su autorización."
+          },
+          {
+            "id": "c",
+            "texto": "Entrevistar al responsable de desarrollo sobre el procedimiento."
+          },
+          {
+            "id": "d",
+            "texto": "Revisar únicamente los cambios clasificados como urgentes."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Select approved change requests and verify signatures."
+          },
+          {
+            "id": "b",
+            "texto": "Sample changes recorded in production and trace them back to their authorization."
+          },
+          {
+            "id": "c",
+            "texto": "Interview the development manager regarding the change procedure."
+          },
+          {
+            "id": "d",
+            "texto": "Review only changes classified as emergency changes."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 3,
+        "pregunta": "Una organización compra nuevas herramientas de TI sin comprobar si apoyan sus objetivos de negocio. ¿Qué medida atendería MEJOR el problema?",
+        "preguntaEn": "An organization acquires new IT tools without verifying whether they support business objectives. Which measure BEST addresses this issue?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Aumentar la frecuencia de copias de seguridad."
+          },
+          {
+            "id": "b",
+            "texto": "Integrar la planificación e inversión de TI con la estrategia de la organización."
+          },
+          {
+            "id": "c",
+            "texto": "Encargar todas las compras al administrador de sistemas."
+          },
+          {
+            "id": "d",
+            "texto": "Exigir que cada proveedor ofrezca soporte permanente."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Increase backup frequency."
+          },
+          {
+            "id": "b",
+            "texto": "Integrate IT planning and investment with organizational strategy."
+          },
+          {
+            "id": "c",
+            "texto": "Assign all procurement decisions to the systems administrator."
+          },
+          {
+            "id": "d",
+            "texto": "Require every vendor to provide 24/7 technical support."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 4,
+        "pregunta": "Un comité aprueba proyectos tecnológicos, pero nadie supervisa si entregan los beneficios esperados. ¿Cuál es la principal deficiencia?",
+        "preguntaEn": "A committee approves technology projects, but no one monitors whether they deliver expected benefits. What is the primary deficiency?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Falta de seguimiento de la generación de valor de las inversiones de TI."
+          },
+          {
+            "id": "b",
+            "texto": "Falta de cifrado en los sistemas utilizados por el comité."
+          },
+          {
+            "id": "c",
+            "texto": "Exceso de participación de la alta dirección."
+          },
+          {
+            "id": "d",
+            "texto": "Ausencia de pruebas de recuperación de desastres."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Lack of monitoring of value delivery from IT investments."
+          },
+          {
+            "id": "b",
+            "texto": "Lack of encryption in the systems used by the committee."
+          },
+          {
+            "id": "c",
+            "texto": "Excessive involvement of executive management."
+          },
+          {
+            "id": "d",
+            "texto": "Absence of disaster recovery testing."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 5,
+        "pregunta": "Durante el desarrollo de un sistema de matrículas, los usuarios detectan al final que no se contempló la anulación de una inscripción. ¿Qué control habría reducido MEJOR este riesgo?",
+        "preguntaEn": "During development of an enrollment system, users discover at the end that enrollment cancellation was omitted. Which control would have BEST reduced this risk?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Aumentar la capacidad del servidor antes de instalar el sistema."
+          },
+          {
+            "id": "b",
+            "texto": "Obtener la revisión y aprobación de los requisitos por los usuarios responsables."
+          },
+          {
+            "id": "c",
+            "texto": "Ejecutar pruebas de penetración antes del despliegue."
+          },
+          {
+            "id": "d",
+            "texto": "Permitir que el programador agregue funciones después de la entrega."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Increase server capacity prior to system deployment."
+          },
+          {
+            "id": "b",
+            "texto": "Obtain requirements review and sign-off by responsible business users."
+          },
+          {
+            "id": "c",
+            "texto": "Perform penetration testing prior to deployment."
+          },
+          {
+            "id": "d",
+            "texto": "Allow developers to add functionality after handover."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 6,
+        "pregunta": "Una institución migra los expedientes de sus alumnos a un sistema nuevo. ¿Cuál es la MEJOR evidencia de que la migración conservó los datos completos y correctos?",
+        "preguntaEn": "An institution migrates student records to a new system. What is the BEST evidence that migration preserved complete and accurate data?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "El nuevo sistema inicia sin mostrar errores."
+          },
+          {
+            "id": "b",
+            "texto": "Los usuarios recibieron capacitación."
+          },
+          {
+            "id": "c",
+            "texto": "Se conciliaron cantidades y totales clave entre el origen y el destino, investigando las diferencias."
+          },
+          {
+            "id": "d",
+            "texto": "El proveedor confirmó por correo que terminó la migración."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The new system boots without displaying errors."
+          },
+          {
+            "id": "b",
+            "texto": "Users received comprehensive operational training."
+          },
+          {
+            "id": "c",
+            "texto": "Reconciliation of key counts and totals between source and destination was performed and discrepancies investigated."
+          },
+          {
+            "id": "d",
+            "texto": "The vendor confirmed completion via email."
+          }
+        ],
+        "respuestaCorrectaId": "c",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 7,
+        "pregunta": "Una clínica necesita recuperar su sistema de atención tras una interrupción. Antes de decidir qué infraestructura contratar, ¿qué debería definir PRIMERO?",
+        "preguntaEn": "A clinic needs to recover its healthcare system after an outage. Before deciding what infrastructure to contract, what should be defined FIRST?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "La marca de los servidores de respaldo."
+          },
+          {
+            "id": "b",
+            "texto": "Los procesos críticos y sus necesidades de recuperación mediante un análisis de impacto en el negocio."
+          },
+          {
+            "id": "c",
+            "texto": "El número de técnicos que trabajarán de noche."
+          },
+          {
+            "id": "d",
+            "texto": "La frecuencia de actualización del antivirus."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The hardware brand of backup servers."
+          },
+          {
+            "id": "b",
+            "texto": "Critical business processes and recovery requirements through a business impact analysis."
+          },
+          {
+            "id": "c",
+            "texto": "The number of technicians on the night shift."
+          },
+          {
+            "id": "d",
+            "texto": "The antivirus definition update frequency."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 8,
+        "pregunta": "Una empresa ejecuta copias de seguridad diarias y recibe mensajes de «respaldo completado». ¿Qué prueba ofrece la evidencia MÁS sólida de que podrá recuperar el servicio?",
+        "preguntaEn": "An enterprise runs daily backups and receives 'backup completed' status logs. Which test provides the STRONGEST evidence that service can be recovered?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Comprobar que existe espacio libre en el almacenamiento."
+          },
+          {
+            "id": "b",
+            "texto": "Revisar que el programa de respaldo está instalado."
+          },
+          {
+            "id": "c",
+            "texto": "Restaurar periódicamente datos y verificar que sean utilizables."
+          },
+          {
+            "id": "d",
+            "texto": "Preguntar al administrador si conoce el procedimiento."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Verifying that free storage space exists on media."
+          },
+          {
+            "id": "b",
+            "texto": "Checking that backup software is properly installed."
+          },
+          {
+            "id": "c",
+            "texto": "Periodically restoring data and verifying that it is usable."
+          },
+          {
+            "id": "d",
+            "texto": "Asking the administrator if they know the procedure."
+          }
+        ],
+        "respuestaCorrectaId": "c",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 9,
+        "pregunta": "En un sistema financiero, cuatro administradores utilizan la misma cuenta privilegiada. ¿Cuál es el riesgo MÁS importante?",
+        "preguntaEn": "In a financial system, four administrators share the same privileged account. What is the MOST significant risk?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Aumentará el tiempo de inicio de sesión."
+          },
+          {
+            "id": "b",
+            "texto": "No será posible atribuir con confianza las acciones a cada persona."
+          },
+          {
+            "id": "c",
+            "texto": "Los usuarios tendrán que recordar más contraseñas."
+          },
+          {
+            "id": "d",
+            "texto": "El sistema necesitará más capacidad de almacenamiento."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Login time will increase."
+          },
+          {
+            "id": "b",
+            "texto": "Actions cannot be reliably attributed to individual users."
+          },
+          {
+            "id": "c",
+            "texto": "Users will need to memorize more passwords."
+          },
+          {
+            "id": "d",
+            "texto": "The system will require greater storage capacity."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 10,
+        "pregunta": "Una universidad permite acceso remoto a expedientes con datos personales. Ya utiliza contraseñas, pero se detectaron intentos de acceso con credenciales robadas. ¿Qué control reduciría MEJOR ese riesgo?",
+        "preguntaEn": "A university allows remote access to student records containing personal data. Passwords are used, but credential-stuffing attacks were detected. Which control BEST reduces this risk?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Autenticación multifactor para el acceso remoto."
+          },
+          {
+            "id": "b",
+            "texto": "Cambiar el nombre visible del portal."
+          },
+          {
+            "id": "c",
+            "texto": "Ampliar la capacidad de la base de datos."
+          },
+          {
+            "id": "d",
+            "texto": "Publicar las contraseñas en una intranet restringida."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Multi-factor authentication for remote access."
+          },
+          {
+            "id": "b",
+            "texto": "Changing the public portal URL name."
+          },
+          {
+            "id": "c",
+            "texto": "Expanding database storage capacity."
+          },
+          {
+            "id": "d",
+            "texto": "Publishing passwords on a restricted intranet."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      }
+    ],
+    "2": [
+      {
+        "id": 11,
+        "pregunta": "[Caso A: Cambios en entidad financiera] Un banco actualiza con frecuencia su sistema de créditos. Algunos cambios urgentes se aplican directamente en producción sin registrar siempre quién hizo el despliegue. Si el auditor busca cambios no autorizados, ¿cuál sería su MEJOR punto de partida?",
+        "preguntaEn": "[Case A: Financial Institution Changes] A bank frequently updates its credit processing system. Emergency changes are applied directly to production without consistent logs of deployers. If the auditor seeks unauthorized changes, what is the BEST starting point?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "La carpeta de solicitudes aprobadas."
+          },
+          {
+            "id": "b",
+            "texto": "El registro de cambios efectivamente aplicados en producción."
+          },
+          {
+            "id": "c",
+            "texto": "El presupuesto del proyecto."
+          },
+          {
+            "id": "d",
+            "texto": "Las actas de capacitación de usuarios."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The repository of approved change tickets."
+          },
+          {
+            "id": "b",
+            "texto": "The log of changes actually implemented in production."
+          },
+          {
+            "id": "c",
+            "texto": "The project budget sheet."
+          },
+          {
+            "id": "d",
+            "texto": "User training attendance logs."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 12,
+        "pregunta": "[Caso A: Cambios en entidad financiera] ¿Qué hallazgo representa el riesgo MÁS directo para la integridad del cálculo de créditos?",
+        "preguntaEn": "[Case A: Financial Institution Changes] Which finding represents the MOST direct risk to the integrity of credit calculations?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Los cambios urgentes no siempre tienen pruebas documentadas antes de su aplicación."
+          },
+          {
+            "id": "b",
+            "texto": "El equipo utiliza nombres cortos para las versiones."
+          },
+          {
+            "id": "c",
+            "texto": "La reunión semanal dura más de una hora."
+          },
+          {
+            "id": "d",
+            "texto": "Los usuarios solicitan nuevas funciones por correo."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Emergency changes lack documented testing prior to production release."
+          },
+          {
+            "id": "b",
+            "texto": "The team uses abbreviated version names."
+          },
+          {
+            "id": "c",
+            "texto": "The weekly status meeting exceeds one hour."
+          },
+          {
+            "id": "d",
+            "texto": "Users request new enhancements via email."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 13,
+        "pregunta": "[Caso A: Cambios en entidad financiera] El banco afirma que todos los cambios urgentes se revisan después de implementarlos. ¿Qué evidencia debería buscar el auditor?",
+        "preguntaEn": "[Case A: Financial Institution Changes] The bank asserts all emergency changes are reviewed post-implementation. What evidence should the auditor seek?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Una declaración verbal del jefe de desarrollo."
+          },
+          {
+            "id": "b",
+            "texto": "La política general de TI, aunque no incluya excepciones."
+          },
+          {
+            "id": "c",
+            "texto": "Registros de revisión posterior, aprobación y resolución de problemas para una muestra de cambios urgentes."
+          },
+          {
+            "id": "d",
+            "texto": "La lista de empleados del banco."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "A verbal statement from the development lead."
+          },
+          {
+            "id": "b",
+            "texto": "The general IT policy, even if silent on exceptions."
+          },
+          {
+            "id": "c",
+            "texto": "Post-implementation review records, approvals, and issue logs for a sample of emergency changes."
+          },
+          {
+            "id": "d",
+            "texto": "The corporate employee roster."
+          }
+        ],
+        "respuestaCorrectaId": "c",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 14,
+        "pregunta": "[Caso A: Cambios en entidad financiera] Un desarrollador puede programar, aprobar y desplegar por sí mismo un cambio. ¿Cuál es la MEJOR recomendación?",
+        "preguntaEn": "[Case A: Financial Institution Changes] A developer can code, approve, and deploy changes autonomously. What is the BEST recommendation?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Separar esas funciones o establecer una revisión independiente documentada cuando la separación no sea viable."
+          },
+          {
+            "id": "b",
+            "texto": "Permitirlo siempre que el desarrollador tenga experiencia."
+          },
+          {
+            "id": "c",
+            "texto": "Eliminar el registro de cambios para reducir demoras."
+          },
+          {
+            "id": "d",
+            "texto": "Revisar únicamente los cambios que produzcan una caída del sistema."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Segregate these functions or establish documented independent review when segregation is unfeasible."
+          },
+          {
+            "id": "b",
+            "texto": "Permit it provided the developer has sufficient seniority."
+          },
+          {
+            "id": "c",
+            "texto": "Eliminate change logging to minimize deployment latency."
+          },
+          {
+            "id": "d",
+            "texto": "Review only changes that result in unexpected system outages."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 15,
+        "pregunta": "[Caso B: Servicios tercerizados] Una clínica utiliza un proveedor en la nube para historias clínicas. No ha definido tolerancia a caídas ni pérdida de datos. ¿Qué debería hacer la clínica PRIMERO para establecer requisitos de recuperación adecuados?",
+        "preguntaEn": "[Case B: Outsourced Services] A clinic uses a cloud provider for electronic health records without defining tolerated downtime or data loss thresholds. What should the clinic do FIRST to establish recovery targets?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Comprar otro servicio de respaldo inmediatamente."
+          },
+          {
+            "id": "b",
+            "texto": "Realizar un análisis de impacto en el negocio con los responsables de los procesos clínicos."
+          },
+          {
+            "id": "c",
+            "texto": "Aceptar los tiempos de recuperación que ofrece el proveedor por defecto."
+          },
+          {
+            "id": "d",
+            "texto": "Aumentar el número de cuentas de administrador."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Contract an additional backup provider immediately."
+          },
+          {
+            "id": "b",
+            "texto": "Conduct a business impact analysis with clinical process owners."
+          },
+          {
+            "id": "c",
+            "texto": "Accept the default vendor recovery timeframes."
+          },
+          {
+            "id": "d",
+            "texto": "Increase the number of administrative accounts."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 16,
+        "pregunta": "[Caso B: Servicios tercerizados] ¿Qué información permitiría evaluar MEJOR si el servicio contratado cubre las necesidades de recuperación?",
+        "preguntaEn": "[Case B: Outsourced Services] Which information would BEST assess whether contracted cloud services meet recovery needs?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Los objetivos de tiempo y punto de recuperación definidos por la clínica, comparados con los compromisos y capacidades comprobadas del proveedor."
+          },
+          {
+            "id": "b",
+            "texto": "La cantidad de clientes que tiene el proveedor."
+          },
+          {
+            "id": "c",
+            "texto": "El precio mensual del servicio."
+          },
+          {
+            "id": "d",
+            "texto": "La ubicación de la oficina comercial del proveedor."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "RTO and RPO defined by the clinic compared against contracted and demonstrated vendor capabilities."
+          },
+          {
+            "id": "b",
+            "texto": "The total customer count of the cloud provider."
+          },
+          {
+            "id": "c",
+            "texto": "The monthly subscription cost."
+          },
+          {
+            "id": "d",
+            "texto": "The physical address of the vendor sales office."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 17,
+        "pregunta": "[Caso B: Servicios tercerizados] El proveedor entrega informes que indican que los respaldos terminaron correctamente. ¿Qué debería solicitar el auditor para comprobar su utilidad?",
+        "preguntaEn": "[Case B: Outsourced Services] The vendor provides logs stating backups completed successfully. What should the auditor request to confirm their utility?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Una demostración o evidencia de pruebas de restauración satisfactorias."
+          },
+          {
+            "id": "b",
+            "texto": "Una copia del logotipo del proveedor."
+          },
+          {
+            "id": "c",
+            "texto": "El listado de precios del próximo año."
+          },
+          {
+            "id": "d",
+            "texto": "Una explicación oral de cómo funciona la nube."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Demonstration or evidence of successful restoration test results."
+          },
+          {
+            "id": "b",
+            "texto": "A certified copy of the vendor corporate logo."
+          },
+          {
+            "id": "c",
+            "texto": "Next year upcoming pricing sheet."
+          },
+          {
+            "id": "d",
+            "texto": "An oral overview of cloud architecture."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 18,
+        "pregunta": "[Caso C: Cuentas universitarias] Una revisión encontró cuentas activas de ex trabajadores y permisos que algunos empleados conservaron tras cambiar de puesto. ¿Qué situación requiere la atención MÁS inmediata?",
+        "preguntaEn": "[Case C: University Accounts] An audit revealed active accounts of terminated staff and lingering privileges after role transfers. Which situation warrants the MOST immediate attention?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Cuentas de ex trabajadores que todavía permiten ingresar."
+          },
+          {
+            "id": "b",
+            "texto": "Que cada área utilice nombres diferentes para sus puestos."
+          },
+          {
+            "id": "c",
+            "texto": "Que las contraseñas tengan distinta longitud entre usuarios."
+          },
+          {
+            "id": "d",
+            "texto": "Que el formulario de contratación tenga muchas páginas."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Active accounts belonging to terminated employees that still permit logon."
+          },
+          {
+            "id": "b",
+            "texto": "Inconsistent job title naming conventions across academic departments."
+          },
+          {
+            "id": "c",
+            "texto": "Varying password lengths among individual user accounts."
+          },
+          {
+            "id": "d",
+            "texto": "Excessive page length of HR onboarding forms."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 19,
+        "pregunta": "[Caso C: Cuentas universitarias] ¿Qué control ayudaría MEJOR a evitar que el problema de cuentas huérfanas y permisos acumulados reaparezca?",
+        "preguntaEn": "[Case C: University Accounts] Which control would BEST prevent orphaned accounts and privilege creep from recurring?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Un proceso oportuno y verificable que vincule las altas, los cambios de puesto y las bajas de Recursos Humanos con la modificación de accesos."
+          },
+          {
+            "id": "b",
+            "texto": "Pedir a cada trabajador que avise cuando quiera cerrar su cuenta."
+          },
+          {
+            "id": "c",
+            "texto": "Revisar los accesos solo cuando ocurra un incidente."
+          },
+          {
+            "id": "d",
+            "texto": "Crear una cuenta compartida para cada facultad."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "A timely, auditable process linking HR onboarding, transfers, and terminations with access management changes."
+          },
+          {
+            "id": "b",
+            "texto": "Instructing departing staff to notify IT when closing their accounts."
+          },
+          {
+            "id": "c",
+            "texto": "Reviewing user permissions only after an unauthorized access incident."
+          },
+          {
+            "id": "d",
+            "texto": "Creating shared departmental generic accounts."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 20,
+        "pregunta": "[Caso C: Cuentas universitarias] Para verificar si los permisos corresponden a las funciones actuales, ¿quién debería participar principalmente en su revisión periódica?",
+        "preguntaEn": "[Case C: University Accounts] To verify that access permissions align with current job roles, who should primarily participate in periodic user access reviews?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Los responsables de las áreas o propietarios de la información, con apoyo de TI."
+          },
+          {
+            "id": "b",
+            "texto": "Solo el proveedor de internet."
+          },
+          {
+            "id": "c",
+            "texto": "Únicamente los propios usuarios, sin validación adicional."
+          },
+          {
+            "id": "d",
+            "texto": "El personal encargado del mantenimiento de equipos."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Business unit managers or information asset owners, supported by IT."
+          },
+          {
+            "id": "b",
+            "texto": "The corporate internet service provider."
+          },
+          {
+            "id": "c",
+            "texto": "End users themselves without supervisory validation."
+          },
+          {
+            "id": "d",
+            "texto": "Hardware maintenance facility technicians."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      }
+    ],
+    "3": [
+      {
+        "id": 1,
+        "pregunta": "Una empresa creció rápidamente y el auditor debe elaborar su plan anual. Existen informes de auditorías anteriores, pero no una evaluación reciente de riesgos de TI. ¿Qué debería hacer PRIMERO?",
+        "preguntaEn": "An enterprise grew rapidly and the auditor must prepare its annual plan. Previous audit reports exist, but no recent IT risk assessment is available. What should the auditor do FIRST?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Repetir las pruebas que detectaron más errores el año anterior."
+          },
+          {
+            "id": "b",
+            "texto": "Evaluar los riesgos de TI para establecer prioridades."
+          },
+          {
+            "id": "c",
+            "texto": "Solicitar a gerencia una lista de controles que desea revisar."
+          },
+          {
+            "id": "d",
+            "texto": "Seleccionar una muestra de transacciones críticas."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Repeat the tests that detected the most exceptions in the prior year."
+          },
+          {
+            "id": "b",
+            "texto": "Perform an IT risk assessment to establish priorities."
+          },
+          {
+            "id": "c",
+            "texto": "Request from management a list of controls they want reviewed."
+          },
+          {
+            "id": "d",
+            "texto": "Select a sample of critical transactions."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 2,
+        "pregunta": "El auditor quiere comprobar si todos los cambios realizados en producción fueron autorizados. ¿Cuál es la mejor forma de seleccionar la muestra?",
+        "preguntaEn": "The auditor wants to verify whether all changes made in production were authorized. What is the best method to select the sample?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Tomar solicitudes de cambio aprobadas y verificar sus firmas."
+          },
+          {
+            "id": "b",
+            "texto": "Tomar cambios registrados en producción y rastrearlos hasta su autorización."
+          },
+          {
+            "id": "c",
+            "texto": "Entrevistar al responsable de desarrollo sobre el procedimiento."
+          },
+          {
+            "id": "d",
+            "texto": "Revisar únicamente los cambios clasificados como urgentes."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Select approved change requests and verify signatures."
+          },
+          {
+            "id": "b",
+            "texto": "Sample changes recorded in production and trace them back to their authorization."
+          },
+          {
+            "id": "c",
+            "texto": "Interview the development manager regarding the change procedure."
+          },
+          {
+            "id": "d",
+            "texto": "Review only changes classified as emergency changes."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 3,
+        "pregunta": "Una organización compra nuevas herramientas de TI sin comprobar si apoyan sus objetivos de negocio. ¿Qué medida atendería MEJOR el problema?",
+        "preguntaEn": "An organization acquires new IT tools without verifying whether they support business objectives. Which measure BEST addresses this issue?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Aumentar la frecuencia de copias de seguridad."
+          },
+          {
+            "id": "b",
+            "texto": "Integrar la planificación e inversión de TI con la estrategia de la organización."
+          },
+          {
+            "id": "c",
+            "texto": "Encargar todas las compras al administrador de sistemas."
+          },
+          {
+            "id": "d",
+            "texto": "Exigir que cada proveedor ofrezca soporte permanente."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Increase backup frequency."
+          },
+          {
+            "id": "b",
+            "texto": "Integrate IT planning and investment with organizational strategy."
+          },
+          {
+            "id": "c",
+            "texto": "Assign all procurement decisions to the systems administrator."
+          },
+          {
+            "id": "d",
+            "texto": "Require every vendor to provide 24/7 technical support."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 4,
+        "pregunta": "Un comité aprueba proyectos tecnológicos, pero nadie supervisa si entregan los beneficios esperados. ¿Cuál es la principal deficiencia?",
+        "preguntaEn": "A committee approves technology projects, but no one monitors whether they deliver expected benefits. What is the primary deficiency?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Falta de seguimiento de la generación de valor de las inversiones de TI."
+          },
+          {
+            "id": "b",
+            "texto": "Falta de cifrado en los sistemas utilizados por el comité."
+          },
+          {
+            "id": "c",
+            "texto": "Exceso de participación de la alta dirección."
+          },
+          {
+            "id": "d",
+            "texto": "Ausencia de pruebas de recuperación de desastres."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Lack of monitoring of value delivery from IT investments."
+          },
+          {
+            "id": "b",
+            "texto": "Lack of encryption in the systems used by the committee."
+          },
+          {
+            "id": "c",
+            "texto": "Excessive involvement of executive management."
+          },
+          {
+            "id": "d",
+            "texto": "Absence of disaster recovery testing."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 5,
+        "pregunta": "Durante el desarrollo de un sistema de matrículas, los usuarios detectan al final que no se contempló la anulación de una inscripción. ¿Qué control habría reducido MEJOR este riesgo?",
+        "preguntaEn": "During development of an enrollment system, users discover at the end that enrollment cancellation was omitted. Which control would have BEST reduced this risk?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Aumentar la capacidad del servidor antes de instalar el sistema."
+          },
+          {
+            "id": "b",
+            "texto": "Obtener la revisión y aprobación de los requisitos por los usuarios responsables."
+          },
+          {
+            "id": "c",
+            "texto": "Ejecutar pruebas de penetración antes del despliegue."
+          },
+          {
+            "id": "d",
+            "texto": "Permitir que el programador agregue funciones después de la entrega."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Increase server capacity prior to system deployment."
+          },
+          {
+            "id": "b",
+            "texto": "Obtain requirements review and sign-off by responsible business users."
+          },
+          {
+            "id": "c",
+            "texto": "Perform penetration testing prior to deployment."
+          },
+          {
+            "id": "d",
+            "texto": "Allow developers to add functionality after handover."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 6,
+        "pregunta": "Una institución migra los expedientes de sus alumnos a un sistema nuevo. ¿Cuál es la MEJOR evidencia de que la migración conservó los datos completos y correctos?",
+        "preguntaEn": "An institution migrates student records to a new system. What is the BEST evidence that migration preserved complete and accurate data?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "El nuevo sistema inicia sin mostrar errores."
+          },
+          {
+            "id": "b",
+            "texto": "Los usuarios recibieron capacitación."
+          },
+          {
+            "id": "c",
+            "texto": "Se conciliaron cantidades y totales clave entre el origen y el destino, investigando las diferencias."
+          },
+          {
+            "id": "d",
+            "texto": "El proveedor confirmó por correo que terminó la migración."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The new system boots without displaying errors."
+          },
+          {
+            "id": "b",
+            "texto": "Users received comprehensive operational training."
+          },
+          {
+            "id": "c",
+            "texto": "Reconciliation of key counts and totals between source and destination was performed and discrepancies investigated."
+          },
+          {
+            "id": "d",
+            "texto": "The vendor confirmed completion via email."
+          }
+        ],
+        "respuestaCorrectaId": "c",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 7,
+        "pregunta": "Una clínica necesita recuperar su sistema de atención tras una interrupción. Antes de decidir qué infraestructura contratar, ¿qué debería definir PRIMERO?",
+        "preguntaEn": "A clinic needs to recover its healthcare system after an outage. Before deciding what infrastructure to contract, what should be defined FIRST?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "La marca de los servidores de respaldo."
+          },
+          {
+            "id": "b",
+            "texto": "Los procesos críticos y sus necesidades de recuperación mediante un análisis de impacto en el negocio."
+          },
+          {
+            "id": "c",
+            "texto": "El número de técnicos que trabajarán de noche."
+          },
+          {
+            "id": "d",
+            "texto": "La frecuencia de actualización del antivirus."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The hardware brand of backup servers."
+          },
+          {
+            "id": "b",
+            "texto": "Critical business processes and recovery requirements through a business impact analysis."
+          },
+          {
+            "id": "c",
+            "texto": "The number of technicians on the night shift."
+          },
+          {
+            "id": "d",
+            "texto": "The antivirus definition update frequency."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 8,
+        "pregunta": "Una empresa ejecuta copias de seguridad diarias y recibe mensajes de «respaldo completado». ¿Qué prueba ofrece la evidencia MÁS sólida de que podrá recuperar el servicio?",
+        "preguntaEn": "An enterprise runs daily backups and receives 'backup completed' status logs. Which test provides the STRONGEST evidence that service can be recovered?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Comprobar que existe espacio libre en el almacenamiento."
+          },
+          {
+            "id": "b",
+            "texto": "Revisar que el programa de respaldo está instalado."
+          },
+          {
+            "id": "c",
+            "texto": "Restaurar periódicamente datos y verificar que sean utilizables."
+          },
+          {
+            "id": "d",
+            "texto": "Preguntar al administrador si conoce el procedimiento."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Verifying that free storage space exists on media."
+          },
+          {
+            "id": "b",
+            "texto": "Checking that backup software is properly installed."
+          },
+          {
+            "id": "c",
+            "texto": "Periodically restoring data and verifying that it is usable."
+          },
+          {
+            "id": "d",
+            "texto": "Asking the administrator if they know the procedure."
+          }
+        ],
+        "respuestaCorrectaId": "c",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 9,
+        "pregunta": "En un sistema financiero, cuatro administradores utilizan la misma cuenta privilegiada. ¿Cuál es el riesgo MÁS importante?",
+        "preguntaEn": "In a financial system, four administrators share the same privileged account. What is the MOST significant risk?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Aumentará el tiempo de inicio de sesión."
+          },
+          {
+            "id": "b",
+            "texto": "No será posible atribuir con confianza las acciones a cada persona."
+          },
+          {
+            "id": "c",
+            "texto": "Los usuarios tendrán que recordar más contraseñas."
+          },
+          {
+            "id": "d",
+            "texto": "El sistema necesitará más capacidad de almacenamiento."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Login time will increase."
+          },
+          {
+            "id": "b",
+            "texto": "Actions cannot be reliably attributed to individual users."
+          },
+          {
+            "id": "c",
+            "texto": "Users will need to memorize more passwords."
+          },
+          {
+            "id": "d",
+            "texto": "The system will require greater storage capacity."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 10,
+        "pregunta": "Una universidad permite acceso remoto a expedientes con datos personales. Ya utiliza contraseñas, pero se detectaron intentos de acceso con credenciales robadas. ¿Qué control reduciría MEJOR ese riesgo?",
+        "preguntaEn": "A university allows remote access to student records containing personal data. Passwords are used, but credential-stuffing attacks were detected. Which control BEST reduces this risk?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Autenticación multifactor para el acceso remoto."
+          },
+          {
+            "id": "b",
+            "texto": "Cambiar el nombre visible del portal."
+          },
+          {
+            "id": "c",
+            "texto": "Ampliar la capacidad de la base de datos."
+          },
+          {
+            "id": "d",
+            "texto": "Publicar las contraseñas en una intranet restringida."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Multi-factor authentication for remote access."
+          },
+          {
+            "id": "b",
+            "texto": "Changing the public portal URL name."
+          },
+          {
+            "id": "c",
+            "texto": "Expanding database storage capacity."
+          },
+          {
+            "id": "d",
+            "texto": "Publishing passwords on a restricted intranet."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 11,
+        "pregunta": "[Caso A: Cambios en entidad financiera] Un banco actualiza con frecuencia su sistema de créditos. Algunos cambios urgentes se aplican directamente en producción sin registrar siempre quién hizo el despliegue. Si el auditor busca cambios no autorizados, ¿cuál sería su MEJOR punto de partida?",
+        "preguntaEn": "[Case A: Financial Institution Changes] A bank frequently updates its credit processing system. Emergency changes are applied directly to production without consistent logs of deployers. If the auditor seeks unauthorized changes, what is the BEST starting point?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "La carpeta de solicitudes aprobadas."
+          },
+          {
+            "id": "b",
+            "texto": "El registro de cambios efectivamente aplicados en producción."
+          },
+          {
+            "id": "c",
+            "texto": "El presupuesto del proyecto."
+          },
+          {
+            "id": "d",
+            "texto": "Las actas de capacitación de usuarios."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The repository of approved change tickets."
+          },
+          {
+            "id": "b",
+            "texto": "The log of changes actually implemented in production."
+          },
+          {
+            "id": "c",
+            "texto": "The project budget sheet."
+          },
+          {
+            "id": "d",
+            "texto": "User training attendance logs."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 12,
+        "pregunta": "[Caso A: Cambios en entidad financiera] ¿Qué hallazgo representa el riesgo MÁS directo para la integridad del cálculo de créditos?",
+        "preguntaEn": "[Case A: Financial Institution Changes] Which finding represents the MOST direct risk to the integrity of credit calculations?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Los cambios urgentes no siempre tienen pruebas documentadas antes de su aplicación."
+          },
+          {
+            "id": "b",
+            "texto": "El equipo utiliza nombres cortos para las versiones."
+          },
+          {
+            "id": "c",
+            "texto": "La reunión semanal dura más de una hora."
+          },
+          {
+            "id": "d",
+            "texto": "Los usuarios solicitan nuevas funciones por correo."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Emergency changes lack documented testing prior to production release."
+          },
+          {
+            "id": "b",
+            "texto": "The team uses abbreviated version names."
+          },
+          {
+            "id": "c",
+            "texto": "The weekly status meeting exceeds one hour."
+          },
+          {
+            "id": "d",
+            "texto": "Users request new enhancements via email."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 13,
+        "pregunta": "[Caso A: Cambios en entidad financiera] El banco afirma que todos los cambios urgentes se revisan después de implementarlos. ¿Qué evidencia debería buscar el auditor?",
+        "preguntaEn": "[Case A: Financial Institution Changes] The bank asserts all emergency changes are reviewed post-implementation. What evidence should the auditor seek?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Una declaración verbal del jefe de desarrollo."
+          },
+          {
+            "id": "b",
+            "texto": "La política general de TI, aunque no incluya excepciones."
+          },
+          {
+            "id": "c",
+            "texto": "Registros de revisión posterior, aprobación y resolución de problemas para una muestra de cambios urgentes."
+          },
+          {
+            "id": "d",
+            "texto": "La lista de empleados del banco."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "A verbal statement from the development lead."
+          },
+          {
+            "id": "b",
+            "texto": "The general IT policy, even if silent on exceptions."
+          },
+          {
+            "id": "c",
+            "texto": "Post-implementation review records, approvals, and issue logs for a sample of emergency changes."
+          },
+          {
+            "id": "d",
+            "texto": "The corporate employee roster."
+          }
+        ],
+        "respuestaCorrectaId": "c",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 14,
+        "pregunta": "[Caso A: Cambios en entidad financiera] Un desarrollador puede programar, aprobar y desplegar por sí mismo un cambio. ¿Cuál es la MEJOR recomendación?",
+        "preguntaEn": "[Case A: Financial Institution Changes] A developer can code, approve, and deploy changes autonomously. What is the BEST recommendation?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Separar esas funciones o establecer una revisión independiente documentada cuando la separación no sea viable."
+          },
+          {
+            "id": "b",
+            "texto": "Permitirlo siempre que el desarrollador tenga experiencia."
+          },
+          {
+            "id": "c",
+            "texto": "Eliminar el registro de cambios para reducir demoras."
+          },
+          {
+            "id": "d",
+            "texto": "Revisar únicamente los cambios que produzcan una caída del sistema."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Segregate these functions or establish documented independent review when segregation is unfeasible."
+          },
+          {
+            "id": "b",
+            "texto": "Permit it provided the developer has sufficient seniority."
+          },
+          {
+            "id": "c",
+            "texto": "Eliminate change logging to minimize deployment latency."
+          },
+          {
+            "id": "d",
+            "texto": "Review only changes that result in unexpected system outages."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 15,
+        "pregunta": "[Caso B: Servicios tercerizados] Una clínica utiliza un proveedor en la nube para historias clínicas. No ha definido tolerancia a caídas ni pérdida de datos. ¿Qué debería hacer la clínica PRIMERO para establecer requisitos de recuperación adecuados?",
+        "preguntaEn": "[Case B: Outsourced Services] A clinic uses a cloud provider for electronic health records without defining tolerated downtime or data loss thresholds. What should the clinic do FIRST to establish recovery targets?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Comprar otro servicio de respaldo inmediatamente."
+          },
+          {
+            "id": "b",
+            "texto": "Realizar un análisis de impacto en el negocio con los responsables de los procesos clínicos."
+          },
+          {
+            "id": "c",
+            "texto": "Aceptar los tiempos de recuperación que ofrece el proveedor por defecto."
+          },
+          {
+            "id": "d",
+            "texto": "Aumentar el número de cuentas de administrador."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Contract an additional backup provider immediately."
+          },
+          {
+            "id": "b",
+            "texto": "Conduct a business impact analysis with clinical process owners."
+          },
+          {
+            "id": "c",
+            "texto": "Accept the default vendor recovery timeframes."
+          },
+          {
+            "id": "d",
+            "texto": "Increase the number of administrative accounts."
+          }
+        ],
+        "respuestaCorrectaId": "b",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 16,
+        "pregunta": "[Caso B: Servicios tercerizados] ¿Qué información permitiría evaluar MEJOR si el servicio contratado cubre las necesidades de recuperación?",
+        "preguntaEn": "[Case B: Outsourced Services] Which information would BEST assess whether contracted cloud services meet recovery needs?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Los objetivos de tiempo y punto de recuperación definidos por la clínica, comparados con los compromisos y capacidades comprobadas del proveedor."
+          },
+          {
+            "id": "b",
+            "texto": "La cantidad de clientes que tiene el proveedor."
+          },
+          {
+            "id": "c",
+            "texto": "El precio mensual del servicio."
+          },
+          {
+            "id": "d",
+            "texto": "La ubicación de la oficina comercial del proveedor."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "RTO and RPO defined by the clinic compared against contracted and demonstrated vendor capabilities."
+          },
+          {
+            "id": "b",
+            "texto": "The total customer count of the cloud provider."
+          },
+          {
+            "id": "c",
+            "texto": "The monthly subscription cost."
+          },
+          {
+            "id": "d",
+            "texto": "The physical address of the vendor sales office."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 17,
+        "pregunta": "[Caso B: Servicios tercerizados] El proveedor entrega informes que indican que los respaldos terminaron correctamente. ¿Qué debería solicitar el auditor para comprobar su utilidad?",
+        "preguntaEn": "[Case B: Outsourced Services] The vendor provides logs stating backups completed successfully. What should the auditor request to confirm their utility?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Una demostración o evidencia de pruebas de restauración satisfactorias."
+          },
+          {
+            "id": "b",
+            "texto": "Una copia del logotipo del proveedor."
+          },
+          {
+            "id": "c",
+            "texto": "El listado de precios del próximo año."
+          },
+          {
+            "id": "d",
+            "texto": "Una explicación oral de cómo funciona la nube."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Demonstration or evidence of successful restoration test results."
+          },
+          {
+            "id": "b",
+            "texto": "A certified copy of the vendor corporate logo."
+          },
+          {
+            "id": "c",
+            "texto": "Next year upcoming pricing sheet."
+          },
+          {
+            "id": "d",
+            "texto": "An oral overview of cloud architecture."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 18,
+        "pregunta": "[Caso C: Cuentas universitarias] Una revisión encontró cuentas activas de ex trabajadores y permisos que algunos empleados conservaron tras cambiar de puesto. ¿Qué situación requiere la atención MÁS inmediata?",
+        "preguntaEn": "[Case C: University Accounts] An audit revealed active accounts of terminated staff and lingering privileges after role transfers. Which situation warrants the MOST immediate attention?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Cuentas de ex trabajadores que todavía permiten ingresar."
+          },
+          {
+            "id": "b",
+            "texto": "Que cada área utilice nombres diferentes para sus puestos."
+          },
+          {
+            "id": "c",
+            "texto": "Que las contraseñas tengan distinta longitud entre usuarios."
+          },
+          {
+            "id": "d",
+            "texto": "Que el formulario de contratación tenga muchas páginas."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Active accounts belonging to terminated employees that still permit logon."
+          },
+          {
+            "id": "b",
+            "texto": "Inconsistent job title naming conventions across academic departments."
+          },
+          {
+            "id": "c",
+            "texto": "Varying password lengths among individual user accounts."
+          },
+          {
+            "id": "d",
+            "texto": "Excessive page length of HR onboarding forms."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 19,
+        "pregunta": "[Caso C: Cuentas universitarias] ¿Qué control ayudaría MEJOR a evitar que el problema de cuentas huérfanas y permisos acumulados reaparezca?",
+        "preguntaEn": "[Case C: University Accounts] Which control would BEST prevent orphaned accounts and privilege creep from recurring?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Un proceso oportuno y verificable que vincule las altas, los cambios de puesto y las bajas de Recursos Humanos con la modificación de accesos."
+          },
+          {
+            "id": "b",
+            "texto": "Pedir a cada trabajador que avise cuando quiera cerrar su cuenta."
+          },
+          {
+            "id": "c",
+            "texto": "Revisar los accesos solo cuando ocurra un incidente."
+          },
+          {
+            "id": "d",
+            "texto": "Crear una cuenta compartida para cada facultad."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "A timely, auditable process linking HR onboarding, transfers, and terminations with access management changes."
+          },
+          {
+            "id": "b",
+            "texto": "Instructing departing staff to notify IT when closing their accounts."
+          },
+          {
+            "id": "c",
+            "texto": "Reviewing user permissions only after an unauthorized access incident."
+          },
+          {
+            "id": "d",
+            "texto": "Creating shared departmental generic accounts."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      },
+      {
+        "id": 20,
+        "pregunta": "[Caso C: Cuentas universitarias] Para verificar si los permisos corresponden a las funciones actuales, ¿quién debería participar principalmente en su revisión periódica?",
+        "preguntaEn": "[Case C: University Accounts] To verify that access permissions align with current job roles, who should primarily participate in periodic user access reviews?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Los responsables de las áreas o propietarios de la información, con apoyo de TI."
+          },
+          {
+            "id": "b",
+            "texto": "Solo el proveedor de internet."
+          },
+          {
+            "id": "c",
+            "texto": "Únicamente los propios usuarios, sin validación adicional."
+          },
+          {
+            "id": "d",
+            "texto": "El personal encargado del mantenimiento de equipos."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Business unit managers or information asset owners, supported by IT."
+          },
+          {
+            "id": "b",
+            "texto": "The corporate internet service provider."
+          },
+          {
+            "id": "c",
+            "texto": "End users themselves without supervisory validation."
+          },
+          {
+            "id": "d",
+            "texto": "Hardware maintenance facility technicians."
+          }
+        ],
+        "respuestaCorrectaId": "a",
+        "justificacion": "",
+        "justificacionEn": ""
+      }
+    ]
   }
 };
 
@@ -7031,6 +8821,7 @@ const DOM = {
   btnCasos:              document.getElementById('btn-seccion-casos'),
   btnDeepseek:           document.getElementById('btn-seccion-deepseek'),
   btnGemini:             document.getElementById('btn-seccion-gemini'),
+  btnGpt:                document.getElementById('btn-seccion-gpt'),
   subsectionTitle:       document.getElementById('subsection-title'),
   subsectionGrid:        document.getElementById('subsection-grid'),
   btnBackToStart:        document.getElementById('btn-back-to-start'),
@@ -7360,6 +9151,7 @@ function init() {
   DOM.btnCasos.addEventListener('click',    () => mostrarSubsecciones('casos'));
   if (DOM.btnDeepseek) DOM.btnDeepseek.addEventListener('click', () => mostrarSubsecciones('deepseek'));
   if (DOM.btnGemini)   DOM.btnGemini.addEventListener('click',   () => mostrarSubsecciones('gemini'));
+  if (DOM.btnGpt)      DOM.btnGpt.addEventListener('click',      () => mostrarSubsecciones('gpt'));
   DOM.btnBackToStart.addEventListener('click', () => showScreen(DOM.screenStart));
   DOM.btnNext.addEventListener('click', siguientePregunta);
   DOM.btnRestart.addEventListener('click', reiniciarCuestionario);

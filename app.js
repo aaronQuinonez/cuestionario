@@ -34,7 +34,7 @@ const TRANSLATIONS = {
     randomModeTitle:   'Modo Aleatorio',
     randomModeDesc:    'Mezcla las alternativas en cada pregunta',
     randomBadge:       '🔀 Aleatorio',
-    reorderNotice:     '🔄 Opciones reordenadas (A-D) sincronizadas con la justificación',
+    reorderNotice:     '🔄 Opciones sincronizadas en su orden original con la justificación',
     score0:  ['📚', '¡Sigue estudiando!',  'No te rindas, cada intento te acerca más al dominio del tema.'],
     score40: ['👍', '¡Buen esfuerzo!',     'Vas por buen camino. Repasa las preguntas que fallaste.'],
     score70: ['🌟', '¡Muy bien!',          'Casi perfecto. Revisa las respuestas incorrectas para alcanzar el 100%.'],
@@ -68,6 +68,15 @@ const TRANSLATIONS = {
           2: 'Parte 2: Casos de Estudio (11 - 20)',
           3: 'Examen Completo (20 preguntas)'
         }
+      },
+      multiples: {
+        label: 'Opciones Múltiples',
+        emoji: '☑️',
+        subLabels: {
+          1: 'Capítulo 1: Proceso de Auditoría de SI (1 - 10)',
+          2: 'Capítulo 2: Gobernanza y Gestión de TI (11 - 20)',
+          3: 'Simulacro Parcial Completo (20 preguntas)'
+        }
       }
     },
     deepseekLabel:     'Banco DeepSeek',
@@ -75,7 +84,13 @@ const TRANSLATIONS = {
     geminiLabel:       'Banco Gemini',
     geminiCount:       '20 preguntas',
     gptLabel:          'Banco GPT',
-    gptCount:          '20 preguntas'
+    gptCount:          '20 preguntas',
+    multiplesLabel:    'Opciones Múltiples',
+    multiplesCount:    '20 preguntas (A-F)',
+    multiBadge:        '☑️ Selección Múltiple',
+    multiInstruction:  'Marca de 2 a 5 opciones correctas:',
+    submitMultiBtn:    'Confirmar respuestas',
+    missedOptionTag:   '(Correcta omitida)'
   },
   en: {
     appTitle:          'Interactive<br>Quiz',
@@ -102,7 +117,7 @@ const TRANSLATIONS = {
     randomModeTitle:   'Shuffle Mode',
     randomModeDesc:    'Shuffles alternatives on each question',
     randomBadge:       '🔀 Shuffled',
-    reorderNotice:     '🔄 Options reordered (A-D) synchronized with justification',
+    reorderNotice:     '🔄 Options synchronized in original order with justification',
     score0:  ['📚', 'Keep studying!',    "Don't give up, each attempt brings you closer to mastering the topic."],
     score40: ['👍', 'Good effort!',      "You're on the right track. Review the questions you got wrong."],
     score70: ['🌟', 'Well done!',        'Almost perfect. Review incorrect answers to reach 100%.'],
@@ -136,6 +151,15 @@ const TRANSLATIONS = {
           2: 'Part 2: Case Studies (11 - 20)',
           3: 'Full Exam (20 questions)'
         }
+      },
+      multiples: {
+        label: 'Multiple Choice',
+        emoji: '☑️',
+        subLabels: {
+          1: 'Chapter 1: IS Audit Process (1 - 10)',
+          2: 'Chapter 2: IT Governance & Management (11 - 20)',
+          3: 'Full Midterm Mock Exam (20 questions)'
+        }
       }
     },
     deepseekLabel:     'DeepSeek Bank',
@@ -143,7 +167,13 @@ const TRANSLATIONS = {
     geminiLabel:       'Gemini Bank',
     geminiCount:       '20 questions',
     gptLabel:          'GPT Bank',
-    gptCount:          '20 questions'
+    gptCount:          '20 questions',
+    multiplesLabel:    'Multiple Choice',
+    multiplesCount:    '20 questions (A-F)',
+    multiBadge:        '☑️ Multiple Selection',
+    multiInstruction:  'Select 2 to 5 correct options:',
+    submitMultiBtn:    'Confirm answers',
+    missedOptionTag:   '(Missed correct option)'
   }
 };
 
@@ -207,8 +237,16 @@ function applyLanguage(lang) {
         const alt = alts.find(a => a.id === btn.dataset.id);
         if (alt) {
           const span = btn.querySelector('.alternative-text');
-          if (span) span.textContent = alt.texto;
-          btn.setAttribute('aria-label', `${currentLang === 'en' ? 'Option' : 'Opción'} ${alt.id.toUpperCase()}: ${alt.texto}`);
+          if (span) {
+            span.textContent = alt.texto;
+            if (btn.classList.contains('alternative-btn--missed')) {
+              const tag = document.createElement('span');
+              tag.className = 'alt-tag-missed';
+              tag.textContent = t('missedOptionTag') || '(Correcta omitida)';
+              span.appendChild(tag);
+            }
+          }
+          btn.setAttribute('aria-label', `${currentLang === 'en' ? 'Option' : 'Opción'} ${btn.dataset.letter || alt.id.toUpperCase()}: ${alt.texto}`);
         }
       });
 
@@ -8784,6 +8822,2656 @@ const BANCO_PREGUNTAS = {
         "justificacionEn": ""
       }
     ]
+  },
+  "multiples": {
+    "1": [
+      {
+        "id": 1,
+        "tipo": "multiple",
+        "pregunta": "Respecto al Estatuto de Auditoría (Audit Charter) según las directrices de ISACA, ¿cuáles afirmaciones son CORRECTAS?",
+        "preguntaEn": "Regarding the Audit Charter according to ISACA guidelines, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Define la autoridad, alcance global y responsabilidades del auditor de SI."
+          },
+          {
+            "id": "b",
+            "texto": "Debe ser aprobado formalmente por el Comité de Auditoría o la Junta Directiva."
+          },
+          {
+            "id": "c",
+            "texto": "Establece la rendición de cuentas (accountability) e independencia de la función de auditoría."
+          },
+          {
+            "id": "d",
+            "texto": "Debe redactarse nuevamente para cada encargo de auditoría individual."
+          },
+          {
+            "id": "e",
+            "texto": "Reemplaza la necesidad de realizar un plan de auditoría basado en riesgos."
+          },
+          {
+            "id": "f",
+            "texto": "Otorga el derecho de acceso a la información y sistemas necesarios para cumplir con su mandato."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Defines the authority, overall scope, and responsibilities of the IS auditor."
+          },
+          {
+            "id": "b",
+            "texto": "Must be formally approved by the Audit Committee or the Board of Directors."
+          },
+          {
+            "id": "c",
+            "texto": "Establishes accountability and independence of the audit function."
+          },
+          {
+            "id": "d",
+            "texto": "Must be drafted anew for each individual audit engagement."
+          },
+          {
+            "id": "e",
+            "texto": "Replaces the requirement to perform a risk-based audit plan."
+          },
+          {
+            "id": "f",
+            "texto": "Grants the right of access to information and systems necessary to fulfill its mandate."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "f"
+        ],
+        "justificacion": "A, B, C y F definen la naturaleza del Audit Charter: fija el mandato supremo, independencia, responsabilidad, acceso institucional y aprobación por el máximo órgano de gobierno.\n\nD es incorrecto: el estatuto es un documento marco de gobernanza permanente, no se elabora por auditoría individual.\n\nE es falso: el estatuto autoriza la función, pero la planificación basada en riesgos sigue siendo obligatoria.",
+        "justificacionEn": "A, B, C, and F define the nature of the Audit Charter: it sets the supreme mandate, independence, accountability, institutional access, and approval by the highest governing body.\n\nD is incorrect: the charter is an enduring governance framework document, not drafted per audit engagement.\n\nE is false: the charter authorizes the function, but risk-based planning remains mandatory."
+      },
+      {
+        "id": 2,
+        "tipo": "multiple",
+        "pregunta": "Sobre las pruebas de auditoría y su metodología técnica, ¿cuáles afirmaciones son CORRECTAS?",
+        "preguntaEn": "Regarding audit testing and its technical methodology, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Las pruebas de cumplimiento verifican si los controles internos operan de forma efectiva y consistente."
+          },
+          {
+            "id": "b",
+            "texto": "Las pruebas sustantivas evalúan directamente la validez, exactitud e integridad de los datos y transacciones."
+          },
+          {
+            "id": "c",
+            "texto": "Si las pruebas de cumplimiento demuestran controles deficientes, se debe aumentar la extensión de las pruebas sustantivas."
+          },
+          {
+            "id": "d",
+            "texto": "Las pruebas de cumplimiento utilizan exclusivamente muestreo por variables monetarias."
+          },
+          {
+            "id": "e",
+            "texto": "Las pruebas sustantivas se eliminan si la empresa cuenta con un marco COBIT implementado."
+          },
+          {
+            "id": "f",
+            "texto": "El recálculo de intereses bancarios y el cotejo de saldos contra registros de base de datos son pruebas sustantivas."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Compliance tests verify whether internal controls operate effectively and consistently."
+          },
+          {
+            "id": "b",
+            "texto": "Substantive tests directly evaluate the validity, accuracy, and completeness of data and transactions."
+          },
+          {
+            "id": "c",
+            "texto": "If compliance tests reveal deficient controls, the extent of substantive testing must be increased."
+          },
+          {
+            "id": "d",
+            "texto": "Compliance tests exclusively use monetary unit sampling (variable sampling)."
+          },
+          {
+            "id": "e",
+            "texto": "Substantive tests are eliminated if the enterprise has a COBIT framework implemented."
+          },
+          {
+            "id": "f",
+            "texto": "Recalculating bank interest and cross-checking ledger balances against database records are substantive tests."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "f"
+        ],
+        "justificacion": "A, B y F corresponden a las definiciones exactas de pruebas de cumplimiento (de controles) y pruebas sustantivas (de saldos y datos).\n\nC es la regla de auditoría inversa: a menor efectividad del control, mayor prueba sustantiva para reducir el riesgo de detección.\n\nD es falso: las pruebas de cumplimiento usan muestreo de atributos.\n\nE es incorrecto: ningún marco de gobierno elimina las pruebas sustantivas.",
+        "justificacionEn": "A, B, and F correspond to the exact definitions of compliance testing (controls) and substantive testing (balances and data).\n\nC is the inverse audit relationship: lower control effectiveness requires greater substantive testing to reduce detection risk.\n\nD is false: compliance testing uses attribute sampling.\n\nE is incorrect: no governance framework eliminates substantive tests."
+      },
+      {
+        "id": 3,
+        "tipo": "multiple",
+        "pregunta": "En relación con las técnicas de muestreo de auditoría en sistemas de información, identifique las opciones CORRECTAS:",
+        "preguntaEn": "Regarding audit sampling techniques in information systems, identify the CORRECT statements:",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "El muestreo de atributos se utiliza principalmente en pruebas de cumplimiento para evaluar tasas de ocurrencia."
+          },
+          {
+            "id": "b",
+            "texto": "El muestreo por variables se emplea para estimar magnitudes numéricas o valores monetarios en pruebas sustantivas."
+          },
+          {
+            "id": "c",
+            "texto": "El muestreo de descubrimiento (discovery sampling) es aplicable cuando se sospecha fraude o incumplimientos graves."
+          },
+          {
+            "id": "d",
+            "texto": "El riesgo de muestreo es la probabilidad de que la muestra seleccionada no represente las características de la población."
+          },
+          {
+            "id": "e",
+            "texto": "El muestreo no estadístico permite calcular de forma matemática y exacta el intervalo de confianza."
+          },
+          {
+            "id": "f",
+            "texto": "En un muestreo de descubrimiento, encontrar un solo error certifica que el control opera con normalidad."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Attribute sampling is primarily used in compliance testing to evaluate occurrence rates."
+          },
+          {
+            "id": "b",
+            "texto": "Variable sampling is used to estimate numerical amounts or monetary values in substantive tests."
+          },
+          {
+            "id": "c",
+            "texto": "Discovery sampling is applicable when fraud or severe non-compliance is suspected."
+          },
+          {
+            "id": "d",
+            "texto": "Sampling risk is the probability that the chosen sample does not represent population characteristics."
+          },
+          {
+            "id": "e",
+            "texto": "Non-statistical sampling allows for mathematical and exact calculation of the confidence interval."
+          },
+          {
+            "id": "f",
+            "texto": "In discovery sampling, finding a single error confirms that the control operates normally."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "justificacion": "A, B, C y D son principios matemáticos y metodológicos del muestreo de auditoría de ISACA.\n\nE es falso: solo el muestreo estadístico permite la medición matemática objetiva del riesgo de muestreo.\n\nF es falso: en descubrimiento, si se detecta un solo fallo, se presume comprometida toda la población.",
+        "justificacionEn": "A, B, C, and D are mathematical and methodological principles of ISACA audit sampling.\n\nE is false: only statistical sampling allows objective mathematical measurement of sampling risk.\n\nF is false: in discovery sampling, if a single flaw is found, the entire population is presumed compromised."
+      },
+      {
+        "id": 4,
+        "tipo": "multiple",
+        "pregunta": "¿Cuáles de las siguientes son herramientas o técnicas aplicables en Técnicas de Auditoría Asistidas por Computadora (CAATs) y aseguramiento continuo?",
+        "preguntaEn": "Which of the following are tools or techniques applicable to Computer-Assisted Audit Techniques (CAATs) and continuous assurance?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Software de Auditoría Generalizado (GAS como ACL o IDEA)"
+          },
+          {
+            "id": "b",
+            "texto": "Módulos de auditoría embebidos (como SCARF o EAM)"
+          },
+          {
+            "id": "c",
+            "texto": "Entornos de desarrollo integrados (IDE como Visual Studio o Eclipse)"
+          },
+          {
+            "id": "d",
+            "texto": "Sistemas integrados de compilación continua (Jenkins o GitHub Actions)"
+          },
+          {
+            "id": "e",
+            "texto": "Archivos o datos de prueba procesados en el sistema (Test Data)"
+          },
+          {
+            "id": "f",
+            "texto": "Monitoreo continuo automatizado de transacciones y controles (Continuous Auditing)"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Generalized Audit Software (GAS such as ACL or IDEA)"
+          },
+          {
+            "id": "b",
+            "texto": "Embedded audit modules (such as SCARF or EAM)"
+          },
+          {
+            "id": "c",
+            "texto": "Integrated development environments (IDEs such as Visual Studio or Eclipse)"
+          },
+          {
+            "id": "d",
+            "texto": "Continuous integration/build systems (such as Jenkins or GitHub Actions)"
+          },
+          {
+            "id": "e",
+            "texto": "Test data files processed through the system (Test Data)"
+          },
+          {
+            "id": "f",
+            "texto": "Automated continuous transaction and control monitoring (Continuous Auditing)"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "e",
+          "f"
+        ],
+        "justificacion": "A, B, E y F corresponden a técnicas de CAATs para extracción, análisis de datos y monitoreo de transacciones.\n\nC y D son herramientas exclusivas de desarrollo de software y DevOps, no técnicas de auditoría asistida.",
+        "justificacionEn": "A, B, E, and F are CAATs techniques for data extraction, analytics, and transaction monitoring.\n\nC and D are software engineering and DevOps tools, not computer-assisted audit techniques."
+      },
+      {
+        "id": 5,
+        "tipo": "multiple",
+        "pregunta": "¿Cuáles de los siguientes son ejemplos de controles DETECTIVOS en sistemas de información?",
+        "preguntaEn": "Which of the following are examples of DETECTIVE controls in information systems?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Revisión y análisis periódico de bitácoras (audit trails)"
+          },
+          {
+            "id": "b",
+            "texto": "Conciliaciones bancarias y de saldos transaccionales a fin de mes"
+          },
+          {
+            "id": "c",
+            "texto": "Cifrado robusto de bases de datos en reposo mediante AES-256"
+          },
+          {
+            "id": "d",
+            "texto": "Sistemas de detección de intrusiones en red (NIDS)"
+          },
+          {
+            "id": "e",
+            "texto": "Restauración de datos a partir de copias de seguridad en cinta"
+          },
+          {
+            "id": "f",
+            "texto": "Verificación de totales de control (hash totals) al cierre de lotes"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Periodic review and analysis of audit logs/trails"
+          },
+          {
+            "id": "b",
+            "texto": "Month-end bank and transactional balance reconciliations"
+          },
+          {
+            "id": "c",
+            "texto": "Strong database encryption at rest using AES-256"
+          },
+          {
+            "id": "d",
+            "texto": "Network intrusion detection systems (NIDS)"
+          },
+          {
+            "id": "e",
+            "texto": "Data restoration from tape backup copies"
+          },
+          {
+            "id": "f",
+            "texto": "Verification of control totals (hash totals) at batch closing"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "d",
+          "f"
+        ],
+        "justificacion": "A, B, D y F alertan o descubren la ocurrencia de una anomalía o error una vez que ha sucedido.\n\nC es un control preventivo (impide la lectura ilegítima).\n\nE es un control correctivo (repara el daño tras un fallo).",
+        "justificacionEn": "A, B, D, and F alert or discover anomalies and errors after they have occurred.\n\nC is a preventive control (prevents illegitimate access).\n\nE is a corrective control (repairs damage following an outage or disruption)."
+      },
+      {
+        "id": 6,
+        "tipo": "multiple",
+        "pregunta": "¿Cuáles de los siguientes son ejemplos de controles CORRECTIVOS en auditoría de sistemas?",
+        "preguntaEn": "Which of the following are examples of CORRECTIVE controls in systems auditing?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Procedimientos de conmutación por error automatizada (failover)"
+          },
+          {
+            "id": "b",
+            "texto": "Políticas de contraseñas robustas y bloqueo automático por intentos fallidos"
+          },
+          {
+            "id": "c",
+            "texto": "Restauración de bases de datos a partir de respaldos (backups)"
+          },
+          {
+            "id": "d",
+            "texto": "Activación del Plan de Recuperación ante Desastres (DRP) tras un corte"
+          },
+          {
+            "id": "e",
+            "texto": "Listas de control de acceso (ACL) configuradas en el firewall perimetral"
+          },
+          {
+            "id": "f",
+            "texto": "Aislamiento, limpieza y reinstalación de un servidor infectado con malware"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Automated failover procedures"
+          },
+          {
+            "id": "b",
+            "texto": "Strong password policies and automatic lockout upon failed attempts"
+          },
+          {
+            "id": "c",
+            "texto": "Database restoration from backups"
+          },
+          {
+            "id": "d",
+            "texto": "Disaster Recovery Plan (DRP) activation following an outage"
+          },
+          {
+            "id": "e",
+            "texto": "Access control lists (ACLs) configured on the perimeter firewall"
+          },
+          {
+            "id": "f",
+            "texto": "Isolation, remediation, and reinstallation of a malware-infected server"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "c",
+          "d",
+          "f"
+        ],
+        "justificacion": "A, C, D y F entran en acción después del incidente para restaurar la operatividad y mitigar el daño.\n\nB y E son controles preventivos que bloquean incidentes antes de que ocurran.",
+        "justificacionEn": "A, C, D, and F take action after an incident to restore normal operations and mitigate damage.\n\nB and E are preventive controls designed to block incidents before they occur."
+      },
+      {
+        "id": 7,
+        "tipo": "multiple",
+        "pregunta": "Respecto a la evidencia de auditoría y los papeles de trabajo (audit workpapers), ¿qué afirmaciones son CORRECTAS?",
+        "preguntaEn": "Regarding audit evidence and audit workpapers, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "La evidencia obtenida directamente por el auditor es más confiable que la entregada por el personal auditado."
+          },
+          {
+            "id": "b",
+            "texto": "La evidencia debe satisfacer los atributos de ser suficiente y apropiada/competente."
+          },
+          {
+            "id": "c",
+            "texto": "Las declaraciones verbales de la gerencia poseen mayor jerarquía probatoria que las bitácoras del sistema."
+          },
+          {
+            "id": "d",
+            "texto": "Los papeles de trabajo documentan la planificación, las pruebas ejecutadas, la evidencia y las conclusiones."
+          },
+          {
+            "id": "e",
+            "texto": "Confirmaciones escritas de terceros independientes ofrecen mayor confiabilidad que reportes internos."
+          },
+          {
+            "id": "f",
+            "texto": "Los papeles de trabajo deben ser destruidos inmediatamente tras entregar el informe por confidencialidad."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Evidence obtained directly by the auditor is more reliable than evidence supplied by auditee personnel."
+          },
+          {
+            "id": "b",
+            "texto": "Evidence must satisfy the criteria of being sufficient and appropriate/competent."
+          },
+          {
+            "id": "c",
+            "texto": "Oral statements from management carry higher evidentiary weight than automated system logs."
+          },
+          {
+            "id": "d",
+            "texto": "Workpapers document the planning, audit procedures performed, evidence gathered, and conclusions reached."
+          },
+          {
+            "id": "e",
+            "texto": "Written confirmations from independent third parties offer greater reliability than internal reports."
+          },
+          {
+            "id": "f",
+            "texto": "Workpapers must be destroyed immediately upon report delivery to preserve confidentiality."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "d",
+          "e"
+        ],
+        "justificacion": "A, B, D y E reflejan la jerarquía y requisitos de la evidencia según ITAF: la evidencia directa y de terceros externos siempre tiene mayor peso probatorio, y los papeles de trabajo respaldan las conclusiones.\n\nC es falso: el testimonio oral es la evidencia menos confiable.\n\nF es incorrecto: los papeles de trabajo deben custodiarse según las políticas de retención de la organización.",
+        "justificacionEn": "A, B, D, and E reflect ITAF evidence hierarchy and standards: direct and third-party external evidence holds higher evidentiary value, and workpapers substantiate audit findings.\n\nC is false: oral testimony is the least reliable form of evidence.\n\nF is incorrect: workpapers must be retained according to corporate record retention policies."
+      },
+      {
+        "id": 8,
+        "tipo": "multiple",
+        "pregunta": "Al documentar un hallazgo formal de auditoría según los estándares de ISACA, ¿cuáles elementos constituyen su estructura obligatoria?",
+        "preguntaEn": "When documenting a formal audit finding according to ISACA standards, which elements constitute its mandatory structure?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Condición (la situación real observada en el examen)"
+          },
+          {
+            "id": "b",
+            "texto": "Criterio (la norma, estándar, ley o política que debe cumplirse)"
+          },
+          {
+            "id": "c",
+            "texto": "Causa (la razón de fondo por la cual ocurrió la desviación)"
+          },
+          {
+            "id": "d",
+            "texto": "Efecto o Impacto (el riesgo o consecuencia material de la falla)"
+          },
+          {
+            "id": "e",
+            "texto": "Asignación de puntos de historia y diagramas de casos de uso"
+          },
+          {
+            "id": "f",
+            "texto": "Recomendación (la acción constructiva propuesta para subsanar la causa)"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Condition (the factual situation observed during the review)"
+          },
+          {
+            "id": "b",
+            "texto": "Criteria (the standard, policy, regulation, or law being measured against)"
+          },
+          {
+            "id": "c",
+            "texto": "Cause (the underlying reason why the deviation occurred)"
+          },
+          {
+            "id": "d",
+            "texto": "Effect or Impact (the risk exposure or material consequence of the deficiency)"
+          },
+          {
+            "id": "e",
+            "texto": "Story point estimation and UML use-case diagrams"
+          },
+          {
+            "id": "f",
+            "texto": "Recommendation (the constructive action proposed to remediate the root cause)"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "f"
+        ],
+        "justificacion": "A, B, C, D y F conforman la estructura clásica del hallazgo: Condición, Criterio, Causa, Efecto y Recomendación.\n\nE pertenece a metodologías de desarrollo de software (Scrum/UML), ajenas a la redacción del hallazgo.",
+        "justificacionEn": "A, B, C, D, and F constitute the classic audit finding structure: Condition, Criteria, Cause, Effect, and Recommendation.\n\nE belongs to software engineering methodologies (Scrum/UML) and is unrelated to audit findings."
+      },
+      {
+        "id": 9,
+        "tipo": "multiple",
+        "pregunta": "En relación con la etapa de reporte y seguimiento (follow-up) de la auditoría de SI, ¿cuáles afirmaciones son CORRECTAS?",
+        "preguntaEn": "Regarding the reporting and follow-up phase of an IS audit, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "El borrador del informe debe discutirse con los directores de área en una reunión de cierre previa."
+          },
+          {
+            "id": "b",
+            "texto": "El auditor de SI es el encargado de implementar materialmente los parches y cambios recomendados."
+          },
+          {
+            "id": "c",
+            "texto": "El proceso de seguimiento evalúa si la administración adoptó medidas correctivas oportunas."
+          },
+          {
+            "id": "d",
+            "texto": "Si la gerencia decide aceptar un riesgo residual importante, dicha decisión debe informarse al Directorio."
+          },
+          {
+            "id": "e",
+            "texto": "Las recomendaciones deben ser prácticas, realizables y orientadas a la causa raíz."
+          },
+          {
+            "id": "f",
+            "texto": "Las actividades de seguimiento se anulan si el personal auditado firma acuerdos de confidencialidad."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The draft report should be discussed with area management during an exit/closing conference."
+          },
+          {
+            "id": "b",
+            "texto": "The IS auditor is responsible for hands-on operational implementation of recommended patches and changes."
+          },
+          {
+            "id": "c",
+            "texto": "The follow-up process evaluates whether management took timely and appropriate corrective actions."
+          },
+          {
+            "id": "d",
+            "texto": "If management decides to accept significant residual risk, this decision must be reported to the Board."
+          },
+          {
+            "id": "e",
+            "texto": "Recommendations must be practical, achievable, and addressed to the root cause."
+          },
+          {
+            "id": "f",
+            "texto": "Follow-up activities are cancelled if auditee personnel sign non-disclosure agreements."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "c",
+          "d",
+          "e"
+        ],
+        "justificacion": "A, C, D y E cumplen el proceso de cierre y monitoreo de compromisos según ITAF: se socializan hallazgos, se hace seguimiento y la aceptación de riesgos altos se escala al gobierno corporativo.\n\nB es falso: el auditor pierde independencia si ejecuta la remediación operativa.\n\nF es falso: los acuerdos de confidencialidad no eximen el seguimiento de debilidades de control.",
+        "justificacionEn": "A, C, D, and E adhere to ITAF closing and monitoring standards: findings are vetted with management, follow-up assesses remediation, and significant risk acceptance is escalated to the governing board.\n\nB is false: the auditor compromises independence by executing operational remediation.\n\nF is false: NDAs do not waive control remediation follow-up."
+      },
+      {
+        "id": 10,
+        "tipo": "multiple",
+        "pregunta": "¿Cuáles de los siguientes corresponden a controles FÍSICOS o AMBIENTALES en un centro de cómputo?",
+        "preguntaEn": "Which of the following correspond to PHYSICAL or ENVIRONMENTAL controls in a data center?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Sistemas de supresión de incendios mediante agentes limpios (FM-200 o Novec)"
+          },
+          {
+            "id": "b",
+            "texto": "Dispositivos de autenticación biométrica en la puerta de la sala de servidores"
+          },
+          {
+            "id": "c",
+            "texto": "Sistemas de Alimentación Ininterrumpida (UPS) y motogeneradores eléctricos"
+          },
+          {
+            "id": "d",
+            "texto": "Filtrado de paquetes mediante inspección con estado en el firewall"
+          },
+          {
+            "id": "e",
+            "texto": "Sensores de detección de aniego y monitoreo de temperatura/humedad relativa"
+          },
+          {
+            "id": "f",
+            "texto": "Cifrado de enlaces punto a punto con IPsec en modo transporte"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Clean-agent fire suppression systems (such as FM-200 or Novec)"
+          },
+          {
+            "id": "b",
+            "texto": "Biometric authentication access devices on the server room door"
+          },
+          {
+            "id": "c",
+            "texto": "Uninterruptible Power Supply (UPS) systems and diesel generators"
+          },
+          {
+            "id": "d",
+            "texto": "Packet filtering through stateful inspection firewalls"
+          },
+          {
+            "id": "e",
+            "texto": "Water leakage detection sensors and temperature/relative humidity monitoring"
+          },
+          {
+            "id": "f",
+            "texto": "Point-to-point link encryption using IPsec in transport mode"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "e"
+        ],
+        "justificacion": "A, B, C y E resguardan las instalaciones físicas y condiciones ambientales frente a intrusiones y desastres naturales.\n\nD y F son controles lógicos o técnicos aplicados a la red de datos.",
+        "justificacionEn": "A, B, C, and E safeguard physical facilities and environmental parameters against intrusion and physical disasters.\n\nD and F are logical and technical network security controls."
+      }
+    ],
+    "2": [
+      {
+        "id": 11,
+        "tipo": "multiple",
+        "pregunta": "Sobre las estructuras organizacionales de gobernanza y alineación de TI, ¿qué afirmaciones son CORRECTAS?",
+        "preguntaEn": "Regarding IT governance organizational structures and business alignment, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "El Comité de Estrategia de TI a nivel del Directorio supervisa la dirección general y las grandes inversiones."
+          },
+          {
+            "id": "b",
+            "texto": "El Comité de Dirección de TI (IT Steering Committee) prioriza proyectos y supervisa la entrega operativa."
+          },
+          {
+            "id": "c",
+            "texto": "El departamento de TI debe reportar formalmente al CFO para garantizar la reducción de costos."
+          },
+          {
+            "id": "d",
+            "texto": "El plan estratégico de TI debe elaborarse en concordancia con los objetivos de negocio de la empresa."
+          },
+          {
+            "id": "e",
+            "texto": "Los programadores deben formar parte obligatoria del Comité de Auditoría del Directorio."
+          },
+          {
+            "id": "f",
+            "texto": "La falta de documentos estratégicos dificulta la definición de acuerdos de nivel de servicio (SLA)."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The IT Strategy Committee at the Board level oversees overall direction and major investments."
+          },
+          {
+            "id": "b",
+            "texto": "The IT Steering Committee prioritizes projects and oversees operational service delivery."
+          },
+          {
+            "id": "c",
+            "texto": "The IT department must formally report to the CFO to guarantee cost reduction."
+          },
+          {
+            "id": "d",
+            "texto": "The IT strategic plan must be developed in alignment with corporate business objectives."
+          },
+          {
+            "id": "e",
+            "texto": "Programmers must be mandatory members of the Board's Audit Committee."
+          },
+          {
+            "id": "f",
+            "texto": "The absence of strategic documents impairs the effective definition of Service Level Agreements (SLAs)."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "d",
+          "f"
+        ],
+        "justificacion": "A, B, D y F corresponden a las buenas prácticas de gobernanza: distinción entre comité estratégico y directivo, alineación con el negocio y derivación de SLAs a partir de la estrategia.\n\nC es incorrecto: reportar al CFO genera conflicto de interés al supeditar la seguridad y calidad al gasto financiero.\n\nE es incorrecto: los desarrolladores son parte de la operación, no del órgano de supervisión del Directorio.",
+        "justificacionEn": "A, B, D, and F align with governance best practices: distinction between strategy and steering committees, business alignment, and SLA derivation from strategy.\n\nC is incorrect: reporting directly to the CFO creates a conflict of interest by subordinating security and quality to cost reduction.\n\nE is incorrect: developers are operational staff, not members of board oversight committees."
+      },
+      {
+        "id": 12,
+        "tipo": "multiple",
+        "pregunta": "En el modelo de gobernanza de las Tres Líneas, ¿cuáles asignaciones de responsabilidades son CORRECTAS?",
+        "preguntaEn": "In the Three Lines Governance Model, which responsibility assignments are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Primera Línea: La gestión operativa y los líderes de proceso que poseen y gestionan el riesgo diario."
+          },
+          {
+            "id": "b",
+            "texto": "Segunda Línea: Funciones de soporte y supervisión especializada como Gestión de Riesgos y Cumplimiento."
+          },
+          {
+            "id": "c",
+            "texto": "Tercera Línea: La Auditoría Interna, brindando aseguramiento independiente y objetivo a la Junta."
+          },
+          {
+            "id": "d",
+            "texto": "Primera Línea: El auditor externo emitiendo la opinión de cumplimiento legal."
+          },
+          {
+            "id": "e",
+            "texto": "Segunda Línea: Los auditores de SI ejecutando auditorías sorpresa a los desarrolladores."
+          },
+          {
+            "id": "f",
+            "texto": "El Órgano de Gobierno (Junta Directiva) supervisa y recibe reportes directos de la tercera línea."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "First Line: Operational management and process owners who own and manage day-to-day risk."
+          },
+          {
+            "id": "b",
+            "texto": "Second Line: Support and specialized oversight functions such as Risk Management and Compliance."
+          },
+          {
+            "id": "c",
+            "texto": "Third Line: Internal Audit, providing independent and objective assurance to the Board."
+          },
+          {
+            "id": "d",
+            "texto": "First Line: The external auditor issuing the legal compliance opinion."
+          },
+          {
+            "id": "e",
+            "texto": "Second Line: IS auditors performing surprise audit inspections on developers."
+          },
+          {
+            "id": "f",
+            "texto": "The Governing Body (Board of Directors) oversees and receives direct reporting from the third line."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "f"
+        ],
+        "justificacion": "A, B, C y F describen con precisión el Modelo de las Tres Líneas: 1.ª línea opera y controla, 2.ª línea monitorea y asesora, 3.ª línea asegura de forma independiente y la Junta gobierna.\n\nD es falso: auditoría externa es un asegurador externo al modelo de tres líneas internas.\n\nE es falso: la auditoría es tercera línea, nunca segunda.",
+        "justificacionEn": "A, B, C, and F accurately depict the Three Lines Model: 1st line operates and controls, 2nd line oversees and advises, 3rd line provides independent assurance, and the Board governs.\n\nD is false: external audit is an external assurance provider outside the internal three lines. E is false: audit is strictly the third line, never the second."
+      },
+      {
+        "id": 13,
+        "tipo": "multiple",
+        "pregunta": "En un centro de procesamiento de información, ¿cuáles de las siguientes combinaciones de funciones representan un CONFLICTO de segregación de funciones (SoD)?",
+        "preguntaEn": "In an information processing facility, which of the following job role combinations represent a Segregation of Duties (SoD) CONFLICT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Administrador de seguridad informática y responsable del control de cambios a producción"
+          },
+          {
+            "id": "b",
+            "texto": "Programador de aplicaciones y operador de consola en el entorno de producción"
+          },
+          {
+            "id": "c",
+            "texto": "Desarrollador de sistemas y personal encargado del mantenimiento en entorno de desarrollo"
+          },
+          {
+            "id": "d",
+            "texto": "Administrador de bases de datos (DBA) con autoridad para aprobar modificaciones a saldos contables"
+          },
+          {
+            "id": "e",
+            "texto": "Usuario que registra la creación de proveedores y a su vez aprueba los pagos de facturas"
+          },
+          {
+            "id": "f",
+            "texto": "Administrador de red que reporta al Oficial de Seguridad de la Información"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "IT security administrator and production change control coordinator"
+          },
+          {
+            "id": "b",
+            "texto": "Application programmer and computer console operator in the production environment"
+          },
+          {
+            "id": "c",
+            "texto": "Systems developer and software maintenance staff in the development environment"
+          },
+          {
+            "id": "d",
+            "texto": "Database administrator (DBA) with authority to approve changes to financial ledger balances"
+          },
+          {
+            "id": "e",
+            "texto": "User who enters vendor master records and also approves invoice disbursement payments"
+          },
+          {
+            "id": "f",
+            "texto": "Network administrator reporting to the Chief Information Security Officer (CISO)"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "d",
+          "e"
+        ],
+        "justificacion": "A, B, D y E violan la segregación de funciones: permiten a una misma persona alterar parámetros, migrar código, manipular saldos o autorizar compras sin supervisión.\n\nC es una práctica habitual y permitida en desarrollo.\n\nF es una relación de reporte válida que no mezcla ejecución con autorización transaccional.",
+        "justificacionEn": "A, B, D, and E violate segregation of duties: they allow a single individual to alter security settings, deploy unvetted code, manipulate ledger data, or approve fraudulent vendor disbursements.\n\nC is standard practice in development environments.\n\nF is an acceptable reporting relationship that does not compromise transactional checks."
+      },
+      {
+        "id": 14,
+        "tipo": "multiple",
+        "pregunta": "En el diseño de un Cuadro de Mando Integral de TI (IT Balanced Scorecard), ¿cuáles son las cuatro perspectivas estándar?",
+        "preguntaEn": "In the design of an IT Balanced Scorecard, which are the four standard perspectives?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Contribución corporativa / empresarial (Valor aportado al negocio)"
+          },
+          {
+            "id": "b",
+            "texto": "Orientación al usuario / cliente (Satisfacción del cliente interno y externo)"
+          },
+          {
+            "id": "c",
+            "texto": "Excelencia operacional (Eficiencia de los procesos de TI y entrega de servicios)"
+          },
+          {
+            "id": "d",
+            "texto": "Orientación al futuro (Capacidad de aprendizaje, innovación y capital humano)"
+          },
+          {
+            "id": "e",
+            "texto": "Rentabilidad de las campañas en redes sociales y marketing de influencers"
+          },
+          {
+            "id": "f",
+            "texto": "Análisis de casos de uso y diagramas de secuencia en UML"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Corporate / Business contribution (Value delivered to the enterprise)"
+          },
+          {
+            "id": "b",
+            "texto": "User / Customer orientation (Internal and external customer satisfaction)"
+          },
+          {
+            "id": "c",
+            "texto": "Operational excellence (Efficiency of IT processes and service delivery)"
+          },
+          {
+            "id": "d",
+            "texto": "Future orientation (Capacity for learning, innovation, and human capital)"
+          },
+          {
+            "id": "e",
+            "texto": "Social media advertising profitability and influencer marketing ROI"
+          },
+          {
+            "id": "f",
+            "texto": "Use case analysis and UML sequence diagrams"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "justificacion": "A, B, C y D corresponden a las 4 perspectivas adaptadas del Balanced Scorecard para TI desarrolladas por Van Grembergen e ISACA.\n\nE y F no forman parte de las perspectivas formales de evaluación de gobernanza de TI.",
+        "justificacionEn": "A, B, C, and D correspond to the four standard IT Balanced Scorecard perspectives developed by Van Grembergen and ISACA.\n\nE and F are not part of formal IT governance scorecard perspectives."
+      },
+      {
+        "id": 15,
+        "tipo": "multiple",
+        "pregunta": "En la gobernanza de datos según las directrices de ISACA, ¿qué afirmaciones sobre roles son CORRECTAS?",
+        "preguntaEn": "In data governance according to ISACA guidelines, which statements regarding roles are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "El Dueño del Dato (Data Owner) clasifica la información y autoriza formalmente los privilegios de acceso."
+          },
+          {
+            "id": "b",
+            "texto": "El Custodio del Dato (Data Custodian) implementa la protección técnica, almacenamiento y copias de seguridad."
+          },
+          {
+            "id": "c",
+            "texto": "El Administrador de Base de Datos (DBA) actúa como custodio técnico y no como propietario del negocio."
+          },
+          {
+            "id": "d",
+            "texto": "Los programadores son los dueños de los datos transaccionales por haber codificado las tablas."
+          },
+          {
+            "id": "e",
+            "texto": "El Oficial de Seguridad o Privacidad recomienda y supervisa las directrices de protección de datos."
+          },
+          {
+            "id": "f",
+            "texto": "El Custodio del Dato decide de forma autónoma qué registros financieros deben eliminarse."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The Data Owner classifies information and formally authorizes user access privileges."
+          },
+          {
+            "id": "b",
+            "texto": "The Data Custodian implements technical safeguards, storage, and backup protection."
+          },
+          {
+            "id": "c",
+            "texto": "The Database Administrator (DBA) acts as a technical custodian rather than a business data owner."
+          },
+          {
+            "id": "d",
+            "texto": "Application developers are the business owners of transaction data because they coded the tables."
+          },
+          {
+            "id": "e",
+            "texto": "The Information Security/Privacy Officer recommends and oversees data protection guidelines."
+          },
+          {
+            "id": "f",
+            "texto": "The Data Custodian autonomously decides which historical financial records should be purged."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "e"
+        ],
+        "justificacion": "A, B, C y E reflejan la distribución de responsabilidades sobre la información: el negocio (owner) clasifica y autoriza; TI (custodian) administra la infraestructura; Seguridad supervisa.\n\nD es incorrecto: los desarrolladores no tienen propiedad sobre la información corporativa.\n\nF es falso: las decisiones de retención y purga de información pertenecen al Data Owner.",
+        "justificacionEn": "A, B, C, and E reflect ISACA data stewardship roles: the business data owner classifies and grants access; IT custodians manage technical storage and backups; Security oversees compliance.\n\nD is incorrect: developers do not own enterprise business data.\n\nF is false: retention and disposal decisions belong strictly to the Data Owner."
+      },
+      {
+        "id": 16,
+        "tipo": "multiple",
+        "pregunta": "Dentro de la Gestión de Riesgos Empresariales de TI (IT Risk Management), ¿cuáles son estrategias válidas de TRATAMIENTO del riesgo?",
+        "preguntaEn": "Within IT Enterprise Risk Management, which are valid risk TREATMENT strategies?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Mitigación / Reducción (aplicación de controles para disminuir impacto o probabilidad)"
+          },
+          {
+            "id": "b",
+            "texto": "Transferencia / Compartición (adquisición de pólizas de seguro cibernético o tercerización)"
+          },
+          {
+            "id": "c",
+            "texto": "Aceptación (asunción informada y formal del riesgo residual dentro de la tolerancia de la gerencia)"
+          },
+          {
+            "id": "d",
+            "texto": "Evitación / Evasión (cancelación del servicio, proyecto o actividad que originaba el riesgo)"
+          },
+          {
+            "id": "e",
+            "texto": "Ocultamiento deliberado (eliminar reportes de vulnerabilidades para evitar llamadas de atención)"
+          },
+          {
+            "id": "f",
+            "texto": "Supresión absoluta (garantizar la erradicación del 100% de cualquier riesgo en todos los sistemas)"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Mitigation / Reduction (applying controls to lower risk impact or probability)"
+          },
+          {
+            "id": "b",
+            "texto": "Transfer / Sharing (purchasing cyber insurance policies or outsourcing)"
+          },
+          {
+            "id": "c",
+            "texto": "Acceptance (informed and formal assumption of residual risk within management tolerance)"
+          },
+          {
+            "id": "d",
+            "texto": "Avoidance (terminating the activity, project, or process that creates the risk)"
+          },
+          {
+            "id": "e",
+            "texto": "Deliberate concealment (deleting vulnerability reports to avoid management scrutiny)"
+          },
+          {
+            "id": "f",
+            "texto": "Absolute suppression (guaranteeing 100% total eradication of any risk across all systems)"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "justificacion": "A, B, C y D son las 4 respuestas estándar al riesgo reconocidas por ISO 31000 y COSO ERM.\n\nE constituye una falta ética gravísima.\n\nF es técnicamente imposible: el riesgo cero no existe en sistemas de información.",
+        "justificacionEn": "A, B, C, and D are the four standard risk treatment responses recognized by ISO 31000 and COSO ERM.\n\nE constitutes severe professional misconduct.\n\nF is technically unfeasible: zero risk does not exist in information systems."
+      },
+      {
+        "id": 17,
+        "tipo": "multiple",
+        "pregunta": "Al auditar la contratación de proveedores y servicios en la nube, ¿cuáles prácticas de control son RECOMENDADAS?",
+        "preguntaEn": "When auditing third-party vendors and cloud service contracts, which control practices are RECOMMENDED?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Evaluar informes de aseguramiento emitidos por terceros independientes (como SOC 2 o ISO 27001)."
+          },
+          {
+            "id": "b",
+            "texto": "Incluir cláusulas contractuales con derecho explícito de auditoría (right-to-audit)."
+          },
+          {
+            "id": "c",
+            "texto": "Definir Acuerdos de Nivel de Servicio (SLA) con penalidades económicas por indisponibilidad."
+          },
+          {
+            "id": "d",
+            "texto": "Establecer contratos de depósito en custodia de código fuente (Software Escrow) para aplicativos críticos."
+          },
+          {
+            "id": "e",
+            "texto": "Permitir al proveedor modificar de forma discrecional las medidas de seguridad pactadas."
+          },
+          {
+            "id": "f",
+            "texto": "Considerar que la contratación en la nube exime a la gerencia de toda responsabilidad legal y de gobierno."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Reviewing independent third-party assurance audit reports (such as SOC 2 or ISO 27001)."
+          },
+          {
+            "id": "b",
+            "texto": "Including explicit contractual right-to-audit clauses."
+          },
+          {
+            "id": "c",
+            "texto": "Defining Service Level Agreements (SLAs) with financial penalties for service downtime."
+          },
+          {
+            "id": "d",
+            "texto": "Establishing software escrow agreements for proprietary critical applications."
+          },
+          {
+            "id": "e",
+            "texto": "Allowing the vendor to unilaterally modify agreed-upon security safeguards at their discretion."
+          },
+          {
+            "id": "f",
+            "texto": "Assuming that outsourcing to the cloud absolves corporate management of all governance and legal accountability."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "justificacion": "A, B, C y D son controles para mitigar el riesgo de terceros: aseguramiento externo, facultades de inspección, métricas de servicio (SLA) y garantía de acceso al código (escrow).\n\nE rompe la gobernanza contractual.\n\nF es falso: la responsabilidad final ante reguladores y clientes nunca es transferible al proveedor.",
+        "justificacionEn": "A, B, C, and D are essential third-party vendor risk controls: independent audit assurance, right-to-audit clauses, performance SLAs, and source code escrow.\n\nE compromises contract governance.\n\nF is false: ultimate governance and legal accountability can never be outsourced to a vendor."
+      },
+      {
+        "id": 18,
+        "tipo": "multiple",
+        "pregunta": "Sobre la jerarquía de los documentos normativos de TI, ¿cuáles afirmaciones son CORRECTAS?",
+        "preguntaEn": "Regarding the hierarchy of IT governance documentation, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Las Políticas son directrices obligatorias de alto nivel aprobadas por la gerencia y el Directorio."
+          },
+          {
+            "id": "b",
+            "texto": "Los Estándares establecen requisitos y configuraciones tecnológicas de carácter mandatorio."
+          },
+          {
+            "id": "c",
+            "texto": "Los Procedimientos detallan de forma secuencial y operativa los pasos para realizar una tarea."
+          },
+          {
+            "id": "d",
+            "texto": "Las Directrices (Guidelines) contienen recomendaciones y mejores prácticas cuyo uso es discrecional."
+          },
+          {
+            "id": "e",
+            "texto": "Las Políticas deben actualizarse diariamente e incluir fragmentos específicos de código fuente."
+          },
+          {
+            "id": "f",
+            "texto": "Las Guías operativas anulan de forma automática a los estándares si el personal decide utilizarlas."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Policies are high-level mandatory directives approved by executive management and the Board."
+          },
+          {
+            "id": "b",
+            "texto": "Standards establish specific mandatory technical configurations and baseline requirements."
+          },
+          {
+            "id": "c",
+            "texto": "Procedures detail the step-by-step operational instructions to accomplish a specific task."
+          },
+          {
+            "id": "d",
+            "texto": "Guidelines contain recommendations and best-practice advice that are discretionary."
+          },
+          {
+            "id": "e",
+            "texto": "Policies must be updated daily and include specific code implementation snippets."
+          },
+          {
+            "id": "f",
+            "texto": "Operational guidelines automatically supersede standards whenever staff chooses to use them."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "justificacion": "A, B, C y D presentan la pirámide documental clásica: Políticas (obligatorias y abstractas), Estándares (obligatorios y técnicos), Procedimientos (paso a paso) y Directrices (orientativas y opcionales).\n\nE es falso: las políticas son estables y de alto nivel.\n\nF es incorrecto: una directriz opcional jamás subordina a un estándar mandatorio.",
+        "justificacionEn": "A, B, C, and D represent the classic documentation pyramid: Policies (mandatory and overarching), Standards (mandatory and technical), Procedures (step-by-step execution), and Guidelines (discretionary recommendations).\n\nE is false: policies are high-level and stable.\n\nF is incorrect: discretionary guidelines can never override mandatory standards."
+      },
+      {
+        "id": 19,
+        "tipo": "multiple",
+        "pregunta": "En la planificación de la continuidad del negocio (BCP) y la resiliencia operativa, ¿qué afirmaciones son CORRECTAS?",
+        "preguntaEn": "In business continuity planning (BCP) and operational resilience, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "El Análisis de Impacto en el Negocio (BIA) identifica procesos críticos, el RTO y el RPO."
+          },
+          {
+            "id": "b",
+            "texto": "La Junta Directiva y la alta gerencia son los máximos responsables de la efectividad del plan de continuidad."
+          },
+          {
+            "id": "c",
+            "texto": "El departamento de TI define de manera aislada qué líneas comerciales deben salvarse en una crisis."
+          },
+          {
+            "id": "d",
+            "texto": "El Plan de Recuperación ante Desastres (DRP) se enfoca en restaurar la infraestructura y datos tecnológicos."
+          },
+          {
+            "id": "e",
+            "texto": "Los ejercicios y simulacros periódicos son esenciales para verificar la viabilidad real del plan."
+          },
+          {
+            "id": "f",
+            "texto": "Una vez documentado el BCP, se prohíbe realizar modificaciones para no invalidar las firmas."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The Business Impact Analysis (BIA) identifies critical business processes, RTO, and RPO."
+          },
+          {
+            "id": "b",
+            "texto": "The Board of Directors and senior management bear ultimate responsibility for business continuity effectiveness."
+          },
+          {
+            "id": "c",
+            "texto": "The IT department unilaterally determines which business operational lines should be recovered during a crisis."
+          },
+          {
+            "id": "d",
+            "texto": "The Disaster Recovery Plan (DRP) focuses on technical IT infrastructure and data recovery."
+          },
+          {
+            "id": "e",
+            "texto": "Periodic drills, walkthroughs, and simulations are essential to validate plan viability."
+          },
+          {
+            "id": "f",
+            "texto": "Once a BCP is approved, further modifications are prohibited to prevent invalidating signatures."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "d",
+          "e"
+        ],
+        "justificacion": "A, B, D y E son pilares de la continuidad operativa: análisis de criticidad (BIA), responsabilidad directiva, enfoque tecnológico del DRP y validación mediante pruebas y simulacros.\n\nC es falso: son los dueños de negocio quienes definen las prioridades comerciales.\n\nF es incorrecto: el BCP exige actualización continua ante cambios en el entorno.",
+        "justificacionEn": "A, B, D, and E are cornerstones of operational continuity: business impact analysis (BIA), executive accountability, technological focus of the DRP, and ongoing simulation testing.\n\nC is false: business unit leaders determine commercial recovery priorities.\n\nF is incorrect: continuity plans require continuous revision to address changing operational environments."
+      },
+      {
+        "id": 20,
+        "tipo": "multiple",
+        "pregunta": "En relación con los marcos y modelos de madurez de procesos de TI, identifique las afirmaciones CORRECTAS:",
+        "preguntaEn": "Regarding IT process maturity models and governance frameworks, identify the CORRECT statements:",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "CMMI permite medir y clasificar la capacidad de los procesos de software en niveles evolutivos (1 a 5)."
+          },
+          {
+            "id": "b",
+            "texto": "COBIT distingue formalmente los objetivos de Gobierno (EDM) frente a los objetivos de Gestión (PBRM)."
+          },
+          {
+            "id": "c",
+            "texto": "Un nivel de madurez inicial denota procesos caóticos, no documentados y altamente dependientes de individuos."
+          },
+          {
+            "id": "d",
+            "texto": "ITIL se centra en las mejores prácticas para la Gestión y Entrega de Servicios de TI (ITSM)."
+          },
+          {
+            "id": "e",
+            "texto": "Un nivel 5 de madurez en CMMI certifica que una empresa jamás sufrirá incidentes ni errores de software."
+          },
+          {
+            "id": "f",
+            "texto": "Scrum es un estándar internacional de certificación para la gobernanza del Directorio corporativo."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "CMMI measures and classifies software process maturity across evolutionary tiers (1 to 5)."
+          },
+          {
+            "id": "b",
+            "texto": "COBIT formally distinguishes Governance objectives (EDM) from Management objectives (APO, BAI, DSS, MEA)."
+          },
+          {
+            "id": "c",
+            "texto": "An initial maturity level denotes chaotic, ad-hoc, and individual-dependent processes."
+          },
+          {
+            "id": "d",
+            "texto": "ITIL focuses on best-practice guidance for IT Service Management (ITSM)."
+          },
+          {
+            "id": "e",
+            "texto": "Level 5 CMMI certification guarantees that an enterprise will never experience defects or outages."
+          },
+          {
+            "id": "f",
+            "texto": "Scrum is an international standard for corporate board of directors governance."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "justificacion": "A, B, C y D describen adecuadamente los marcos del Dominio 2: niveles de CMMI, separación EDM/PBRM en COBIT, características de madurez básica y enfoque de servicios de ITIL.\n\nE es falso: la madurez optimizada no otorga inmunidad absoluta frente a fallos.\n\nF es falso: Scrum es un marco ágil para desarrollo de proyectos a nivel de equipo técnico.",
+        "justificacionEn": "A, B, C, and D accurately represent Domain 2 frameworks: CMMI levels, COBIT governance vs management separation, basic maturity characteristics, and ITIL service management focus.\n\nE is false: optimizing maturity does not confer absolute immunity from software errors.\n\nF is false: Scrum is an agile project team methodology, not a board governance framework."
+      }
+    ],
+    "3": [
+      {
+        "id": 1,
+        "tipo": "multiple",
+        "pregunta": "Respecto al Estatuto de Auditoría (Audit Charter) según las directrices de ISACA, ¿cuáles afirmaciones son CORRECTAS?",
+        "preguntaEn": "Regarding the Audit Charter according to ISACA guidelines, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Define la autoridad, alcance global y responsabilidades del auditor de SI."
+          },
+          {
+            "id": "b",
+            "texto": "Debe ser aprobado formalmente por el Comité de Auditoría o la Junta Directiva."
+          },
+          {
+            "id": "c",
+            "texto": "Establece la rendición de cuentas (accountability) e independencia de la función de auditoría."
+          },
+          {
+            "id": "d",
+            "texto": "Debe redactarse nuevamente para cada encargo de auditoría individual."
+          },
+          {
+            "id": "e",
+            "texto": "Reemplaza la necesidad de realizar un plan de auditoría basado en riesgos."
+          },
+          {
+            "id": "f",
+            "texto": "Otorga el derecho de acceso a la información y sistemas necesarios para cumplir con su mandato."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Defines the authority, overall scope, and responsibilities of the IS auditor."
+          },
+          {
+            "id": "b",
+            "texto": "Must be formally approved by the Audit Committee or the Board of Directors."
+          },
+          {
+            "id": "c",
+            "texto": "Establishes accountability and independence of the audit function."
+          },
+          {
+            "id": "d",
+            "texto": "Must be drafted anew for each individual audit engagement."
+          },
+          {
+            "id": "e",
+            "texto": "Replaces the requirement to perform a risk-based audit plan."
+          },
+          {
+            "id": "f",
+            "texto": "Grants the right of access to information and systems necessary to fulfill its mandate."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "f"
+        ],
+        "justificacion": "A, B, C y F definen la naturaleza del Audit Charter: fija el mandato supremo, independencia, responsabilidad, acceso institucional y aprobación por el máximo órgano de gobierno.\n\nD es incorrecto: el estatuto es un documento marco de gobernanza permanente, no se elabora por auditoría individual.\n\nE es falso: el estatuto autoriza la función, pero la planificación basada en riesgos sigue siendo obligatoria.",
+        "justificacionEn": "A, B, C, and F define the nature of the Audit Charter: it sets the supreme mandate, independence, accountability, institutional access, and approval by the highest governing body.\n\nD is incorrect: the charter is an enduring governance framework document, not drafted per audit engagement.\n\nE is false: the charter authorizes the function, but risk-based planning remains mandatory."
+      },
+      {
+        "id": 2,
+        "tipo": "multiple",
+        "pregunta": "Sobre las pruebas de auditoría y su metodología técnica, ¿cuáles afirmaciones son CORRECTAS?",
+        "preguntaEn": "Regarding audit testing and its technical methodology, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Las pruebas de cumplimiento verifican si los controles internos operan de forma efectiva y consistente."
+          },
+          {
+            "id": "b",
+            "texto": "Las pruebas sustantivas evalúan directamente la validez, exactitud e integridad de los datos y transacciones."
+          },
+          {
+            "id": "c",
+            "texto": "Si las pruebas de cumplimiento demuestran controles deficientes, se debe aumentar la extensión de las pruebas sustantivas."
+          },
+          {
+            "id": "d",
+            "texto": "Las pruebas de cumplimiento utilizan exclusivamente muestreo por variables monetarias."
+          },
+          {
+            "id": "e",
+            "texto": "Las pruebas sustantivas se eliminan si la empresa cuenta con un marco COBIT implementado."
+          },
+          {
+            "id": "f",
+            "texto": "El recálculo de intereses bancarios y el cotejo de saldos contra registros de base de datos son pruebas sustantivas."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Compliance tests verify whether internal controls operate effectively and consistently."
+          },
+          {
+            "id": "b",
+            "texto": "Substantive tests directly evaluate the validity, accuracy, and completeness of data and transactions."
+          },
+          {
+            "id": "c",
+            "texto": "If compliance tests reveal deficient controls, the extent of substantive testing must be increased."
+          },
+          {
+            "id": "d",
+            "texto": "Compliance tests exclusively use monetary unit sampling (variable sampling)."
+          },
+          {
+            "id": "e",
+            "texto": "Substantive tests are eliminated if the enterprise has a COBIT framework implemented."
+          },
+          {
+            "id": "f",
+            "texto": "Recalculating bank interest and cross-checking ledger balances against database records are substantive tests."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "f"
+        ],
+        "justificacion": "A, B y F corresponden a las definiciones exactas de pruebas de cumplimiento (de controles) y pruebas sustantivas (de saldos y datos).\n\nC es la regla de auditoría inversa: a menor efectividad del control, mayor prueba sustantiva para reducir el riesgo de detección.\n\nD es falso: las pruebas de cumplimiento usan muestreo de atributos.\n\nE es incorrecto: ningún marco de gobierno elimina las pruebas sustantivas.",
+        "justificacionEn": "A, B, and F correspond to the exact definitions of compliance testing (controls) and substantive testing (balances and data).\n\nC is the inverse audit relationship: lower control effectiveness requires greater substantive testing to reduce detection risk.\n\nD is false: compliance testing uses attribute sampling.\n\nE is incorrect: no governance framework eliminates substantive tests."
+      },
+      {
+        "id": 3,
+        "tipo": "multiple",
+        "pregunta": "En relación con las técnicas de muestreo de auditoría en sistemas de información, identifique las opciones CORRECTAS:",
+        "preguntaEn": "Regarding audit sampling techniques in information systems, identify the CORRECT statements:",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "El muestreo de atributos se utiliza principalmente en pruebas de cumplimiento para evaluar tasas de ocurrencia."
+          },
+          {
+            "id": "b",
+            "texto": "El muestreo por variables se emplea para estimar magnitudes numéricas o valores monetarios en pruebas sustantivas."
+          },
+          {
+            "id": "c",
+            "texto": "El muestreo de descubrimiento (discovery sampling) es aplicable cuando se sospecha fraude o incumplimientos graves."
+          },
+          {
+            "id": "d",
+            "texto": "El riesgo de muestreo es la probabilidad de que la muestra seleccionada no represente las características de la población."
+          },
+          {
+            "id": "e",
+            "texto": "El muestreo no estadístico permite calcular de forma matemática y exacta el intervalo de confianza."
+          },
+          {
+            "id": "f",
+            "texto": "En un muestreo de descubrimiento, encontrar un solo error certifica que el control opera con normalidad."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Attribute sampling is primarily used in compliance testing to evaluate occurrence rates."
+          },
+          {
+            "id": "b",
+            "texto": "Variable sampling is used to estimate numerical amounts or monetary values in substantive tests."
+          },
+          {
+            "id": "c",
+            "texto": "Discovery sampling is applicable when fraud or severe non-compliance is suspected."
+          },
+          {
+            "id": "d",
+            "texto": "Sampling risk is the probability that the chosen sample does not represent population characteristics."
+          },
+          {
+            "id": "e",
+            "texto": "Non-statistical sampling allows for mathematical and exact calculation of the confidence interval."
+          },
+          {
+            "id": "f",
+            "texto": "In discovery sampling, finding a single error confirms that the control operates normally."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "justificacion": "A, B, C y D son principios matemáticos y metodológicos del muestreo de auditoría de ISACA.\n\nE es falso: solo el muestreo estadístico permite la medición matemática objetiva del riesgo de muestreo.\n\nF es falso: en descubrimiento, si se detecta un solo fallo, se presume comprometida toda la población.",
+        "justificacionEn": "A, B, C, and D are mathematical and methodological principles of ISACA audit sampling.\n\nE is false: only statistical sampling allows objective mathematical measurement of sampling risk.\n\nF is false: in discovery sampling, if a single flaw is found, the entire population is presumed compromised."
+      },
+      {
+        "id": 4,
+        "tipo": "multiple",
+        "pregunta": "¿Cuáles de las siguientes son herramientas o técnicas aplicables en Técnicas de Auditoría Asistidas por Computadora (CAATs) y aseguramiento continuo?",
+        "preguntaEn": "Which of the following are tools or techniques applicable to Computer-Assisted Audit Techniques (CAATs) and continuous assurance?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Software de Auditoría Generalizado (GAS como ACL o IDEA)"
+          },
+          {
+            "id": "b",
+            "texto": "Módulos de auditoría embebidos (como SCARF o EAM)"
+          },
+          {
+            "id": "c",
+            "texto": "Entornos de desarrollo integrados (IDE como Visual Studio o Eclipse)"
+          },
+          {
+            "id": "d",
+            "texto": "Sistemas integrados de compilación continua (Jenkins o GitHub Actions)"
+          },
+          {
+            "id": "e",
+            "texto": "Archivos o datos de prueba procesados en el sistema (Test Data)"
+          },
+          {
+            "id": "f",
+            "texto": "Monitoreo continuo automatizado de transacciones y controles (Continuous Auditing)"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Generalized Audit Software (GAS such as ACL or IDEA)"
+          },
+          {
+            "id": "b",
+            "texto": "Embedded audit modules (such as SCARF or EAM)"
+          },
+          {
+            "id": "c",
+            "texto": "Integrated development environments (IDEs such as Visual Studio or Eclipse)"
+          },
+          {
+            "id": "d",
+            "texto": "Continuous integration/build systems (such as Jenkins or GitHub Actions)"
+          },
+          {
+            "id": "e",
+            "texto": "Test data files processed through the system (Test Data)"
+          },
+          {
+            "id": "f",
+            "texto": "Automated continuous transaction and control monitoring (Continuous Auditing)"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "e",
+          "f"
+        ],
+        "justificacion": "A, B, E y F corresponden a técnicas de CAATs para extracción, análisis de datos y monitoreo de transacciones.\n\nC y D son herramientas exclusivas de desarrollo de software y DevOps, no técnicas de auditoría asistida.",
+        "justificacionEn": "A, B, E, and F are CAATs techniques for data extraction, analytics, and transaction monitoring.\n\nC and D are software engineering and DevOps tools, not computer-assisted audit techniques."
+      },
+      {
+        "id": 5,
+        "tipo": "multiple",
+        "pregunta": "¿Cuáles de los siguientes son ejemplos de controles DETECTIVOS en sistemas de información?",
+        "preguntaEn": "Which of the following are examples of DETECTIVE controls in information systems?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Revisión y análisis periódico de bitácoras (audit trails)"
+          },
+          {
+            "id": "b",
+            "texto": "Conciliaciones bancarias y de saldos transaccionales a fin de mes"
+          },
+          {
+            "id": "c",
+            "texto": "Cifrado robusto de bases de datos en reposo mediante AES-256"
+          },
+          {
+            "id": "d",
+            "texto": "Sistemas de detección de intrusiones en red (NIDS)"
+          },
+          {
+            "id": "e",
+            "texto": "Restauración de datos a partir de copias de seguridad en cinta"
+          },
+          {
+            "id": "f",
+            "texto": "Verificación de totales de control (hash totals) al cierre de lotes"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Periodic review and analysis of audit logs/trails"
+          },
+          {
+            "id": "b",
+            "texto": "Month-end bank and transactional balance reconciliations"
+          },
+          {
+            "id": "c",
+            "texto": "Strong database encryption at rest using AES-256"
+          },
+          {
+            "id": "d",
+            "texto": "Network intrusion detection systems (NIDS)"
+          },
+          {
+            "id": "e",
+            "texto": "Data restoration from tape backup copies"
+          },
+          {
+            "id": "f",
+            "texto": "Verification of control totals (hash totals) at batch closing"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "d",
+          "f"
+        ],
+        "justificacion": "A, B, D y F alertan o descubren la ocurrencia de una anomalía o error una vez que ha sucedido.\n\nC es un control preventivo (impide la lectura ilegítima).\n\nE es un control correctivo (repara el daño tras un fallo).",
+        "justificacionEn": "A, B, D, and F alert or discover anomalies and errors after they have occurred.\n\nC is a preventive control (prevents illegitimate access).\n\nE is a corrective control (repairs damage following an outage or disruption)."
+      },
+      {
+        "id": 6,
+        "tipo": "multiple",
+        "pregunta": "¿Cuáles de los siguientes son ejemplos de controles CORRECTIVOS en auditoría de sistemas?",
+        "preguntaEn": "Which of the following are examples of CORRECTIVE controls in systems auditing?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Procedimientos de conmutación por error automatizada (failover)"
+          },
+          {
+            "id": "b",
+            "texto": "Políticas de contraseñas robustas y bloqueo automático por intentos fallidos"
+          },
+          {
+            "id": "c",
+            "texto": "Restauración de bases de datos a partir de respaldos (backups)"
+          },
+          {
+            "id": "d",
+            "texto": "Activación del Plan de Recuperación ante Desastres (DRP) tras un corte"
+          },
+          {
+            "id": "e",
+            "texto": "Listas de control de acceso (ACL) configuradas en el firewall perimetral"
+          },
+          {
+            "id": "f",
+            "texto": "Aislamiento, limpieza y reinstalación de un servidor infectado con malware"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Automated failover procedures"
+          },
+          {
+            "id": "b",
+            "texto": "Strong password policies and automatic lockout upon failed attempts"
+          },
+          {
+            "id": "c",
+            "texto": "Database restoration from backups"
+          },
+          {
+            "id": "d",
+            "texto": "Disaster Recovery Plan (DRP) activation following an outage"
+          },
+          {
+            "id": "e",
+            "texto": "Access control lists (ACLs) configured on the perimeter firewall"
+          },
+          {
+            "id": "f",
+            "texto": "Isolation, remediation, and reinstallation of a malware-infected server"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "c",
+          "d",
+          "f"
+        ],
+        "justificacion": "A, C, D y F entran en acción después del incidente para restaurar la operatividad y mitigar el daño.\n\nB y E son controles preventivos que bloquean incidentes antes de que ocurran.",
+        "justificacionEn": "A, C, D, and F take action after an incident to restore normal operations and mitigate damage.\n\nB and E are preventive controls designed to block incidents before they occur."
+      },
+      {
+        "id": 7,
+        "tipo": "multiple",
+        "pregunta": "Respecto a la evidencia de auditoría y los papeles de trabajo (audit workpapers), ¿qué afirmaciones son CORRECTAS?",
+        "preguntaEn": "Regarding audit evidence and audit workpapers, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "La evidencia obtenida directamente por el auditor es más confiable que la entregada por el personal auditado."
+          },
+          {
+            "id": "b",
+            "texto": "La evidencia debe satisfacer los atributos de ser suficiente y apropiada/competente."
+          },
+          {
+            "id": "c",
+            "texto": "Las declaraciones verbales de la gerencia poseen mayor jerarquía probatoria que las bitácoras del sistema."
+          },
+          {
+            "id": "d",
+            "texto": "Los papeles de trabajo documentan la planificación, las pruebas ejecutadas, la evidencia y las conclusiones."
+          },
+          {
+            "id": "e",
+            "texto": "Confirmaciones escritas de terceros independientes ofrecen mayor confiabilidad que reportes internos."
+          },
+          {
+            "id": "f",
+            "texto": "Los papeles de trabajo deben ser destruidos inmediatamente tras entregar el informe por confidencialidad."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Evidence obtained directly by the auditor is more reliable than evidence supplied by auditee personnel."
+          },
+          {
+            "id": "b",
+            "texto": "Evidence must satisfy the criteria of being sufficient and appropriate/competent."
+          },
+          {
+            "id": "c",
+            "texto": "Oral statements from management carry higher evidentiary weight than automated system logs."
+          },
+          {
+            "id": "d",
+            "texto": "Workpapers document the planning, audit procedures performed, evidence gathered, and conclusions reached."
+          },
+          {
+            "id": "e",
+            "texto": "Written confirmations from independent third parties offer greater reliability than internal reports."
+          },
+          {
+            "id": "f",
+            "texto": "Workpapers must be destroyed immediately upon report delivery to preserve confidentiality."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "d",
+          "e"
+        ],
+        "justificacion": "A, B, D y E reflejan la jerarquía y requisitos de la evidencia según ITAF: la evidencia directa y de terceros externos siempre tiene mayor peso probatorio, y los papeles de trabajo respaldan las conclusiones.\n\nC es falso: el testimonio oral es la evidencia menos confiable.\n\nF es incorrecto: los papeles de trabajo deben custodiarse según las políticas de retención de la organización.",
+        "justificacionEn": "A, B, D, and E reflect ITAF evidence hierarchy and standards: direct and third-party external evidence holds higher evidentiary value, and workpapers substantiate audit findings.\n\nC is false: oral testimony is the least reliable form of evidence.\n\nF is incorrect: workpapers must be retained according to corporate record retention policies."
+      },
+      {
+        "id": 8,
+        "tipo": "multiple",
+        "pregunta": "Al documentar un hallazgo formal de auditoría según los estándares de ISACA, ¿cuáles elementos constituyen su estructura obligatoria?",
+        "preguntaEn": "When documenting a formal audit finding according to ISACA standards, which elements constitute its mandatory structure?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Condición (la situación real observada en el examen)"
+          },
+          {
+            "id": "b",
+            "texto": "Criterio (la norma, estándar, ley o política que debe cumplirse)"
+          },
+          {
+            "id": "c",
+            "texto": "Causa (la razón de fondo por la cual ocurrió la desviación)"
+          },
+          {
+            "id": "d",
+            "texto": "Efecto o Impacto (el riesgo o consecuencia material de la falla)"
+          },
+          {
+            "id": "e",
+            "texto": "Asignación de puntos de historia y diagramas de casos de uso"
+          },
+          {
+            "id": "f",
+            "texto": "Recomendación (la acción constructiva propuesta para subsanar la causa)"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Condition (the factual situation observed during the review)"
+          },
+          {
+            "id": "b",
+            "texto": "Criteria (the standard, policy, regulation, or law being measured against)"
+          },
+          {
+            "id": "c",
+            "texto": "Cause (the underlying reason why the deviation occurred)"
+          },
+          {
+            "id": "d",
+            "texto": "Effect or Impact (the risk exposure or material consequence of the deficiency)"
+          },
+          {
+            "id": "e",
+            "texto": "Story point estimation and UML use-case diagrams"
+          },
+          {
+            "id": "f",
+            "texto": "Recommendation (the constructive action proposed to remediate the root cause)"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "f"
+        ],
+        "justificacion": "A, B, C, D y F conforman la estructura clásica del hallazgo: Condición, Criterio, Causa, Efecto y Recomendación.\n\nE pertenece a metodologías de desarrollo de software (Scrum/UML), ajenas a la redacción del hallazgo.",
+        "justificacionEn": "A, B, C, D, and F constitute the classic audit finding structure: Condition, Criteria, Cause, Effect, and Recommendation.\n\nE belongs to software engineering methodologies (Scrum/UML) and is unrelated to audit findings."
+      },
+      {
+        "id": 9,
+        "tipo": "multiple",
+        "pregunta": "En relación con la etapa de reporte y seguimiento (follow-up) de la auditoría de SI, ¿cuáles afirmaciones son CORRECTAS?",
+        "preguntaEn": "Regarding the reporting and follow-up phase of an IS audit, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "El borrador del informe debe discutirse con los directores de área en una reunión de cierre previa."
+          },
+          {
+            "id": "b",
+            "texto": "El auditor de SI es el encargado de implementar materialmente los parches y cambios recomendados."
+          },
+          {
+            "id": "c",
+            "texto": "El proceso de seguimiento evalúa si la administración adoptó medidas correctivas oportunas."
+          },
+          {
+            "id": "d",
+            "texto": "Si la gerencia decide aceptar un riesgo residual importante, dicha decisión debe informarse al Directorio."
+          },
+          {
+            "id": "e",
+            "texto": "Las recomendaciones deben ser prácticas, realizables y orientadas a la causa raíz."
+          },
+          {
+            "id": "f",
+            "texto": "Las actividades de seguimiento se anulan si el personal auditado firma acuerdos de confidencialidad."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The draft report should be discussed with area management during an exit/closing conference."
+          },
+          {
+            "id": "b",
+            "texto": "The IS auditor is responsible for hands-on operational implementation of recommended patches and changes."
+          },
+          {
+            "id": "c",
+            "texto": "The follow-up process evaluates whether management took timely and appropriate corrective actions."
+          },
+          {
+            "id": "d",
+            "texto": "If management decides to accept significant residual risk, this decision must be reported to the Board."
+          },
+          {
+            "id": "e",
+            "texto": "Recommendations must be practical, achievable, and addressed to the root cause."
+          },
+          {
+            "id": "f",
+            "texto": "Follow-up activities are cancelled if auditee personnel sign non-disclosure agreements."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "c",
+          "d",
+          "e"
+        ],
+        "justificacion": "A, C, D y E cumplen el proceso de cierre y monitoreo de compromisos según ITAF: se socializan hallazgos, se hace seguimiento y la aceptación de riesgos altos se escala al gobierno corporativo.\n\nB es falso: el auditor pierde independencia si ejecuta la remediación operativa.\n\nF es falso: los acuerdos de confidencialidad no eximen el seguimiento de debilidades de control.",
+        "justificacionEn": "A, C, D, and E adhere to ITAF closing and monitoring standards: findings are vetted with management, follow-up assesses remediation, and significant risk acceptance is escalated to the governing board.\n\nB is false: the auditor compromises independence by executing operational remediation.\n\nF is false: NDAs do not waive control remediation follow-up."
+      },
+      {
+        "id": 10,
+        "tipo": "multiple",
+        "pregunta": "¿Cuáles de los siguientes corresponden a controles FÍSICOS o AMBIENTALES en un centro de cómputo?",
+        "preguntaEn": "Which of the following correspond to PHYSICAL or ENVIRONMENTAL controls in a data center?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Sistemas de supresión de incendios mediante agentes limpios (FM-200 o Novec)"
+          },
+          {
+            "id": "b",
+            "texto": "Dispositivos de autenticación biométrica en la puerta de la sala de servidores"
+          },
+          {
+            "id": "c",
+            "texto": "Sistemas de Alimentación Ininterrumpida (UPS) y motogeneradores eléctricos"
+          },
+          {
+            "id": "d",
+            "texto": "Filtrado de paquetes mediante inspección con estado en el firewall"
+          },
+          {
+            "id": "e",
+            "texto": "Sensores de detección de aniego y monitoreo de temperatura/humedad relativa"
+          },
+          {
+            "id": "f",
+            "texto": "Cifrado de enlaces punto a punto con IPsec en modo transporte"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Clean-agent fire suppression systems (such as FM-200 or Novec)"
+          },
+          {
+            "id": "b",
+            "texto": "Biometric authentication access devices on the server room door"
+          },
+          {
+            "id": "c",
+            "texto": "Uninterruptible Power Supply (UPS) systems and diesel generators"
+          },
+          {
+            "id": "d",
+            "texto": "Packet filtering through stateful inspection firewalls"
+          },
+          {
+            "id": "e",
+            "texto": "Water leakage detection sensors and temperature/relative humidity monitoring"
+          },
+          {
+            "id": "f",
+            "texto": "Point-to-point link encryption using IPsec in transport mode"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "e"
+        ],
+        "justificacion": "A, B, C y E resguardan las instalaciones físicas y condiciones ambientales frente a intrusiones y desastres naturales.\n\nD y F son controles lógicos o técnicos aplicados a la red de datos.",
+        "justificacionEn": "A, B, C, and E safeguard physical facilities and environmental parameters against intrusion and physical disasters.\n\nD and F are logical and technical network security controls."
+      },
+      {
+        "id": 11,
+        "tipo": "multiple",
+        "pregunta": "Sobre las estructuras organizacionales de gobernanza y alineación de TI, ¿qué afirmaciones son CORRECTAS?",
+        "preguntaEn": "Regarding IT governance organizational structures and business alignment, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "El Comité de Estrategia de TI a nivel del Directorio supervisa la dirección general y las grandes inversiones."
+          },
+          {
+            "id": "b",
+            "texto": "El Comité de Dirección de TI (IT Steering Committee) prioriza proyectos y supervisa la entrega operativa."
+          },
+          {
+            "id": "c",
+            "texto": "El departamento de TI debe reportar formalmente al CFO para garantizar la reducción de costos."
+          },
+          {
+            "id": "d",
+            "texto": "El plan estratégico de TI debe elaborarse en concordancia con los objetivos de negocio de la empresa."
+          },
+          {
+            "id": "e",
+            "texto": "Los programadores deben formar parte obligatoria del Comité de Auditoría del Directorio."
+          },
+          {
+            "id": "f",
+            "texto": "La falta de documentos estratégicos dificulta la definición de acuerdos de nivel de servicio (SLA)."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The IT Strategy Committee at the Board level oversees overall direction and major investments."
+          },
+          {
+            "id": "b",
+            "texto": "The IT Steering Committee prioritizes projects and oversees operational service delivery."
+          },
+          {
+            "id": "c",
+            "texto": "The IT department must formally report to the CFO to guarantee cost reduction."
+          },
+          {
+            "id": "d",
+            "texto": "The IT strategic plan must be developed in alignment with corporate business objectives."
+          },
+          {
+            "id": "e",
+            "texto": "Programmers must be mandatory members of the Board's Audit Committee."
+          },
+          {
+            "id": "f",
+            "texto": "The absence of strategic documents impairs the effective definition of Service Level Agreements (SLAs)."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "d",
+          "f"
+        ],
+        "justificacion": "A, B, D y F corresponden a las buenas prácticas de gobernanza: distinción entre comité estratégico y directivo, alineación con el negocio y derivación de SLAs a partir de la estrategia.\n\nC es incorrecto: reportar al CFO genera conflicto de interés al supeditar la seguridad y calidad al gasto financiero.\n\nE es incorrecto: los desarrolladores son parte de la operación, no del órgano de supervisión del Directorio.",
+        "justificacionEn": "A, B, D, and F align with governance best practices: distinction between strategy and steering committees, business alignment, and SLA derivation from strategy.\n\nC is incorrect: reporting directly to the CFO creates a conflict of interest by subordinating security and quality to cost reduction.\n\nE is incorrect: developers are operational staff, not members of board oversight committees."
+      },
+      {
+        "id": 12,
+        "tipo": "multiple",
+        "pregunta": "En el modelo de gobernanza de las Tres Líneas, ¿cuáles asignaciones de responsabilidades son CORRECTAS?",
+        "preguntaEn": "In the Three Lines Governance Model, which responsibility assignments are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Primera Línea: La gestión operativa y los líderes de proceso que poseen y gestionan el riesgo diario."
+          },
+          {
+            "id": "b",
+            "texto": "Segunda Línea: Funciones de soporte y supervisión especializada como Gestión de Riesgos y Cumplimiento."
+          },
+          {
+            "id": "c",
+            "texto": "Tercera Línea: La Auditoría Interna, brindando aseguramiento independiente y objetivo a la Junta."
+          },
+          {
+            "id": "d",
+            "texto": "Primera Línea: El auditor externo emitiendo la opinión de cumplimiento legal."
+          },
+          {
+            "id": "e",
+            "texto": "Segunda Línea: Los auditores de SI ejecutando auditorías sorpresa a los desarrolladores."
+          },
+          {
+            "id": "f",
+            "texto": "El Órgano de Gobierno (Junta Directiva) supervisa y recibe reportes directos de la tercera línea."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "First Line: Operational management and process owners who own and manage day-to-day risk."
+          },
+          {
+            "id": "b",
+            "texto": "Second Line: Support and specialized oversight functions such as Risk Management and Compliance."
+          },
+          {
+            "id": "c",
+            "texto": "Third Line: Internal Audit, providing independent and objective assurance to the Board."
+          },
+          {
+            "id": "d",
+            "texto": "First Line: The external auditor issuing the legal compliance opinion."
+          },
+          {
+            "id": "e",
+            "texto": "Second Line: IS auditors performing surprise audit inspections on developers."
+          },
+          {
+            "id": "f",
+            "texto": "The Governing Body (Board of Directors) oversees and receives direct reporting from the third line."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "f"
+        ],
+        "justificacion": "A, B, C y F describen con precisión el Modelo de las Tres Líneas: 1.ª línea opera y controla, 2.ª línea monitorea y asesora, 3.ª línea asegura de forma independiente y la Junta gobierna.\n\nD es falso: auditoría externa es un asegurador externo al modelo de tres líneas internas.\n\nE es falso: la auditoría es tercera línea, nunca segunda.",
+        "justificacionEn": "A, B, C, and F accurately depict the Three Lines Model: 1st line operates and controls, 2nd line oversees and advises, 3rd line provides independent assurance, and the Board governs.\n\nD is false: external audit is an external assurance provider outside the internal three lines. E is false: audit is strictly the third line, never the second."
+      },
+      {
+        "id": 13,
+        "tipo": "multiple",
+        "pregunta": "En un centro de procesamiento de información, ¿cuáles de las siguientes combinaciones de funciones representan un CONFLICTO de segregación de funciones (SoD)?",
+        "preguntaEn": "In an information processing facility, which of the following job role combinations represent a Segregation of Duties (SoD) CONFLICT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Administrador de seguridad informática y responsable del control de cambios a producción"
+          },
+          {
+            "id": "b",
+            "texto": "Programador de aplicaciones y operador de consola en el entorno de producción"
+          },
+          {
+            "id": "c",
+            "texto": "Desarrollador de sistemas y personal encargado del mantenimiento en entorno de desarrollo"
+          },
+          {
+            "id": "d",
+            "texto": "Administrador de bases de datos (DBA) con autoridad para aprobar modificaciones a saldos contables"
+          },
+          {
+            "id": "e",
+            "texto": "Usuario que registra la creación de proveedores y a su vez aprueba los pagos de facturas"
+          },
+          {
+            "id": "f",
+            "texto": "Administrador de red que reporta al Oficial de Seguridad de la Información"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "IT security administrator and production change control coordinator"
+          },
+          {
+            "id": "b",
+            "texto": "Application programmer and computer console operator in the production environment"
+          },
+          {
+            "id": "c",
+            "texto": "Systems developer and software maintenance staff in the development environment"
+          },
+          {
+            "id": "d",
+            "texto": "Database administrator (DBA) with authority to approve changes to financial ledger balances"
+          },
+          {
+            "id": "e",
+            "texto": "User who enters vendor master records and also approves invoice disbursement payments"
+          },
+          {
+            "id": "f",
+            "texto": "Network administrator reporting to the Chief Information Security Officer (CISO)"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "d",
+          "e"
+        ],
+        "justificacion": "A, B, D y E violan la segregación de funciones: permiten a una misma persona alterar parámetros, migrar código, manipular saldos o autorizar compras sin supervisión.\n\nC es una práctica habitual y permitida en desarrollo.\n\nF es una relación de reporte válida que no mezcla ejecución con autorización transaccional.",
+        "justificacionEn": "A, B, D, and E violate segregation of duties: they allow a single individual to alter security settings, deploy unvetted code, manipulate ledger data, or approve fraudulent vendor disbursements.\n\nC is standard practice in development environments.\n\nF is an acceptable reporting relationship that does not compromise transactional checks."
+      },
+      {
+        "id": 14,
+        "tipo": "multiple",
+        "pregunta": "En el diseño de un Cuadro de Mando Integral de TI (IT Balanced Scorecard), ¿cuáles son las cuatro perspectivas estándar?",
+        "preguntaEn": "In the design of an IT Balanced Scorecard, which are the four standard perspectives?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Contribución corporativa / empresarial (Valor aportado al negocio)"
+          },
+          {
+            "id": "b",
+            "texto": "Orientación al usuario / cliente (Satisfacción del cliente interno y externo)"
+          },
+          {
+            "id": "c",
+            "texto": "Excelencia operacional (Eficiencia de los procesos de TI y entrega de servicios)"
+          },
+          {
+            "id": "d",
+            "texto": "Orientación al futuro (Capacidad de aprendizaje, innovación y capital humano)"
+          },
+          {
+            "id": "e",
+            "texto": "Rentabilidad de las campañas en redes sociales y marketing de influencers"
+          },
+          {
+            "id": "f",
+            "texto": "Análisis de casos de uso y diagramas de secuencia en UML"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Corporate / Business contribution (Value delivered to the enterprise)"
+          },
+          {
+            "id": "b",
+            "texto": "User / Customer orientation (Internal and external customer satisfaction)"
+          },
+          {
+            "id": "c",
+            "texto": "Operational excellence (Efficiency of IT processes and service delivery)"
+          },
+          {
+            "id": "d",
+            "texto": "Future orientation (Capacity for learning, innovation, and human capital)"
+          },
+          {
+            "id": "e",
+            "texto": "Social media advertising profitability and influencer marketing ROI"
+          },
+          {
+            "id": "f",
+            "texto": "Use case analysis and UML sequence diagrams"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "justificacion": "A, B, C y D corresponden a las 4 perspectivas adaptadas del Balanced Scorecard para TI desarrolladas por Van Grembergen e ISACA.\n\nE y F no forman parte de las perspectivas formales de evaluación de gobernanza de TI.",
+        "justificacionEn": "A, B, C, and D correspond to the four standard IT Balanced Scorecard perspectives developed by Van Grembergen and ISACA.\n\nE and F are not part of formal IT governance scorecard perspectives."
+      },
+      {
+        "id": 15,
+        "tipo": "multiple",
+        "pregunta": "En la gobernanza de datos según las directrices de ISACA, ¿qué afirmaciones sobre roles son CORRECTAS?",
+        "preguntaEn": "In data governance according to ISACA guidelines, which statements regarding roles are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "El Dueño del Dato (Data Owner) clasifica la información y autoriza formalmente los privilegios de acceso."
+          },
+          {
+            "id": "b",
+            "texto": "El Custodio del Dato (Data Custodian) implementa la protección técnica, almacenamiento y copias de seguridad."
+          },
+          {
+            "id": "c",
+            "texto": "El Administrador de Base de Datos (DBA) actúa como custodio técnico y no como propietario del negocio."
+          },
+          {
+            "id": "d",
+            "texto": "Los programadores son los dueños de los datos transaccionales por haber codificado las tablas."
+          },
+          {
+            "id": "e",
+            "texto": "El Oficial de Seguridad o Privacidad recomienda y supervisa las directrices de protección de datos."
+          },
+          {
+            "id": "f",
+            "texto": "El Custodio del Dato decide de forma autónoma qué registros financieros deben eliminarse."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The Data Owner classifies information and formally authorizes user access privileges."
+          },
+          {
+            "id": "b",
+            "texto": "The Data Custodian implements technical safeguards, storage, and backup protection."
+          },
+          {
+            "id": "c",
+            "texto": "The Database Administrator (DBA) acts as a technical custodian rather than a business data owner."
+          },
+          {
+            "id": "d",
+            "texto": "Application developers are the business owners of transaction data because they coded the tables."
+          },
+          {
+            "id": "e",
+            "texto": "The Information Security/Privacy Officer recommends and oversees data protection guidelines."
+          },
+          {
+            "id": "f",
+            "texto": "The Data Custodian autonomously decides which historical financial records should be purged."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "e"
+        ],
+        "justificacion": "A, B, C y E reflejan la distribución de responsabilidades sobre la información: el negocio (owner) clasifica y autoriza; TI (custodian) administra la infraestructura; Seguridad supervisa.\n\nD es incorrecto: los desarrolladores no tienen propiedad sobre la información corporativa.\n\nF es falso: las decisiones de retención y purga de información pertenecen al Data Owner.",
+        "justificacionEn": "A, B, C, and E reflect ISACA data stewardship roles: the business data owner classifies and grants access; IT custodians manage technical storage and backups; Security oversees compliance.\n\nD is incorrect: developers do not own enterprise business data.\n\nF is false: retention and disposal decisions belong strictly to the Data Owner."
+      },
+      {
+        "id": 16,
+        "tipo": "multiple",
+        "pregunta": "Dentro de la Gestión de Riesgos Empresariales de TI (IT Risk Management), ¿cuáles son estrategias válidas de TRATAMIENTO del riesgo?",
+        "preguntaEn": "Within IT Enterprise Risk Management, which are valid risk TREATMENT strategies?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Mitigación / Reducción (aplicación de controles para disminuir impacto o probabilidad)"
+          },
+          {
+            "id": "b",
+            "texto": "Transferencia / Compartición (adquisición de pólizas de seguro cibernético o tercerización)"
+          },
+          {
+            "id": "c",
+            "texto": "Aceptación (asunción informada y formal del riesgo residual dentro de la tolerancia de la gerencia)"
+          },
+          {
+            "id": "d",
+            "texto": "Evitación / Evasión (cancelación del servicio, proyecto o actividad que originaba el riesgo)"
+          },
+          {
+            "id": "e",
+            "texto": "Ocultamiento deliberado (eliminar reportes de vulnerabilidades para evitar llamadas de atención)"
+          },
+          {
+            "id": "f",
+            "texto": "Supresión absoluta (garantizar la erradicación del 100% de cualquier riesgo en todos los sistemas)"
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Mitigation / Reduction (applying controls to lower risk impact or probability)"
+          },
+          {
+            "id": "b",
+            "texto": "Transfer / Sharing (purchasing cyber insurance policies or outsourcing)"
+          },
+          {
+            "id": "c",
+            "texto": "Acceptance (informed and formal assumption of residual risk within management tolerance)"
+          },
+          {
+            "id": "d",
+            "texto": "Avoidance (terminating the activity, project, or process that creates the risk)"
+          },
+          {
+            "id": "e",
+            "texto": "Deliberate concealment (deleting vulnerability reports to avoid management scrutiny)"
+          },
+          {
+            "id": "f",
+            "texto": "Absolute suppression (guaranteeing 100% total eradication of any risk across all systems)"
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "justificacion": "A, B, C y D son las 4 respuestas estándar al riesgo reconocidas por ISO 31000 y COSO ERM.\n\nE constituye una falta ética gravísima.\n\nF es técnicamente imposible: el riesgo cero no existe en sistemas de información.",
+        "justificacionEn": "A, B, C, and D are the four standard risk treatment responses recognized by ISO 31000 and COSO ERM.\n\nE constitutes severe professional misconduct.\n\nF is technically unfeasible: zero risk does not exist in information systems."
+      },
+      {
+        "id": 17,
+        "tipo": "multiple",
+        "pregunta": "Al auditar la contratación de proveedores y servicios en la nube, ¿cuáles prácticas de control son RECOMENDADAS?",
+        "preguntaEn": "When auditing third-party vendors and cloud service contracts, which control practices are RECOMMENDED?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Evaluar informes de aseguramiento emitidos por terceros independientes (como SOC 2 o ISO 27001)."
+          },
+          {
+            "id": "b",
+            "texto": "Incluir cláusulas contractuales con derecho explícito de auditoría (right-to-audit)."
+          },
+          {
+            "id": "c",
+            "texto": "Definir Acuerdos de Nivel de Servicio (SLA) con penalidades económicas por indisponibilidad."
+          },
+          {
+            "id": "d",
+            "texto": "Establecer contratos de depósito en custodia de código fuente (Software Escrow) para aplicativos críticos."
+          },
+          {
+            "id": "e",
+            "texto": "Permitir al proveedor modificar de forma discrecional las medidas de seguridad pactadas."
+          },
+          {
+            "id": "f",
+            "texto": "Considerar que la contratación en la nube exime a la gerencia de toda responsabilidad legal y de gobierno."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Reviewing independent third-party assurance audit reports (such as SOC 2 or ISO 27001)."
+          },
+          {
+            "id": "b",
+            "texto": "Including explicit contractual right-to-audit clauses."
+          },
+          {
+            "id": "c",
+            "texto": "Defining Service Level Agreements (SLAs) with financial penalties for service downtime."
+          },
+          {
+            "id": "d",
+            "texto": "Establishing software escrow agreements for proprietary critical applications."
+          },
+          {
+            "id": "e",
+            "texto": "Allowing the vendor to unilaterally modify agreed-upon security safeguards at their discretion."
+          },
+          {
+            "id": "f",
+            "texto": "Assuming that outsourcing to the cloud absolves corporate management of all governance and legal accountability."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "justificacion": "A, B, C y D son controles para mitigar el riesgo de terceros: aseguramiento externo, facultades de inspección, métricas de servicio (SLA) y garantía de acceso al código (escrow).\n\nE rompe la gobernanza contractual.\n\nF es falso: la responsabilidad final ante reguladores y clientes nunca es transferible al proveedor.",
+        "justificacionEn": "A, B, C, and D are essential third-party vendor risk controls: independent audit assurance, right-to-audit clauses, performance SLAs, and source code escrow.\n\nE compromises contract governance.\n\nF is false: ultimate governance and legal accountability can never be outsourced to a vendor."
+      },
+      {
+        "id": 18,
+        "tipo": "multiple",
+        "pregunta": "Sobre la jerarquía de los documentos normativos de TI, ¿cuáles afirmaciones son CORRECTAS?",
+        "preguntaEn": "Regarding the hierarchy of IT governance documentation, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "Las Políticas son directrices obligatorias de alto nivel aprobadas por la gerencia y el Directorio."
+          },
+          {
+            "id": "b",
+            "texto": "Los Estándares establecen requisitos y configuraciones tecnológicas de carácter mandatorio."
+          },
+          {
+            "id": "c",
+            "texto": "Los Procedimientos detallan de forma secuencial y operativa los pasos para realizar una tarea."
+          },
+          {
+            "id": "d",
+            "texto": "Las Directrices (Guidelines) contienen recomendaciones y mejores prácticas cuyo uso es discrecional."
+          },
+          {
+            "id": "e",
+            "texto": "Las Políticas deben actualizarse diariamente e incluir fragmentos específicos de código fuente."
+          },
+          {
+            "id": "f",
+            "texto": "Las Guías operativas anulan de forma automática a los estándares si el personal decide utilizarlas."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "Policies are high-level mandatory directives approved by executive management and the Board."
+          },
+          {
+            "id": "b",
+            "texto": "Standards establish specific mandatory technical configurations and baseline requirements."
+          },
+          {
+            "id": "c",
+            "texto": "Procedures detail the step-by-step operational instructions to accomplish a specific task."
+          },
+          {
+            "id": "d",
+            "texto": "Guidelines contain recommendations and best-practice advice that are discretionary."
+          },
+          {
+            "id": "e",
+            "texto": "Policies must be updated daily and include specific code implementation snippets."
+          },
+          {
+            "id": "f",
+            "texto": "Operational guidelines automatically supersede standards whenever staff chooses to use them."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "justificacion": "A, B, C y D presentan la pirámide documental clásica: Políticas (obligatorias y abstractas), Estándares (obligatorios y técnicos), Procedimientos (paso a paso) y Directrices (orientativas y opcionales).\n\nE es falso: las políticas son estables y de alto nivel.\n\nF es incorrecto: una directriz opcional jamás subordina a un estándar mandatorio.",
+        "justificacionEn": "A, B, C, and D represent the classic documentation pyramid: Policies (mandatory and overarching), Standards (mandatory and technical), Procedures (step-by-step execution), and Guidelines (discretionary recommendations).\n\nE is false: policies are high-level and stable.\n\nF is incorrect: discretionary guidelines can never override mandatory standards."
+      },
+      {
+        "id": 19,
+        "tipo": "multiple",
+        "pregunta": "En la planificación de la continuidad del negocio (BCP) y la resiliencia operativa, ¿qué afirmaciones son CORRECTAS?",
+        "preguntaEn": "In business continuity planning (BCP) and operational resilience, which statements are CORRECT?",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "El Análisis de Impacto en el Negocio (BIA) identifica procesos críticos, el RTO y el RPO."
+          },
+          {
+            "id": "b",
+            "texto": "La Junta Directiva y la alta gerencia son los máximos responsables de la efectividad del plan de continuidad."
+          },
+          {
+            "id": "c",
+            "texto": "El departamento de TI define de manera aislada qué líneas comerciales deben salvarse en una crisis."
+          },
+          {
+            "id": "d",
+            "texto": "El Plan de Recuperación ante Desastres (DRP) se enfoca en restaurar la infraestructura y datos tecnológicos."
+          },
+          {
+            "id": "e",
+            "texto": "Los ejercicios y simulacros periódicos son esenciales para verificar la viabilidad real del plan."
+          },
+          {
+            "id": "f",
+            "texto": "Una vez documentado el BCP, se prohíbe realizar modificaciones para no invalidar las firmas."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "The Business Impact Analysis (BIA) identifies critical business processes, RTO, and RPO."
+          },
+          {
+            "id": "b",
+            "texto": "The Board of Directors and senior management bear ultimate responsibility for business continuity effectiveness."
+          },
+          {
+            "id": "c",
+            "texto": "The IT department unilaterally determines which business operational lines should be recovered during a crisis."
+          },
+          {
+            "id": "d",
+            "texto": "The Disaster Recovery Plan (DRP) focuses on technical IT infrastructure and data recovery."
+          },
+          {
+            "id": "e",
+            "texto": "Periodic drills, walkthroughs, and simulations are essential to validate plan viability."
+          },
+          {
+            "id": "f",
+            "texto": "Once a BCP is approved, further modifications are prohibited to prevent invalidating signatures."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "d",
+          "e"
+        ],
+        "justificacion": "A, B, D y E son pilares de la continuidad operativa: análisis de criticidad (BIA), responsabilidad directiva, enfoque tecnológico del DRP y validación mediante pruebas y simulacros.\n\nC es falso: son los dueños de negocio quienes definen las prioridades comerciales.\n\nF es incorrecto: el BCP exige actualización continua ante cambios en el entorno.",
+        "justificacionEn": "A, B, D, and E are cornerstones of operational continuity: business impact analysis (BIA), executive accountability, technological focus of the DRP, and ongoing simulation testing.\n\nC is false: business unit leaders determine commercial recovery priorities.\n\nF is incorrect: continuity plans require continuous revision to address changing operational environments."
+      },
+      {
+        "id": 20,
+        "tipo": "multiple",
+        "pregunta": "En relación con los marcos y modelos de madurez de procesos de TI, identifique las afirmaciones CORRECTAS:",
+        "preguntaEn": "Regarding IT process maturity models and governance frameworks, identify the CORRECT statements:",
+        "alternativas": [
+          {
+            "id": "a",
+            "texto": "CMMI permite medir y clasificar la capacidad de los procesos de software en niveles evolutivos (1 a 5)."
+          },
+          {
+            "id": "b",
+            "texto": "COBIT distingue formalmente los objetivos de Gobierno (EDM) frente a los objetivos de Gestión (PBRM)."
+          },
+          {
+            "id": "c",
+            "texto": "Un nivel de madurez inicial denota procesos caóticos, no documentados y altamente dependientes de individuos."
+          },
+          {
+            "id": "d",
+            "texto": "ITIL se centra en las mejores prácticas para la Gestión y Entrega de Servicios de TI (ITSM)."
+          },
+          {
+            "id": "e",
+            "texto": "Un nivel 5 de madurez en CMMI certifica que una empresa jamás sufrirá incidentes ni errores de software."
+          },
+          {
+            "id": "f",
+            "texto": "Scrum es un estándar internacional de certificación para la gobernanza del Directorio corporativo."
+          }
+        ],
+        "alternativasEn": [
+          {
+            "id": "a",
+            "texto": "CMMI measures and classifies software process maturity across evolutionary tiers (1 to 5)."
+          },
+          {
+            "id": "b",
+            "texto": "COBIT formally distinguishes Governance objectives (EDM) from Management objectives (APO, BAI, DSS, MEA)."
+          },
+          {
+            "id": "c",
+            "texto": "An initial maturity level denotes chaotic, ad-hoc, and individual-dependent processes."
+          },
+          {
+            "id": "d",
+            "texto": "ITIL focuses on best-practice guidance for IT Service Management (ITSM)."
+          },
+          {
+            "id": "e",
+            "texto": "Level 5 CMMI certification guarantees that an enterprise will never experience defects or outages."
+          },
+          {
+            "id": "f",
+            "texto": "Scrum is an international standard for corporate board of directors governance."
+          }
+        ],
+        "respuestasCorrectasIds": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "justificacion": "A, B, C y D describen adecuadamente los marcos del Dominio 2: niveles de CMMI, separación EDM/PBRM en COBIT, características de madurez básica y enfoque de servicios de ITIL.\n\nE es falso: la madurez optimizada no otorga inmunidad absoluta frente a fallos.\n\nF es falso: Scrum es un marco ágil para desarrollo de proyectos a nivel de equipo técnico.",
+        "justificacionEn": "A, B, C, and D accurately represent Domain 2 frameworks: CMMI levels, COBIT governance vs management separation, basic maturity characteristics, and ITIL service management focus.\n\nE is false: optimizing maturity does not confer absolute immunity from software errors.\n\nF is false: Scrum is an agile project team methodology, not a board governance framework."
+      }
+    ]
   }
 };
 
@@ -8807,6 +11495,7 @@ const state = {
   respondida:                false,
   modoAleatorio:             false,
   ordenAlternativasActuales: ['a', 'b', 'c', 'd'],
+  opcionesSeleccionadas:     [],
 };
 
 /* ----------------------------------------------------------
@@ -8822,6 +11511,12 @@ const DOM = {
   btnDeepseek:           document.getElementById('btn-seccion-deepseek'),
   btnGemini:             document.getElementById('btn-seccion-gemini'),
   btnGpt:                document.getElementById('btn-seccion-gpt'),
+  btnMultiples:          document.getElementById('btn-seccion-multiples'),
+  multiChoiceBanner:     document.getElementById('multi-choice-banner'),
+  multiChoiceInstruction:document.getElementById('multi-choice-instruction'),
+  multiChoiceCounter:    document.getElementById('multi-choice-counter'),
+  btnSubmitMulti:        document.getElementById('btn-submit-multi'),
+  btnSubmitMultiText:    document.getElementById('btn-submit-multi-text'),
   subsectionTitle:       document.getElementById('subsection-title'),
   subsectionGrid:        document.getElementById('subsection-grid'),
   btnBackToStart:        document.getElementById('btn-back-to-start'),
@@ -8892,13 +11587,14 @@ function mostrarSubsecciones(seccion) {
 }
 
 function iniciarCuestionario(seccion, subseccion) {
-  state.seccionActual    = seccion;
-  state.subseccionActual = subseccion;
-  state.preguntas        = [...BANCO_PREGUNTAS[seccion][subseccion]];
-  state.indiceActual     = 0;
-  state.correctas        = 0;
-  state.incorrectas      = 0;
-  state.respondida       = false;
+  state.seccionActual         = seccion;
+  state.subseccionActual      = subseccion;
+  state.preguntas             = [...BANCO_PREGUNTAS[seccion][subseccion]];
+  state.indiceActual          = 0;
+  state.correctas             = 0;
+  state.incorrectas           = 0;
+  state.respondida            = false;
+  state.opcionesSeleccionadas = [];
 
   // Bloquear el modo aleatorio seleccionado antes de iniciar el cuestionario
   state.modoAleatorio = DOM.toggleRandomMode ? DOM.toggleRandomMode.checked : false;
@@ -8915,14 +11611,17 @@ function iniciarCuestionario(seccion, subseccion) {
 
 function mostrarPregunta() {
   state.respondida = false;
+  state.opcionesSeleccionadas = [];
   const pregunta   = state.preguntas[state.indiceActual];
   const numHumano  = state.indiceActual + 1;
+  const esMultiple = pregunta.tipo === 'multiple' || Array.isArray(pregunta.respuestasCorrectasIds);
 
+  const baseIds = pregunta.alternativas.map(a => a.id);
   // Si está activo el modo aleatorio, mezclar el orden de las alternativas
   if (state.modoAleatorio) {
-    state.ordenAlternativasActuales = shuffleAlts(['a', 'b', 'c', 'd']);
+    state.ordenAlternativasActuales = shuffleAlts(baseIds);
   } else {
-    state.ordenAlternativasActuales = ['a', 'b', 'c', 'd'];
+    state.ordenAlternativasActuales = [...baseIds];
   }
 
   const useEn         = currentLang === 'en' && pregunta.preguntaEn;
@@ -8937,13 +11636,25 @@ function mostrarPregunta() {
   ocultarFeedback();
   DOM.btnNext.hidden = true;
 
+  if (esMultiple) {
+    if (DOM.multiChoiceBanner) DOM.multiChoiceBanner.hidden = false;
+    actualizarContadorMultiple();
+    if (DOM.btnSubmitMulti) {
+      DOM.btnSubmitMulti.hidden = false;
+      DOM.btnSubmitMulti.disabled = true;
+    }
+  } else {
+    if (DOM.multiChoiceBanner) DOM.multiChoiceBanner.hidden = true;
+    if (DOM.btnSubmitMulti) DOM.btnSubmitMulti.hidden = true;
+  }
+
   // Renderizar alternativas según el orden actual
   DOM.alternativesList.innerHTML = '';
   state.ordenAlternativasActuales.forEach((altId, idx) => {
     const alt = allAlts.find(a => a.id === altId);
     if (!alt) return;
 
-    const displayLetter = String.fromCharCode(65 + idx); // A, B, C, D
+    const displayLetter = String.fromCharCode(65 + idx); // A, B, C, D, E, F...
 
     const li  = document.createElement('li');
     li.setAttribute('role', 'listitem');
@@ -8959,11 +11670,171 @@ function mostrarPregunta() {
     span.textContent = alt.texto;
 
     btn.appendChild(span);
-    btn.addEventListener('click', () => manejarRespuesta(alt.id, pregunta));
+
+    if (esMultiple) {
+      btn.addEventListener('click', () => toggleSeleccionMultiple(alt.id, btn));
+    } else {
+      btn.addEventListener('click', () => manejarRespuesta(alt.id, pregunta));
+    }
 
     li.appendChild(btn);
     DOM.alternativesList.appendChild(li);
   });
+}
+
+function toggleSeleccionMultiple(altId, btn) {
+  if (state.respondida) return;
+
+  const idx = state.opcionesSeleccionadas.indexOf(altId);
+  if (idx > -1) {
+    state.opcionesSeleccionadas.splice(idx, 1);
+    btn.classList.remove('alternative-btn--selected');
+  } else {
+    if (state.opcionesSeleccionadas.length >= 5) {
+      return; // Máximo 5 opciones permitidas según instrucciones
+    }
+    state.opcionesSeleccionadas.push(altId);
+    btn.classList.add('alternative-btn--selected');
+  }
+
+  actualizarContadorMultiple();
+}
+
+function actualizarContadorMultiple() {
+  const count = state.opcionesSeleccionadas.length;
+  if (DOM.multiChoiceCounter) {
+    DOM.multiChoiceCounter.textContent = `${count} / 5`;
+    DOM.multiChoiceCounter.classList.toggle('multi-choice-counter--ready', count >= 2 && count <= 5);
+    DOM.multiChoiceCounter.classList.toggle('multi-choice-counter--limit', count === 5);
+  }
+  if (DOM.btnSubmitMulti) {
+    DOM.btnSubmitMulti.disabled = (count < 2 || count > 5);
+  }
+}
+
+function confirmarRespuestaMultiple() {
+  if (state.respondida) return;
+  const pregunta = state.preguntas[state.indiceActual];
+  if (!pregunta) return;
+
+  const count = state.opcionesSeleccionadas.length;
+  if (count < 2 || count > 5) return;
+
+  state.respondida = true;
+  if (DOM.btnSubmitMulti) DOM.btnSubmitMulti.hidden = true;
+
+  const seleccionadas = [...state.opcionesSeleccionadas];
+  const correctas = pregunta.respuestasCorrectasIds || [];
+
+  const todasCorrectasMarcadas = correctas.every(id => seleccionadas.includes(id));
+  const ningunaIncorrectaMarcada = seleccionadas.every(id => correctas.includes(id));
+  const esCorrecta = todasCorrectasMarcadas && ningunaIncorrectaMarcada;
+
+  if (esCorrecta) {
+    state.correctas++;
+  } else {
+    state.incorrectas++;
+  }
+  DOM.liveScore.textContent = state.correctas;
+
+  const baseIds = pregunta.alternativas.map(a => a.id);
+  const useEn   = currentLang === 'en' && pregunta.preguntaEn;
+  const allAlts = useEn ? pregunta.alternativasEn : pregunta.alternativas;
+
+  if (state.modoAleatorio) {
+    state.ordenAlternativasActuales = [...baseIds];
+    DOM.alternativesList.innerHTML = '';
+
+    state.ordenAlternativasActuales.forEach((altId, idx) => {
+      const alt = allAlts.find(a => a.id === altId);
+      if (!alt) return;
+
+      const displayLetter = String.fromCharCode(65 + idx);
+      const li  = document.createElement('li');
+      li.setAttribute('role', 'listitem');
+
+      const btn = document.createElement('button');
+      btn.className      = 'alternative-btn';
+      btn.dataset.id     = alt.id;
+      btn.dataset.letter = displayLetter;
+      btn.disabled       = true;
+      btn.setAttribute('aria-label', `${currentLang === 'en' ? 'Option' : 'Opción'} ${displayLetter}: ${alt.texto}`);
+
+      const esEstaCorrecta = correctas.includes(alt.id);
+      const fueSeleccionada = seleccionadas.includes(alt.id);
+
+      if (esEstaCorrecta && fueSeleccionada) {
+        btn.classList.add('alternative-btn--correct');
+      } else if (esEstaCorrecta && !fueSeleccionada) {
+        btn.classList.add('alternative-btn--missed');
+      } else if (!esEstaCorrecta && fueSeleccionada) {
+        btn.classList.add('alternative-btn--wrong');
+      }
+
+      const span = document.createElement('span');
+      span.className   = 'alternative-text';
+      span.textContent = alt.texto;
+
+      if (esEstaCorrecta && !fueSeleccionada) {
+        const tag = document.createElement('span');
+        tag.className   = 'alt-tag-missed';
+        tag.textContent = t('missedOptionTag') || '(Correcta omitida)';
+        span.appendChild(tag);
+      }
+
+      btn.appendChild(span);
+      li.appendChild(btn);
+      DOM.alternativesList.appendChild(li);
+    });
+  } else {
+    const botones = DOM.alternativesList.querySelectorAll('.alternative-btn');
+    botones.forEach(btn => {
+      btn.disabled = true;
+      btn.classList.remove('alternative-btn--selected');
+      const altId = btn.dataset.id;
+      const esEstaCorrecta = correctas.includes(altId);
+      const fueSeleccionada = seleccionadas.includes(altId);
+
+      if (esEstaCorrecta && fueSeleccionada) {
+        btn.classList.add('alternative-btn--correct');
+      } else if (esEstaCorrecta && !fueSeleccionada) {
+        btn.classList.add('alternative-btn--missed');
+        const span = btn.querySelector('.alternative-text');
+        if (span) {
+          const tag = document.createElement('span');
+          tag.className   = 'alt-tag-missed';
+          tag.textContent = t('missedOptionTag') || '(Correcta omitida)';
+          span.appendChild(tag);
+        }
+      } else if (!esEstaCorrecta && fueSeleccionada) {
+        btn.classList.add('alternative-btn--wrong');
+      }
+    });
+  }
+
+  const useEnJust = currentLang === 'en' && pregunta.justificacionEn;
+  const just      = useEnJust ? pregunta.justificacionEn : pregunta.justificacion;
+  mostrarFeedback(esCorrecta, just);
+
+  if (DOM.feedbackReorderNotice) {
+    DOM.feedbackReorderNotice.hidden = !state.modoAleatorio;
+    if (state.modoAleatorio) {
+      DOM.feedbackReorderNotice.textContent = t('reorderNotice');
+    }
+  }
+
+  const esUltima = state.indiceActual >= state.preguntas.length - 1;
+  DOM.btnNext.hidden = false;
+  const nextText = DOM.btnNext.querySelector('#btn-next-text') || DOM.btnNext;
+  nextText.textContent = esUltima ? t('finishBtn') : t('nextBtn');
+  const prevArrow = DOM.btnNext.querySelector('.btn-arrow');
+  if (prevArrow) prevArrow.remove();
+  const arrow = document.createElement('span');
+  arrow.className   = 'btn-arrow';
+  arrow.textContent = esUltima ? ' ↗' : ' →';
+  arrow.setAttribute('aria-hidden', 'true');
+  DOM.btnNext.appendChild(arrow);
+  DOM.feedbackCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 function manejarRespuesta(idSeleccionado, pregunta) {
@@ -8978,10 +11849,11 @@ function manejarRespuesta(idSeleccionado, pregunta) {
   }
   DOM.liveScore.textContent = state.correctas;
 
-  // Si estamos en modo aleatorio, reordenar las alternativas a su orden original (A, B, C, D)
+  // Si estamos en modo aleatorio, reordenar las alternativas a su orden original
   // para que coincidan 100% con la justificación
   if (state.modoAleatorio) {
-    state.ordenAlternativasActuales = ['a', 'b', 'c', 'd'];
+    const baseIds = pregunta.alternativas.map(a => a.id);
+    state.ordenAlternativasActuales = [...baseIds];
     const useEn   = currentLang === 'en' && pregunta.preguntaEn;
     const allAlts = useEn ? pregunta.alternativasEn : pregunta.alternativas;
 
@@ -8990,7 +11862,7 @@ function manejarRespuesta(idSeleccionado, pregunta) {
       const alt = allAlts.find(a => a.id === altId);
       if (!alt) return;
 
-      const displayLetter = String.fromCharCode(65 + idx); // A, B, C, D
+      const displayLetter = String.fromCharCode(65 + idx);
 
       const li  = document.createElement('li');
       li.setAttribute('role', 'listitem');
@@ -9062,7 +11934,10 @@ function mostrarFeedback(esCorrecta, justificacion) {
   DOM.feedbackIcon.textContent   = esCorrecta ? '✅' : '❌';
   DOM.feedbackStatus.textContent = esCorrecta ? t('correct') : t('incorrect');
   if (justificacion && justificacion.trim() !== '') {
-    const formatted = justificacion.replace(/\s([B-D])\.\s/g, '\n$1. ');
+    let formatted = justificacion;
+    if (!formatted.includes('\n')) {
+      formatted = formatted.replace(/\s([B-F])\.\s/g, '\n$1. ');
+    }
     DOM.feedbackJust.textContent = formatted;
     DOM.feedbackJust.hidden      = false;
   } else {
@@ -9149,9 +12024,11 @@ function reiniciarCuestionario() {
 function init() {
   DOM.btnTeoria.addEventListener('click',   () => mostrarSubsecciones('teoria'));
   DOM.btnCasos.addEventListener('click',    () => mostrarSubsecciones('casos'));
-  if (DOM.btnDeepseek) DOM.btnDeepseek.addEventListener('click', () => mostrarSubsecciones('deepseek'));
-  if (DOM.btnGemini)   DOM.btnGemini.addEventListener('click',   () => mostrarSubsecciones('gemini'));
-  if (DOM.btnGpt)      DOM.btnGpt.addEventListener('click',      () => mostrarSubsecciones('gpt'));
+  if (DOM.btnDeepseek)    DOM.btnDeepseek.addEventListener('click',    () => mostrarSubsecciones('deepseek'));
+  if (DOM.btnGemini)      DOM.btnGemini.addEventListener('click',      () => mostrarSubsecciones('gemini'));
+  if (DOM.btnGpt)         DOM.btnGpt.addEventListener('click',         () => mostrarSubsecciones('gpt'));
+  if (DOM.btnMultiples)   DOM.btnMultiples.addEventListener('click',   () => mostrarSubsecciones('multiples'));
+  if (DOM.btnSubmitMulti) DOM.btnSubmitMulti.addEventListener('click', confirmarRespuestaMultiple);
   DOM.btnBackToStart.addEventListener('click', () => showScreen(DOM.screenStart));
   DOM.btnNext.addEventListener('click', siguientePregunta);
   DOM.btnRestart.addEventListener('click', reiniciarCuestionario);

@@ -370,8 +370,102 @@ button {
 
 /* Excepción: los marcados como correcto/incorrecto no bajan de opacidad */
 .alternative-btn--correct:disabled,
-.alternative-btn--wrong:disabled {
+.alternative-btn--wrong:disabled,
+.alternative-btn--missed:disabled {
   opacity: 1;
+}
+
+/* Estado SELECCIONADO (modo selección múltiple antes de confirmar) */
+.alternative-btn--selected {
+  border-color: var(--color-primary) !important;
+  background: var(--color-primary-light) !important;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.25) !important;
+}
+
+.alternative-btn--selected::before {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #fff !important;
+}
+
+/* Estado CORRECTA OMITIDA (era correcta pero el usuario no la marcó) */
+.alternative-btn--missed {
+  border-color: var(--color-success) !important;
+  border-style: dashed !important;
+  background: rgba(34, 197, 94, 0.08) !important;
+  color: var(--color-success-text) !important;
+}
+
+.alternative-btn--missed::before {
+  background: transparent !important;
+  border-color: var(--color-success) !important;
+  color: var(--color-success) !important;
+  content: "✓" !important;
+}
+
+.alt-tag-missed {
+  display: inline-block;
+  margin-left: var(--space-2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-success-text);
+  background: rgba(34, 197, 94, 0.16);
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  vertical-align: middle;
+}
+
+/* Banner de instrucciones de opciones múltiples */
+.multi-choice-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(108, 99, 255, 0.08);
+  border: 1.5px solid rgba(108, 99, 255, 0.25);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-2);
+}
+
+.multi-choice-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.multi-choice-badge {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+}
+
+.multi-choice-instruction {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.multi-choice-counter {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  padding: 4px 10px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  transition: background var(--transition-fast);
+}
+
+.multi-choice-counter--ready {
+  background: var(--color-success);
+}
+
+.multi-choice-counter--limit {
+  background: #f59e0b;
 }
 
 /* ----------------------------------------------------------

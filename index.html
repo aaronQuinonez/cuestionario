@@ -53,6 +53,11 @@
             <span class="section-btn__label" data-i18n="gptLabel">Banco GPT</span>
             <span class="section-btn__sub" data-i18n="gptCount">20 preguntas</span>
           </button>
+          <button class="section-btn" id="btn-seccion-multiples">
+            <span class="section-btn__emoji" aria-hidden="true">☑️</span>
+            <span class="section-btn__label" data-i18n="multiplesLabel">Opciones Múltiples</span>
+            <span class="section-btn__sub" data-i18n="multiplesCount">20 preguntas (A-F)</span>
+          </button>
         </div>
       </div>
     </section>
@@ -114,6 +119,15 @@
         <h2 class="question-text" id="question-text"><!-- JS --></h2>
       </div>
 
+      <!-- Instrucción para preguntas de opciones múltiples -->
+      <div class="multi-choice-banner" id="multi-choice-banner" hidden>
+        <div class="multi-choice-info">
+          <span class="multi-choice-badge" data-i18n="multiBadge">☑️ Selección Múltiple</span>
+          <span class="multi-choice-instruction" id="multi-choice-instruction" data-i18n="multiInstruction">Marca de 2 a 5 opciones correctas:</span>
+        </div>
+        <span class="multi-choice-counter" id="multi-choice-counter">0 / 5</span>
+      </div>
+
       <ul class="alternatives-list" id="alternatives-list" role="list" aria-label="Alternativas de respuesta">
         <!-- JS inserta los <li> -->
       </ul>
@@ -131,6 +145,10 @@
       </div>
 
       <div class="quiz-footer">
+        <button class="btn btn--primary btn--full" id="btn-submit-multi" hidden disabled>
+          <span id="btn-submit-multi-text" data-i18n="submitMultiBtn">Confirmar respuestas</span>
+          <span class="btn-arrow" aria-hidden="true">✓</span>
+        </button>
         <button class="btn btn--primary btn--full" id="btn-next" hidden>
           <span id="btn-next-text" data-i18n="nextBtn">Siguiente pregunta</span>
           <span class="btn-arrow" aria-hidden="true">→</span>

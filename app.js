@@ -77,6 +77,16 @@ const TRANSLATIONS = {
           2: 'Capítulo 2: Gobernanza y Gestión de TI (11 - 20)',
           3: 'Simulacro Parcial Completo (20 preguntas)'
         }
+      },
+      multiples2: {
+        label: 'Opciones Múltiples 2',
+        emoji: '📋',
+        subLabels: {
+          1: 'Capítulo 3: Adquisición y Desarrollo (1 - 10)',
+          2: 'Capítulo 4: Operaciones y Resiliencia (11 - 20)',
+          3: 'Capítulo 5: Protección de Activos (21 - 30)',
+          4: 'Simulacro Completo (30 preguntas)'
+        }
       }
     },
     deepseekLabel:     'Banco DeepSeek',
@@ -87,6 +97,8 @@ const TRANSLATIONS = {
     gptCount:          '20 preguntas',
     multiplesLabel:    'Opciones Múltiples',
     multiplesCount:    '20 preguntas (A-F)',
+    multiples2Label:   'Opciones Múltiples 2',
+    multiples2Count:   '30 preguntas (A-F)',
     multiBadge:        '☑️ Selección Múltiple',
     multiInstruction:  'Marca de 2 a 5 opciones correctas:',
     submitMultiBtn:    'Confirmar respuestas',
@@ -160,6 +172,16 @@ const TRANSLATIONS = {
           2: 'Chapter 2: IT Governance & Management (11 - 20)',
           3: 'Full Midterm Mock Exam (20 questions)'
         }
+      },
+      multiples2: {
+        label: 'Multiple Choice 2',
+        emoji: '📋',
+        subLabels: {
+          1: 'Chapter 3: Acquisition & Development (1 - 10)',
+          2: 'Chapter 4: Operations & Resilience (11 - 20)',
+          3: 'Chapter 5: Protection of Information Assets (21 - 30)',
+          4: 'Full Mock Exam (30 questions)'
+        }
       }
     },
     deepseekLabel:     'DeepSeek Bank',
@@ -170,6 +192,8 @@ const TRANSLATIONS = {
     gptCount:          '20 questions',
     multiplesLabel:    'Multiple Choice',
     multiplesCount:    '20 questions (A-F)',
+    multiples2Label:   'Multiple Choice 2',
+    multiples2Count:   '30 questions (A-F)',
     multiBadge:        '☑️ Multiple Selection',
     multiInstruction:  'Select 2 to 5 correct options:',
     submitMultiBtn:    'Confirm answers',
@@ -11472,7 +11496,3947 @@ const BANCO_PREGUNTAS = {
         "justificacionEn": "A, B, C, and D accurately represent Domain 2 frameworks: CMMI levels, COBIT governance vs management separation, basic maturity characteristics, and ITIL service management focus.\n\nE is false: optimizing maturity does not confer absolute immunity from software errors.\n\nF is false: Scrum is an agile project team methodology, not a board governance framework."
       }
     ]
-  }
+  },
+  "multiples2": {
+      "1": [
+        {
+          "id": 1,
+          "tipo": "multiple",
+          "pregunta": "En relación con las fases del ciclo de vida de desarrollo de sistemas (SDLC) tradicional, ¿cuáles son CORRECTAS?",
+          "preguntaEn": "Regarding the phases of the traditional systems development life cycle (SDLC), which are CORRECT?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Estudio de factibilidad"
+            },
+            {
+              "id": "b",
+              "texto": "Auditoría fiscal anual de la empresa"
+            },
+            {
+              "id": "c",
+              "texto": "Definición de requerimientos"
+            },
+            {
+              "id": "d",
+              "texto": "Capacitación del personal de ventas"
+            },
+            {
+              "id": "e",
+              "texto": "Diseño"
+            },
+            {
+              "id": "f",
+              "texto": "Revisión posimplementación"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Feasibility study"
+            },
+            {
+              "id": "b",
+              "texto": "Annual enterprise financial tax audit"
+            },
+            {
+              "id": "c",
+              "texto": "Requirements definition"
+            },
+            {
+              "id": "d",
+              "texto": "Sales force training program"
+            },
+            {
+              "id": "e",
+              "texto": "Design"
+            },
+            {
+              "id": "f",
+              "texto": "Post-implementation review"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e",
+            "f"
+          ],
+          "justificacion": "A, C, E y F son fases del SDLC tradicional: factibilidad, requerimientos, diseño (o selección, si el sistema se adquiere), desarrollo/configuración, pruebas e implementación finales y revisión posimplementación.\n\nB y D no son fases del SDLC; son actividades ajenas al proceso de desarrollo.",
+          "justificacionEn": "A, C, E, and F are phases of the traditional SDLC: feasibility study, requirements definition, design (or software selection), development/configuration, testing and final implementation, and post-implementation review.\n\nB and D are not SDLC phases; they are unrelated operational business activities."
+        },
+        {
+          "id": 2,
+          "tipo": "multiple",
+          "pregunta": "¿Cuáles de las siguientes son técnicas de programación y control del cronograma de un proyecto?",
+          "preguntaEn": "Which of the following are project scheduling and timeline control techniques?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Diagrama de Gantt"
+            },
+            {
+              "id": "b",
+              "texto": "Análisis FODA"
+            },
+            {
+              "id": "c",
+              "texto": "PERT"
+            },
+            {
+              "id": "d",
+              "texto": "Diagramas de casos de uso UML"
+            },
+            {
+              "id": "e",
+              "texto": "Método de la ruta crítica (CPM)"
+            },
+            {
+              "id": "f",
+              "texto": "Matriz de clasificación de datos"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Gantt chart"
+            },
+            {
+              "id": "b",
+              "texto": "SWOT analysis"
+            },
+            {
+              "id": "c",
+              "texto": "PERT (Program Evaluation and Review Technique)"
+            },
+            {
+              "id": "d",
+              "texto": "UML use-case diagrams"
+            },
+            {
+              "id": "e",
+              "texto": "Critical Path Method (CPM)"
+            },
+            {
+              "id": "f",
+              "texto": "Data classification matrix"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e"
+          ],
+          "justificacion": "Gantt, PERT y CPM son técnicas clásicas de planificación y seguimiento del tiempo en la gestión de proyectos.\n\nB es una herramienta de análisis estratégico; D es una técnica de modelado de requisitos; F pertenece a la gobernanza de datos.",
+          "justificacionEn": "Gantt, PERT, and CPM are classic project management scheduling and timeline tracking techniques.\n\nB is a strategic management tool; D is a requirements modeling technique; F belongs to data governance."
+        },
+        {
+          "id": 3,
+          "tipo": "multiple",
+          "pregunta": "Respecto a las metodologías de desarrollo ágil, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding agile software development methodologies, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Trabaja con iteraciones cortas y entregas incrementales"
+            },
+            {
+              "id": "b",
+              "texto": "Depende de documentación detallada y exhaustiva antes de programar"
+            },
+            {
+              "id": "c",
+              "texto": "Requiere colaboración continua con el usuario"
+            },
+            {
+              "id": "d",
+              "texto": "Se caracteriza por la ausencia total de requisitos de usuario"
+            },
+            {
+              "id": "e",
+              "texto": "Tiene una fuerte dependencia del conocimiento tácito del equipo"
+            },
+            {
+              "id": "f",
+              "texto": "Congela todos los requisitos antes de escribir la primera línea de código"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Works with short iterations and incremental deliverables"
+            },
+            {
+              "id": "b",
+              "texto": "Relies heavily on exhaustive and detailed documentation prior to coding"
+            },
+            {
+              "id": "c",
+              "texto": "Requires continuous and close collaboration with the user"
+            },
+            {
+              "id": "d",
+              "texto": "Is characterized by a complete absence of user requirements"
+            },
+            {
+              "id": "e",
+              "texto": "Relies significantly on the team's tacit knowledge"
+            },
+            {
+              "id": "f",
+              "texto": "Freezes all system requirements before writing the first line of code"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e"
+          ],
+          "justificacion": "A, C y E describen el enfoque ágil: iteraciones, involucramiento permanente del usuario y apoyo en el conocimiento tácito.\n\nB y F son rasgos del enfoque en cascada (waterfall), no del ágil.\n\nD es falso: el ágil sí trabaja con requisitos, pero los refina de forma continua.",
+          "justificacionEn": "A, C, and E describe the agile approach: short iterations, continuous user involvement, and reliance on tacit team knowledge.\n\nB and F are hallmarks of the waterfall model, not agile.\n\nD is false: agile does work with requirements, refining them continuously through user stories."
+        },
+        {
+          "id": 4,
+          "tipo": "multiple",
+          "pregunta": "¿Cuáles de las siguientes pruebas se consideran parte de las pruebas del sistema (system testing)?",
+          "preguntaEn": "Which of the following test types are considered part of system testing?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Pruebas de recuperación"
+            },
+            {
+              "id": "b",
+              "texto": "Pruebas de aceptación del usuario (UAT)"
+            },
+            {
+              "id": "c",
+              "texto": "Pruebas de seguridad"
+            },
+            {
+              "id": "d",
+              "texto": "Pruebas de carga"
+            },
+            {
+              "id": "e",
+              "texto": "Pruebas de volumen"
+            },
+            {
+              "id": "f",
+              "texto": "Pruebas de estrés"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Recovery testing"
+            },
+            {
+              "id": "b",
+              "texto": "User Acceptance Testing (UAT)"
+            },
+            {
+              "id": "c",
+              "texto": "Security testing"
+            },
+            {
+              "id": "d",
+              "texto": "Load testing"
+            },
+            {
+              "id": "e",
+              "texto": "Volume testing"
+            },
+            {
+              "id": "f",
+              "texto": "Stress testing"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d",
+            "e",
+            "f"
+          ],
+          "justificacion": "Recuperación, seguridad, carga, volumen y estrés son pruebas específicas del sistema (junto con las de rendimiento).\n\nB es la prueba de aceptación final, que se realiza después de que las pruebas del sistema resultan satisfactorias.",
+          "justificacionEn": "Recovery, security, load, volume, and stress are specific forms of system testing (along with performance testing).\n\nB is final acceptance testing, conducted only after system testing is completed successfully."
+        },
+        {
+          "id": 5,
+          "tipo": "multiple",
+          "pregunta": "Sobre los distintos tipos de pruebas de software, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding the various types of software testing, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Las pruebas de regresión repiten parte del plan de pruebas para confirmar que los cambios no introdujeron nuevos errores"
+            },
+            {
+              "id": "b",
+              "texto": "Las pruebas de caja negra requieren conocer la estructura interna del código"
+            },
+            {
+              "id": "c",
+              "texto": "Las pruebas de sociabilidad verifican que el sistema opere en su entorno sin afectar a los sistemas existentes"
+            },
+            {
+              "id": "d",
+              "texto": "Las pruebas alfa son ejecutadas por clientes externos"
+            },
+            {
+              "id": "e",
+              "texto": "Las pruebas de caja blanca evalúan la lógica interna del programa"
+            },
+            {
+              "id": "f",
+              "texto": "Las pruebas paralelas alimentan los mismos datos al sistema modificado y a uno alterno para comparar resultados"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Regression testing reruns previous test cases to confirm changes did not introduce new defects"
+            },
+            {
+              "id": "b",
+              "texto": "Black-box testing requires knowledge of internal code structure"
+            },
+            {
+              "id": "c",
+              "texto": "Sociability testing confirms the system operates in its environment without adversely impacting existing systems"
+            },
+            {
+              "id": "d",
+              "texto": "Alpha testing is performed by external public clients"
+            },
+            {
+              "id": "e",
+              "texto": "White-box testing assesses the internal programmatic logic of the software"
+            },
+            {
+              "id": "f",
+              "texto": "Parallel testing feeds identical data into the new and existing systems to compare outputs"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e",
+            "f"
+          ],
+          "justificacion": "A, C, E y F corresponden a las definiciones del manual.\n\nB es falso: la caja negra prueba el funcionamiento sin considerar la estructura interna del programa.\n\nD es falso: las pruebas alfa las realizan usuarios dentro de la organización que desarrolla; las beta involucran a un grupo limitado de usuarios externos.",
+          "justificacionEn": "A, C, E, and F correspond to CISA manual definitions.\n\nB is false: black-box testing evaluates functional behavior without looking at internal source code.\n\nD is false: alpha testing is performed internally by development organization users; beta testing involves external users."
+        },
+        {
+          "id": 6,
+          "tipo": "multiple",
+          "pregunta": "En las pruebas de aceptación final (QAT y UAT), ¿cuáles son afirmaciones correctas?",
+          "preguntaEn": "Regarding final acceptance testing (QAT and UAT), which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "La UAT debe ejecutarse idealmente en un entorno de prueba o staging seguro"
+            },
+            {
+              "id": "b",
+              "texto": "La UAT la realizan exclusivamente los desarrolladores"
+            },
+            {
+              "id": "c",
+              "texto": "Si el proveedor probó el paquete adquirido, no se requieren pruebas del usuario ni del personal de mantenimiento"
+            },
+            {
+              "id": "d",
+              "texto": "La QAT se enfoca en los aspectos técnicos y la realiza principalmente el área de TI"
+            },
+            {
+              "id": "e",
+              "texto": "Los criterios de aceptación se definen después de ejecutar las pruebas"
+            },
+            {
+              "id": "f",
+              "texto": "El auditor debe emitir una opinión sobre si el sistema cumple los requisitos, tiene controles adecuados y está listo para migrar a producción"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "UAT should ideally be executed in a dedicated, secure test or staging environment"
+            },
+            {
+              "id": "b",
+              "texto": "UAT is performed exclusively by the software developers"
+            },
+            {
+              "id": "c",
+              "texto": "If the vendor tested an acquired software package, testing by business users and maintenance staff is unnecessary"
+            },
+            {
+              "id": "d",
+              "texto": "QAT focuses on technical and quality aspects and is conducted primarily by IT staff"
+            },
+            {
+              "id": "e",
+              "texto": "Acceptance criteria are established only after test execution is completed"
+            },
+            {
+              "id": "f",
+              "texto": "The auditor should express an opinion on whether the system satisfies requirements, controls, and is ready for production"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "d",
+            "f"
+          ],
+          "justificacion": "A, D y F coinciden con el manual: entorno seguro para evitar cambios no autorizados, QAT técnica a cargo de TI y opinión final del auditor.\n\nB es falso: la UAT se ejecuta desde la perspectiva del usuario.\n\nC es falso: los sistemas adquiridos también deben ser probados por el usuario final y el personal de mantenimiento.\n\nE es falso: los criterios de aceptación se definen antes de las pruebas.",
+          "justificacionEn": "A, D, and F align with CISA standards: secure environment to avoid unauthorized changes, technical QAT by IT, and final auditor opinion.\n\nB is false: UAT is conducted from the perspective of end users.\n\nC is false: acquired software packages must still be tested by end users and maintenance personnel.\n\nE is false: acceptance criteria must be defined prior to test execution."
+        },
+        {
+          "id": 7,
+          "tipo": "multiple",
+          "pregunta": "Sobre las técnicas de cambio al nuevo sistema (changeover / go-live), ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding system changeover / go-live conversion strategies, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "En el cambio paralelo, el sistema antiguo y el nuevo funcionan simultáneamente durante un periodo de traslape"
+            },
+            {
+              "id": "b",
+              "texto": "En el cambio abrupto, el sistema antiguo se descontinúa en una fecha y hora de corte"
+            },
+            {
+              "id": "c",
+              "texto": "En el cambio paralelo, los usuarios utilizan únicamente el sistema nuevo"
+            },
+            {
+              "id": "d",
+              "texto": "En el cambio por fases, la migración se hace módulo por módulo según un calendario preestablecido"
+            },
+            {
+              "id": "e",
+              "texto": "El cambio por fases evita tener que mantener dos entornos a la vez"
+            },
+            {
+              "id": "f",
+              "texto": "El cambio paralelo es el más económico de las tres técnicas"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "In parallel changeover, the legacy and new systems operate concurrently during an overlap period"
+            },
+            {
+              "id": "b",
+              "texto": "In direct cutover (abrupt changeover), the legacy system is discontinued at a scheduled cutoff time"
+            },
+            {
+              "id": "c",
+              "texto": "In parallel changeover, users exclusively utilize the new system"
+            },
+            {
+              "id": "d",
+              "texto": "In phased changeover, migration occurs module by module according to a planned schedule"
+            },
+            {
+              "id": "e",
+              "texto": "Phased changeover eliminates the need to maintain dual environments concurrently"
+            },
+            {
+              "id": "f",
+              "texto": "Parallel changeover is the most economical of the three migration strategies"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "d"
+          ],
+          "justificacion": "A, B y D describen correctamente las tres técnicas.\n\nC es falso: en el paralelo los usuarios deben usar ambos sistemas durante el traslape.\n\nE es falso: el cambio por fases exige sostener dos entornos y extiende el ciclo de vida del proyecto.\n\nF es falso: operar dos sistemas al mismo tiempo implica mayores costos y esfuerzo.",
+          "justificacionEn": "A, B, and D accurately characterize the primary changeover strategies.\n\nC is false: parallel changeover requires operating and feeding both systems concurrently.\n\nE is false: phased cutovers require dual environment support and interfaces, extending project overhead.\n\nF is false: running parallel systems is the most costly and resource-intensive strategy."
+        },
+        {
+          "id": 8,
+          "tipo": "multiple",
+          "pregunta": "En un proceso de conversión y migración de datos, ¿qué actividades son adecuadas?",
+          "preguntaEn": "During a data conversion and migration process, which activities are appropriate?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Depurar los datos antes de convertirlos"
+            },
+            {
+              "id": "b",
+              "texto": "Verificar la conversión con conteos de registros y totales de control"
+            },
+            {
+              "id": "c",
+              "texto": "Ejecutar la migración sin plan de reversa (fallback)"
+            },
+            {
+              "id": "d",
+              "texto": "Definir responsables de verificar y aprobar cada paso de la conversión"
+            },
+            {
+              "id": "e",
+              "texto": "Diseñar reportes de excepción para los datos que no puedan convertirse automáticamente"
+            },
+            {
+              "id": "f",
+              "texto": "Omitir los ensayos de conversión para ahorrar tiempo"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Cleanse and scrub data prior to conversion"
+            },
+            {
+              "id": "b",
+              "texto": "Verify conversion accuracy using record counts and control totals"
+            },
+            {
+              "id": "c",
+              "texto": "Execute the migration without a fallback/rollback plan"
+            },
+            {
+              "id": "d",
+              "texto": "Designate authorized individuals to verify and sign off on each conversion stage"
+            },
+            {
+              "id": "e",
+              "texto": "Develop exception reports for data records that cannot be converted automatically"
+            },
+            {
+              "id": "f",
+              "texto": "Skip conversion dress rehearsals to accelerate the timeline"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "d",
+            "e"
+          ],
+          "justificacion": "A, B, D y E son pasos recomendados: limpieza previa, verificación de exactitud y completitud, aprobación formal y reportes de excepciones.\n\nC es incorrecto: antes del corte debe existir un escenario de reversa para restaurar los datos si el nuevo sistema falla.\n\nF es incorrecto: los ensayos (dress rehearsals) familiarizan al personal y prueban el proceso de extremo a extremo.",
+          "justificacionEn": "A, B, D, and E are recommended data migration practices: upfront data cleansing, validation via control totals, formal sign-offs, and exception reporting.\n\nC is incorrect: a fallback/rollback plan is mandatory in case the cutover fails.\n\nF is incorrect: dress rehearsals are essential to validate timing and end-to-end execution."
+        },
+        {
+          "id": 9,
+          "tipo": "multiple",
+          "pregunta": "Respecto a los controles de validación de datos de entrada, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding input data validation controls, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El dígito verificador detecta errores de transposición y transcripción"
+            },
+            {
+              "id": "b",
+              "texto": "La verificación de rango detecta errores de transposición"
+            },
+            {
+              "id": "c",
+              "texto": "Los totales de lote garantizan la confidencialidad de los datos"
+            },
+            {
+              "id": "d",
+              "texto": "La verificación de duplicados detecta transacciones ingresadas más de una vez"
+            },
+            {
+              "id": "e",
+              "texto": "Los controles de entrada solo se aplican a datos digitados manualmente"
+            },
+            {
+              "id": "f",
+              "texto": "La verificación de rango confirma que el dato corresponde a un cliente existente"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "A check digit detects transposition and transcription errors"
+            },
+            {
+              "id": "b",
+              "texto": "Range checking detects transposition errors"
+            },
+            {
+              "id": "c",
+              "texto": "Batch totals ensure data confidentiality"
+            },
+            {
+              "id": "d",
+              "texto": "Duplicate checking detects transactions submitted more than once"
+            },
+            {
+              "id": "e",
+              "texto": "Input validation controls only apply to manually keyed data"
+            },
+            {
+              "id": "f",
+              "texto": "Range checking verifies that an input corresponds to an existing customer record"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "d"
+          ],
+          "justificacion": "A y D son correctas: el dígito verificador detecta transposición y transcripción; la verificación de duplicados evita registros repetidos.\n\nB y F confunden la función de la verificación de rango (valores dentro de límites definidos).\n\nC es falso: los totales de lote controlan integridad y completitud, no confidencialidad.\n\nE es falso: la validación debe aplicarse a toda fuente de entrada, incluidas interfaces y cargas automáticas.",
+          "justificacionEn": "A and D are correct: check digits catch transposition and transcription mistakes; duplicate checks prevent re-entry of processed items.\n\nB and F confuse range checks (boundaries) with validity/reasonableness checks.\n\nC is false: batch totals ensure completeness and integrity, not confidentiality.\n\nE is false: input controls must validate all ingestion channels, including APIs and automated batch feeds."
+        },
+        {
+          "id": 10,
+          "tipo": "multiple",
+          "pregunta": "Sobre la revisión posimplementación, ¿cuáles son afirmaciones correctas?",
+          "preguntaEn": "Regarding post-implementation reviews (PIR), which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Se realiza antes de la puesta en producción para autorizar el pase"
+            },
+            {
+              "id": "b",
+              "texto": "Evalúa si se alcanzaron los objetivos y entregables del proyecto"
+            },
+            {
+              "id": "c",
+              "texto": "Es innecesaria si la UAT fue satisfactoria"
+            },
+            {
+              "id": "d",
+              "texto": "Permite identificar lecciones aprendidas aplicables a proyectos futuros"
+            },
+            {
+              "id": "e",
+              "texto": "Verifica si los controles y requisitos se cumplen en el sistema implementado"
+            },
+            {
+              "id": "f",
+              "texto": "Se limita a revisar los costos de hardware"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "It is conducted prior to go-live to authorize release into production"
+            },
+            {
+              "id": "b",
+              "texto": "It assesses whether project business objectives and deliverables were achieved"
+            },
+            {
+              "id": "c",
+              "texto": "It is rendered unnecessary if user acceptance testing was successful"
+            },
+            {
+              "id": "d",
+              "texto": "It identifies lessons learned that can benefit future enterprise initiatives"
+            },
+            {
+              "id": "e",
+              "texto": "It verifies that internal controls and business requirements are operating as designed"
+            },
+            {
+              "id": "f",
+              "texto": "Its scope is strictly limited to evaluating hardware capital expenses"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "b",
+            "d",
+            "e"
+          ],
+          "justificacion": "B, D y E son propósitos de la revisión posimplementación: verificar entregables, controles y requisitos, y capturar lecciones aprendidas.\n\nA es falso: ocurre después de la implementación.\n\nC es falso: la UAT y la revisión posimplementación cumplen objetivos distintos.\n\nF es falso: su alcance incluye objetivos, controles, requisitos y satisfacción de los usuarios, no solo costos.",
+          "justificacionEn": "B, D, and E represent core goals of a PIR: verifying deliverables, auditing operating controls, and documenting lessons learned.\n\nA is false: it occurs after production stabilization (e.g., 30-90 days).\n\nC is false: UAT and PIR serve distinct assurance purposes.\n\nF is false: scope encompasses business case benefits, controls, and user satisfaction."
+        }
+      ],
+      "2": [
+        {
+          "id": 11,
+          "tipo": "multiple",
+          "pregunta": "Sobre el RTO y el RPO, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding RTO (Recovery Time Objective) and RPO (Recovery Point Objective), which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El RTO es el tiempo máximo aceptable de inactividad tras una interrupción"
+            },
+            {
+              "id": "b",
+              "texto": "Un RTO alto implica que el sistema debe estar disponible de inmediato"
+            },
+            {
+              "id": "c",
+              "texto": "El RPO es la máxima pérdida de datos aceptable, medida en tiempo"
+            },
+            {
+              "id": "d",
+              "texto": "El RTO y el RPO se fijan antes de realizar el análisis de impacto al negocio (BIA)"
+            },
+            {
+              "id": "e",
+              "texto": "Un RPO de minutos requiere replicación de datos en tiempo real o espejo"
+            },
+            {
+              "id": "f",
+              "texto": "Cuanto más cercanos a cero son el RTO y el RPO, menor es el costo de la estrategia de recuperación"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "RTO is the maximum acceptable outage duration following a disruption"
+            },
+            {
+              "id": "b",
+              "texto": "A high RTO implies the system must be restored immediately"
+            },
+            {
+              "id": "c",
+              "texto": "RPO is the maximum allowable data loss measured in time"
+            },
+            {
+              "id": "d",
+              "texto": "RTO and RPO are established before conducting the Business Impact Analysis (BIA)"
+            },
+            {
+              "id": "e",
+              "texto": "An RPO of minutes demands real-time data replication or mirroring"
+            },
+            {
+              "id": "f",
+              "texto": "The closer RTO and RPO are to zero, the lower the disaster recovery cost"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e"
+          ],
+          "justificacion": "A, C y E son correctas: el RTO mide el tiempo de recuperación aceptable; el RPO, la pérdida de datos aceptable; y un RPO muy bajo exige replicación en tiempo real.\n\nB es falso: un RTO alto significa que el sistema puede recuperarse más tarde.\n\nD es falso: el BIA es precisamente el que permite determinar RTO y RPO.\n\nF es falso: a menor tiempo requerido, mayor costo.",
+          "justificacionEn": "A, C, and E are correct: RTO specifies allowable downtime; RPO specifies acceptable data loss; near-zero RPO requires synchronous data replication.\n\nB is false: a high RTO means restoration can wait.\n\nD is false: the BIA is the formal vehicle used to determine RTO and RPO targets.\n\nF is false: shrinking RTO and RPO toward zero increases recovery costs exponentially."
+        },
+        {
+          "id": 12,
+          "tipo": "multiple",
+          "pregunta": "En cuanto a las alternativas de recuperación ante desastres, ¿cuáles son correctas?",
+          "preguntaEn": "Regarding disaster recovery alternative site strategies, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El sitio frío cuenta con espacio e infraestructura básica, pero sin equipos de TI ni datos"
+            },
+            {
+              "id": "b",
+              "texto": "El sitio tibio tiene infraestructura parcialmente configurada con TI, redes y periféricos esenciales"
+            },
+            {
+              "id": "c",
+              "texto": "Los acuerdos recíprocos son la alternativa más viable por su fácil compatibilidad"
+            },
+            {
+              "id": "d",
+              "texto": "El sitio caliente cuenta con toda la infraestructura y los equipos de TI y comunicaciones necesarios"
+            },
+            {
+              "id": "e",
+              "texto": "El sitio espejo replica los datos en tiempo real y asume el procesamiento sin interrupción perceptible"
+            },
+            {
+              "id": "f",
+              "texto": "El sitio frío ofrece el menor tiempo de recuperación"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "A cold site provides basic space and electrical/cooling utilities, but no IT hardware or data"
+            },
+            {
+              "id": "b",
+              "texto": "A warm site has partially configured hardware, network links, and essential peripherals"
+            },
+            {
+              "id": "c",
+              "texto": "Reciprocal agreements are the most viable alternative due to ease of technical compatibility"
+            },
+            {
+              "id": "d",
+              "texto": "A hot site possesses complete infrastructure, active equipment, and communications ready to run"
+            },
+            {
+              "id": "e",
+              "texto": "A mirrored site replicates data synchronously and assumes processing with near-zero disruption"
+            },
+            {
+              "id": "f",
+              "texto": "A cold site provides the shortest recovery time objective"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "d",
+            "e"
+          ],
+          "justificacion": "A, B, D y E corresponden a las definiciones del manual.\n\nC es falso: los acuerdos recíprocos no se consideran una opción viable por la dificultad de mantener compatibilidad y cumplimiento.\n\nF es falso: el sitio frío es el más barato pero el de mayor tiempo de recuperación.",
+          "justificacionEn": "A, B, D, and E accurately reflect CISA recovery site definitions.\n\nC is false: reciprocal agreements are rarely viable due to ongoing technical configuration drift and confidentiality conflicts.\n\nF is false: cold sites have the longest recovery time (days or weeks)."
+        },
+        {
+          "id": 13,
+          "tipo": "multiple",
+          "pregunta": "Sobre los esquemas de respaldo, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding data backup schemes and methodologies, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El respaldo completo copia todos los archivos y carpetas"
+            },
+            {
+              "id": "b",
+              "texto": "El respaldo incremental copia lo que cambió desde el último respaldo incremental o completo"
+            },
+            {
+              "id": "c",
+              "texto": "En un esquema completo más incrementales, basta restaurar el último completo y el último incremental"
+            },
+            {
+              "id": "d",
+              "texto": "El respaldo diferencial copia lo que cambió desde el último respaldo completo"
+            },
+            {
+              "id": "e",
+              "texto": "El respaldo diferencial requiere menos tiempo de restauración que el incremental"
+            },
+            {
+              "id": "f",
+              "texto": "El respaldo completo es el más rápido y el que requiere menos capacidad de medios"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "A full backup duplicates all specified files and directories"
+            },
+            {
+              "id": "b",
+              "texto": "An incremental backup copies only files modified since the last full or incremental backup"
+            },
+            {
+              "id": "c",
+              "texto": "In a full plus incremental scheme, restoration only requires the last full and the most recent incremental backup"
+            },
+            {
+              "id": "d",
+              "texto": "A differential backup copies all files that have changed since the last full backup"
+            },
+            {
+              "id": "e",
+              "texto": "A differential backup requires less restoration time than an incremental backup scheme"
+            },
+            {
+              "id": "f",
+              "texto": "A full backup is the fastest to execute and requires the least storage media"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "d",
+            "e"
+          ],
+          "justificacion": "A, B, D y E son correctas según el manual.\n\nC es falso: para restaurar se necesita el último completo y todos los incrementales posteriores.\n\nF es falso: el completo es el que más tiempo y capacidad de medios requiere.",
+          "justificacionEn": "A, B, D, and E are correct according to CISA guidelines.\n\nC is false: restoring incremental backups requires the baseline full backup plus all subsequent incrementals in sequence.\n\nF is false: full backups take the longest time and highest media capacity."
+        },
+        {
+          "id": 14,
+          "tipo": "multiple",
+          "pregunta": "¿Qué actividades forman parte del análisis de impacto al negocio (BIA)?",
+          "preguntaEn": "Which activities form an integral part of a Business Impact Analysis (BIA)?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Identificar los procesos críticos y los recursos que los soportan"
+            },
+            {
+              "id": "b",
+              "texto": "Definir el presupuesto de ventas del siguiente año"
+            },
+            {
+              "id": "c",
+              "texto": "Evaluar el impacto de la interrupción a lo largo del tiempo"
+            },
+            {
+              "id": "d",
+              "texto": "Seleccionar el sitio alterno antes de analizar los impactos"
+            },
+            {
+              "id": "e",
+              "texto": "Determinar el RTO y el RPO"
+            },
+            {
+              "id": "f",
+              "texto": "Priorizar el orden de recuperación de los procesos"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Identify critical business processes and their supporting dependencies"
+            },
+            {
+              "id": "b",
+              "texto": "Formulate next year's corporate commercial sales quota"
+            },
+            {
+              "id": "c",
+              "texto": "Evaluate financial and operational outage impacts over time"
+            },
+            {
+              "id": "d",
+              "texto": "Contract an alternate recovery site before analyzing business impacts"
+            },
+            {
+              "id": "e",
+              "texto": "Determine RTO and RPO objectives for critical functions"
+            },
+            {
+              "id": "f",
+              "texto": "Prioritize the sequence of process restoration based on criticality"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e",
+            "f"
+          ],
+          "justificacion": "A, C, E y F son resultados del BIA y base para elegir las estrategias de recuperación.\n\nB no es parte del BIA.\n\nD es incorrecto: las estrategias y alternativas se seleccionan a partir del BIA, no antes.",
+          "justificacionEn": "A, C, E, and F are standard BIA outcomes that guide continuity strategy selection.\n\nB is outside the scope of business continuity.\n\nD is incorrect: recovery solutions are chosen based on BIA findings, not beforehand."
+        },
+        {
+          "id": 15,
+          "tipo": "multiple",
+          "pregunta": "¿Cuáles son métodos de prueba de un plan de recuperación ante desastres (DRP)?",
+          "preguntaEn": "Which of the following are recognized Disaster Recovery Plan (DRP) testing methods?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Revisión de listas de verificación (checklist)"
+            },
+            {
+              "id": "b",
+              "texto": "Pruebas de penetración"
+            },
+            {
+              "id": "c",
+              "texto": "Recorrido estructurado (structured walk-through)"
+            },
+            {
+              "id": "d",
+              "texto": "Simulación"
+            },
+            {
+              "id": "e",
+              "texto": "Prueba paralela"
+            },
+            {
+              "id": "f",
+              "texto": "Prueba de interrupción completa"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Checklist review"
+            },
+            {
+              "id": "b",
+              "texto": "Penetration testing"
+            },
+            {
+              "id": "c",
+              "texto": "Structured walk-through"
+            },
+            {
+              "id": "d",
+              "texto": "Simulation testing"
+            },
+            {
+              "id": "e",
+              "texto": "Parallel testing"
+            },
+            {
+              "id": "f",
+              "texto": "Full-interruption testing"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d",
+            "e",
+            "f"
+          ],
+          "justificacion": "Los tipos de prueba del manual son: revisión de checklist, recorrido estructurado, simulación, prueba paralela e interrupción completa (la más rigurosa, costosa y potencialmente disruptiva).\n\nB es una técnica de pruebas de seguridad, no de pruebas de recuperación.",
+          "justificacionEn": "Recognized DRP test levels are: checklist review, structured walk-through, simulation, parallel test, and full-interruption test.\n\nB is a technical cybersecurity validation technique, not a disaster recovery exercise."
+        },
+        {
+          "id": 16,
+          "tipo": "multiple",
+          "pregunta": "¿Qué objetivos debe cumplir una prueba del plan de continuidad o recuperación?",
+          "preguntaEn": "What key objectives should a business continuity or disaster recovery exercise accomplish?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Verificar la completitud y precisión del plan"
+            },
+            {
+              "id": "b",
+              "texto": "Programarla en horario pico de producción para maximizar la interrupción"
+            },
+            {
+              "id": "c",
+              "texto": "Evaluar el desempeño del personal involucrado"
+            },
+            {
+              "id": "d",
+              "texto": "Evaluar la coordinación con proveedores y terceros externos"
+            },
+            {
+              "id": "e",
+              "texto": "Limitar la participación a los miembros del equipo de recuperación"
+            },
+            {
+              "id": "f",
+              "texto": "Concluir que, si todo funciona sin recomendaciones, no hace falta una prueba más exigente"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Verify the completeness, accuracy, and currency of the plan"
+            },
+            {
+              "id": "b",
+              "texto": "Schedule during peak operational hours to maximize disruption"
+            },
+            {
+              "id": "c",
+              "texto": "Evaluate personnel performance and recovery team readiness"
+            },
+            {
+              "id": "d",
+              "texto": "Assess coordination with third-party vendors and critical partners"
+            },
+            {
+              "id": "e",
+              "texto": "Restrict participation strictly to formal recovery team members"
+            },
+            {
+              "id": "f",
+              "texto": "Conclude that if no defects were found, subsequent testing is unneeded"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d"
+          ],
+          "justificacion": "A, C y D son tareas que debe lograr la prueba.\n\nB es falso: se recomienda programarla cuando minimice la interrupción de las operaciones (por ejemplo, fines de semana).\n\nE es falso: también debe evaluarse el nivel de capacitación y conciencia de empleados que no forman parte del equipo.\n\nF es falso: si no surge ninguna recomendación, probablemente debió planificarse una prueba más desafiante.",
+          "justificacionEn": "A, C, and D are primary objectives of continuity testing.\n\nB is false: tests should be scheduled to minimize production disruption.\n\nE is false: general staff awareness and coordination should also be validated.\n\nF is false: a test yielding no recommendations usually indicates an insufficiently challenging test scenario."
+        },
+        {
+          "id": 17,
+          "tipo": "multiple",
+          "pregunta": "Sobre la gestión de incidentes y de problemas, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding incident management and problem management, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "La gestión de incidentes busca restablecer el proceso afectado a su estado normal lo antes posible"
+            },
+            {
+              "id": "b",
+              "texto": "La base de errores conocidos (KEDB) registra únicamente incidentes de seguridad"
+            },
+            {
+              "id": "c",
+              "texto": "La gestión de problemas busca identificar la causa raíz de uno o varios incidentes"
+            },
+            {
+              "id": "d",
+              "texto": "Un error conocido es un problema cuya causa raíz fue identificada y para el que se desarrolló una solución temporal (workaround)"
+            },
+            {
+              "id": "e",
+              "texto": "Los 5 porqués y el diagrama de Ishikawa son técnicas de análisis de causa raíz"
+            },
+            {
+              "id": "f",
+              "texto": "Ambos procesos persiguen exactamente el mismo objetivo"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Incident management aims to restore normal service operation as quickly as possible"
+            },
+            {
+              "id": "b",
+              "texto": "The Known Error Database (KEDB) exclusively records information security breaches"
+            },
+            {
+              "id": "c",
+              "texto": "Problem management aims to identify the underlying root cause of incidents"
+            },
+            {
+              "id": "d",
+              "texto": "A known error is a problem with an identified root cause and a documented workaround"
+            },
+            {
+              "id": "e",
+              "texto": "The 5 Whys and Ishikawa (fishbone) diagrams are root-cause analysis techniques"
+            },
+            {
+              "id": "f",
+              "texto": "Both disciplines pursue identical operational objectives"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d",
+            "e"
+          ],
+          "justificacion": "A, C, D y E coinciden con el manual.\n\nB es falso: la KEDB documenta errores conocidos y sus soluciones temporales.\n\nF es falso: incidentes buscan restablecer el servicio; problemas buscan reducir el número y la severidad de los incidentes.",
+          "justificacionEn": "A, C, D, and E reflect ITIL/CISA principles.\n\nB is false: KEDB logs all recurring operational errors and workarounds.\n\nF is false: incident management focuses on rapid restoration; problem management focuses on preventing recurring failures."
+        },
+        {
+          "id": 18,
+          "tipo": "multiple",
+          "pregunta": "En bases de datos, ¿qué afirmaciones sobre integridad y transacciones son correctas?",
+          "preguntaEn": "In database systems, which statements regarding integrity and transaction properties (ACID) are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "La atomicidad garantiza que una transacción se complete en su totalidad o no se aplique en absoluto"
+            },
+            {
+              "id": "b",
+              "texto": "La durabilidad implica que los cambios se revierten al cerrar la sesión"
+            },
+            {
+              "id": "c",
+              "texto": "La integridad referencial exige que toda clave foránea sea nula o apunte a un valor existente en otra tabla"
+            },
+            {
+              "id": "d",
+              "texto": "La normalización busca maximizar la redundancia de datos"
+            },
+            {
+              "id": "e",
+              "texto": "La integridad de entidad exige que la clave primaria sea única y no nula"
+            },
+            {
+              "id": "f",
+              "texto": "El aislamiento exige que las transacciones concurrentes vean los estados intermedios de las demás"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Atomicity guarantees that a transaction executes completely or is rolled back entirely"
+            },
+            {
+              "id": "b",
+              "texto": "Durability means data updates are reverted as soon as the session closes"
+            },
+            {
+              "id": "c",
+              "texto": "Referential integrity requires that foreign key values match an existing primary key or be null"
+            },
+            {
+              "id": "d",
+              "texto": "Normalization aims to maximize data redundancy across database tables"
+            },
+            {
+              "id": "e",
+              "texto": "Entity integrity mandates that primary keys must be unique and non-null"
+            },
+            {
+              "id": "f",
+              "texto": "Isolation requires concurrent transactions to expose intermediate states to each other"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e"
+          ],
+          "justificacion": "A, C y E son correctas.\n\nB es falso: la durabilidad garantiza que los cambios confirmados persistan.\n\nD es falso: la normalización reduce la redundancia.\n\nF es falso: el aislamiento evita que las transacciones concurrentes interfieran entre sí.",
+          "justificacionEn": "A, C, and E are correct database integrity concepts.\n\nB is false: durability guarantees committed changes survive system crashes.\n\nD is false: normalization reduces data redundancy and anomalies.\n\nF is false: isolation prevents concurrent transactions from seeing intermediate uncommitted states."
+        },
+        {
+          "id": 19,
+          "tipo": "multiple",
+          "pregunta": "Respecto a la gestión de niveles de servicio y los SLA, ¿cuáles son correctas?",
+          "preguntaEn": "Regarding Service Level Management and SLAs, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Un SLA es un acuerdo entre TI (interna o externa) y el cliente que detalla los servicios a prestar"
+            },
+            {
+              "id": "b",
+              "texto": "Los SLA solo aplican a proveedores externos"
+            },
+            {
+              "id": "c",
+              "texto": "Describe los servicios en términos no técnicos desde la perspectiva del cliente"
+            },
+            {
+              "id": "d",
+              "texto": "Sirve como estándar para medir y ajustar los servicios durante el periodo del acuerdo"
+            },
+            {
+              "id": "e",
+              "texto": "La gestión de niveles de servicio incluye el catálogo de servicios y las reuniones de revisión"
+            },
+            {
+              "id": "f",
+              "texto": "La gestión de niveles de servicio se limita a redactar el SLA"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "An SLA is an agreement between IT (internal or external) and the customer defining services provided"
+            },
+            {
+              "id": "b",
+              "texto": "SLAs apply exclusively to commercial third-party service providers"
+            },
+            {
+              "id": "c",
+              "texto": "It describes service terms in non-technical language from the customer's perspective"
+            },
+            {
+              "id": "d",
+              "texto": "It serves as a baseline standard to monitor and tune performance over the agreement term"
+            },
+            {
+              "id": "e",
+              "texto": "Service Level Management encompasses the service catalog, metrics, and periodic review meetings"
+            },
+            {
+              "id": "f",
+              "texto": "Service Level Management is restricted solely to the initial drafting of the SLA contract"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d",
+            "e"
+          ],
+          "justificacion": "A, C, D y E coinciden con el manual.\n\nB es falso: el área de TI puede ser interna o un proveedor externo.\n\nF es falso: la gestión abarca definición, acuerdo, documentación, catálogo, seguimiento y revisiones.",
+          "justificacionEn": "A, C, D, and E represent SLA governance best practices.\n\nB is false: SLAs are established with both internal IT departments and external vendors.\n\nF is false: SLM is an ongoing lifecycle of agreement, monitoring, reporting, and review."
+        },
+        {
+          "id": 20,
+          "tipo": "multiple",
+          "pregunta": "Sobre la computación de usuario final (EUC) y el Shadow IT, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding End-User Computing (EUC) and Shadow IT, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El EUC permite que usuarios no programadores diseñen sus propias aplicaciones"
+            },
+            {
+              "id": "b",
+              "texto": "Las aplicaciones EUC siempre están sujetas a una revisión independiente"
+            },
+            {
+              "id": "c",
+              "texto": "La falta de supervisión de TI en el EUC genera riesgos como ausencia de autenticación, de registros de auditoría y de respaldos"
+            },
+            {
+              "id": "d",
+              "texto": "El Shadow IT es tecnología usada sin que el departamento de TI lo sepa"
+            },
+            {
+              "id": "e",
+              "texto": "Las aplicaciones EUC siempre se desarrollan con una metodología formal"
+            },
+            {
+              "id": "f",
+              "texto": "Excel y Access incluyen de forma estándar un registro de auditoría robusto"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "EUC enables non-technical end users to create their own processing applications"
+            },
+            {
+              "id": "b",
+              "texto": "EUC applications are always subjected to rigorous independent testing and reviews"
+            },
+            {
+              "id": "c",
+              "texto": "Lack of IT oversight in EUC introduces risks such as absent authentication, audit trails, and backups"
+            },
+            {
+              "id": "d",
+              "texto": "Shadow IT refers to technology assets used without IT department approval or knowledge"
+            },
+            {
+              "id": "e",
+              "texto": "EUC solutions are consistently built following formal SDLC development methodologies"
+            },
+            {
+              "id": "f",
+              "texto": "Desktop spreadsheets and databases include robust built-in immutable audit trails by default"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d"
+          ],
+          "justificacion": "A, C y D son correctas.\n\nB y E son falsas: justamente la falta de revisión y de metodología formal es uno de los riesgos del EUC.\n\nF es falso: las soluciones estándar de EUC suelen no contar con registro de auditoría adecuado.",
+          "justificacionEn": "A, C, and D are correct.\n\nB and E are false: lack of independent review and formal methodology represents the primary risk of EUC.\n\nF is false: desktop end-user tools typically lack native tamper-proof audit trails."
+        }
+      ],
+      "3": [
+        {
+          "id": 21,
+          "tipo": "multiple",
+          "pregunta": "En una política de seguridad de la información, ¿qué elementos y características son correctos?",
+          "preguntaEn": "In an information security policy, which elements and attributes are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Incluye alcance, enunciado de la política y objetivos"
+            },
+            {
+              "id": "b",
+              "texto": "Una vez emitida, no requiere monitoreo"
+            },
+            {
+              "id": "c",
+              "texto": "Sus objetivos incluyen confidencialidad, integridad y disponibilidad"
+            },
+            {
+              "id": "d",
+              "texto": "Detalla la configuración técnica de cada sistema"
+            },
+            {
+              "id": "e",
+              "texto": "Sus objetivos deben ser específicos, medibles, alcanzables, realistas y con plazo (SMART)"
+            },
+            {
+              "id": "f",
+              "texto": "Puede emitirse sin aprobación de la alta dirección"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "It includes scope, policy statement, and overarching objectives"
+            },
+            {
+              "id": "b",
+              "texto": "Once published, it does not require continuous monitoring or reviews"
+            },
+            {
+              "id": "c",
+              "texto": "Its core objectives encompass confidentiality, integrity, and availability (CIA)"
+            },
+            {
+              "id": "d",
+              "texto": "It specifies detailed low-level configuration settings for each system"
+            },
+            {
+              "id": "e",
+              "texto": "Its objectives should be Specific, Measurable, Achievable, Realistic, and Time-bound (SMART)"
+            },
+            {
+              "id": "f",
+              "texto": "It can be formally issued without executive leadership approval"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e"
+          ],
+          "justificacion": "A, C y E corresponden a los elementos clave de una política de seguridad.\n\nB es falso: el monitoreo es uno de sus objetivos.\n\nD es falso: la política se redacta a alto nivel; el detalle técnico va en procedimientos y estándares.\n\nF es falso: la política debe establecer el tono desde la dirección y asignar responsabilidades.",
+          "justificacionEn": "A, C, and E are foundational characteristics of security policies.\n\nB is false: compliance monitoring and periodic reviews are mandatory.\n\nD is false: policies are high-level directives; technical details reside in standards and baselines.\n\nF is false: management endorsement is essential to establish authority and accountability."
+        },
+        {
+          "id": 22,
+          "tipo": "multiple",
+          "pregunta": "Sobre los factores de autenticación, ¿cuáles son correctos?",
+          "preguntaEn": "Regarding authentication factors and multi-factor authentication (MFA), which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "La contraseña es algo que el usuario sabe"
+            },
+            {
+              "id": "b",
+              "texto": "Usuario y contraseña constituyen autenticación multifactor"
+            },
+            {
+              "id": "c",
+              "texto": "Un token OTP es algo que el usuario tiene"
+            },
+            {
+              "id": "d",
+              "texto": "PIN más contraseña constituyen autenticación multifactor"
+            },
+            {
+              "id": "e",
+              "texto": "Tarjeta inteligente más PIN constituyen autenticación multifactor"
+            },
+            {
+              "id": "f",
+              "texto": "La huella dactilar es algo que el usuario es"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "A password represents something the user knows"
+            },
+            {
+              "id": "b",
+              "texto": "A username combined with a password constitutes multi-factor authentication"
+            },
+            {
+              "id": "c",
+              "texto": "A one-time password (OTP) token represents something the user has"
+            },
+            {
+              "id": "d",
+              "texto": "A PIN combined with a password constitutes multi-factor authentication"
+            },
+            {
+              "id": "e",
+              "texto": "A smart card combined with a PIN constitutes multi-factor authentication"
+            },
+            {
+              "id": "f",
+              "texto": "A fingerprint represents something the user is"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e",
+            "f"
+          ],
+          "justificacion": "A, C y F clasifican correctamente los factores (conocimiento, posesión e inherencia).\n\nE combina dos factores distintos (posesión y conocimiento), por lo que es multifactor.\n\nB y D combinan factores de la misma categoría (conocimiento), por lo que no son multifactor.",
+          "justificacionEn": "A, C, and F correctly map the factors: knowledge, possession, and inherence.\n\nE combines two distinct factor categories (possession + knowledge), creating valid MFA.\n\nB and D combine items within the same factor category (knowledge), which is not MFA."
+        },
+        {
+          "id": 23,
+          "tipo": "multiple",
+          "pregunta": "Respecto a las métricas de desempeño de los sistemas biométricos, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding biometric access control system performance metrics, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "La tasa de falsa aceptación (FAR) mide la frecuencia con que se acepta a un impostor"
+            },
+            {
+              "id": "b",
+              "texto": "La FAR mide la frecuencia con que se rechaza a un usuario legítimo"
+            },
+            {
+              "id": "c",
+              "texto": "La tasa de falso rechazo (FRR) mide la frecuencia con que se rechaza a un usuario legítimo"
+            },
+            {
+              "id": "d",
+              "texto": "La tasa de error igual (EER) es el punto donde FAR y FRR coinciden; un valor menor indica mayor exactitud"
+            },
+            {
+              "id": "e",
+              "texto": "Las plantillas biométricas no requieren protección especial"
+            },
+            {
+              "id": "f",
+              "texto": "La biometría es infalible"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "False Acceptance Rate (FAR) measures how frequently an unauthorized impostor is accepted"
+            },
+            {
+              "id": "b",
+              "texto": "FAR measures how frequently an authorized legitimate user is rejected"
+            },
+            {
+              "id": "c",
+              "texto": "False Rejection Rate (FRR) measures how frequently an authorized legitimate user is rejected"
+            },
+            {
+              "id": "d",
+              "texto": "Equal Error Rate (EER) is the point where FAR equals FRR; a lower EER indicates higher overall accuracy"
+            },
+            {
+              "id": "e",
+              "texto": "Stored biometric reference templates require no cryptographic protection"
+            },
+            {
+              "id": "f",
+              "texto": "Biometric authentication is 100% infallible"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d"
+          ],
+          "justificacion": "A, C y D son definiciones correctas.\n\nB invierte el concepto: describe la FRR.\n\nE es falso: las plantillas deben protegerse, ya que no pueden cambiarse como una contraseña.\n\nF es falso: todo sistema biométrico tiene tasas de error.",
+          "justificacionEn": "A, C, and D are standard biometric performance metrics.\n\nB incorrectly defines FAR (it describes FRR).\n\nE is false: templates must be encrypted because physiological traits cannot be reset if compromised.\n\nF is false: all biometric systems exhibit statistical false acceptance and rejection rates."
+        },
+        {
+          "id": 24,
+          "tipo": "multiple",
+          "pregunta": "Sobre los tipos de firewall, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding firewall architectures and capabilities, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El filtrado de paquetes decide con base en los encabezados de los paquetes"
+            },
+            {
+              "id": "b",
+              "texto": "La inspección con estado (stateful inspection) mantiene una tabla del estado de las conexiones"
+            },
+            {
+              "id": "c",
+              "texto": "Con un firewall ya no se necesita un sistema de detección de intrusiones"
+            },
+            {
+              "id": "d",
+              "texto": "Un firewall de aplicaciones web (WAF) protege aplicaciones web de ataques como inyección SQL y XSS"
+            },
+            {
+              "id": "e",
+              "texto": "Los firewalls de próxima generación solo filtran por puerto"
+            },
+            {
+              "id": "f",
+              "texto": "Los firewalls de aplicación inspeccionan el tráfico en la capa de aplicación"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Packet filtering firewalls make decisions based on packet header attributes"
+            },
+            {
+              "id": "b",
+              "texto": "Stateful inspection firewalls maintain an internal connection state table"
+            },
+            {
+              "id": "c",
+              "texto": "Deploying a firewall eliminates the need for intrusion detection systems"
+            },
+            {
+              "id": "d",
+              "texto": "A Web Application Firewall (WAF) protects web apps from attacks such as SQL injection and XSS"
+            },
+            {
+              "id": "e",
+              "texto": "Next-Generation Firewalls (NGFW) only filter traffic at Layer 4 by port numbers"
+            },
+            {
+              "id": "f",
+              "texto": "Application-level gateway firewalls inspect payload traffic up to the application layer"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "d",
+            "f"
+          ],
+          "justificacion": "A, B, D y F describen correctamente los tipos de firewall del manual.\n\nC es falso: firewall e IDS/IPS son controles complementarios.\n\nE es falso: los NGFW añaden inspección profunda, identificación de aplicaciones y otras funciones.",
+          "justificacionEn": "A, B, D, and F accurately define firewall technologies in the CISA manual.\n\nC is false: firewalls and IDS/IPS provide complementary layered defense.\n\nE is false: NGFWs provide deep packet inspection and Layer 7 application awareness."
+        },
+        {
+          "id": 25,
+          "tipo": "multiple",
+          "pregunta": "Sobre los sistemas de detección y prevención de intrusiones (IDS/IPS), ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS), which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Un IDS de red (NIDS) monitorea el tráfico de la red"
+            },
+            {
+              "id": "b",
+              "texto": "Un IDS basado en firmas detecta mejor los ataques desconocidos (zero-day)"
+            },
+            {
+              "id": "c",
+              "texto": "Un IDS de host (HIDS) monitorea la actividad en un equipo específico"
+            },
+            {
+              "id": "d",
+              "texto": "Un IPS puede bloquear activamente el tráfico malicioso"
+            },
+            {
+              "id": "e",
+              "texto": "Un IDS es un control preventivo"
+            },
+            {
+              "id": "f",
+              "texto": "Un IDS basado en anomalías elimina por completo los falsos positivos"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "A Network-based IDS (NIDS) inspects traffic packets across the network segment"
+            },
+            {
+              "id": "b",
+              "texto": "A signature-based IDS is best suited for detecting unknown zero-day attacks"
+            },
+            {
+              "id": "c",
+              "texto": "A Host-based IDS (HIDS) monitors operating system and log activity on an individual endpoint"
+            },
+            {
+              "id": "d",
+              "texto": "An IPS sits inline and can actively block or terminate malicious network traffic"
+            },
+            {
+              "id": "e",
+              "texto": "An IDS operates as a preventive security control"
+            },
+            {
+              "id": "f",
+              "texto": "An anomaly-based IDS completely eliminates false-positive alerts"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d"
+          ],
+          "justificacion": "A, C y D son correctas.\n\nB es falso: las firmas detectan ataques ya conocidos; las anomalías pueden detectar comportamientos nuevos.\n\nE es falso: el IDS es un control detectivo; el IPS agrega capacidad preventiva.\n\nF es falso: los modelos de anomalías tienden a generar falsos positivos.",
+          "justificacionEn": "A, C, and D are correct statements.\n\nB is false: signature matching only detects known attack patterns; anomaly detection is needed for novel attacks.\n\nE is false: an IDS is detective, whereas an IPS is preventive.\n\nF is false: anomaly-based detection notoriously generates elevated false-positive rates."
+        },
+        {
+          "id": 26,
+          "tipo": "multiple",
+          "pregunta": "Sobre cifrado y firmas digitales, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding cryptography and digital signatures, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El cifrado simétrico usa la misma clave para cifrar y descifrar"
+            },
+            {
+              "id": "b",
+              "texto": "AES es un algoritmo asimétrico"
+            },
+            {
+              "id": "c",
+              "texto": "El cifrado asimétrico usa un par de claves (pública y privada)"
+            },
+            {
+              "id": "d",
+              "texto": "La firma digital aporta integridad, autenticación y no repudio"
+            },
+            {
+              "id": "e",
+              "texto": "El emisor comparte su clave privada con el receptor para que verifique la firma"
+            },
+            {
+              "id": "f",
+              "texto": "Para lograr confidencialidad con cifrado asimétrico, el emisor cifra con la clave pública del receptor"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Symmetric encryption uses the same shared key to encrypt and decrypt data"
+            },
+            {
+              "id": "b",
+              "texto": "AES is an asymmetric cryptographic algorithm"
+            },
+            {
+              "id": "c",
+              "texto": "Asymmetric cryptography utilizes a mathematically linked key pair (public and private)"
+            },
+            {
+              "id": "d",
+              "texto": "A digital signature provides integrity, origin authentication, and non-repudiation"
+            },
+            {
+              "id": "e",
+              "texto": "The sender shares their private key with the recipient to enable signature verification"
+            },
+            {
+              "id": "f",
+              "texto": "To achieve confidentiality with asymmetric encryption, the sender encrypts with the recipient's public key"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d",
+            "f"
+          ],
+          "justificacion": "A, C, D y F son correctas.\n\nB es falso: AES es un algoritmo simétrico.\n\nE es falso: la clave privada nunca se comparte; la firma se verifica con la clave pública del emisor.",
+          "justificacionEn": "A, C, D, and F are correct cryptographic principles.\n\nB is false: AES is a symmetric block cipher.\n\nE is false: private keys must remain secret; the recipient verifies the signature using the sender's public key."
+        },
+        {
+          "id": 27,
+          "tipo": "multiple",
+          "pregunta": "En una infraestructura de clave pública (PKI), ¿qué afirmaciones son correctas?",
+          "preguntaEn": "In a Public Key Infrastructure (PKI), which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "La autoridad certificadora (CA) emite y firma los certificados digitales"
+            },
+            {
+              "id": "b",
+              "texto": "La autoridad de registro (RA) genera la clave privada del usuario"
+            },
+            {
+              "id": "c",
+              "texto": "La lista de revocación de certificados (CRL) enumera los certificados revocados antes de su vencimiento"
+            },
+            {
+              "id": "d",
+              "texto": "El certificado digital contiene la clave privada del titular"
+            },
+            {
+              "id": "e",
+              "texto": "La CA distribuye su clave privada a todos los usuarios"
+            },
+            {
+              "id": "f",
+              "texto": "La CRL se usa para renovar certificados"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "The Certificate Authority (CA) issues and digitally signs public certificates"
+            },
+            {
+              "id": "b",
+              "texto": "The Registration Authority (RA) generates the user's private key"
+            },
+            {
+              "id": "c",
+              "texto": "The Certificate Revocation List (CRL) lists certificates revoked prior to scheduled expiration"
+            },
+            {
+              "id": "d",
+              "texto": "The digital certificate encapsulates the subject's private key"
+            },
+            {
+              "id": "e",
+              "texto": "The CA broadcasts its private key to all relying parties"
+            },
+            {
+              "id": "f",
+              "texto": "The CRL is utilized as the primary vehicle to renew certificates"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c"
+          ],
+          "justificacion": "A y C son funciones propias de la PKI.\n\nB es falso: la RA verifica la identidad del solicitante.\n\nD y E son falsos: las claves privadas nunca se incluyen ni se distribuyen.\n\nF es falso: la CRL informa revocaciones, no renueva certificados.",
+          "justificacionEn": "A and C represent fundamental PKI functions.\n\nB is false: the RA verifies subscriber identity before forwarding requests to the CA.\n\nD and E are false: private keys are never placed in public certificates or distributed.\n\nF is false: the CRL publishes revoked certificates; it does not renew them."
+        },
+        {
+          "id": 28,
+          "tipo": "multiple",
+          "pregunta": "Sobre ataques y acceso físico no autorizado, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding cyber attacks and unauthorized physical entry, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El phishing busca obtener información sensible haciéndose pasar por una entidad confiable"
+            },
+            {
+              "id": "b",
+              "texto": "El pharming redirige el tráfico de un sitio web hacia uno falso"
+            },
+            {
+              "id": "c",
+              "texto": "El piggybacking consiste en seguir a una persona autorizada a través de una puerta segura"
+            },
+            {
+              "id": "d",
+              "texto": "Una trampa de acceso (mantrap) de dos puertas ayuda a mitigar el piggybacking"
+            },
+            {
+              "id": "e",
+              "texto": "El phishing solo explota vulnerabilidades de hardware"
+            },
+            {
+              "id": "f",
+              "texto": "El piggybacking solo ocurre en entornos virtuales"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Phishing deceives victims to obtain sensitive credentials by impersonating trusted entities"
+            },
+            {
+              "id": "b",
+              "texto": "Pharming poisons DNS or host resolution to redirect legitimate traffic to fraudulent sites"
+            },
+            {
+              "id": "c",
+              "texto": "Piggybacking/tailgating involves following an authorized individual through a secure door"
+            },
+            {
+              "id": "d",
+              "texto": "A dual-door mantrap (access interlocking chamber) mitigates piggybacking"
+            },
+            {
+              "id": "e",
+              "texto": "Phishing exclusively targets hardware-level vulnerabilities"
+            },
+            {
+              "id": "f",
+              "texto": "Piggybacking occurs solely within virtualized cloud environments"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "justificacion": "A, B, C y D corresponden al glosario y a los controles del manual.\n\nE es falso: el phishing explota el factor humano mediante engaño.\n\nF es falso: el piggybacking es físico (y también puede darse en enlaces de telecomunicaciones).",
+          "justificacionEn": "A, B, C, and D reflect CISA glossary definitions and physical/social engineering controls.\n\nE is false: phishing targets the human element through deception.\n\nF is false: piggybacking is primarily a physical entry risk (or unauthorized tap on an open link)."
+        },
+        {
+          "id": 29,
+          "tipo": "multiple",
+          "pregunta": "Sobre los controles ambientales y supresión de incendios en salas de TI, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding environmental controls and fire suppression in IT facilities, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El FM-200 suele considerarse una opción preferida de supresión de incendios"
+            },
+            {
+              "id": "b",
+              "texto": "Los rociadores con agua siempre presente son preferibles en salas de servidores porque no pueden tener fugas"
+            },
+            {
+              "id": "c",
+              "texto": "En un sistema de tubería seca (dry-pipe), el agua no fluye hasta que se activa la alarma de incendio"
+            },
+            {
+              "id": "d",
+              "texto": "Los sistemas con agua siempre presente en las tuberías pueden tener fugas y dañar los equipos"
+            },
+            {
+              "id": "e",
+              "texto": "El FM-200 está prohibido en centros de datos"
+            },
+            {
+              "id": "f",
+              "texto": "El agua nunca daña los equipos electrónicos"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "FM-200 clean agent is widely regarded as a preferred gaseous fire suppression system"
+            },
+            {
+              "id": "b",
+              "texto": "Wet-pipe water sprinkler systems are preferred in server rooms because they cannot leak"
+            },
+            {
+              "id": "c",
+              "texto": "In a dry-pipe sprinkler system, pipes contain pressurized air until a fire alarm is triggered"
+            },
+            {
+              "id": "d",
+              "texto": "Wet-pipe sprinkler systems pose a risk of accidental pipe leakage damaging IT equipment"
+            },
+            {
+              "id": "e",
+              "texto": "FM-200 is internationally prohibited in modern data center facilities"
+            },
+            {
+              "id": "f",
+              "texto": "Water exposure never causes permanent damage to energized electronic equipment"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d"
+          ],
+          "justificacion": "A, C y D coinciden con el manual.\n\nB y F son falsos: el agua presente en las tuberías puede filtrarse y dañar los equipos.\n\nE es falso: es un agente limpio ampliamente usado para este fin.",
+          "justificacionEn": "A, C, and D align with data center best practices.\n\nB and F are false: standing water in pipes can leak or rupture, causing catastrophic equipment damage.\n\nE is false: FM-200 and Novec clean agents are common halon replacements."
+        },
+        {
+          "id": 30,
+          "tipo": "multiple",
+          "pregunta": "En el modelo de responsabilidad compartida en la nube, ¿cuáles son afirmaciones correctas?",
+          "preguntaEn": "In the cloud computing shared responsibility model, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El cliente no puede transferir al proveedor el riesgo de seguridad de sus datos ni de gobierno, riesgo y cumplimiento (GRC)"
+            },
+            {
+              "id": "b",
+              "texto": "El proveedor de nube (CSP) asume siempre la seguridad física"
+            },
+            {
+              "id": "c",
+              "texto": "El CSP gestiona toda la seguridad, incluidos los datos del cliente"
+            },
+            {
+              "id": "d",
+              "texto": "Las responsabilidades compartidas varían según el tipo de servicio contratado"
+            },
+            {
+              "id": "e",
+              "texto": "Contratar la nube elimina la necesidad de auditar"
+            },
+            {
+              "id": "f",
+              "texto": "La seguridad del hardware, la infraestructura y la virtualización suele estar a cargo del CSP"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "The client customer cannot outsource accountability for data security or governance (GRC)"
+            },
+            {
+              "id": "b",
+              "texto": "The Cloud Service Provider (CSP) always assumes physical data center security"
+            },
+            {
+              "id": "c",
+              "texto": "The CSP manages all security end-to-end, including customer data classification and access"
+            },
+            {
+              "id": "d",
+              "texto": "Shared security obligations vary depending on service model (IaaS, PaaS, SaaS)"
+            },
+            {
+              "id": "e",
+              "texto": "Migrating to the cloud eliminates the need for independent IT audit assurance"
+            },
+            {
+              "id": "f",
+              "texto": "Physical hardware, underlying infrastructure, and virtualization are typically managed by the CSP"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "d",
+            "f"
+          ],
+          "justificacion": "A, B, D y F coinciden con el modelo de responsabilidad compartida del manual.\n\nC es falso: el cliente conserva responsabilidad sobre sus datos y configuraciones.\n\nE es falso: el auditor sigue evaluando controles y riesgos en entornos de nube.",
+          "justificacionEn": "A, B, D, and F represent core tenets of the cloud shared responsibility model.\n\nC is false: data protection and access authorization remain the customer's duty.\n\nE is false: independent audits (e.g., SOC 2, ISO 27017, internal review) are essential in cloud deployments."
+        }
+      ],
+      "4": [
+        {
+          "id": 1,
+          "tipo": "multiple",
+          "pregunta": "En relación con las fases del ciclo de vida de desarrollo de sistemas (SDLC) tradicional, ¿cuáles son CORRECTAS?",
+          "preguntaEn": "Regarding the phases of the traditional systems development life cycle (SDLC), which are CORRECT?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Estudio de factibilidad"
+            },
+            {
+              "id": "b",
+              "texto": "Auditoría fiscal anual de la empresa"
+            },
+            {
+              "id": "c",
+              "texto": "Definición de requerimientos"
+            },
+            {
+              "id": "d",
+              "texto": "Capacitación del personal de ventas"
+            },
+            {
+              "id": "e",
+              "texto": "Diseño"
+            },
+            {
+              "id": "f",
+              "texto": "Revisión posimplementación"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Feasibility study"
+            },
+            {
+              "id": "b",
+              "texto": "Annual enterprise financial tax audit"
+            },
+            {
+              "id": "c",
+              "texto": "Requirements definition"
+            },
+            {
+              "id": "d",
+              "texto": "Sales force training program"
+            },
+            {
+              "id": "e",
+              "texto": "Design"
+            },
+            {
+              "id": "f",
+              "texto": "Post-implementation review"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e",
+            "f"
+          ],
+          "justificacion": "A, C, E y F son fases del SDLC tradicional: factibilidad, requerimientos, diseño (o selección, si el sistema se adquiere), desarrollo/configuración, pruebas e implementación finales y revisión posimplementación.\n\nB y D no son fases del SDLC; son actividades ajenas al proceso de desarrollo.",
+          "justificacionEn": "A, C, E, and F are phases of the traditional SDLC: feasibility study, requirements definition, design (or software selection), development/configuration, testing and final implementation, and post-implementation review.\n\nB and D are not SDLC phases; they are unrelated operational business activities."
+        },
+        {
+          "id": 2,
+          "tipo": "multiple",
+          "pregunta": "¿Cuáles de las siguientes son técnicas de programación y control del cronograma de un proyecto?",
+          "preguntaEn": "Which of the following are project scheduling and timeline control techniques?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Diagrama de Gantt"
+            },
+            {
+              "id": "b",
+              "texto": "Análisis FODA"
+            },
+            {
+              "id": "c",
+              "texto": "PERT"
+            },
+            {
+              "id": "d",
+              "texto": "Diagramas de casos de uso UML"
+            },
+            {
+              "id": "e",
+              "texto": "Método de la ruta crítica (CPM)"
+            },
+            {
+              "id": "f",
+              "texto": "Matriz de clasificación de datos"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Gantt chart"
+            },
+            {
+              "id": "b",
+              "texto": "SWOT analysis"
+            },
+            {
+              "id": "c",
+              "texto": "PERT (Program Evaluation and Review Technique)"
+            },
+            {
+              "id": "d",
+              "texto": "UML use-case diagrams"
+            },
+            {
+              "id": "e",
+              "texto": "Critical Path Method (CPM)"
+            },
+            {
+              "id": "f",
+              "texto": "Data classification matrix"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e"
+          ],
+          "justificacion": "Gantt, PERT y CPM son técnicas clásicas de planificación y seguimiento del tiempo en la gestión de proyectos.\n\nB es una herramienta de análisis estratégico; D es una técnica de modelado de requisitos; F pertenece a la gobernanza de datos.",
+          "justificacionEn": "Gantt, PERT, and CPM are classic project management scheduling and timeline tracking techniques.\n\nB is a strategic management tool; D is a requirements modeling technique; F belongs to data governance."
+        },
+        {
+          "id": 3,
+          "tipo": "multiple",
+          "pregunta": "Respecto a las metodologías de desarrollo ágil, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding agile software development methodologies, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Trabaja con iteraciones cortas y entregas incrementales"
+            },
+            {
+              "id": "b",
+              "texto": "Depende de documentación detallada y exhaustiva antes de programar"
+            },
+            {
+              "id": "c",
+              "texto": "Requiere colaboración continua con el usuario"
+            },
+            {
+              "id": "d",
+              "texto": "Se caracteriza por la ausencia total de requisitos de usuario"
+            },
+            {
+              "id": "e",
+              "texto": "Tiene una fuerte dependencia del conocimiento tácito del equipo"
+            },
+            {
+              "id": "f",
+              "texto": "Congela todos los requisitos antes de escribir la primera línea de código"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Works with short iterations and incremental deliverables"
+            },
+            {
+              "id": "b",
+              "texto": "Relies heavily on exhaustive and detailed documentation prior to coding"
+            },
+            {
+              "id": "c",
+              "texto": "Requires continuous and close collaboration with the user"
+            },
+            {
+              "id": "d",
+              "texto": "Is characterized by a complete absence of user requirements"
+            },
+            {
+              "id": "e",
+              "texto": "Relies significantly on the team's tacit knowledge"
+            },
+            {
+              "id": "f",
+              "texto": "Freezes all system requirements before writing the first line of code"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e"
+          ],
+          "justificacion": "A, C y E describen el enfoque ágil: iteraciones, involucramiento permanente del usuario y apoyo en el conocimiento tácito.\n\nB y F son rasgos del enfoque en cascada (waterfall), no del ágil.\n\nD es falso: el ágil sí trabaja con requisitos, pero los refina de forma continua.",
+          "justificacionEn": "A, C, and E describe the agile approach: short iterations, continuous user involvement, and reliance on tacit team knowledge.\n\nB and F are hallmarks of the waterfall model, not agile.\n\nD is false: agile does work with requirements, refining them continuously through user stories."
+        },
+        {
+          "id": 4,
+          "tipo": "multiple",
+          "pregunta": "¿Cuáles de las siguientes pruebas se consideran parte de las pruebas del sistema (system testing)?",
+          "preguntaEn": "Which of the following test types are considered part of system testing?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Pruebas de recuperación"
+            },
+            {
+              "id": "b",
+              "texto": "Pruebas de aceptación del usuario (UAT)"
+            },
+            {
+              "id": "c",
+              "texto": "Pruebas de seguridad"
+            },
+            {
+              "id": "d",
+              "texto": "Pruebas de carga"
+            },
+            {
+              "id": "e",
+              "texto": "Pruebas de volumen"
+            },
+            {
+              "id": "f",
+              "texto": "Pruebas de estrés"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Recovery testing"
+            },
+            {
+              "id": "b",
+              "texto": "User Acceptance Testing (UAT)"
+            },
+            {
+              "id": "c",
+              "texto": "Security testing"
+            },
+            {
+              "id": "d",
+              "texto": "Load testing"
+            },
+            {
+              "id": "e",
+              "texto": "Volume testing"
+            },
+            {
+              "id": "f",
+              "texto": "Stress testing"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d",
+            "e",
+            "f"
+          ],
+          "justificacion": "Recuperación, seguridad, carga, volumen y estrés son pruebas específicas del sistema (junto con las de rendimiento).\n\nB es la prueba de aceptación final, que se realiza después de que las pruebas del sistema resultan satisfactorias.",
+          "justificacionEn": "Recovery, security, load, volume, and stress are specific forms of system testing (along with performance testing).\n\nB is final acceptance testing, conducted only after system testing is completed successfully."
+        },
+        {
+          "id": 5,
+          "tipo": "multiple",
+          "pregunta": "Sobre los distintos tipos de pruebas de software, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding the various types of software testing, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Las pruebas de regresión repiten parte del plan de pruebas para confirmar que los cambios no introdujeron nuevos errores"
+            },
+            {
+              "id": "b",
+              "texto": "Las pruebas de caja negra requieren conocer la estructura interna del código"
+            },
+            {
+              "id": "c",
+              "texto": "Las pruebas de sociabilidad verifican que el sistema opere en su entorno sin afectar a los sistemas existentes"
+            },
+            {
+              "id": "d",
+              "texto": "Las pruebas alfa son ejecutadas por clientes externos"
+            },
+            {
+              "id": "e",
+              "texto": "Las pruebas de caja blanca evalúan la lógica interna del programa"
+            },
+            {
+              "id": "f",
+              "texto": "Las pruebas paralelas alimentan los mismos datos al sistema modificado y a uno alterno para comparar resultados"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Regression testing reruns previous test cases to confirm changes did not introduce new defects"
+            },
+            {
+              "id": "b",
+              "texto": "Black-box testing requires knowledge of internal code structure"
+            },
+            {
+              "id": "c",
+              "texto": "Sociability testing confirms the system operates in its environment without adversely impacting existing systems"
+            },
+            {
+              "id": "d",
+              "texto": "Alpha testing is performed by external public clients"
+            },
+            {
+              "id": "e",
+              "texto": "White-box testing assesses the internal programmatic logic of the software"
+            },
+            {
+              "id": "f",
+              "texto": "Parallel testing feeds identical data into the new and existing systems to compare outputs"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e",
+            "f"
+          ],
+          "justificacion": "A, C, E y F corresponden a las definiciones del manual.\n\nB es falso: la caja negra prueba el funcionamiento sin considerar la estructura interna del programa.\n\nD es falso: las pruebas alfa las realizan usuarios dentro de la organización que desarrolla; las beta involucran a un grupo limitado de usuarios externos.",
+          "justificacionEn": "A, C, E, and F correspond to CISA manual definitions.\n\nB is false: black-box testing evaluates functional behavior without looking at internal source code.\n\nD is false: alpha testing is performed internally by development organization users; beta testing involves external users."
+        },
+        {
+          "id": 6,
+          "tipo": "multiple",
+          "pregunta": "En las pruebas de aceptación final (QAT y UAT), ¿cuáles son afirmaciones correctas?",
+          "preguntaEn": "Regarding final acceptance testing (QAT and UAT), which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "La UAT debe ejecutarse idealmente en un entorno de prueba o staging seguro"
+            },
+            {
+              "id": "b",
+              "texto": "La UAT la realizan exclusivamente los desarrolladores"
+            },
+            {
+              "id": "c",
+              "texto": "Si el proveedor probó el paquete adquirido, no se requieren pruebas del usuario ni del personal de mantenimiento"
+            },
+            {
+              "id": "d",
+              "texto": "La QAT se enfoca en los aspectos técnicos y la realiza principalmente el área de TI"
+            },
+            {
+              "id": "e",
+              "texto": "Los criterios de aceptación se definen después de ejecutar las pruebas"
+            },
+            {
+              "id": "f",
+              "texto": "El auditor debe emitir una opinión sobre si el sistema cumple los requisitos, tiene controles adecuados y está listo para migrar a producción"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "UAT should ideally be executed in a dedicated, secure test or staging environment"
+            },
+            {
+              "id": "b",
+              "texto": "UAT is performed exclusively by the software developers"
+            },
+            {
+              "id": "c",
+              "texto": "If the vendor tested an acquired software package, testing by business users and maintenance staff is unnecessary"
+            },
+            {
+              "id": "d",
+              "texto": "QAT focuses on technical and quality aspects and is conducted primarily by IT staff"
+            },
+            {
+              "id": "e",
+              "texto": "Acceptance criteria are established only after test execution is completed"
+            },
+            {
+              "id": "f",
+              "texto": "The auditor should express an opinion on whether the system satisfies requirements, controls, and is ready for production"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "d",
+            "f"
+          ],
+          "justificacion": "A, D y F coinciden con el manual: entorno seguro para evitar cambios no autorizados, QAT técnica a cargo de TI y opinión final del auditor.\n\nB es falso: la UAT se ejecuta desde la perspectiva del usuario.\n\nC es falso: los sistemas adquiridos también deben ser probados por el usuario final y el personal de mantenimiento.\n\nE es falso: los criterios de aceptación se definen antes de las pruebas.",
+          "justificacionEn": "A, D, and F align with CISA standards: secure environment to avoid unauthorized changes, technical QAT by IT, and final auditor opinion.\n\nB is false: UAT is conducted from the perspective of end users.\n\nC is false: acquired software packages must still be tested by end users and maintenance personnel.\n\nE is false: acceptance criteria must be defined prior to test execution."
+        },
+        {
+          "id": 7,
+          "tipo": "multiple",
+          "pregunta": "Sobre las técnicas de cambio al nuevo sistema (changeover / go-live), ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding system changeover / go-live conversion strategies, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "En el cambio paralelo, el sistema antiguo y el nuevo funcionan simultáneamente durante un periodo de traslape"
+            },
+            {
+              "id": "b",
+              "texto": "En el cambio abrupto, el sistema antiguo se descontinúa en una fecha y hora de corte"
+            },
+            {
+              "id": "c",
+              "texto": "En el cambio paralelo, los usuarios utilizan únicamente el sistema nuevo"
+            },
+            {
+              "id": "d",
+              "texto": "En el cambio por fases, la migración se hace módulo por módulo según un calendario preestablecido"
+            },
+            {
+              "id": "e",
+              "texto": "El cambio por fases evita tener que mantener dos entornos a la vez"
+            },
+            {
+              "id": "f",
+              "texto": "El cambio paralelo es el más económico de las tres técnicas"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "In parallel changeover, the legacy and new systems operate concurrently during an overlap period"
+            },
+            {
+              "id": "b",
+              "texto": "In direct cutover (abrupt changeover), the legacy system is discontinued at a scheduled cutoff time"
+            },
+            {
+              "id": "c",
+              "texto": "In parallel changeover, users exclusively utilize the new system"
+            },
+            {
+              "id": "d",
+              "texto": "In phased changeover, migration occurs module by module according to a planned schedule"
+            },
+            {
+              "id": "e",
+              "texto": "Phased changeover eliminates the need to maintain dual environments concurrently"
+            },
+            {
+              "id": "f",
+              "texto": "Parallel changeover is the most economical of the three migration strategies"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "d"
+          ],
+          "justificacion": "A, B y D describen correctamente las tres técnicas.\n\nC es falso: en el paralelo los usuarios deben usar ambos sistemas durante el traslape.\n\nE es falso: el cambio por fases exige sostener dos entornos y extiende el ciclo de vida del proyecto.\n\nF es falso: operar dos sistemas al mismo tiempo implica mayores costos y esfuerzo.",
+          "justificacionEn": "A, B, and D accurately characterize the primary changeover strategies.\n\nC is false: parallel changeover requires operating and feeding both systems concurrently.\n\nE is false: phased cutovers require dual environment support and interfaces, extending project overhead.\n\nF is false: running parallel systems is the most costly and resource-intensive strategy."
+        },
+        {
+          "id": 8,
+          "tipo": "multiple",
+          "pregunta": "En un proceso de conversión y migración de datos, ¿qué actividades son adecuadas?",
+          "preguntaEn": "During a data conversion and migration process, which activities are appropriate?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Depurar los datos antes de convertirlos"
+            },
+            {
+              "id": "b",
+              "texto": "Verificar la conversión con conteos de registros y totales de control"
+            },
+            {
+              "id": "c",
+              "texto": "Ejecutar la migración sin plan de reversa (fallback)"
+            },
+            {
+              "id": "d",
+              "texto": "Definir responsables de verificar y aprobar cada paso de la conversión"
+            },
+            {
+              "id": "e",
+              "texto": "Diseñar reportes de excepción para los datos que no puedan convertirse automáticamente"
+            },
+            {
+              "id": "f",
+              "texto": "Omitir los ensayos de conversión para ahorrar tiempo"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Cleanse and scrub data prior to conversion"
+            },
+            {
+              "id": "b",
+              "texto": "Verify conversion accuracy using record counts and control totals"
+            },
+            {
+              "id": "c",
+              "texto": "Execute the migration without a fallback/rollback plan"
+            },
+            {
+              "id": "d",
+              "texto": "Designate authorized individuals to verify and sign off on each conversion stage"
+            },
+            {
+              "id": "e",
+              "texto": "Develop exception reports for data records that cannot be converted automatically"
+            },
+            {
+              "id": "f",
+              "texto": "Skip conversion dress rehearsals to accelerate the timeline"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "d",
+            "e"
+          ],
+          "justificacion": "A, B, D y E son pasos recomendados: limpieza previa, verificación de exactitud y completitud, aprobación formal y reportes de excepciones.\n\nC es incorrecto: antes del corte debe existir un escenario de reversa para restaurar los datos si el nuevo sistema falla.\n\nF es incorrecto: los ensayos (dress rehearsals) familiarizan al personal y prueban el proceso de extremo a extremo.",
+          "justificacionEn": "A, B, D, and E are recommended data migration practices: upfront data cleansing, validation via control totals, formal sign-offs, and exception reporting.\n\nC is incorrect: a fallback/rollback plan is mandatory in case the cutover fails.\n\nF is incorrect: dress rehearsals are essential to validate timing and end-to-end execution."
+        },
+        {
+          "id": 9,
+          "tipo": "multiple",
+          "pregunta": "Respecto a los controles de validación de datos de entrada, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding input data validation controls, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El dígito verificador detecta errores de transposición y transcripción"
+            },
+            {
+              "id": "b",
+              "texto": "La verificación de rango detecta errores de transposición"
+            },
+            {
+              "id": "c",
+              "texto": "Los totales de lote garantizan la confidencialidad de los datos"
+            },
+            {
+              "id": "d",
+              "texto": "La verificación de duplicados detecta transacciones ingresadas más de una vez"
+            },
+            {
+              "id": "e",
+              "texto": "Los controles de entrada solo se aplican a datos digitados manualmente"
+            },
+            {
+              "id": "f",
+              "texto": "La verificación de rango confirma que el dato corresponde a un cliente existente"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "A check digit detects transposition and transcription errors"
+            },
+            {
+              "id": "b",
+              "texto": "Range checking detects transposition errors"
+            },
+            {
+              "id": "c",
+              "texto": "Batch totals ensure data confidentiality"
+            },
+            {
+              "id": "d",
+              "texto": "Duplicate checking detects transactions submitted more than once"
+            },
+            {
+              "id": "e",
+              "texto": "Input validation controls only apply to manually keyed data"
+            },
+            {
+              "id": "f",
+              "texto": "Range checking verifies that an input corresponds to an existing customer record"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "d"
+          ],
+          "justificacion": "A y D son correctas: el dígito verificador detecta transposición y transcripción; la verificación de duplicados evita registros repetidos.\n\nB y F confunden la función de la verificación de rango (valores dentro de límites definidos).\n\nC es falso: los totales de lote controlan integridad y completitud, no confidencialidad.\n\nE es falso: la validación debe aplicarse a toda fuente de entrada, incluidas interfaces y cargas automáticas.",
+          "justificacionEn": "A and D are correct: check digits catch transposition and transcription mistakes; duplicate checks prevent re-entry of processed items.\n\nB and F confuse range checks (boundaries) with validity/reasonableness checks.\n\nC is false: batch totals ensure completeness and integrity, not confidentiality.\n\nE is false: input controls must validate all ingestion channels, including APIs and automated batch feeds."
+        },
+        {
+          "id": 10,
+          "tipo": "multiple",
+          "pregunta": "Sobre la revisión posimplementación, ¿cuáles son afirmaciones correctas?",
+          "preguntaEn": "Regarding post-implementation reviews (PIR), which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Se realiza antes de la puesta en producción para autorizar el pase"
+            },
+            {
+              "id": "b",
+              "texto": "Evalúa si se alcanzaron los objetivos y entregables del proyecto"
+            },
+            {
+              "id": "c",
+              "texto": "Es innecesaria si la UAT fue satisfactoria"
+            },
+            {
+              "id": "d",
+              "texto": "Permite identificar lecciones aprendidas aplicables a proyectos futuros"
+            },
+            {
+              "id": "e",
+              "texto": "Verifica si los controles y requisitos se cumplen en el sistema implementado"
+            },
+            {
+              "id": "f",
+              "texto": "Se limita a revisar los costos de hardware"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "It is conducted prior to go-live to authorize release into production"
+            },
+            {
+              "id": "b",
+              "texto": "It assesses whether project business objectives and deliverables were achieved"
+            },
+            {
+              "id": "c",
+              "texto": "It is rendered unnecessary if user acceptance testing was successful"
+            },
+            {
+              "id": "d",
+              "texto": "It identifies lessons learned that can benefit future enterprise initiatives"
+            },
+            {
+              "id": "e",
+              "texto": "It verifies that internal controls and business requirements are operating as designed"
+            },
+            {
+              "id": "f",
+              "texto": "Its scope is strictly limited to evaluating hardware capital expenses"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "b",
+            "d",
+            "e"
+          ],
+          "justificacion": "B, D y E son propósitos de la revisión posimplementación: verificar entregables, controles y requisitos, y capturar lecciones aprendidas.\n\nA es falso: ocurre después de la implementación.\n\nC es falso: la UAT y la revisión posimplementación cumplen objetivos distintos.\n\nF es falso: su alcance incluye objetivos, controles, requisitos y satisfacción de los usuarios, no solo costos.",
+          "justificacionEn": "B, D, and E represent core goals of a PIR: verifying deliverables, auditing operating controls, and documenting lessons learned.\n\nA is false: it occurs after production stabilization (e.g., 30-90 days).\n\nC is false: UAT and PIR serve distinct assurance purposes.\n\nF is false: scope encompasses business case benefits, controls, and user satisfaction."
+        },
+        {
+          "id": 11,
+          "tipo": "multiple",
+          "pregunta": "Sobre el RTO y el RPO, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding RTO (Recovery Time Objective) and RPO (Recovery Point Objective), which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El RTO es el tiempo máximo aceptable de inactividad tras una interrupción"
+            },
+            {
+              "id": "b",
+              "texto": "Un RTO alto implica que el sistema debe estar disponible de inmediato"
+            },
+            {
+              "id": "c",
+              "texto": "El RPO es la máxima pérdida de datos aceptable, medida en tiempo"
+            },
+            {
+              "id": "d",
+              "texto": "El RTO y el RPO se fijan antes de realizar el análisis de impacto al negocio (BIA)"
+            },
+            {
+              "id": "e",
+              "texto": "Un RPO de minutos requiere replicación de datos en tiempo real o espejo"
+            },
+            {
+              "id": "f",
+              "texto": "Cuanto más cercanos a cero son el RTO y el RPO, menor es el costo de la estrategia de recuperación"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "RTO is the maximum acceptable outage duration following a disruption"
+            },
+            {
+              "id": "b",
+              "texto": "A high RTO implies the system must be restored immediately"
+            },
+            {
+              "id": "c",
+              "texto": "RPO is the maximum allowable data loss measured in time"
+            },
+            {
+              "id": "d",
+              "texto": "RTO and RPO are established before conducting the Business Impact Analysis (BIA)"
+            },
+            {
+              "id": "e",
+              "texto": "An RPO of minutes demands real-time data replication or mirroring"
+            },
+            {
+              "id": "f",
+              "texto": "The closer RTO and RPO are to zero, the lower the disaster recovery cost"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e"
+          ],
+          "justificacion": "A, C y E son correctas: el RTO mide el tiempo de recuperación aceptable; el RPO, la pérdida de datos aceptable; y un RPO muy bajo exige replicación en tiempo real.\n\nB es falso: un RTO alto significa que el sistema puede recuperarse más tarde.\n\nD es falso: el BIA es precisamente el que permite determinar RTO y RPO.\n\nF es falso: a menor tiempo requerido, mayor costo.",
+          "justificacionEn": "A, C, and E are correct: RTO specifies allowable downtime; RPO specifies acceptable data loss; near-zero RPO requires synchronous data replication.\n\nB is false: a high RTO means restoration can wait.\n\nD is false: the BIA is the formal vehicle used to determine RTO and RPO targets.\n\nF is false: shrinking RTO and RPO toward zero increases recovery costs exponentially."
+        },
+        {
+          "id": 12,
+          "tipo": "multiple",
+          "pregunta": "En cuanto a las alternativas de recuperación ante desastres, ¿cuáles son correctas?",
+          "preguntaEn": "Regarding disaster recovery alternative site strategies, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El sitio frío cuenta con espacio e infraestructura básica, pero sin equipos de TI ni datos"
+            },
+            {
+              "id": "b",
+              "texto": "El sitio tibio tiene infraestructura parcialmente configurada con TI, redes y periféricos esenciales"
+            },
+            {
+              "id": "c",
+              "texto": "Los acuerdos recíprocos son la alternativa más viable por su fácil compatibilidad"
+            },
+            {
+              "id": "d",
+              "texto": "El sitio caliente cuenta con toda la infraestructura y los equipos de TI y comunicaciones necesarios"
+            },
+            {
+              "id": "e",
+              "texto": "El sitio espejo replica los datos en tiempo real y asume el procesamiento sin interrupción perceptible"
+            },
+            {
+              "id": "f",
+              "texto": "El sitio frío ofrece el menor tiempo de recuperación"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "A cold site provides basic space and electrical/cooling utilities, but no IT hardware or data"
+            },
+            {
+              "id": "b",
+              "texto": "A warm site has partially configured hardware, network links, and essential peripherals"
+            },
+            {
+              "id": "c",
+              "texto": "Reciprocal agreements are the most viable alternative due to ease of technical compatibility"
+            },
+            {
+              "id": "d",
+              "texto": "A hot site possesses complete infrastructure, active equipment, and communications ready to run"
+            },
+            {
+              "id": "e",
+              "texto": "A mirrored site replicates data synchronously and assumes processing with near-zero disruption"
+            },
+            {
+              "id": "f",
+              "texto": "A cold site provides the shortest recovery time objective"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "d",
+            "e"
+          ],
+          "justificacion": "A, B, D y E corresponden a las definiciones del manual.\n\nC es falso: los acuerdos recíprocos no se consideran una opción viable por la dificultad de mantener compatibilidad y cumplimiento.\n\nF es falso: el sitio frío es el más barato pero el de mayor tiempo de recuperación.",
+          "justificacionEn": "A, B, D, and E accurately reflect CISA recovery site definitions.\n\nC is false: reciprocal agreements are rarely viable due to ongoing technical configuration drift and confidentiality conflicts.\n\nF is false: cold sites have the longest recovery time (days or weeks)."
+        },
+        {
+          "id": 13,
+          "tipo": "multiple",
+          "pregunta": "Sobre los esquemas de respaldo, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding data backup schemes and methodologies, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El respaldo completo copia todos los archivos y carpetas"
+            },
+            {
+              "id": "b",
+              "texto": "El respaldo incremental copia lo que cambió desde el último respaldo incremental o completo"
+            },
+            {
+              "id": "c",
+              "texto": "En un esquema completo más incrementales, basta restaurar el último completo y el último incremental"
+            },
+            {
+              "id": "d",
+              "texto": "El respaldo diferencial copia lo que cambió desde el último respaldo completo"
+            },
+            {
+              "id": "e",
+              "texto": "El respaldo diferencial requiere menos tiempo de restauración que el incremental"
+            },
+            {
+              "id": "f",
+              "texto": "El respaldo completo es el más rápido y el que requiere menos capacidad de medios"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "A full backup duplicates all specified files and directories"
+            },
+            {
+              "id": "b",
+              "texto": "An incremental backup copies only files modified since the last full or incremental backup"
+            },
+            {
+              "id": "c",
+              "texto": "In a full plus incremental scheme, restoration only requires the last full and the most recent incremental backup"
+            },
+            {
+              "id": "d",
+              "texto": "A differential backup copies all files that have changed since the last full backup"
+            },
+            {
+              "id": "e",
+              "texto": "A differential backup requires less restoration time than an incremental backup scheme"
+            },
+            {
+              "id": "f",
+              "texto": "A full backup is the fastest to execute and requires the least storage media"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "d",
+            "e"
+          ],
+          "justificacion": "A, B, D y E son correctas según el manual.\n\nC es falso: para restaurar se necesita el último completo y todos los incrementales posteriores.\n\nF es falso: el completo es el que más tiempo y capacidad de medios requiere.",
+          "justificacionEn": "A, B, D, and E are correct according to CISA guidelines.\n\nC is false: restoring incremental backups requires the baseline full backup plus all subsequent incrementals in sequence.\n\nF is false: full backups take the longest time and highest media capacity."
+        },
+        {
+          "id": 14,
+          "tipo": "multiple",
+          "pregunta": "¿Qué actividades forman parte del análisis de impacto al negocio (BIA)?",
+          "preguntaEn": "Which activities form an integral part of a Business Impact Analysis (BIA)?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Identificar los procesos críticos y los recursos que los soportan"
+            },
+            {
+              "id": "b",
+              "texto": "Definir el presupuesto de ventas del siguiente año"
+            },
+            {
+              "id": "c",
+              "texto": "Evaluar el impacto de la interrupción a lo largo del tiempo"
+            },
+            {
+              "id": "d",
+              "texto": "Seleccionar el sitio alterno antes de analizar los impactos"
+            },
+            {
+              "id": "e",
+              "texto": "Determinar el RTO y el RPO"
+            },
+            {
+              "id": "f",
+              "texto": "Priorizar el orden de recuperación de los procesos"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Identify critical business processes and their supporting dependencies"
+            },
+            {
+              "id": "b",
+              "texto": "Formulate next year's corporate commercial sales quota"
+            },
+            {
+              "id": "c",
+              "texto": "Evaluate financial and operational outage impacts over time"
+            },
+            {
+              "id": "d",
+              "texto": "Contract an alternate recovery site before analyzing business impacts"
+            },
+            {
+              "id": "e",
+              "texto": "Determine RTO and RPO objectives for critical functions"
+            },
+            {
+              "id": "f",
+              "texto": "Prioritize the sequence of process restoration based on criticality"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e",
+            "f"
+          ],
+          "justificacion": "A, C, E y F son resultados del BIA y base para elegir las estrategias de recuperación.\n\nB no es parte del BIA.\n\nD es incorrecto: las estrategias y alternativas se seleccionan a partir del BIA, no antes.",
+          "justificacionEn": "A, C, E, and F are standard BIA outcomes that guide continuity strategy selection.\n\nB is outside the scope of business continuity.\n\nD is incorrect: recovery solutions are chosen based on BIA findings, not beforehand."
+        },
+        {
+          "id": 15,
+          "tipo": "multiple",
+          "pregunta": "¿Cuáles son métodos de prueba de un plan de recuperación ante desastres (DRP)?",
+          "preguntaEn": "Which of the following are recognized Disaster Recovery Plan (DRP) testing methods?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Revisión de listas de verificación (checklist)"
+            },
+            {
+              "id": "b",
+              "texto": "Pruebas de penetración"
+            },
+            {
+              "id": "c",
+              "texto": "Recorrido estructurado (structured walk-through)"
+            },
+            {
+              "id": "d",
+              "texto": "Simulación"
+            },
+            {
+              "id": "e",
+              "texto": "Prueba paralela"
+            },
+            {
+              "id": "f",
+              "texto": "Prueba de interrupción completa"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Checklist review"
+            },
+            {
+              "id": "b",
+              "texto": "Penetration testing"
+            },
+            {
+              "id": "c",
+              "texto": "Structured walk-through"
+            },
+            {
+              "id": "d",
+              "texto": "Simulation testing"
+            },
+            {
+              "id": "e",
+              "texto": "Parallel testing"
+            },
+            {
+              "id": "f",
+              "texto": "Full-interruption testing"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d",
+            "e",
+            "f"
+          ],
+          "justificacion": "Los tipos de prueba del manual son: revisión de checklist, recorrido estructurado, simulación, prueba paralela e interrupción completa (la más rigurosa, costosa y potencialmente disruptiva).\n\nB es una técnica de pruebas de seguridad, no de pruebas de recuperación.",
+          "justificacionEn": "Recognized DRP test levels are: checklist review, structured walk-through, simulation, parallel test, and full-interruption test.\n\nB is a technical cybersecurity validation technique, not a disaster recovery exercise."
+        },
+        {
+          "id": 16,
+          "tipo": "multiple",
+          "pregunta": "¿Qué objetivos debe cumplir una prueba del plan de continuidad o recuperación?",
+          "preguntaEn": "What key objectives should a business continuity or disaster recovery exercise accomplish?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Verificar la completitud y precisión del plan"
+            },
+            {
+              "id": "b",
+              "texto": "Programarla en horario pico de producción para maximizar la interrupción"
+            },
+            {
+              "id": "c",
+              "texto": "Evaluar el desempeño del personal involucrado"
+            },
+            {
+              "id": "d",
+              "texto": "Evaluar la coordinación con proveedores y terceros externos"
+            },
+            {
+              "id": "e",
+              "texto": "Limitar la participación a los miembros del equipo de recuperación"
+            },
+            {
+              "id": "f",
+              "texto": "Concluir que, si todo funciona sin recomendaciones, no hace falta una prueba más exigente"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Verify the completeness, accuracy, and currency of the plan"
+            },
+            {
+              "id": "b",
+              "texto": "Schedule during peak operational hours to maximize disruption"
+            },
+            {
+              "id": "c",
+              "texto": "Evaluate personnel performance and recovery team readiness"
+            },
+            {
+              "id": "d",
+              "texto": "Assess coordination with third-party vendors and critical partners"
+            },
+            {
+              "id": "e",
+              "texto": "Restrict participation strictly to formal recovery team members"
+            },
+            {
+              "id": "f",
+              "texto": "Conclude that if no defects were found, subsequent testing is unneeded"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d"
+          ],
+          "justificacion": "A, C y D son tareas que debe lograr la prueba.\n\nB es falso: se recomienda programarla cuando minimice la interrupción de las operaciones (por ejemplo, fines de semana).\n\nE es falso: también debe evaluarse el nivel de capacitación y conciencia de empleados que no forman parte del equipo.\n\nF es falso: si no surge ninguna recomendación, probablemente debió planificarse una prueba más desafiante.",
+          "justificacionEn": "A, C, and D are primary objectives of continuity testing.\n\nB is false: tests should be scheduled to minimize production disruption.\n\nE is false: general staff awareness and coordination should also be validated.\n\nF is false: a test yielding no recommendations usually indicates an insufficiently challenging test scenario."
+        },
+        {
+          "id": 17,
+          "tipo": "multiple",
+          "pregunta": "Sobre la gestión de incidentes y de problemas, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding incident management and problem management, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "La gestión de incidentes busca restablecer el proceso afectado a su estado normal lo antes posible"
+            },
+            {
+              "id": "b",
+              "texto": "La base de errores conocidos (KEDB) registra únicamente incidentes de seguridad"
+            },
+            {
+              "id": "c",
+              "texto": "La gestión de problemas busca identificar la causa raíz de uno o varios incidentes"
+            },
+            {
+              "id": "d",
+              "texto": "Un error conocido es un problema cuya causa raíz fue identificada y para el que se desarrolló una solución temporal (workaround)"
+            },
+            {
+              "id": "e",
+              "texto": "Los 5 porqués y el diagrama de Ishikawa son técnicas de análisis de causa raíz"
+            },
+            {
+              "id": "f",
+              "texto": "Ambos procesos persiguen exactamente el mismo objetivo"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Incident management aims to restore normal service operation as quickly as possible"
+            },
+            {
+              "id": "b",
+              "texto": "The Known Error Database (KEDB) exclusively records information security breaches"
+            },
+            {
+              "id": "c",
+              "texto": "Problem management aims to identify the underlying root cause of incidents"
+            },
+            {
+              "id": "d",
+              "texto": "A known error is a problem with an identified root cause and a documented workaround"
+            },
+            {
+              "id": "e",
+              "texto": "The 5 Whys and Ishikawa (fishbone) diagrams are root-cause analysis techniques"
+            },
+            {
+              "id": "f",
+              "texto": "Both disciplines pursue identical operational objectives"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d",
+            "e"
+          ],
+          "justificacion": "A, C, D y E coinciden con el manual.\n\nB es falso: la KEDB documenta errores conocidos y sus soluciones temporales.\n\nF es falso: incidentes buscan restablecer el servicio; problemas buscan reducir el número y la severidad de los incidentes.",
+          "justificacionEn": "A, C, D, and E reflect ITIL/CISA principles.\n\nB is false: KEDB logs all recurring operational errors and workarounds.\n\nF is false: incident management focuses on rapid restoration; problem management focuses on preventing recurring failures."
+        },
+        {
+          "id": 18,
+          "tipo": "multiple",
+          "pregunta": "En bases de datos, ¿qué afirmaciones sobre integridad y transacciones son correctas?",
+          "preguntaEn": "In database systems, which statements regarding integrity and transaction properties (ACID) are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "La atomicidad garantiza que una transacción se complete en su totalidad o no se aplique en absoluto"
+            },
+            {
+              "id": "b",
+              "texto": "La durabilidad implica que los cambios se revierten al cerrar la sesión"
+            },
+            {
+              "id": "c",
+              "texto": "La integridad referencial exige que toda clave foránea sea nula o apunte a un valor existente en otra tabla"
+            },
+            {
+              "id": "d",
+              "texto": "La normalización busca maximizar la redundancia de datos"
+            },
+            {
+              "id": "e",
+              "texto": "La integridad de entidad exige que la clave primaria sea única y no nula"
+            },
+            {
+              "id": "f",
+              "texto": "El aislamiento exige que las transacciones concurrentes vean los estados intermedios de las demás"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Atomicity guarantees that a transaction executes completely or is rolled back entirely"
+            },
+            {
+              "id": "b",
+              "texto": "Durability means data updates are reverted as soon as the session closes"
+            },
+            {
+              "id": "c",
+              "texto": "Referential integrity requires that foreign key values match an existing primary key or be null"
+            },
+            {
+              "id": "d",
+              "texto": "Normalization aims to maximize data redundancy across database tables"
+            },
+            {
+              "id": "e",
+              "texto": "Entity integrity mandates that primary keys must be unique and non-null"
+            },
+            {
+              "id": "f",
+              "texto": "Isolation requires concurrent transactions to expose intermediate states to each other"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e"
+          ],
+          "justificacion": "A, C y E son correctas.\n\nB es falso: la durabilidad garantiza que los cambios confirmados persistan.\n\nD es falso: la normalización reduce la redundancia.\n\nF es falso: el aislamiento evita que las transacciones concurrentes interfieran entre sí.",
+          "justificacionEn": "A, C, and E are correct database integrity concepts.\n\nB is false: durability guarantees committed changes survive system crashes.\n\nD is false: normalization reduces data redundancy and anomalies.\n\nF is false: isolation prevents concurrent transactions from seeing intermediate uncommitted states."
+        },
+        {
+          "id": 19,
+          "tipo": "multiple",
+          "pregunta": "Respecto a la gestión de niveles de servicio y los SLA, ¿cuáles son correctas?",
+          "preguntaEn": "Regarding Service Level Management and SLAs, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Un SLA es un acuerdo entre TI (interna o externa) y el cliente que detalla los servicios a prestar"
+            },
+            {
+              "id": "b",
+              "texto": "Los SLA solo aplican a proveedores externos"
+            },
+            {
+              "id": "c",
+              "texto": "Describe los servicios en términos no técnicos desde la perspectiva del cliente"
+            },
+            {
+              "id": "d",
+              "texto": "Sirve como estándar para medir y ajustar los servicios durante el periodo del acuerdo"
+            },
+            {
+              "id": "e",
+              "texto": "La gestión de niveles de servicio incluye el catálogo de servicios y las reuniones de revisión"
+            },
+            {
+              "id": "f",
+              "texto": "La gestión de niveles de servicio se limita a redactar el SLA"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "An SLA is an agreement between IT (internal or external) and the customer defining services provided"
+            },
+            {
+              "id": "b",
+              "texto": "SLAs apply exclusively to commercial third-party service providers"
+            },
+            {
+              "id": "c",
+              "texto": "It describes service terms in non-technical language from the customer's perspective"
+            },
+            {
+              "id": "d",
+              "texto": "It serves as a baseline standard to monitor and tune performance over the agreement term"
+            },
+            {
+              "id": "e",
+              "texto": "Service Level Management encompasses the service catalog, metrics, and periodic review meetings"
+            },
+            {
+              "id": "f",
+              "texto": "Service Level Management is restricted solely to the initial drafting of the SLA contract"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d",
+            "e"
+          ],
+          "justificacion": "A, C, D y E coinciden con el manual.\n\nB es falso: el área de TI puede ser interna o un proveedor externo.\n\nF es falso: la gestión abarca definición, acuerdo, documentación, catálogo, seguimiento y revisiones.",
+          "justificacionEn": "A, C, D, and E represent SLA governance best practices.\n\nB is false: SLAs are established with both internal IT departments and external vendors.\n\nF is false: SLM is an ongoing lifecycle of agreement, monitoring, reporting, and review."
+        },
+        {
+          "id": 20,
+          "tipo": "multiple",
+          "pregunta": "Sobre la computación de usuario final (EUC) y el Shadow IT, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding End-User Computing (EUC) and Shadow IT, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El EUC permite que usuarios no programadores diseñen sus propias aplicaciones"
+            },
+            {
+              "id": "b",
+              "texto": "Las aplicaciones EUC siempre están sujetas a una revisión independiente"
+            },
+            {
+              "id": "c",
+              "texto": "La falta de supervisión de TI en el EUC genera riesgos como ausencia de autenticación, de registros de auditoría y de respaldos"
+            },
+            {
+              "id": "d",
+              "texto": "El Shadow IT es tecnología usada sin que el departamento de TI lo sepa"
+            },
+            {
+              "id": "e",
+              "texto": "Las aplicaciones EUC siempre se desarrollan con una metodología formal"
+            },
+            {
+              "id": "f",
+              "texto": "Excel y Access incluyen de forma estándar un registro de auditoría robusto"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "EUC enables non-technical end users to create their own processing applications"
+            },
+            {
+              "id": "b",
+              "texto": "EUC applications are always subjected to rigorous independent testing and reviews"
+            },
+            {
+              "id": "c",
+              "texto": "Lack of IT oversight in EUC introduces risks such as absent authentication, audit trails, and backups"
+            },
+            {
+              "id": "d",
+              "texto": "Shadow IT refers to technology assets used without IT department approval or knowledge"
+            },
+            {
+              "id": "e",
+              "texto": "EUC solutions are consistently built following formal SDLC development methodologies"
+            },
+            {
+              "id": "f",
+              "texto": "Desktop spreadsheets and databases include robust built-in immutable audit trails by default"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d"
+          ],
+          "justificacion": "A, C y D son correctas.\n\nB y E son falsas: justamente la falta de revisión y de metodología formal es uno de los riesgos del EUC.\n\nF es falso: las soluciones estándar de EUC suelen no contar con registro de auditoría adecuado.",
+          "justificacionEn": "A, C, and D are correct.\n\nB and E are false: lack of independent review and formal methodology represents the primary risk of EUC.\n\nF is false: desktop end-user tools typically lack native tamper-proof audit trails."
+        },
+        {
+          "id": 21,
+          "tipo": "multiple",
+          "pregunta": "En una política de seguridad de la información, ¿qué elementos y características son correctos?",
+          "preguntaEn": "In an information security policy, which elements and attributes are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Incluye alcance, enunciado de la política y objetivos"
+            },
+            {
+              "id": "b",
+              "texto": "Una vez emitida, no requiere monitoreo"
+            },
+            {
+              "id": "c",
+              "texto": "Sus objetivos incluyen confidencialidad, integridad y disponibilidad"
+            },
+            {
+              "id": "d",
+              "texto": "Detalla la configuración técnica de cada sistema"
+            },
+            {
+              "id": "e",
+              "texto": "Sus objetivos deben ser específicos, medibles, alcanzables, realistas y con plazo (SMART)"
+            },
+            {
+              "id": "f",
+              "texto": "Puede emitirse sin aprobación de la alta dirección"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "It includes scope, policy statement, and overarching objectives"
+            },
+            {
+              "id": "b",
+              "texto": "Once published, it does not require continuous monitoring or reviews"
+            },
+            {
+              "id": "c",
+              "texto": "Its core objectives encompass confidentiality, integrity, and availability (CIA)"
+            },
+            {
+              "id": "d",
+              "texto": "It specifies detailed low-level configuration settings for each system"
+            },
+            {
+              "id": "e",
+              "texto": "Its objectives should be Specific, Measurable, Achievable, Realistic, and Time-bound (SMART)"
+            },
+            {
+              "id": "f",
+              "texto": "It can be formally issued without executive leadership approval"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e"
+          ],
+          "justificacion": "A, C y E corresponden a los elementos clave de una política de seguridad.\n\nB es falso: el monitoreo es uno de sus objetivos.\n\nD es falso: la política se redacta a alto nivel; el detalle técnico va en procedimientos y estándares.\n\nF es falso: la política debe establecer el tono desde la dirección y asignar responsabilidades.",
+          "justificacionEn": "A, C, and E are foundational characteristics of security policies.\n\nB is false: compliance monitoring and periodic reviews are mandatory.\n\nD is false: policies are high-level directives; technical details reside in standards and baselines.\n\nF is false: management endorsement is essential to establish authority and accountability."
+        },
+        {
+          "id": 22,
+          "tipo": "multiple",
+          "pregunta": "Sobre los factores de autenticación, ¿cuáles son correctos?",
+          "preguntaEn": "Regarding authentication factors and multi-factor authentication (MFA), which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "La contraseña es algo que el usuario sabe"
+            },
+            {
+              "id": "b",
+              "texto": "Usuario y contraseña constituyen autenticación multifactor"
+            },
+            {
+              "id": "c",
+              "texto": "Un token OTP es algo que el usuario tiene"
+            },
+            {
+              "id": "d",
+              "texto": "PIN más contraseña constituyen autenticación multifactor"
+            },
+            {
+              "id": "e",
+              "texto": "Tarjeta inteligente más PIN constituyen autenticación multifactor"
+            },
+            {
+              "id": "f",
+              "texto": "La huella dactilar es algo que el usuario es"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "A password represents something the user knows"
+            },
+            {
+              "id": "b",
+              "texto": "A username combined with a password constitutes multi-factor authentication"
+            },
+            {
+              "id": "c",
+              "texto": "A one-time password (OTP) token represents something the user has"
+            },
+            {
+              "id": "d",
+              "texto": "A PIN combined with a password constitutes multi-factor authentication"
+            },
+            {
+              "id": "e",
+              "texto": "A smart card combined with a PIN constitutes multi-factor authentication"
+            },
+            {
+              "id": "f",
+              "texto": "A fingerprint represents something the user is"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "e",
+            "f"
+          ],
+          "justificacion": "A, C y F clasifican correctamente los factores (conocimiento, posesión e inherencia).\n\nE combina dos factores distintos (posesión y conocimiento), por lo que es multifactor.\n\nB y D combinan factores de la misma categoría (conocimiento), por lo que no son multifactor.",
+          "justificacionEn": "A, C, and F correctly map the factors: knowledge, possession, and inherence.\n\nE combines two distinct factor categories (possession + knowledge), creating valid MFA.\n\nB and D combine items within the same factor category (knowledge), which is not MFA."
+        },
+        {
+          "id": 23,
+          "tipo": "multiple",
+          "pregunta": "Respecto a las métricas de desempeño de los sistemas biométricos, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding biometric access control system performance metrics, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "La tasa de falsa aceptación (FAR) mide la frecuencia con que se acepta a un impostor"
+            },
+            {
+              "id": "b",
+              "texto": "La FAR mide la frecuencia con que se rechaza a un usuario legítimo"
+            },
+            {
+              "id": "c",
+              "texto": "La tasa de falso rechazo (FRR) mide la frecuencia con que se rechaza a un usuario legítimo"
+            },
+            {
+              "id": "d",
+              "texto": "La tasa de error igual (EER) es el punto donde FAR y FRR coinciden; un valor menor indica mayor exactitud"
+            },
+            {
+              "id": "e",
+              "texto": "Las plantillas biométricas no requieren protección especial"
+            },
+            {
+              "id": "f",
+              "texto": "La biometría es infalible"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "False Acceptance Rate (FAR) measures how frequently an unauthorized impostor is accepted"
+            },
+            {
+              "id": "b",
+              "texto": "FAR measures how frequently an authorized legitimate user is rejected"
+            },
+            {
+              "id": "c",
+              "texto": "False Rejection Rate (FRR) measures how frequently an authorized legitimate user is rejected"
+            },
+            {
+              "id": "d",
+              "texto": "Equal Error Rate (EER) is the point where FAR equals FRR; a lower EER indicates higher overall accuracy"
+            },
+            {
+              "id": "e",
+              "texto": "Stored biometric reference templates require no cryptographic protection"
+            },
+            {
+              "id": "f",
+              "texto": "Biometric authentication is 100% infallible"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d"
+          ],
+          "justificacion": "A, C y D son definiciones correctas.\n\nB invierte el concepto: describe la FRR.\n\nE es falso: las plantillas deben protegerse, ya que no pueden cambiarse como una contraseña.\n\nF es falso: todo sistema biométrico tiene tasas de error.",
+          "justificacionEn": "A, C, and D are standard biometric performance metrics.\n\nB incorrectly defines FAR (it describes FRR).\n\nE is false: templates must be encrypted because physiological traits cannot be reset if compromised.\n\nF is false: all biometric systems exhibit statistical false acceptance and rejection rates."
+        },
+        {
+          "id": 24,
+          "tipo": "multiple",
+          "pregunta": "Sobre los tipos de firewall, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding firewall architectures and capabilities, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El filtrado de paquetes decide con base en los encabezados de los paquetes"
+            },
+            {
+              "id": "b",
+              "texto": "La inspección con estado (stateful inspection) mantiene una tabla del estado de las conexiones"
+            },
+            {
+              "id": "c",
+              "texto": "Con un firewall ya no se necesita un sistema de detección de intrusiones"
+            },
+            {
+              "id": "d",
+              "texto": "Un firewall de aplicaciones web (WAF) protege aplicaciones web de ataques como inyección SQL y XSS"
+            },
+            {
+              "id": "e",
+              "texto": "Los firewalls de próxima generación solo filtran por puerto"
+            },
+            {
+              "id": "f",
+              "texto": "Los firewalls de aplicación inspeccionan el tráfico en la capa de aplicación"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Packet filtering firewalls make decisions based on packet header attributes"
+            },
+            {
+              "id": "b",
+              "texto": "Stateful inspection firewalls maintain an internal connection state table"
+            },
+            {
+              "id": "c",
+              "texto": "Deploying a firewall eliminates the need for intrusion detection systems"
+            },
+            {
+              "id": "d",
+              "texto": "A Web Application Firewall (WAF) protects web apps from attacks such as SQL injection and XSS"
+            },
+            {
+              "id": "e",
+              "texto": "Next-Generation Firewalls (NGFW) only filter traffic at Layer 4 by port numbers"
+            },
+            {
+              "id": "f",
+              "texto": "Application-level gateway firewalls inspect payload traffic up to the application layer"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "d",
+            "f"
+          ],
+          "justificacion": "A, B, D y F describen correctamente los tipos de firewall del manual.\n\nC es falso: firewall e IDS/IPS son controles complementarios.\n\nE es falso: los NGFW añaden inspección profunda, identificación de aplicaciones y otras funciones.",
+          "justificacionEn": "A, B, D, and F accurately define firewall technologies in the CISA manual.\n\nC is false: firewalls and IDS/IPS provide complementary layered defense.\n\nE is false: NGFWs provide deep packet inspection and Layer 7 application awareness."
+        },
+        {
+          "id": 25,
+          "tipo": "multiple",
+          "pregunta": "Sobre los sistemas de detección y prevención de intrusiones (IDS/IPS), ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS), which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "Un IDS de red (NIDS) monitorea el tráfico de la red"
+            },
+            {
+              "id": "b",
+              "texto": "Un IDS basado en firmas detecta mejor los ataques desconocidos (zero-day)"
+            },
+            {
+              "id": "c",
+              "texto": "Un IDS de host (HIDS) monitorea la actividad en un equipo específico"
+            },
+            {
+              "id": "d",
+              "texto": "Un IPS puede bloquear activamente el tráfico malicioso"
+            },
+            {
+              "id": "e",
+              "texto": "Un IDS es un control preventivo"
+            },
+            {
+              "id": "f",
+              "texto": "Un IDS basado en anomalías elimina por completo los falsos positivos"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "A Network-based IDS (NIDS) inspects traffic packets across the network segment"
+            },
+            {
+              "id": "b",
+              "texto": "A signature-based IDS is best suited for detecting unknown zero-day attacks"
+            },
+            {
+              "id": "c",
+              "texto": "A Host-based IDS (HIDS) monitors operating system and log activity on an individual endpoint"
+            },
+            {
+              "id": "d",
+              "texto": "An IPS sits inline and can actively block or terminate malicious network traffic"
+            },
+            {
+              "id": "e",
+              "texto": "An IDS operates as a preventive security control"
+            },
+            {
+              "id": "f",
+              "texto": "An anomaly-based IDS completely eliminates false-positive alerts"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d"
+          ],
+          "justificacion": "A, C y D son correctas.\n\nB es falso: las firmas detectan ataques ya conocidos; las anomalías pueden detectar comportamientos nuevos.\n\nE es falso: el IDS es un control detectivo; el IPS agrega capacidad preventiva.\n\nF es falso: los modelos de anomalías tienden a generar falsos positivos.",
+          "justificacionEn": "A, C, and D are correct statements.\n\nB is false: signature matching only detects known attack patterns; anomaly detection is needed for novel attacks.\n\nE is false: an IDS is detective, whereas an IPS is preventive.\n\nF is false: anomaly-based detection notoriously generates elevated false-positive rates."
+        },
+        {
+          "id": 26,
+          "tipo": "multiple",
+          "pregunta": "Sobre cifrado y firmas digitales, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding cryptography and digital signatures, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El cifrado simétrico usa la misma clave para cifrar y descifrar"
+            },
+            {
+              "id": "b",
+              "texto": "AES es un algoritmo asimétrico"
+            },
+            {
+              "id": "c",
+              "texto": "El cifrado asimétrico usa un par de claves (pública y privada)"
+            },
+            {
+              "id": "d",
+              "texto": "La firma digital aporta integridad, autenticación y no repudio"
+            },
+            {
+              "id": "e",
+              "texto": "El emisor comparte su clave privada con el receptor para que verifique la firma"
+            },
+            {
+              "id": "f",
+              "texto": "Para lograr confidencialidad con cifrado asimétrico, el emisor cifra con la clave pública del receptor"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Symmetric encryption uses the same shared key to encrypt and decrypt data"
+            },
+            {
+              "id": "b",
+              "texto": "AES is an asymmetric cryptographic algorithm"
+            },
+            {
+              "id": "c",
+              "texto": "Asymmetric cryptography utilizes a mathematically linked key pair (public and private)"
+            },
+            {
+              "id": "d",
+              "texto": "A digital signature provides integrity, origin authentication, and non-repudiation"
+            },
+            {
+              "id": "e",
+              "texto": "The sender shares their private key with the recipient to enable signature verification"
+            },
+            {
+              "id": "f",
+              "texto": "To achieve confidentiality with asymmetric encryption, the sender encrypts with the recipient's public key"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d",
+            "f"
+          ],
+          "justificacion": "A, C, D y F son correctas.\n\nB es falso: AES es un algoritmo simétrico.\n\nE es falso: la clave privada nunca se comparte; la firma se verifica con la clave pública del emisor.",
+          "justificacionEn": "A, C, D, and F are correct cryptographic principles.\n\nB is false: AES is a symmetric block cipher.\n\nE is false: private keys must remain secret; the recipient verifies the signature using the sender's public key."
+        },
+        {
+          "id": 27,
+          "tipo": "multiple",
+          "pregunta": "En una infraestructura de clave pública (PKI), ¿qué afirmaciones son correctas?",
+          "preguntaEn": "In a Public Key Infrastructure (PKI), which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "La autoridad certificadora (CA) emite y firma los certificados digitales"
+            },
+            {
+              "id": "b",
+              "texto": "La autoridad de registro (RA) genera la clave privada del usuario"
+            },
+            {
+              "id": "c",
+              "texto": "La lista de revocación de certificados (CRL) enumera los certificados revocados antes de su vencimiento"
+            },
+            {
+              "id": "d",
+              "texto": "El certificado digital contiene la clave privada del titular"
+            },
+            {
+              "id": "e",
+              "texto": "La CA distribuye su clave privada a todos los usuarios"
+            },
+            {
+              "id": "f",
+              "texto": "La CRL se usa para renovar certificados"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "The Certificate Authority (CA) issues and digitally signs public certificates"
+            },
+            {
+              "id": "b",
+              "texto": "The Registration Authority (RA) generates the user's private key"
+            },
+            {
+              "id": "c",
+              "texto": "The Certificate Revocation List (CRL) lists certificates revoked prior to scheduled expiration"
+            },
+            {
+              "id": "d",
+              "texto": "The digital certificate encapsulates the subject's private key"
+            },
+            {
+              "id": "e",
+              "texto": "The CA broadcasts its private key to all relying parties"
+            },
+            {
+              "id": "f",
+              "texto": "The CRL is utilized as the primary vehicle to renew certificates"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c"
+          ],
+          "justificacion": "A y C son funciones propias de la PKI.\n\nB es falso: la RA verifica la identidad del solicitante.\n\nD y E son falsos: las claves privadas nunca se incluyen ni se distribuyen.\n\nF es falso: la CRL informa revocaciones, no renueva certificados.",
+          "justificacionEn": "A and C represent fundamental PKI functions.\n\nB is false: the RA verifies subscriber identity before forwarding requests to the CA.\n\nD and E are false: private keys are never placed in public certificates or distributed.\n\nF is false: the CRL publishes revoked certificates; it does not renew them."
+        },
+        {
+          "id": 28,
+          "tipo": "multiple",
+          "pregunta": "Sobre ataques y acceso físico no autorizado, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding cyber attacks and unauthorized physical entry, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El phishing busca obtener información sensible haciéndose pasar por una entidad confiable"
+            },
+            {
+              "id": "b",
+              "texto": "El pharming redirige el tráfico de un sitio web hacia uno falso"
+            },
+            {
+              "id": "c",
+              "texto": "El piggybacking consiste en seguir a una persona autorizada a través de una puerta segura"
+            },
+            {
+              "id": "d",
+              "texto": "Una trampa de acceso (mantrap) de dos puertas ayuda a mitigar el piggybacking"
+            },
+            {
+              "id": "e",
+              "texto": "El phishing solo explota vulnerabilidades de hardware"
+            },
+            {
+              "id": "f",
+              "texto": "El piggybacking solo ocurre en entornos virtuales"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "Phishing deceives victims to obtain sensitive credentials by impersonating trusted entities"
+            },
+            {
+              "id": "b",
+              "texto": "Pharming poisons DNS or host resolution to redirect legitimate traffic to fraudulent sites"
+            },
+            {
+              "id": "c",
+              "texto": "Piggybacking/tailgating involves following an authorized individual through a secure door"
+            },
+            {
+              "id": "d",
+              "texto": "A dual-door mantrap (access interlocking chamber) mitigates piggybacking"
+            },
+            {
+              "id": "e",
+              "texto": "Phishing exclusively targets hardware-level vulnerabilities"
+            },
+            {
+              "id": "f",
+              "texto": "Piggybacking occurs solely within virtualized cloud environments"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "justificacion": "A, B, C y D corresponden al glosario y a los controles del manual.\n\nE es falso: el phishing explota el factor humano mediante engaño.\n\nF es falso: el piggybacking es físico (y también puede darse en enlaces de telecomunicaciones).",
+          "justificacionEn": "A, B, C, and D reflect CISA glossary definitions and physical/social engineering controls.\n\nE is false: phishing targets the human element through deception.\n\nF is false: piggybacking is primarily a physical entry risk (or unauthorized tap on an open link)."
+        },
+        {
+          "id": 29,
+          "tipo": "multiple",
+          "pregunta": "Sobre los controles ambientales y supresión de incendios en salas de TI, ¿qué afirmaciones son correctas?",
+          "preguntaEn": "Regarding environmental controls and fire suppression in IT facilities, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El FM-200 suele considerarse una opción preferida de supresión de incendios"
+            },
+            {
+              "id": "b",
+              "texto": "Los rociadores con agua siempre presente son preferibles en salas de servidores porque no pueden tener fugas"
+            },
+            {
+              "id": "c",
+              "texto": "En un sistema de tubería seca (dry-pipe), el agua no fluye hasta que se activa la alarma de incendio"
+            },
+            {
+              "id": "d",
+              "texto": "Los sistemas con agua siempre presente en las tuberías pueden tener fugas y dañar los equipos"
+            },
+            {
+              "id": "e",
+              "texto": "El FM-200 está prohibido en centros de datos"
+            },
+            {
+              "id": "f",
+              "texto": "El agua nunca daña los equipos electrónicos"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "FM-200 clean agent is widely regarded as a preferred gaseous fire suppression system"
+            },
+            {
+              "id": "b",
+              "texto": "Wet-pipe water sprinkler systems are preferred in server rooms because they cannot leak"
+            },
+            {
+              "id": "c",
+              "texto": "In a dry-pipe sprinkler system, pipes contain pressurized air until a fire alarm is triggered"
+            },
+            {
+              "id": "d",
+              "texto": "Wet-pipe sprinkler systems pose a risk of accidental pipe leakage damaging IT equipment"
+            },
+            {
+              "id": "e",
+              "texto": "FM-200 is internationally prohibited in modern data center facilities"
+            },
+            {
+              "id": "f",
+              "texto": "Water exposure never causes permanent damage to energized electronic equipment"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "c",
+            "d"
+          ],
+          "justificacion": "A, C y D coinciden con el manual.\n\nB y F son falsos: el agua presente en las tuberías puede filtrarse y dañar los equipos.\n\nE es falso: es un agente limpio ampliamente usado para este fin.",
+          "justificacionEn": "A, C, and D align with data center best practices.\n\nB and F are false: standing water in pipes can leak or rupture, causing catastrophic equipment damage.\n\nE is false: FM-200 and Novec clean agents are common halon replacements."
+        },
+        {
+          "id": 30,
+          "tipo": "multiple",
+          "pregunta": "En el modelo de responsabilidad compartida en la nube, ¿cuáles son afirmaciones correctas?",
+          "preguntaEn": "In the cloud computing shared responsibility model, which statements are correct?",
+          "alternativas": [
+            {
+              "id": "a",
+              "texto": "El cliente no puede transferir al proveedor el riesgo de seguridad de sus datos ni de gobierno, riesgo y cumplimiento (GRC)"
+            },
+            {
+              "id": "b",
+              "texto": "El proveedor de nube (CSP) asume siempre la seguridad física"
+            },
+            {
+              "id": "c",
+              "texto": "El CSP gestiona toda la seguridad, incluidos los datos del cliente"
+            },
+            {
+              "id": "d",
+              "texto": "Las responsabilidades compartidas varían según el tipo de servicio contratado"
+            },
+            {
+              "id": "e",
+              "texto": "Contratar la nube elimina la necesidad de auditar"
+            },
+            {
+              "id": "f",
+              "texto": "La seguridad del hardware, la infraestructura y la virtualización suele estar a cargo del CSP"
+            }
+          ],
+          "alternativasEn": [
+            {
+              "id": "a",
+              "texto": "The client customer cannot outsource accountability for data security or governance (GRC)"
+            },
+            {
+              "id": "b",
+              "texto": "The Cloud Service Provider (CSP) always assumes physical data center security"
+            },
+            {
+              "id": "c",
+              "texto": "The CSP manages all security end-to-end, including customer data classification and access"
+            },
+            {
+              "id": "d",
+              "texto": "Shared security obligations vary depending on service model (IaaS, PaaS, SaaS)"
+            },
+            {
+              "id": "e",
+              "texto": "Migrating to the cloud eliminates the need for independent IT audit assurance"
+            },
+            {
+              "id": "f",
+              "texto": "Physical hardware, underlying infrastructure, and virtualization are typically managed by the CSP"
+            }
+          ],
+          "respuestasCorrectasIds": [
+            "a",
+            "b",
+            "d",
+            "f"
+          ],
+          "justificacion": "A, B, D y F coinciden con el modelo de responsabilidad compartida del manual.\n\nC es falso: el cliente conserva responsabilidad sobre sus datos y configuraciones.\n\nE es falso: el auditor sigue evaluando controles y riesgos en entornos de nube.",
+          "justificacionEn": "A, B, D, and F represent core tenets of the cloud shared responsibility model.\n\nC is false: data protection and access authorization remain the customer's duty.\n\nE is false: independent audits (e.g., SOC 2, ISO 27017, internal review) are essential in cloud deployments."
+        }
+      ]
+    }
 };
 
 /* ----------------------------------------------------------
@@ -11512,6 +15476,7 @@ const DOM = {
   btnGemini:             document.getElementById('btn-seccion-gemini'),
   btnGpt:                document.getElementById('btn-seccion-gpt'),
   btnMultiples:          document.getElementById('btn-seccion-multiples'),
+  btnMultiples2:         document.getElementById('btn-seccion-multiples2'),
   multiChoiceBanner:     document.getElementById('multi-choice-banner'),
   multiChoiceInstruction:document.getElementById('multi-choice-instruction'),
   multiChoiceCounter:    document.getElementById('multi-choice-counter'),
@@ -12028,6 +15993,7 @@ function init() {
   if (DOM.btnGemini)      DOM.btnGemini.addEventListener('click',      () => mostrarSubsecciones('gemini'));
   if (DOM.btnGpt)         DOM.btnGpt.addEventListener('click',         () => mostrarSubsecciones('gpt'));
   if (DOM.btnMultiples)   DOM.btnMultiples.addEventListener('click',   () => mostrarSubsecciones('multiples'));
+  if (DOM.btnMultiples2)  DOM.btnMultiples2.addEventListener('click',  () => mostrarSubsecciones('multiples2'));
   if (DOM.btnSubmitMulti) DOM.btnSubmitMulti.addEventListener('click', confirmarRespuestaMultiple);
   DOM.btnBackToStart.addEventListener('click', () => showScreen(DOM.screenStart));
   DOM.btnNext.addEventListener('click', siguientePregunta);
